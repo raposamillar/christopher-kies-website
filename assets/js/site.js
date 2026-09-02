@@ -1,4 +1,30 @@
 (() => {
+  const navType = () => {
+    const entry = performance.getEntriesByType("navigation")[0];
+    return entry ? entry.type : "navigate";
+  };
+
+  const pinToHeader = () => {
+    if (navType() === "back_forward") {
+      return;
+    }
+    const hash = location.hash;
+    if (hash && hash !== "#top" && hash !== "#content") {
+      return;
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  };
+
+  pinToHeader();
+  window.addEventListener("DOMContentLoaded", pinToHeader);
+  window.addEventListener("load", pinToHeader);
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      return;
+    }
+    pinToHeader();
+  });
+
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-nav-toggle]");
   const isMobileNav = () => window.matchMedia("(max-width: 800px)").matches;
@@ -69,6 +95,25 @@
       });
     });
   }
+
+  const isHomePage = () => {
+    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    return page === "" || page === "index.html";
+  };
+
+  const goToHomeTop = (event) => {
+    if (!isHomePage()) {
+      closeNav();
+      return;
+    }
+    event.preventDefault();
+    closeNav();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  document.querySelectorAll(".brand, .nav-home a").forEach((el) => {
+    el.addEventListener("click", goToHomeTop);
+  });
 
   const form = document.querySelector("[data-contact-form]");
   if (form) {
