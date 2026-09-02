@@ -535,11 +535,77 @@ summary:focus-visible {
   margin: 0 0 0.75rem;
 }
 
+.hero-block .lede {
+  margin-bottom: 1.1rem;
+}
+
+.featured-piece-title {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 0 0 0.35rem;
+}
+
 .placeholder-note {
   border: 1px dashed var(--rule-light);
   padding: 1.1rem 1.2rem;
   color: var(--muted);
   max-width: 42rem;
+}
+
+.score-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0 0;
+  max-width: 42rem;
+}
+
+.page-placeholder {
+  margin: 0;
+  border: 1px dashed var(--rule-light);
+  aspect-ratio: 8.5 / 11;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  background: var(--bg);
+}
+
+.page-placeholder figcaption {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.video-placeholder {
+  border: 1px dashed var(--rule-light);
+  aspect-ratio: 16 / 9;
+  max-width: 42rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  padding: 1.1rem 1.2rem;
+  text-align: center;
+}
+
+.video-placeholder p {
+  margin: 0;
+  max-width: 22rem;
+}
+
+.video-embed {
+  aspect-ratio: 16 / 9;
+  max-width: 42rem;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .album-grid {
@@ -1286,7 +1352,8 @@ summary:focus-visible {
   .album-grid,
   .about-layout,
   .about-gallery-grid,
-  .media-item {
+  .media-item,
+  .score-pair {
     grid-template-columns: 1fr;
   }
 
