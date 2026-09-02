@@ -1,0 +1,846 @@
+{
+  "001": {
+    "tracks": [
+      {
+        "src": "assets/audio/001-academic-festival-rag-wind-ensemble.mp3",
+        "title": "Academic Festival Rag for Piano and Wind Ensemble"
+      }
+    ]
+  },
+  "004": {
+    "tracks": [
+      {
+        "src": "assets/audio/004-intro-and-ragtime-bratton.mp3",
+        "title": "Intro and Ragtime in Bratton"
+      }
+    ]
+  },
+  "007": {
+    "tracks": [
+      {
+        "src": "assets/audio/007-franklin-portrait-preamble.mp3",
+        "title": "Franklin Portrait: Preamble for Orchestra"
+      }
+    ]
+  },
+  "010": {
+    "tracks": [
+      {
+        "src": "assets/audio/010-tracks-01-06.mp3",
+        "title": "Tracks 1–6"
+      },
+      {
+        "src": "assets/audio/010-tracks-07-11.mp3",
+        "title": "Tracks 7–11"
+      },
+      {
+        "src": "assets/audio/010-tracks-12-16.mp3",
+        "title": "Tracks 12–16"
+      }
+    ]
+  },
+  "011": {
+    "tracks": [
+      {
+        "src": "assets/audio/011-ladle-rat-rotten-hut-orchestra.mp3",
+        "title": "Ladle Rat Rotten Hut for Orchestra"
+      }
+    ]
+  },
+  "014": {
+    "tracks": [
+      {
+        "src": "assets/audio/014-ladle-rat-rotten-hut-concert-band.mp3",
+        "title": "Ladle Rat Rotten Hut for Concert Band"
+      }
+    ]
+  },
+  "020b": {
+    "tracks": [
+      {
+        "src": "assets/audio/020b-01-initial-march.mp3",
+        "title": "1. Initial March"
+      },
+      {
+        "src": "assets/audio/020b-02-the-eel.mp3",
+        "title": "2. The Eel"
+      },
+      {
+        "src": "assets/audio/020b-03-the-duck.mp3",
+        "title": "3. The Duck"
+      },
+      {
+        "src": "assets/audio/020b-04-the-python.mp3",
+        "title": "4. The Python"
+      },
+      {
+        "src": "assets/audio/020b-05-the-fly.mp3",
+        "title": "5. The Fly"
+      },
+      {
+        "src": "assets/audio/020b-06-the-oyster.mp3",
+        "title": "6. The Oyster"
+      },
+      {
+        "src": "assets/audio/020b-07-the-shrimp.mp3",
+        "title": "7. The Shrimp"
+      },
+      {
+        "src": "assets/audio/020b-08-the-purist.mp3",
+        "title": "8. The Purist"
+      },
+      {
+        "src": "assets/audio/020b-09-the-caterpillar.mp3",
+        "title": "9. The Caterpillar"
+      },
+      {
+        "src": "assets/audio/020b-10-the-manatee.mp3",
+        "title": "10. The Manatee"
+      },
+      {
+        "src": "assets/audio/020b-11-the-grackle.mp3",
+        "title": "11. The Grackle"
+      },
+      {
+        "src": "assets/audio/020b-12-the-wasp.mp3",
+        "title": "12. The Wasp"
+      },
+      {
+        "src": "assets/audio/020b-13-the-chipmunk.mp3",
+        "title": "13. The Chipmunk"
+      },
+      {
+        "src": "assets/audio/020b-14-finale.mp3",
+        "title": "14. Finale"
+      }
+    ]
+  },
+  "021": {
+    "tracks": [
+      {
+        "src": "assets/audio/021-01-introductory-remarks-and-initial-march.mp3",
+        "title": "1. Introductory Remarks and Initial March"
+      },
+      {
+        "src": "assets/audio/021-02-the-eel.mp3",
+        "title": "2. The Eel"
+      },
+      {
+        "src": "assets/audio/021-03-the-duck.mp3",
+        "title": "3. The Duck"
+      },
+      {
+        "src": "assets/audio/021-04-the-python.mp3",
+        "title": "4. The Python"
+      },
+      {
+        "src": "assets/audio/021-05-the-fly.mp3",
+        "title": "5. The Fly"
+      },
+      {
+        "src": "assets/audio/021-06-the-oyster.mp3",
+        "title": "6. The Oyster"
+      },
+      {
+        "src": "assets/audio/021-07-the-shrimp.mp3",
+        "title": "7. The Shrimp"
+      },
+      {
+        "src": "assets/audio/021-08-the-purist.mp3",
+        "title": "8. The Purist"
+      },
+      {
+        "src": "assets/audio/021-09-the-caterpillar.mp3",
+        "title": "9. The Caterpillar"
+      },
+      {
+        "src": "assets/audio/021-10-the-manatee.mp3",
+        "title": "10. The Manatee"
+      },
+      {
+        "src": "assets/audio/021-11-the-grackle.mp3",
+        "title": "11. The Grackle"
+      },
+      {
+        "src": "assets/audio/021-12-the-wasp.mp3",
+        "title": "12. The Wasp"
+      },
+      {
+        "src": "assets/audio/021-13-the-chipmunk.mp3",
+        "title": "13. The Chipmunk"
+      },
+      {
+        "src": "assets/audio/021-14-concluding-remarks-and-finale.mp3",
+        "title": "14. Concluding Remarks and Finale"
+      }
+    ]
+  },
+  "022/053": {
+    "tracks": [
+      {
+        "src": "assets/audio/022-053-lrrh-piano-four-hands-midi.mp3",
+        "title": "MIDI (no narration)"
+      }
+    ]
+  },
+  "023": {
+    "tracks": [
+      {
+        "src": "assets/audio/023-lrrh-oboe-bassoon-piano.mp3",
+        "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Oboe, Bassoon, Piano, and Narrator"
+      }
+    ]
+  },
+  "026": {
+    "tracks": [
+      {
+        "src": "assets/audio/026-lrrh-clarinet-cello-piano.mp3",
+        "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Clarinet in B Flat, Cello, Piano, and Narrator"
+      }
+    ]
+  },
+  "027": {
+    "tracks": [
+      {
+        "src": "assets/audio/027-01-movement-1.mp3",
+        "title": "1. Movement 1"
+      },
+      {
+        "src": "assets/audio/027-02-movement-2.mp3",
+        "title": "2. Movement 2"
+      },
+      {
+        "src": "assets/audio/027-03-movement-3.mp3",
+        "title": "3. Movement 3"
+      },
+      {
+        "src": "assets/audio/027-04-movement-4.mp3",
+        "title": "4. Movement 4"
+      },
+      {
+        "src": "assets/audio/027-05-movement-5.mp3",
+        "title": "5. Movement 5"
+      }
+    ]
+  },
+  "030": {
+    "tracks": [
+      {
+        "src": "assets/audio/030-01-intro-and-can-can.mp3",
+        "title": "1. Intro and Can-Can"
+      },
+      {
+        "src": "assets/audio/030-02-octatangos.mp3",
+        "title": "2. Octatangos"
+      },
+      {
+        "src": "assets/audio/030-03-ragtime-reflections.mp3",
+        "title": "3. Ragtime Reflections"
+      }
+    ]
+  },
+  "032": {
+    "tracks": [
+      {
+        "src": "assets/audio/032-nobody-knows-oboe-piano.mp3",
+        "title": "From CD"
+      }
+    ]
+  },
+  "034b": {
+    "tracks": [
+      {
+        "src": "assets/audio/034b-octatonic-rag-sospiri-2011.mp3",
+        "title": "Sospiri, 2011"
+      }
+    ]
+  },
+  "043": {
+    "tracks": [
+      {
+        "src": "assets/audio/043-01-sieben-lieder.mp3",
+        "title": "1"
+      },
+      {
+        "src": "assets/audio/043-02-sieben-lieder.mp3",
+        "title": "2"
+      },
+      {
+        "src": "assets/audio/043-03-sieben-lieder.mp3",
+        "title": "3"
+      },
+      {
+        "src": "assets/audio/043-04-sieben-lieder.mp3",
+        "title": "4"
+      },
+      {
+        "src": "assets/audio/043-05-sieben-lieder.mp3",
+        "title": "5"
+      },
+      {
+        "src": "assets/audio/043-06-sieben-lieder.mp3",
+        "title": "6"
+      },
+      {
+        "src": "assets/audio/043-07-sieben-lieder.mp3",
+        "title": "7"
+      }
+    ]
+  },
+  "044": {
+    "tracks": [
+      {
+        "src": "assets/audio/044-01-tristamente.mp3",
+        "title": "1. Tristamente"
+      },
+      {
+        "src": "assets/audio/044-02-arietta.mp3",
+        "title": "2. Arietta"
+      },
+      {
+        "src": "assets/audio/044-03-finale.mp3",
+        "title": "3. Finale"
+      }
+    ]
+  },
+  "045": {
+    "tracks": [
+      {
+        "src": "assets/audio/045-take-the-love-bassoon-quartet.mp3",
+        "title": "Take the Love, This Can't Be the A Train for Bassoon Quartet"
+      }
+    ]
+  },
+  "046": {
+    "tracks": [
+      {
+        "src": "assets/audio/046-take-the-love-sospiri-2011.mp3",
+        "title": "Sospiri, 2011"
+      }
+    ]
+  },
+  "047": {
+    "tracks": [
+      {
+        "src": "assets/audio/047-taylor-fanfare-sospiri.mp3",
+        "title": "Sospiri, 18 January 2014"
+      }
+    ]
+  },
+  "048": {
+    "tracks": [
+      {
+        "src": "assets/audio/048-variations-country-gardens-unh.mp3",
+        "title": "UNH"
+      }
+    ]
+  },
+  "049": {
+    "tracks": [
+      {
+        "src": "assets/audio/049-variations-country-gardens-oboe-bassoon-piano.mp3",
+        "title": "Variations on Country Gardens for Oboe, Bassoon and Piano"
+      }
+    ]
+  },
+  "051": {
+    "tracks": [
+      {
+        "src": "assets/audio/051-octatonic-rag-lisa-raposa.mp3",
+        "title": "Octatonic Rag"
+      },
+      {
+        "src": "assets/audio/051-birthday-rag-antonietta.mp3",
+        "title": "Birthday Rag — Antonietta"
+      },
+      {
+        "src": "assets/audio/051-birthday-rag-marianne.mp3",
+        "title": "Birthday Rag — Marianne"
+      },
+      {
+        "src": "assets/audio/051-birthday-rag-charlotte.mp3",
+        "title": "Birthday Rag — Charlotte"
+      }
+    ]
+  },
+  "052": {
+    "tracks": [
+      {
+        "src": "assets/audio/052-01-ragtime-reflections-midi.mp3",
+        "title": "1. Ragtime Reflections (MIDI)"
+      },
+      {
+        "src": "assets/audio/052-02-octatonic-rag-midi.mp3",
+        "title": "2. Octatonic Rag (MIDI)"
+      },
+      {
+        "src": "assets/audio/052-03-octatangos-midi.mp3",
+        "title": "3. Octatangos (MIDI)"
+      },
+      {
+        "src": "assets/audio/052-04-intro-and-can-can-midi.mp3",
+        "title": "4. Intro and Can-Can (MIDI)"
+      }
+    ]
+  },
+  "054": {
+    "tracks": [
+      {
+        "src": "assets/audio/054-taylor-fanfare-piano-four-hands.mp3",
+        "title": "Taylor Fanfare for Piano Four-Hands"
+      }
+    ]
+  },
+  "055": {
+    "tracks": [
+      {
+        "src": "assets/audio/055-01-invention-midi.mp3",
+        "title": "1. MIDI"
+      },
+      {
+        "src": "assets/audio/055-02-invention-midi.mp3",
+        "title": "2. MIDI"
+      },
+      {
+        "src": "assets/audio/055-03-invention-midi.mp3",
+        "title": "3. MIDI"
+      },
+      {
+        "src": "assets/audio/055-04-invention-midi.mp3",
+        "title": "4. MIDI"
+      }
+    ]
+  },
+  "056": {
+    "tracks": [
+      {
+        "src": "assets/audio/056-01-midi.mp3",
+        "title": "1. MIDI"
+      },
+      {
+        "src": "assets/audio/056-02-midi.mp3",
+        "title": "2. MIDI"
+      },
+      {
+        "src": "assets/audio/056-03-midi.mp3",
+        "title": "3. MIDI"
+      },
+      {
+        "src": "assets/audio/056-04-midi.mp3",
+        "title": "4. MIDI"
+      }
+    ]
+  },
+  "058": {
+    "tracks": [
+      {
+        "src": "assets/audio/058-nobody-knows-solo-flute.mp3",
+        "title": "Nobody Knows for Solo Flute"
+      }
+    ]
+  },
+  "063": {
+    "tracks": [
+      {
+        "src": "assets/audio/063-take-the-love-clarinet-piano-unh.mp3",
+        "title": "Charlotte at UNH"
+      }
+    ]
+  },
+  "078": {
+    "tracks": [
+      {
+        "src": "assets/audio/078-01-promenade.mp3",
+        "title": "1. Promenade"
+      },
+      {
+        "src": "assets/audio/078-02-columbine.mp3",
+        "title": "2. Columbine"
+      },
+      {
+        "src": "assets/audio/078-03-pantalon.mp3",
+        "title": "3. Pantalon"
+      }
+    ]
+  },
+  "081": {
+    "tracks": [
+      {
+        "src": "assets/audio/081-01-movement.mp3",
+        "title": "1"
+      },
+      {
+        "src": "assets/audio/081-02-movement.mp3",
+        "title": "2"
+      },
+      {
+        "src": "assets/audio/081-03-movement.mp3",
+        "title": "3"
+      },
+      {
+        "src": "assets/audio/081-04-movement.mp3",
+        "title": "4"
+      },
+      {
+        "src": "assets/audio/081-05-movement.mp3",
+        "title": "5"
+      },
+      {
+        "src": "assets/audio/081-06-movement.mp3",
+        "title": "6"
+      }
+    ]
+  },
+  "082": {
+    "tracks": [
+      {
+        "src": "assets/audio/082-op76-no2-a-minor-midi.mp3",
+        "title": "Op. 76 No. 2 in A Minor (MIDI)"
+      }
+    ]
+  },
+  "083": {
+    "tracks": [
+      {
+        "src": "assets/audio/083-op76-no1.mp3",
+        "title": "Op. 76 No. 1"
+      },
+      {
+        "src": "assets/audio/083-op76-no2.mp3",
+        "title": "Op. 76 No. 2"
+      },
+      {
+        "src": "assets/audio/083-op76-no4.mp3",
+        "title": "Op. 76 No. 4"
+      },
+      {
+        "src": "assets/audio/083-op76-no6.mp3",
+        "title": "Op. 76 No. 6"
+      },
+      {
+        "src": "assets/audio/083-op76-no8.mp3",
+        "title": "Op. 76 No. 8"
+      }
+    ]
+  },
+  "084": {
+    "tracks": [
+      {
+        "src": "assets/audio/084-op116-no1.mp3",
+        "title": "Op. 116 No. 1"
+      },
+      {
+        "src": "assets/audio/084-op116-no4.mp3",
+        "title": "Op. 116 No. 4"
+      },
+      {
+        "src": "assets/audio/084-op116-no6.mp3",
+        "title": "Op. 116 No. 6"
+      },
+      {
+        "src": "assets/audio/084-op116-no7.mp3",
+        "title": "Op. 116 No. 7"
+      }
+    ]
+  },
+  "085": {
+    "tracks": [
+      {
+        "src": "assets/audio/085-01-op117-no1.mp3",
+        "title": "Op. 117 No. 1"
+      },
+      {
+        "src": "assets/audio/085-02-op117-no3.mp3",
+        "title": "Op. 117 No. 3"
+      },
+      {
+        "src": "assets/audio/085-03-op119-no1.mp3",
+        "title": "Op. 119 No. 1"
+      },
+      {
+        "src": "assets/audio/085-04-op116-no7.mp3",
+        "title": "Op. 116 No. 7"
+      }
+    ]
+  },
+  "086": {
+    "tracks": [
+      {
+        "src": "assets/audio/086-op76-no2.mp3",
+        "title": "Op. 76 No. 2"
+      },
+      {
+        "src": "assets/audio/086-op76-no3.mp3",
+        "title": "Op. 76 No. 3"
+      },
+      {
+        "src": "assets/audio/086-op76-no5.mp3",
+        "title": "Op. 76 No. 5"
+      },
+      {
+        "src": "assets/audio/086-op117-no1.mp3",
+        "title": "Op. 117 No. 1"
+      },
+      {
+        "src": "assets/audio/086-op118-no2.mp3",
+        "title": "Op. 118 No. 2"
+      },
+      {
+        "src": "assets/audio/086-op118-no3.mp3",
+        "title": "Op. 118 No. 3"
+      }
+    ]
+  },
+  "096": {
+    "tracks": [
+      {
+        "src": "assets/audio/096-01-berceuse.mp3",
+        "title": "1. Berceuse"
+      },
+      {
+        "src": "assets/audio/096-02-mi-a-ou.mp3",
+        "title": "2. Mi-a-ou"
+      },
+      {
+        "src": "assets/audio/096-03-le-jardin-de-dolly.mp3",
+        "title": "3. Le Jardin de Dolly"
+      },
+      {
+        "src": "assets/audio/096-04-kitty-valse.mp3",
+        "title": "4. Kitty-Valse"
+      },
+      {
+        "src": "assets/audio/096-05-tendresse.mp3",
+        "title": "5. Tendresse"
+      },
+      {
+        "src": "assets/audio/096-06-le-pas-espagnol.mp3",
+        "title": "6. Le Pas espagnol"
+      }
+    ]
+  },
+  "104": {
+    "tracks": [
+      {
+        "src": "assets/audio/104-01-allegro-ma-non-troppo.mp3",
+        "title": "1. Allegro ma non troppo"
+      },
+      {
+        "src": "assets/audio/104-02-andante.mp3",
+        "title": "2. Andante"
+      },
+      {
+        "src": "assets/audio/104-03-scherzo.mp3",
+        "title": "3. Scherzo. Allegretto"
+      },
+      {
+        "src": "assets/audio/104-04-allegro-giusto.mp3",
+        "title": "4. Allegro giusto"
+      }
+    ]
+  },
+  "109": {
+    "tracks": [
+      {
+        "src": "assets/audio/109-karens-song.mp3",
+        "title": "Karen's Song"
+      }
+    ]
+  },
+  "112": {
+    "tracks": [
+      {
+        "src": "assets/audio/112-01-il-dittatore.mp3",
+        "title": "1. Il dittatore"
+      },
+      {
+        "src": "assets/audio/112-02-la-famiglia-punto-e-virgola.mp3",
+        "title": "2. La famiglia Punto-e-virgola"
+      },
+      {
+        "src": "assets/audio/112-03-lo-spazzino.mp3",
+        "title": "3. Lo spazzino"
+      },
+      {
+        "src": "assets/audio/112-04-quanti-pesci-ci-sono-al-mare.mp3",
+        "title": "4. Quanti pesci ci sono al mare?"
+      },
+      {
+        "src": "assets/audio/112-05-a-voce-bassa.mp3",
+        "title": "5. A voce bassa"
+      },
+      {
+        "src": "assets/audio/112-06-il-vigile-urbano.mp3",
+        "title": "6. Il vigile urbano"
+      }
+    ]
+  },
+  "114": {
+    "tracks": [
+      {
+        "src": "assets/audio/114-chinese-folk-song-mashup.mp3",
+        "title": "Chinese Folk Song Mashup 1.0"
+      }
+    ]
+  },
+  "120": {
+    "tracks": [
+      {
+        "src": "assets/audio/120-01-unaccompanied-vocal-trio-excerpt.mp3",
+        "title": "Unaccompanied vocal trio (excerpt)"
+      },
+      {
+        "src": "assets/audio/120-02-unh-womens-chorus-horn.mp3",
+        "title": "UNH Women's Chorus and Horn in F"
+      }
+    ]
+  },
+  "123": {
+    "tracks": [
+      {
+        "src": "assets/audio/123-come-let-us-mourn.mp3",
+        "title": "Come Let Us Mourn"
+      }
+    ]
+  },
+  "124": {
+    "tracks": [
+      {
+        "src": "assets/audio/124-crocus.mp3",
+        "title": "Crocus"
+      }
+    ]
+  },
+  "125": {
+    "tracks": [
+      {
+        "src": "assets/audio/125-english-is-tough-stuff-sandpipers.mp3",
+        "title": "Sandpipers"
+      }
+    ]
+  },
+  "126": {
+    "tracks": [
+      {
+        "src": "assets/audio/126-the-sandpiper.mp3",
+        "title": "The Sandpiper"
+      }
+    ]
+  },
+  "129": {
+    "tracks": [
+      {
+        "src": "assets/audio/129-01-ducks-ditty.mp3",
+        "title": "Ducks' Ditty — Sandpipers, Christopher Kies, piano"
+      },
+      {
+        "src": "assets/audio/129-02-toads-triumph.mp3",
+        "title": "Toad's Triumph — PALS"
+      }
+    ]
+  },
+  "130": {
+    "tracks": [
+      {
+        "src": "assets/audio/130-a-poets-life.mp3",
+        "title": "A Poet's Life"
+      }
+    ]
+  },
+  "131": {
+    "tracks": [
+      {
+        "src": "assets/audio/131-01-spring-sunrise.mp3",
+        "title": "1. Spring Sunrise"
+      },
+      {
+        "src": "assets/audio/131-02-sunshine.mp3",
+        "title": "2. Sunshine"
+      },
+      {
+        "src": "assets/audio/131-03-summer-afternoon.mp3",
+        "title": "3. Summer Afternoon"
+      },
+      {
+        "src": "assets/audio/131-04-clouds.mp3",
+        "title": "4. Clouds"
+      },
+      {
+        "src": "assets/audio/131-05-rain.mp3",
+        "title": "5. Rain"
+      },
+      {
+        "src": "assets/audio/131-06-storm-and-rainbow.mp3",
+        "title": "6. Storm and Rainbow"
+      },
+      {
+        "src": "assets/audio/131-07-sea-at-night-and-winter-night.mp3",
+        "title": "7. Sea at Night and Winter Night"
+      }
+    ]
+  },
+  "138": {
+    "tracks": [
+      {
+        "src": "assets/audio/138-01-oh-tell-me-not-of-heavenly-halls.mp3",
+        "title": "1. Oh Tell Me Not of Heavenly Halls"
+      },
+      {
+        "src": "assets/audio/138-02-a-rushing-of-wings-in-the-dawn.mp3",
+        "title": "2. A Rushing of Wings in the Dawn"
+      },
+      {
+        "src": "assets/audio/138-03-appeal.mp3",
+        "title": "3. Appeal"
+      },
+      {
+        "src": "assets/audio/138-04-sing-little-bird-oh-sing.mp3",
+        "title": "4. Sing Little Bird, Oh Sing!"
+      },
+      {
+        "src": "assets/audio/138-05-april-days.mp3",
+        "title": "5. April Days"
+      }
+    ]
+  },
+  "139": {
+    "tracks": [
+      {
+        "src": "assets/audio/139-geheimerath-rodeleins-house.mp3",
+        "title": "The Geheimerath Rödelein's House"
+      }
+    ]
+  },
+  "140": {
+    "tracks": [
+      {
+        "src": "assets/audio/140-on-censure-or-backbiting.mp3",
+        "title": "On Censure or Backbiting"
+      }
+    ]
+  },
+  "144": {
+    "tracks": [
+      {
+        "src": "assets/audio/144-flight-of-the-bungled-g-harpsichord-midi.mp3",
+        "title": "MIDI"
+      }
+    ]
+  },
+  "145": {
+    "tracks": [
+      {
+        "src": "assets/audio/145-flight-of-the-bungled-g-piano-four-hands-midi.mp3",
+        "title": "MIDI"
+      }
+    ]
+  },
+  "146": {
+    "tracks": [
+      {
+        "src": "assets/audio/146-cadenzas-mozart-k-467.mp3",
+        "title": "Cadenzas to W. A. Mozart's Piano Concerto, K. 467"
+      }
+    ]
+  }
+}
