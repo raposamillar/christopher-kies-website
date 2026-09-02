@@ -391,4 +391,24 @@
           });
       });
   }
+
+  let backToTop = document.querySelector("[data-back-to-top]");
+  if (!backToTop) {
+    backToTop = document.createElement("button");
+    backToTop.type = "button";
+    backToTop.className = "back-to-top";
+    backToTop.setAttribute("data-back-to-top", "");
+    backToTop.setAttribute("aria-label", "Back to top");
+    document.body.appendChild(backToTop);
+  }
+  backToTop.innerHTML =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>';
+  const syncBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 320);
+  };
+  syncBackToTop();
+  window.addEventListener("scroll", syncBackToTop, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })();
