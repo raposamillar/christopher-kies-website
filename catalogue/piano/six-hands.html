@@ -37,28 +37,28 @@
           <li><a href="../../contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="catalogue-search-dialog" aria-label="Search the catalogue">
+      <button class="search-toggle" type="button" data-search-toggle aria-controls="catalogue-search" aria-label="Search the catalogue">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
       </button>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
     </div>
   </div>
 </header>
-<dialog class="search-dialog" id="catalogue-search-dialog" data-search data-search-index="../../assets/js/search-index.json" data-prefix="../../" aria-labelledby="search-dialog-title">
-  <div class="search-panel">
-    <h2 id="search-dialog-title" class="visually-hidden">Search the catalogue</h2>
-    <div class="search-bar">
-      <label class="visually-hidden" for="catalogue-search">Search works</label>
-      <input id="catalogue-search" type="search" data-search-input placeholder="Search by title, catalogue number, or instrument" autocomplete="off">
-      <button type="button" class="search-close" data-search-close>Close</button>
-    </div>
-    <p class="search-status" data-search-status></p>
-    <ul class="search-results" data-search-results></ul>
-  </div>
-</dialog>
+
   <main id="content" class="site-main">
     <p class="breadcrumb"><a href="../../index.html#top">Home</a> / <a href="../index.html#top">Catalogue</a> / <a href="index.html#top">Piano</a> / Six-hands</p>
+<div class="page-heading">
 <h1 class="page-title">Six-hands</h1>
+    <form class="page-search" role="search" aria-label="Search the catalogue" data-search data-search-index="../../assets/js/search-index.json" data-prefix="../../">
+      <label class="visually-hidden" for="catalogue-search">Search the catalogue</label>
+      <input id="catalogue-search" class="site-search-input" type="search" role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false" aria-controls="catalogue-search-results" data-search-input placeholder="Title, catalogue number, or instrument" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      <button class="site-search-submit" type="submit">Search</button>
+      <div class="site-search-panel" data-search-panel hidden>
+        <p class="search-status" data-search-status role="status"></p>
+        <ul class="search-results" id="catalogue-search-results" role="listbox" aria-label="Search results" data-search-results></ul>
+      </div>
+    </form>
+</div>
 
   </main>
   <footer class="site-footer">

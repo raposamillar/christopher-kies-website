@@ -128,13 +128,16 @@
   }
 
   const searchToggle = document.querySelector("[data-search-toggle]");
-  const searchDialog = document.querySelector("[data-search]");
+  const searchRoot = document.querySelector("[data-search]");
+  const searchDialog = searchRoot && searchRoot.tagName === "DIALOG" ? searchRoot : null;
   const searchInput = document.querySelector("[data-search-input]");
   const searchResults = document.querySelector("[data-search-results]");
   const searchStatus = document.querySelector("[data-search-status]");
+  const searchPanel = document.querySelector("[data-search-panel]");
   const searchClose = document.querySelector("[data-search-close]");
   let searchIndex = null;
   let searchRequest = 0;
+  let activeOption = -1;
 
   const fold = (value) =>
     String(value || "")
@@ -153,7 +156,7 @@
     if (searchIndex) {
       return Promise.resolve(searchIndex);
     }
-    const url = searchDialog && searchDialog.getAttribute("data-search-index");
+    const url = searchRoot && searchRoot.getAttribute("data-search-index");
     if (!url) {
       return Promise.resolve([]);
     }
@@ -189,54 +192,152 @@
     return tokens.every((token) => hay.includes(token));
   };
 
+  const optionEls = () => Array.from(searchResults ? searchResults.querySelectorAll("[role='option']") : []);
+
+  const optionHref = (option) => option && option.getAttribute("data-href");
+
+  const setExpanded = (open) => {
+    if (searchInput) {
+      searchInput.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    if (searchPanel) {
+      searchPanel.hidden = !open;
+    }
+  };
+
+  const setActiveOption = (index) => {
+    const options = optionEls();
+    options.forEach((option) => {
+      option.classList.remove("is-active");
+      option.setAttribute("aria-selected", "false");
+    });
+    if (!options.length || index < 0) {
+      activeOption = -1;
+      searchInput && searchInput.removeAttribute("aria-activedescendant");
+      return;
+    }
+    activeOption = (index + options.length) % options.length;
+    const current = options[activeOption];
+    current.classList.add("is-active");
+    current.setAttribute("aria-selected", "true");
+    searchInput && searchInput.setAttribute("aria-activedescendant", current.id);
+    current.scrollIntoView({ block: "nearest" });
+  };
+
+  const closeSearchPanel = () => {
+    setExpanded(false);
+    setActiveOption(-1);
+  };
+
   const renderResults = (query) => {
     if (!searchResults || !searchStatus) {
       return;
     }
     const trimmed = query.trim();
+    activeOption = -1;
+    if (searchInput) {
+      searchInput.removeAttribute("aria-activedescendant");
+    }
     if (!trimmed) {
       searchResults.innerHTML = "";
       searchStatus.textContent = "";
+      closeSearchPanel();
       return;
     }
-    const prefix = (searchDialog && searchDialog.getAttribute("data-prefix")) || "";
+    const prefix = (searchRoot && searchRoot.getAttribute("data-prefix")) || "";
     const hits = (searchIndex || []).filter((entry) => matches(entry, trimmed)).slice(0, 30);
     searchStatus.textContent = hits.length
       ? `${hits.length} work${hits.length === 1 ? "" : "s"}`
       : "No works match.";
     searchResults.innerHTML = hits
-      .map((entry) => {
+      .map((entry, index) => {
         const meta = [entry.catalogue_no ? `No. ${entry.catalogue_no}` : "", entry.section, entry.forces]
           .filter(Boolean)
           .join(" · ");
         const href = `${prefix}${entry.href}`;
-        return `<li><a href="${esc(href)}"><span class="search-result-title">${esc(entry.title)}</span><span class="search-result-meta">${esc(meta)}</span></a></li>`;
+        return `<li role="option" id="search-opt-${index}" data-href="${esc(href)}" aria-selected="false"><span class="search-result-title">${esc(entry.title)}</span><span class="search-result-meta">${esc(meta)}</span></li>`;
       })
       .join("");
+    setExpanded(true);
   };
 
-  const openSearch = () => {
-    if (!searchDialog || typeof searchDialog.showModal !== "function") {
+  const runSearch = () => {
+    if (!searchInput) {
       return;
     }
-    closeNav();
-    searchToggle && searchToggle.setAttribute("aria-expanded", "true");
-    searchDialog.showModal();
+    const current = ++searchRequest;
     loadIndex()
       .then(() => {
-        renderResults(searchInput ? searchInput.value : "");
-        searchInput && searchInput.focus();
+        if (current === searchRequest) {
+          renderResults(searchInput.value);
+        }
       })
       .catch(() => {
-        searchStatus.textContent = "Search is unavailable right now.";
+        if (current === searchRequest && searchStatus) {
+          searchStatus.textContent = "Search is unavailable right now.";
+          setExpanded(true);
+        }
       });
   };
 
-  const closeSearch = () => {
-    if (!searchDialog || !searchDialog.open) {
+  const followActiveOption = () => {
+    const options = optionEls();
+    const target = options[activeOption] || options[0];
+    const href = optionHref(target);
+    if (href) {
+      window.location.assign(href);
+      return true;
+    }
+    return false;
+  };
+
+  const handleSearchKeydown = (event) => {
+    const open = searchInput && searchInput.getAttribute("aria-expanded") === "true";
+    if (event.key === "Escape") {
+      if (searchDialog) {
+        closeSearchDialog();
+        return;
+      }
+      if (open) {
+        closeSearchPanel();
+      } else if (searchInput.value) {
+        searchInput.value = "";
+        closeSearchPanel();
+      }
       return;
     }
-    searchDialog.close();
+    if (event.key === "Enter") {
+      if (followActiveOption()) {
+        event.preventDefault();
+      }
+      return;
+    }
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      if (!open && searchInput.value.trim()) {
+        runSearch();
+      }
+      if (optionEls().length) {
+        setActiveOption(activeOption + 1);
+      }
+      return;
+    }
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      if (optionEls().length) {
+        setActiveOption(activeOption < 0 ? optionEls().length - 1 : activeOption - 1);
+      }
+      return;
+    }
+    if (event.key === "Home") {
+      event.preventDefault();
+      setActiveOption(0);
+      return;
+    }
+    if (event.key === "End") {
+      event.preventDefault();
+      setActiveOption(optionEls().length - 1);
+    }
   };
 
   const albumCovers = document.querySelectorAll("[data-album-cover]");
@@ -408,33 +509,97 @@
     });
   }
 
-  if (searchToggle && searchDialog) {
-    searchToggle.addEventListener("click", openSearch);
-    searchClose && searchClose.addEventListener("click", closeSearch);
+  const openSearchDialog = () => {
+    if (!searchDialog || typeof searchDialog.showModal !== "function") {
+      return;
+    }
+    closeNav();
+    searchToggle && searchToggle.setAttribute("aria-expanded", "true");
+    searchDialog.showModal();
+    loadIndex()
+      .then(() => {
+        renderResults(searchInput ? searchInput.value : "");
+        searchInput && searchInput.focus();
+      })
+      .catch(() => {
+        if (searchStatus) {
+          searchStatus.textContent = "Search is unavailable right now.";
+          setExpanded(true);
+        }
+        searchInput && searchInput.focus();
+      });
+  };
+
+  const closeSearchDialog = () => {
+    if (searchDialog && searchDialog.open) {
+      searchDialog.close();
+    }
+  };
+
+  if (searchToggle) {
+    searchToggle.addEventListener("click", () => {
+      if (searchDialog) {
+        openSearchDialog();
+        return;
+      }
+      if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+      }
+    });
+  }
+
+  if (searchResults) {
+    searchResults.addEventListener("click", (event) => {
+      const option = event.target.closest("[role='option']");
+      if (!option) {
+        return;
+      }
+      const href = optionHref(option);
+      if (href) {
+        window.location.assign(href);
+      }
+    });
+  }
+
+  if (searchDialog) {
+    searchClose && searchClose.addEventListener("click", closeSearchDialog);
     searchDialog.addEventListener("close", () => {
-      searchToggle.setAttribute("aria-expanded", "false");
+      searchToggle && searchToggle.setAttribute("aria-expanded", "false");
       searchRequest += 1;
+      closeSearchPanel();
     });
     searchDialog.addEventListener("click", (event) => {
       if (event.target === searchDialog) {
-        closeSearch();
+        closeSearchDialog();
       }
     });
-    searchInput &&
-      searchInput.addEventListener("input", () => {
-        const current = ++searchRequest;
-        loadIndex()
-          .then(() => {
-            if (current === searchRequest) {
-              renderResults(searchInput.value);
-            }
-          })
-          .catch(() => {
-            if (current === searchRequest) {
-              searchStatus.textContent = "Search is unavailable right now.";
-            }
-          });
-      });
+    if (searchInput) {
+      searchInput.addEventListener("input", runSearch);
+      searchInput.addEventListener("keydown", handleSearchKeydown);
+    }
+  }
+
+  if (searchPanel && searchRoot && searchInput) {
+    searchRoot.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (searchPanel && !searchPanel.hidden && followActiveOption()) {
+        return;
+      }
+      runSearch();
+    });
+    searchInput.addEventListener("input", runSearch);
+    searchInput.addEventListener("keydown", handleSearchKeydown);
+    searchRoot.addEventListener("focusout", (event) => {
+      if (!searchRoot.contains(event.relatedTarget)) {
+        closeSearchPanel();
+      }
+    });
+    document.addEventListener("click", (event) => {
+      if (!searchRoot.contains(event.target) && !(searchToggle && searchToggle.contains(event.target))) {
+        closeSearchPanel();
+      }
+    });
   }
 
   let backToTop = document.querySelector("[data-back-to-top]");
