@@ -1,10 +1,72 @@
 (() => {
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-nav-toggle]");
+  const isMobileNav = () => window.matchMedia("(max-width: 800px)").matches;
+
+  const closeSubmenus = () => {
+    if (!nav) {
+      return;
+    }
+    nav.querySelectorAll(".has-sub").forEach((item) => {
+      item.classList.remove("is-expanded");
+      const trigger = item.querySelector(":scope > a");
+      if (trigger) {
+        trigger.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
+  const closeNav = () => {
+    if (nav) {
+      nav.classList.remove("is-open");
+    }
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+    }
+    document.body.classList.remove("nav-open");
+    closeSubmenus();
+  };
+
   if (toggle && nav) {
+    let closeBtn = nav.querySelector("[data-nav-close]");
+    if (!closeBtn) {
+      closeBtn = document.createElement("button");
+      closeBtn.type = "button";
+      closeBtn.className = "nav-close";
+      closeBtn.setAttribute("data-nav-close", "");
+      closeBtn.setAttribute("aria-label", "Close menu");
+      closeBtn.textContent = "×";
+      nav.appendChild(closeBtn);
+    }
+    closeBtn.addEventListener("click", closeNav);
+
     toggle.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(open));
+      const open = !nav.classList.contains("is-open");
+      if (open) {
+        nav.classList.add("is-open");
+        toggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+      } else {
+        closeNav();
+      }
+    });
+
+    nav.querySelectorAll(".has-sub > a").forEach((trigger) => {
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.setAttribute("aria-haspopup", "true");
+      trigger.addEventListener("click", (event) => {
+        if (!isMobileNav()) {
+          return;
+        }
+        event.preventDefault();
+        const item = trigger.parentElement;
+        const open = !item.classList.contains("is-expanded");
+        closeSubmenus();
+        if (open) {
+          item.classList.add("is-expanded");
+          trigger.setAttribute("aria-expanded", "true");
+        }
+      });
     });
   }
 
@@ -112,12 +174,7 @@
     if (!searchDialog || typeof searchDialog.showModal !== "function") {
       return;
     }
-    if (nav) {
-      nav.classList.remove("is-open");
-    }
-    if (toggle) {
-      toggle.setAttribute("aria-expanded", "false");
-    }
+    closeNav();
     searchToggle && searchToggle.setAttribute("aria-expanded", "true");
     searchDialog.showModal();
     loadIndex()
