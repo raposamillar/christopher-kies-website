@@ -13,7 +13,10 @@
     "year": "2011",
     "forces": "Concerto arranged for two pianos",
     "href": "catalogue/large-ensemble/concertos.html#academic-festival-rag-for-two-pianos",
-    "section": "Large Ensemble · Concertos"
+    "section": "Large Ensemble · Concertos",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Introduction and Ragtime for Clarinet in B Flat and Piano",
@@ -21,7 +24,10 @@
     "year": "2012",
     "forces": "Concertino for Clarinet in B-flat and Piano",
     "href": "catalogue/large-ensemble/concertos.html#introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano",
-    "section": "Large Ensemble · Concertos"
+    "section": "Large Ensemble · Concertos",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Franklin Portrait: Preamble for Orchestra",
@@ -301,7 +307,10 @@
     "year": "",
     "forces": "Flute and Bassoon",
     "href": "catalogue/instrumental/flute.html#aria-variata-alla-maniera-italiana-flute-bassoon-bach-kies",
-    "section": "Solos & Duos · Flute"
+    "section": "Solos & Duos · Flute",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Aria Variata alla maniera italiana (BWV 989) by J.S. Bach / Arranged for Oboe and Bassoon",
@@ -309,7 +318,10 @@
     "year": "",
     "forces": "Oboe and Bassoon",
     "href": "catalogue/instrumental/oboe.html#aria-variata-in-a-minor-for-oboe-and-bassoon",
-    "section": "Solos & Duos · Oboe"
+    "section": "Solos & Duos · Oboe",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Children's Carnival, Op. 25 by Beach / Arranged for Woodwind Quartet",
@@ -317,7 +329,10 @@
     "year": "",
     "forces": "Flute, Oboe, Clarinet, and Bassoon",
     "href": "catalogue/chamber/music-with-double-reeds.html#childrens-carnival-op25",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "String Quartet in F Major, Op. 135 by Beethoven / Arranged for Saxophone Quartet",
@@ -325,7 +340,10 @@
     "year": "",
     "forces": "Saxophone Quartet, SATB",
     "href": "catalogue/chamber/other.html#beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet",
-    "section": "Chamber · Other"
+    "section": "Chamber · Other",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Six Pieces from Children's Games, Op. 22 by Bizet / Arranged for Oboe, Bassoon and Piano",
@@ -333,7 +351,10 @@
     "year": "",
     "forces": "Oboe, Bassoon, and Piano",
     "href": "catalogue/chamber/music-with-double-reeds.html#six-pieces-from-childrens-games-op-22-by-bizet-arranged-for-oboe-bassoon-and-piano",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Seven Piano Pieces by Brahms Arranged for Bassoon and Piano",
@@ -341,7 +362,10 @@
     "year": "",
     "forces": "Bassoon and Piano",
     "href": "catalogue/instrumental/bassoon.html#seven-piano-pieces-of-johannes-brahms-arranged-for-bassoon-and-piano",
-    "section": "Solos & Duos · Bassoon"
+    "section": "Solos & Duos · Bassoon",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Five Pieces from Op. 76 by Brahms Arranged for Oboe and Piano",
@@ -349,7 +373,10 @@
     "year": "",
     "forces": "Oboe and Piano",
     "href": "catalogue/instrumental/oboe.html#five-pieces-from-op-76-by-johannes-brahms-arranged-for-oboe-and-piano",
-    "section": "Solos & Duos · Oboe"
+    "section": "Solos & Duos · Oboe",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Three Intermezzi by Brahms Arranged for Oboe and Piano",
@@ -357,7 +384,10 @@
     "year": "",
     "forces": "Oboe and Piano",
     "href": "catalogue/instrumental/oboe.html#three-intermezzi-opus117-by-brahms-arranged-for-oboe-and-piano",
-    "section": "Solos & Duos · Oboe"
+    "section": "Solos & Duos · Oboe",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Sixteen Pieces by Brahms Arranged for Clarinet and Piano",
@@ -365,7 +395,10 @@
     "year": "",
     "forces": "Clarinet in B Flat and Piano; Clarinet in A and Piano",
     "href": "catalogue/instrumental/clarinet.html#sixteen-pieces-by-johannes-brahms-arranged-for-clarinet-and-piano",
-    "section": "Solos & Duos · Clarinet"
+    "section": "Solos & Duos · Clarinet",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Sixteen Piano Pieces by Brahms Arranged for Alto Saxophone and Piano",
@@ -373,7 +406,10 @@
     "year": "",
     "forces": "Alto Saxophone and Piano",
     "href": "catalogue/instrumental/saxophone.html#sixteen-piano-pieces-by-brahms-arranged-for-alto-saxophone-and-piano",
-    "section": "Solos & Duos · Saxophone"
+    "section": "Solos & Duos · Saxophone",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Eight Pieces, Opus 76 by Johannes Brahms for Violin and Piano",
@@ -381,7 +417,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#eight-pieces-opus-76-by-johannes-brahms-for-violin-and-piano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Fantasies, Opus 116 by Johannes Brahms for Violin and Piano",
@@ -389,7 +428,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#fantasies-opus-116-by-johannes-brahms-for-violin-and-pian",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Four Pieces, Opus 119 by Johannes Brahms for Violin and Piano",
@@ -397,7 +439,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#four-pieces-opus-119-by-johannes-brahms-for-violin-and-piano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Six Pieces, Opus 118 by Johannes Brahms for Violin and Piano",
@@ -405,7 +450,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#six-pieces-opus-118-by-johannes-brahms-for-violin-and-piano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Thirty Piano Pieces by Brahms Arranged for Violin and Piano",
@@ -413,7 +461,10 @@
     "year": "",
     "forces": "",
     "href": "catalogue/instrumental/violin.html#thirtypianopiecesbybrahmsarrangedforviolinandpiano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Three Intermezzi, Op. 117 by Johannes Brahms for Violin and Piano",
@@ -421,7 +472,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#three-intermezzi-opus-117-by-johannes-brahms-for-violin-and-piano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Two Ballades from Opus 10 by Johannes Brahms for Violin and Piano",
@@ -429,7 +483,10 @@
     "year": "",
     "forces": "Violin and Piano",
     "href": "catalogue/instrumental/violin.html#two-ballades-from-opus-10-by-johannes-brahms-for-violin-and-piano",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Two Ballades from Opus 10 by Johannes Brahms for Viola and Piano",
@@ -437,7 +494,10 @@
     "year": "",
     "forces": "Viola and Piano",
     "href": "catalogue/instrumental/viola.html#two-ballades-from-opus-10-by-johannes-brahms-for-viola-and-piano",
-    "section": "Solos & Duos · Viola"
+    "section": "Solos & Duos · Viola",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Dolly, Op. 56 by Fauré Arranged for Oboe, Bassoon, and Piano",
@@ -445,7 +505,10 @@
     "year": "",
     "forces": "Oboe, Bassoon, and Piano",
     "href": "catalogue/chamber/music-with-double-reeds.html#dolly-suite-op-56-arranged-for-oboe-bassoon-and-piano",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Five Pieces by Edward MacDowell Arranged for Alto Saxophone and Piano",
@@ -453,7 +516,10 @@
     "year": "",
     "forces": "Alto Saxophone and Piano",
     "href": "catalogue/instrumental/saxophone.html#five-pieces-by-edward-macdowell-for-alto-saxophone-and-piano",
-    "section": "Solos & Duos · Saxophone"
+    "section": "Solos & Duos · Saxophone",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Five Pieces by Edward MacDowell Arranged for Clarinet in B Flat and Piano",
@@ -461,7 +527,10 @@
     "year": "",
     "forces": "Clarinet in B Flat and Piano",
     "href": "catalogue/instrumental/clarinet.html#five-pieces-by-edward-macdowell-arranged-for-clarinet-and-piano",
-    "section": "Solos & Duos · Clarinet"
+    "section": "Solos & Duos · Clarinet",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Three Pieces by Edward MacDowell arranged for woodwind quartet (2009)",
@@ -469,7 +538,10 @@
     "year": "",
     "forces": "Flute, Oboe, Clarinet, and Bassoon",
     "href": "catalogue/chamber/music-with-double-reeds.html#three-pieces-by-edward-macdowell-arranged-for-woodwind-quartet",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Elite Syncopations by Scott Joplin Arranged for (mixed) Clarinet Quartet",
@@ -477,7 +549,10 @@
     "year": "",
     "forces": "3 Clarinets in B Flat, 1 Bass Clarinet",
     "href": "catalogue/chamber/other.html#elite-syncopations-arranged-for-clarinet-quartet",
-    "section": "Chamber · Other"
+    "section": "Chamber · Other",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Sonata in B Major, Op. 147 by Franz Schubert Arranged for Oboe and Piano",
@@ -485,7 +560,10 @@
     "year": "",
     "forces": "Oboe and Piano",
     "href": "catalogue/instrumental/oboe.html#sonata-in-b-op-147-by-schubert-arranged-for-oboe-and-piano",
-    "section": "Solos & Duos · Oboe"
+    "section": "Solos & Duos · Oboe",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Kinderszenen, Op. 15 by Robert Schumann Arranged for Woodwind Quartet",
@@ -493,7 +571,10 @@
     "year": "",
     "forces": "Flute, Oboe, Clarinet, and Bassoon",
     "href": "catalogue/chamber/music-with-double-reeds.html#kinderszenen-by-robert-schumann-arranged-for-woodwind-quartet",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Karen's Song for Soprano (or Treble Chorus), Flute and Piano (or Harp)",
@@ -637,7 +718,10 @@
     "year": "",
     "forces": "",
     "href": "catalogue/instrumental/violin.html#fantasie-opus-17-robert-schumann-violin-piano-adaptation-christopher-kies",
-    "section": "Solos & Duos · Violin"
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Twelve Short Pieces for Piano (from beginner to intermediate levels)",
@@ -653,7 +737,10 @@
     "year": "2023",
     "forces": "Piano Four-Hands (Pedagogical)",
     "href": "catalogue/piano/four-hands.html#twelve-great-classical-melodies",
-    "section": "Piano · Four-hands"
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "24 Erstwhile Familiar Tunes",
@@ -661,7 +748,10 @@
     "year": "2023",
     "forces": "Piano Solo, Four-Hands, and Six-Hands (Pedagogical)",
     "href": "catalogue/piano/pedagogical.html#24-erstwhile-familiar-tunes",
-    "section": "Piano · Pedagogical Piano Pieces"
+    "section": "Piano · Pedagogical Piano Pieces",
+    "tags": [
+      "arrangement"
+    ]
   },
   {
     "title": "Three Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Op. 56",
@@ -669,6 +759,9 @@
     "year": "arr. 2000",
     "forces": "Wind Septet (Flute, Oboe, 2 Clarinets, 2 Bassoons, and Horn)",
     "href": "catalogue/chamber/music-with-double-reeds.html#three-movements-from-dolly-wind-septet",
-    "section": "Chamber · Music with Double Reeds"
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ]
   }
 ]

@@ -173,10 +173,22 @@
       });
   };
 
+  const ARRANGEMENT_TERMS = new Set(["arrangement", "arrangements", "arranged", "adapted", "adaptation", "adaptations"]);
+
+  const isArrangement = (entry) => (entry.tags || []).includes("arrangement");
+
   const matches = (entry, query) => {
     const tokens = fold(query).trim().split(/\s+/).filter(Boolean);
     if (!tokens.length) {
       return false;
+    }
+    const wantsArrangement = tokens.some((token) => ARRANGEMENT_TERMS.has(token));
+    if (wantsArrangement && !isArrangement(entry)) {
+      return false;
+    }
+    const rest = tokens.filter((token) => !ARRANGEMENT_TERMS.has(token));
+    if (!rest.length) {
+      return true;
     }
     const hay = fold(
       [
@@ -187,9 +199,10 @@
         entry.forces,
         entry.year,
         entry.section,
+        ...(entry.tags || []),
       ].join(" ")
     );
-    return tokens.every((token) => hay.includes(token));
+    return rest.every((token) => hay.includes(token));
   };
 
   const optionEls = () => Array.from(searchResults ? searchResults.querySelectorAll("[role='option']") : []);
@@ -245,7 +258,7 @@
       return;
     }
     const prefix = (searchRoot && searchRoot.getAttribute("data-prefix")) || "";
-    const hits = (searchIndex || []).filter((entry) => matches(entry, trimmed)).slice(0, 30);
+    const hits = (searchIndex || []).filter((entry) => matches(entry, trimmed)).slice(0, 100);
     searchStatus.textContent = hits.length
       ? `${hits.length} work${hits.length === 1 ? "" : "s"}`
       : "No works match.";
@@ -255,7 +268,8 @@
           .filter(Boolean)
           .join(" · ");
         const href = `${prefix}${entry.href}`;
-        return `<li role="option" id="search-opt-${index}" data-href="${esc(href)}" aria-selected="false"><span class="search-result-title">${esc(entry.title)}</span><span class="search-result-meta">${esc(meta)}</span></li>`;
+        const tag = isArrangement(entry) ? ' <span class="work-tag">Arrangement</span>' : "";
+        return `<li role="option" id="search-opt-${index}" data-href="${esc(href)}" aria-selected="false"><span class="search-result-title">${esc(entry.title)}${tag}</span><span class="search-result-meta">${esc(meta)}</span></li>`;
       })
       .join("");
     setExpanded(true);
