@@ -238,6 +238,28 @@
     "section": "Piano · Solo"
   },
   {
+    "title": "Chopin Etudes Lite (Eight Chopin Etudes reimagined in \"half the time and half the calories\")",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano",
+    "href": "catalogue/piano/solo.html#chopin-etudes-lite",
+    "section": "Piano · Solo",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "Eight Chopin Etudes in Chromatic Mirror Inversion (with special emphasis on the left hand)",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano",
+    "href": "catalogue/piano/solo.html#eight-chopin-etudes-chromatic-mirror-inversion",
+    "section": "Piano · Solo",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
     "title": "Four Four-Handed Complements",
     "catalogue_no": "052",
     "year": "2007/2013",
@@ -340,6 +362,17 @@
     "year": "",
     "forces": "Saxophone Quartet, SATB",
     "href": "catalogue/chamber/other.html#beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet",
+    "section": "Chamber · Other",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "Quartet in F Major, Opus 135, Movement 1, Allegretto by Beethoven / Arranged for Mixed Clarinet Quartet",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Mixed Clarinet Quartet",
+    "href": "catalogue/chamber/other.html#beethoven-quartet-op-135-mvt-1-clarinet-quartet",
     "section": "Chamber · Other",
     "tags": [
       "arrangement"
@@ -555,6 +588,17 @@
     ]
   },
   {
+    "title": "Three Menuetti by Mozart from K. 331, 282 and 421 / Arranged for 71 Diverse Instrumental Trios",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Instrumental Trios (71 scorings)",
+    "href": "catalogue/chamber/other.html#three-menuetti-mozart-instrumental-trios",
+    "section": "Chamber · Other",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
     "title": "Sonata in B Major, Op. 147 by Franz Schubert Arranged for Oboe and Piano",
     "catalogue_no": "104",
     "year": "",
@@ -754,6 +798,61 @@
     ]
   },
   {
+    "title": "Colonel Bogey March / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#colonel-bogey-march-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "Oh, What A Beautiful Mornin' by Rodgers and Hammerstein / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands (Pedagogical)",
+    "href": "catalogue/piano/four-hands.html#oh-what-a-beautiful-mornin-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "The Surrey With The Fringe On Top by Rodgers and Hammerstein / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands (Pedagogical)",
+    "href": "catalogue/piano/four-hands.html#surrey-with-the-fringe-on-top-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "U.S. Armed Forces Suite for Piano Four-Hands (Level 1)",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands (Pedagogical, Level 1)",
+    "href": "catalogue/piano/four-hands.html#us-armed-forces-suite-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "U.S. Armed Forces Suite for Piano Four-Hands (Level 2)",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands (Pedagogical, Level 2)",
+    "href": "catalogue/piano/four-hands.html#us-armed-forces-suite-piano-four-hands-level-2",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
     "title": "Three Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Op. 56",
     "catalogue_no": "",
     "year": "arr. 2000",
@@ -762,6 +861,281 @@
     "section": "Chamber · Music with Double Reeds",
     "tags": [
       "arrangement"
+    ]
+  },
+  {
+    "title": "All My Loving by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#all-my-loving-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Good Day Sunshine by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#good-day-sunshine-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Hello, Goodbye by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#hello-goodbye-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Here, There and Everywhere by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#here-there-and-everywhere-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "If I Fell by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#if-i-fell-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Michelle by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#michelle-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Ob-La-Di, Ob-La-Da by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#ob-la-di-ob-la-da-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Something by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#something-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "This Boy (Ringo's Theme) by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#this-boy-ringos-theme-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "When I'm Sixty-Four by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#when-im-sixty-four-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "With a Little Help from My Friends by The Beatles / Arranged for Piano Four-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Four-Hands",
+    "href": "catalogue/piano/four-hands.html#with-a-little-help-from-my-friends-piano-four-hands",
+    "section": "Piano · Four-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Ob-La-Di, Ob-La-Da by The Beatles / Arranged for Piano Six-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Six-Hands (Pedagogical)",
+    "href": "catalogue/piano/six-hands.html#ob-la-di-ob-la-da-piano-six-hands",
+    "section": "Piano · Six-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Something by The Beatles / Arranged for Piano Six-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Six-Hands",
+    "href": "catalogue/piano/six-hands.html#something-piano-six-hands",
+    "section": "Piano · Six-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "The House of the Rising Sun by The Animals / Arranged for Piano Six-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Six-Hands",
+    "href": "catalogue/piano/six-hands.html#house-of-the-rising-sun-piano-six-hands",
+    "section": "Piano · Six-hands",
+    "tags": [
+      "arrangement"
+    ]
+  },
+  {
+    "title": "With a Little Help from My Friends by The Beatles / Arranged for Piano Six-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Piano Six-Hands",
+    "href": "catalogue/piano/six-hands.html#with-a-little-help-from-my-friends-piano-six-hands",
+    "section": "Piano · Six-hands",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "In My Life by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#in-my-life-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Michelle by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#michelle-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Nowhere Man by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#nowhere-man-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Tell Me Why by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#tell-me-why-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "The Word by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#the-word-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "This Boy (Ringo's Theme) by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#this-boy-ringos-theme-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "You Won't See Me by The Beatles / Arranged for Two Pianos",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos",
+    "href": "catalogue/piano/two-pianos.html#you-wont-see-me-two-pianos",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
+    ]
+  },
+  {
+    "title": "Eight Days a Week by The Beatles / Arranged for Two Pianos, Eight-Hands",
+    "catalogue_no": "",
+    "year": "",
+    "forces": "Two Pianos, Eight-Hands",
+    "href": "catalogue/piano/two-pianos.html#eight-days-a-week-two-pianos-eight-hands",
+    "section": "Piano · Two Pianos",
+    "tags": [
+      "arrangement",
+      "beatles"
     ]
   }
 ]

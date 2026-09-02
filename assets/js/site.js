@@ -174,19 +174,46 @@
   };
 
   const ARRANGEMENT_TERMS = new Set(["arrangement", "arrangements", "arranged", "adapted", "adaptation", "adaptations"]);
+  const BEATLES_TERMS = new Set(["beatles"]);
+  const TAG_PILLS = {
+    arrangement: { label: "Arrangement", className: "work-tag" },
+    beatles: { label: "Beatles", className: "work-tag work-tag--beatles" },
+  };
+  const TAG_ORDER = ["arrangement", "beatles"];
 
-  const isArrangement = (entry) => (entry.tags || []).includes("arrangement");
+  const tagsOf = (entry) => entry.tags || [];
+  const hasTag = (entry, tag) => tagsOf(entry).includes(tag);
+
+  const tagMarkup = (entry) =>
+    TAG_ORDER.filter((tag) => hasTag(entry, tag))
+      .map((tag) => {
+        const pill = TAG_PILLS[tag];
+        return ` <span class="${pill.className}">${pill.label}</span>`;
+      })
+      .join("");
 
   const matches = (entry, query) => {
     const tokens = fold(query).trim().split(/\s+/).filter(Boolean);
     if (!tokens.length) {
       return false;
     }
+    const wantsBeatles = tokens.some((token) => BEATLES_TERMS.has(token));
     const wantsArrangement = tokens.some((token) => ARRANGEMENT_TERMS.has(token));
-    if (wantsArrangement && !isArrangement(entry)) {
+    if (wantsBeatles && !hasTag(entry, "beatles")) {
       return false;
     }
-    const rest = tokens.filter((token) => !ARRANGEMENT_TERMS.has(token));
+    if (wantsArrangement && !hasTag(entry, "arrangement")) {
+      return false;
+    }
+    const rest = tokens.filter((token) => {
+      if (wantsBeatles && BEATLES_TERMS.has(token)) {
+        return false;
+      }
+      if (wantsArrangement && ARRANGEMENT_TERMS.has(token)) {
+        return false;
+      }
+      return true;
+    });
     if (!rest.length) {
       return true;
     }
@@ -199,7 +226,8 @@
         entry.forces,
         entry.year,
         entry.section,
-        ...(entry.tags || []),
+        ...tagsOf(entry),
+        ...tagsOf(entry).map((tag) => tag.replace(/[-_]/g, " ")),
       ].join(" ")
     );
     return rest.every((token) => hay.includes(token));
@@ -268,7 +296,7 @@
           .filter(Boolean)
           .join(" · ");
         const href = `${prefix}${entry.href}`;
-        const tag = isArrangement(entry) ? ' <span class="work-tag">Arrangement</span>' : "";
+        const tag = tagMarkup(entry);
         return `<li role="option" id="search-opt-${index}" data-href="${esc(href)}" aria-selected="false"><span class="search-result-title">${esc(entry.title)}${tag}</span><span class="search-result-meta">${esc(meta)}</span></li>`;
       })
       .join("");

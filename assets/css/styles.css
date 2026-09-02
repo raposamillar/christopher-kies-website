@@ -8,11 +8,17 @@
   --rule: #111111;
   --rule-light: #6e6e6e;
   --focus: #111111;
+  --wash: #f3f3f3; /* search-result hover */
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --measure: 68rem;
   --space: clamp(1rem, 2.5vw, 2rem);
   --header-offset: 5.75rem;
+  /* Tag pills. Contrast ≥ 4.5:1 (WCAG AA). */
+  --tag-arrangement-bg: var(--ink); /* #111111 */
+  --tag-arrangement-fg: var(--bg); /* #ffffff = 18.88:1 */
+  --tag-beatles-bg: #102a83; /* deep royal blue */
+  --tag-beatles-fg: var(--bg); /* #ffffff ≈ 12.4:1 */
 }
 
 *,
@@ -303,7 +309,7 @@ summary:focus-visible {
 
 .search-results [role="option"]:hover,
 .search-results [role="option"].is-active {
-  background: #f3f3f3;
+  background: var(--wash);
 }
 
 .search-result-title {
@@ -772,13 +778,18 @@ summary:focus-visible {
   font-size: 0.6875rem;
   letter-spacing: 0.04em;
   line-height: 1;
-  color: var(--bg);
-  background: var(--ink);
+  color: var(--tag-arrangement-fg);
+  background: var(--tag-arrangement-bg);
   border-radius: 999px;
   padding: 0.28em 0.6em;
   margin-left: 0.45rem;
   vertical-align: 0.15em;
   white-space: nowrap;
+}
+
+.work-tag--beatles {
+  color: var(--tag-beatles-fg);
+  background: var(--tag-beatles-bg);
 }
 
 .meta {
