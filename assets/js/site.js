@@ -96,13 +96,19 @@
     });
   }
 
-  const isHomePage = () => {
-    const page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-    return page === "" || page === "index.html";
+  const samePageAs = (anchor) => {
+    const dest = new URL(anchor.href, location.href);
+    const here = new URL(location.href);
+    const norm = (path) => {
+      const trimmed = path.replace(/\/+$/, "") || "/";
+      return trimmed.replace(/\/index\.html$/i, "") || "/";
+    };
+    return dest.origin === here.origin && norm(dest.pathname) === norm(here.pathname);
   };
 
   const goToHomeTop = (event) => {
-    if (!isHomePage()) {
+    const anchor = event.currentTarget;
+    if (!(anchor instanceof HTMLAnchorElement) || !samePageAs(anchor)) {
       closeNav();
       return;
     }
