@@ -399,9 +399,15 @@
       <div class="album-dialog-panel">
         <div class="album-dialog-bar">
           <h2 id="album-dialog-title" class="album-dialog-title" data-album-dialog-title></h2>
+          <div class="photo-dialog-nav" data-album-zoom-nav hidden>
+            <button type="button" data-album-zoom-prev>Previous</button>
+            <button type="button" data-album-zoom-next>Next</button>
+            <button type="button" data-album-zoom-grid>Both covers</button>
+          </div>
           <button type="button" class="search-close" data-album-dialog-close>Close</button>
         </div>
         <div class="album-dialog-images" data-album-dialog-images></div>
+        <div class="photo-dialog-stage album-zoom-stage" data-album-zoom-stage hidden></div>
       </div>
     `;
     document.body.appendChild(albumDialog);
@@ -409,11 +415,56 @@
     const albumTitle = albumDialog.querySelector("[data-album-dialog-title]");
     const albumImages = albumDialog.querySelector("[data-album-dialog-images]");
     const albumClose = albumDialog.querySelector("[data-album-dialog-close]");
+    const albumZoomNav = albumDialog.querySelector("[data-album-zoom-nav]");
+    const albumZoomStage = albumDialog.querySelector("[data-album-zoom-stage]");
+    const albumZoomPrev = albumDialog.querySelector("[data-album-zoom-prev]");
+    const albumZoomNext = albumDialog.querySelector("[data-album-zoom-next]");
+    const albumZoomGrid = albumDialog.querySelector("[data-album-zoom-grid]");
+    let albumFaces = [];
+    let albumZoomIndex = -1;
 
     const closeAlbum = () => {
       if (albumDialog.open) {
         albumDialog.close();
       }
+    };
+
+    const showAlbumGrid = () => {
+      albumZoomIndex = -1;
+      if (albumImages) {
+        albumImages.hidden = false;
+      }
+      if (albumZoomStage) {
+        albumZoomStage.hidden = true;
+        albumZoomStage.innerHTML = "";
+      }
+      if (albumZoomNav) {
+        albumZoomNav.hidden = true;
+      }
+    };
+
+    const showAlbumZoom = (index) => {
+      if (!albumFaces.length || !albumZoomStage) {
+        return;
+      }
+      albumZoomIndex = (index + albumFaces.length) % albumFaces.length;
+      const face = albumFaces[albumZoomIndex];
+      if (albumImages) {
+        albumImages.hidden = true;
+      }
+      albumZoomStage.hidden = false;
+      if (albumZoomNav) {
+        albumZoomNav.hidden = false;
+      }
+      albumZoomStage.innerHTML = `
+        <figure>
+          <button type="button" class="album-zoom-out" aria-label="Show both covers">
+            <img src="${esc(face.src)}" alt="${esc(face.alt)}">
+          </button>
+          <figcaption>${esc(face.caption)}</figcaption>
+        </figure>
+      `;
+      albumZoomStage.scrollTop = 0;
     };
 
     const openAlbum = (button) => {
@@ -425,34 +476,73 @@
       const back = button.getAttribute("data-back") || "";
       const frontAlt = button.getAttribute("data-front-alt") || `Cover of ${title}`;
       const backAlt = button.getAttribute("data-back-alt") || `Back of ${title}`;
+      albumFaces = [
+        { src: front, alt: frontAlt, caption: "Front", label: `Enlarge front cover of ${title}` },
+      ];
+      if (back) {
+        albumFaces.push({
+          src: back,
+          alt: backAlt,
+          caption: "Back",
+          label: `Enlarge back cover of ${title}`,
+        });
+      }
       albumTitle.textContent = title;
-      albumImages.innerHTML = `
+      albumImages.innerHTML = albumFaces
+        .map(
+          (face, index) => `
         <figure>
-          <img src="${esc(front)}" alt="${esc(frontAlt)}">
-          <figcaption>Front</figcaption>
-        </figure>
-        ${
-          back
-            ? `<figure>
-          <img src="${esc(back)}" alt="${esc(backAlt)}">
-          <figcaption>Back</figcaption>
+          <button type="button" class="album-zoom" data-album-zoom="${index}" aria-label="${esc(face.label)}">
+            <img src="${esc(face.src)}" alt="${esc(face.alt)}">
+          </button>
+          <figcaption>${esc(face.caption)}</figcaption>
         </figure>`
-            : ""
-        }
-      `;
+        )
+        .join("");
+      showAlbumGrid();
       if (typeof albumDialog.showModal === "function") {
         albumDialog.showModal();
-        albumClose && albumClose.focus();
+        albumDialog.scrollTop = 0;
+        albumClose && albumClose.focus({ preventScroll: true });
       }
     };
 
     albumCovers.forEach((button) => {
       button.addEventListener("click", () => openAlbum(button));
     });
+    albumImages &&
+      albumImages.addEventListener("click", (event) => {
+        const zoom = event.target.closest("[data-album-zoom]");
+        if (!zoom) {
+          return;
+        }
+        showAlbumZoom(Number(zoom.getAttribute("data-album-zoom")) || 0);
+      });
+    albumZoomStage &&
+      albumZoomStage.addEventListener("click", (event) => {
+        if (event.target.closest(".album-zoom-out")) {
+          showAlbumGrid();
+        }
+      });
+    albumZoomPrev && albumZoomPrev.addEventListener("click", () => showAlbumZoom(albumZoomIndex - 1));
+    albumZoomNext && albumZoomNext.addEventListener("click", () => showAlbumZoom(albumZoomIndex + 1));
+    albumZoomGrid && albumZoomGrid.addEventListener("click", showAlbumGrid);
     albumClose && albumClose.addEventListener("click", closeAlbum);
+    albumDialog.addEventListener("close", showAlbumGrid);
     albumDialog.addEventListener("click", (event) => {
       if (event.target === albumDialog) {
         closeAlbum();
+      }
+    });
+    albumDialog.addEventListener("keydown", (event) => {
+      if (!albumDialog.open || albumZoomIndex < 0) {
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        showAlbumZoom(albumZoomIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        showAlbumZoom(albumZoomIndex + 1);
       }
     });
   }
@@ -527,7 +617,9 @@
       renderPhoto(index);
       if (typeof photoDialog.showModal === "function") {
         photoDialog.showModal();
-        photoClose && photoClose.focus();
+        photoDialog.scrollTop = 0;
+        photoStage && (photoStage.scrollTop = 0);
+        photoClose && photoClose.focus({ preventScroll: true });
       }
     };
 
@@ -627,6 +719,7 @@
             <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(page.pdf)}"${fileAttr}>Download the sample page</a>.</p>
           </object>
         `;
+        scoreStage.scrollTop = 0;
         return;
       }
       scoreStage.innerHTML = `
@@ -635,6 +728,7 @@
           <figcaption>${esc(page.caption)}</figcaption>
         </figure>
       `;
+      scoreStage.scrollTop = 0;
     };
 
     const closeScore = () => {
@@ -652,7 +746,9 @@
       renderScore(scoreIndex);
       if (typeof scoreDialog.showModal === "function") {
         scoreDialog.showModal();
-        scoreClose && scoreClose.focus();
+        scoreDialog.scrollTop = 0;
+        scoreStage && (scoreStage.scrollTop = 0);
+        scoreClose && scoreClose.focus({ preventScroll: true });
       }
     };
 

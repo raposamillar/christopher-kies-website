@@ -74,6 +74,12 @@ summary:focus-visible {
   scroll-margin-top: var(--header-offset);
 }
 
+dialog a:focus-visible,
+dialog button:focus-visible,
+dialog input:focus-visible {
+  scroll-margin-top: 0;
+}
+
 .skip-link {
   position: absolute;
   left: 0.75rem;
@@ -1009,10 +1015,17 @@ summary:focus-visible {
 }
 
 .photo-dialog {
+  position: fixed;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
   width: min(72rem, calc(100vw - 1.5rem));
-  height: calc(100vh - 1.5rem);
-  max-height: calc(100vh - 1.5rem);
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
   padding: 0;
+  overflow: hidden;
   border: 1px solid var(--rule);
   background: var(--bg);
   color: var(--ink);
@@ -1026,7 +1039,9 @@ summary:focus-visible {
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-height: 100%;
   min-height: 0;
+  overflow: hidden;
 }
 
 .photo-dialog-bar {
@@ -1034,8 +1049,13 @@ summary:focus-visible {
   gap: 0.75rem;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   padding: 0.9rem 1.15rem;
   border-bottom: 1px solid var(--rule);
+  background: var(--bg);
 }
 
 .photo-dialog-title {
@@ -1085,9 +1105,10 @@ summary:focus-visible {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 0;
   overflow: auto;
+  overscroll-behavior: contain;
   padding: 1rem 1.15rem 1.25rem;
 }
 
@@ -1103,7 +1124,7 @@ summary:focus-visible {
   max-width: 100%;
   width: auto;
   height: auto;
-  max-height: calc(100vh - 9rem);
+  max-height: calc(100dvh - 9rem);
   object-fit: contain;
   border: 1px solid var(--rule);
 }
@@ -1215,10 +1236,17 @@ summary:focus-visible {
 }
 
 .album-dialog {
+  position: fixed;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
   width: min(90rem, calc(100vw - 1.5rem));
-  height: calc(100vh - 1.5rem);
-  max-height: calc(100vh - 1.5rem);
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
   padding: 0;
+  overflow: hidden;
   border: 1px solid var(--rule);
   background: var(--bg);
   color: var(--ink);
@@ -1233,6 +1261,7 @@ summary:focus-visible {
   flex-direction: column;
   height: 100%;
   min-height: 0;
+  overflow: hidden;
 }
 
 .album-dialog-bar {
@@ -1255,6 +1284,43 @@ summary:focus-visible {
 
 .album-dialog-bar .search-close {
   flex-shrink: 0;
+}
+
+.album-dialog-bar .photo-dialog-nav[hidden],
+.album-zoom-stage[hidden],
+.album-dialog-images[hidden] {
+  display: none;
+}
+
+.album-zoom,
+.album-zoom-out {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+}
+
+.album-zoom {
+  cursor: zoom-in;
+}
+
+.album-zoom-out {
+  cursor: zoom-out;
+}
+
+.album-zoom-stage {
+  flex: 1;
+  min-height: 0;
+}
+
+.album-zoom-stage img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: none;
 }
 
 .album-dialog-images {
@@ -1483,10 +1549,14 @@ summary:focus-visible {
     columns: 1;
   }
 
-  .album-dialog {
-    width: calc(100vw - 1rem);
-    height: calc(100vh - 1rem);
-    max-height: calc(100vh - 1rem);
+  .album-dialog,
+  .photo-dialog {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 0;
   }
 
   .album-dialog-images {
@@ -1497,17 +1567,23 @@ summary:focus-visible {
     max-height: none;
   }
 
-  .photo-dialog {
-    width: calc(100vw - 1rem);
-    height: calc(100vh - 1rem);
-    max-height: calc(100vh - 1rem);
+  .album-dialog-bar,
+  .photo-dialog-bar {
+    flex-wrap: wrap;
+    gap: 0.45rem 0.75rem;
+    padding: max(0.75rem, env(safe-area-inset-top)) 1rem 0.75rem;
+  }
+
+  .album-dialog-title,
+  .photo-dialog-title {
+    flex-basis: 100%;
   }
 
   .photo-dialog-stage img {
-    max-height: none;
+    max-height: calc(100dvh - 9rem);
   }
 
   .score-pdf {
-    height: calc(100vh - 7.5rem);
+    height: calc(100dvh - 8.5rem);
   }
 }
