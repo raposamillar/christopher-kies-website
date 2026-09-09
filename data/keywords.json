@@ -1,0 +1,572 @@
+{
+  "academic-festival-rag-for-piano-and-wind-ensemble": [
+    "piano",
+    "alto saxophone",
+    "baritone saxophone",
+    "bass clarinet",
+    "bass trombone",
+    "bassoon",
+    "clarinet",
+    "euphonium",
+    "flute",
+    "French horn",
+    "oboe",
+    "percussion",
+    "piccolo",
+    "bass",
+    "tenor saxophone",
+    "trombone",
+    "trumpet",
+    "tuba",
+    "xylophone"
+  ],
+  "academic-festival-rag-for-two-pianos": [
+    "piano"
+  ],
+  "introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano": [
+    "clarinet",
+    "piano"
+  ],
+  "franklin-portrait-preamble-for-orchestra": [
+    "alto saxophone",
+    "baritone saxophone",
+    "baritone",
+    "bass clarinet",
+    "trombone",
+    "bassoon",
+    "clarinet",
+    "contrabass",
+    "flute",
+    "French horn",
+    "oboe",
+    "percussion",
+    "piano",
+    "piccolo",
+    "tenor saxophone",
+    "bass trombone",
+    "trumpet",
+    "tuba",
+    "viola",
+    "violin",
+    "cello"
+  ],
+  "le-tombeau-de-saint-saens-for-orchestra-and-narrator": [
+    "narrator",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "tuba",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
+  ],
+  "little-red-riding-hood-or-ladle-rat-rotten-hut-for-orchestra-and-narrator": [
+    "narrator",
+    "bass clarinet",
+    "bassoon",
+    "clarinet",
+    "bass",
+    "contrabassoon",
+    "flute",
+    "harp",
+    "French horn",
+    "oboe",
+    "piccolo",
+    "percussion",
+    "trombone",
+    "trumpet",
+    "tuba",
+    "viola",
+    "violin",
+    "cello"
+  ],
+  "littleredridinghoodforconcertbandnarrator": [
+    "Band",
+    "flute",
+    "oboe",
+    "clarinet",
+    "alto saxophone",
+    "tenor saxophone",
+    "baritone saxophone",
+    "trumpet",
+    "French horn",
+    "euphonium",
+    "tuba",
+    "timpani",
+    "bells",
+    "vibraphone",
+    "marimba",
+    "percussion",
+    "narrator"
+  ],
+  "le-tombeau-de-saint-saens-for-marimba-clarinet-in-b-flat-piano-and-narrator": [
+    "marimba",
+    "percussion",
+    "clarinet",
+    "piano",
+    "voice",
+    "narrator"
+  ],
+  "letombeaudesaintsaenspianofourhandsandnarrator": [
+    "piano",
+    "narrator"
+  ],
+  "le-tombeau-de-saint-saens-for-woodwind-quintet-and-narrator": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "French horn",
+    "bassoon",
+    "narrator"
+  ],
+  "le-tombeau-de-saint-saens-for-brass-quintet-and-narrator": [
+    "trumpet",
+    "trombone",
+    "French horn",
+    "tuba",
+    "voice",
+    "narrator"
+  ],
+  "little-red-riding-hood-or-ladle-rat-rotten-hut-for-piano-four-hands-and-narrator": [
+    "piano",
+    "voice",
+    "narrator"
+  ],
+  "little-red-riding-hood-or-ladle-rat-rotten-hut-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano",
+    "narrator",
+    "voice"
+  ],
+  "little-red-riding-hood-for-flute-bassoon-piano-and-narrator": [
+    "flute",
+    "bassoon",
+    "piano",
+    "narrator"
+  ],
+  "little-red-riding-hood-or-ladle-rat-rotten-hut": [
+    "cello",
+    "clarinet",
+    "piano",
+    "narrator"
+  ],
+  "old-business": [
+    "piano",
+    "bass",
+    "percussion",
+    "narrator",
+    "contrabass"
+  ],
+  "arietta-for-bassoon-quartet": [
+    "bassoon"
+  ],
+  "four-bachtatonicrocktatonic-inventions-for-oboe-clarinet-in-b-flat-and-piano": [
+    "oboe",
+    "clarinet",
+    "piano"
+  ],
+  "in-two-itive-dances": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "nobody-knows-for-oboe-and-piano": [
+    "oboe",
+    "piano"
+  ],
+  "octatonic-rag-for-oboe-bassoon-and-piano": [
+    "bassoon",
+    "oboe",
+    "piano"
+  ],
+  "sieben-lieder-ohne-worter-aus-des-knaben-wunderhorn-for-bassoon-and-piano": [
+    "bassoon",
+    "piano"
+  ],
+  "sonata-for-bassoon-and-piano": [
+    "bassoon",
+    "piano"
+  ],
+  "take-the-love-this-cant-be-the-a-train-for-bassoon-quartet": [
+    "bassoon"
+  ],
+  "take-the-love-this-cant-be-the-a-train": [
+    "bassoon",
+    "oboe",
+    "piano"
+  ],
+  "taylor-fanfare-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "variations-on-country-gardens-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
+  ],
+  "variations-on-country-gardens": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "eight-ragtime-pieces-for-piano": [
+    "piano"
+  ],
+  "chopin-etudes-lite": [
+    "piano"
+  ],
+  "eight-chopin-etudes-chromatic-mirror-inversion": [
+    "piano"
+  ],
+  "four-four-handed-complements": [
+    "piano"
+  ],
+  "taylor-fanfare-for-piano-four-hands": [
+    "piano"
+  ],
+  "bachtatonicrocktatonic-inventions-for-two-pianos": [
+    "piano"
+  ],
+  "four-bachtatonicrocktatonic-inventions-for-marimba-clarinet-in-b-flat-and-piano": [
+    "marimba",
+    "clarinet",
+    "piano"
+  ],
+  "nobody-knows-for-solo-flute": [
+    "flute"
+  ],
+  "ragtime-reflections-flute-and-piano": [
+    "flute",
+    "piano"
+  ],
+  "take-the-love-this-cant-be-the-a-train-for-clarinet-in-b-flat-and-piano": [
+    "clarinet",
+    "piano"
+  ],
+  "taylor-fanfare-for-string-quartet-and-piano": [
+    "violin",
+    "viola",
+    "cello",
+    "piano"
+  ],
+  "aria-variata-alla-maniera-italiana-flute-bassoon-bach-kies": [
+    "flute",
+    "bassoon"
+  ],
+  "aria-variata-in-a-minor-for-oboe-and-bassoon": [
+    "oboe",
+    "bassoon"
+  ],
+  "childrens-carnival-op25": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
+  ],
+  "beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet": [
+    "soprano saxophone",
+    "alto saxophone",
+    "tenor saxophone",
+    "baritone saxophone",
+    "saxophone"
+  ],
+  "beethoven-quartet-op-135-mvt-1-clarinet-quartet": [
+    "clarinet"
+  ],
+  "six-pieces-from-childrens-games-op-22-by-bizet-arranged-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "seven-piano-pieces-of-johannes-brahms-arranged-for-bassoon-and-piano": [
+    "bassoon",
+    "piano"
+  ],
+  "five-pieces-from-op-76-by-johannes-brahms-arranged-for-oboe-and-piano": [
+    "oboe",
+    "piano"
+  ],
+  "three-intermezzi-opus117-by-brahms-arranged-for-oboe-and-piano": [
+    "oboe",
+    "piano"
+  ],
+  "sixteen-pieces-by-johannes-brahms-arranged-for-clarinet-and-piano": [
+    "clarinet",
+    "piano"
+  ],
+  "sixteen-piano-pieces-by-brahms-arranged-for-alto-saxophone-and-piano": [
+    "alto saxophone",
+    "piano",
+    "saxophone"
+  ],
+  "eight-pieces-opus-76-by-johannes-brahms-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "fantasies-opus-116-by-johannes-brahms-for-violin-and-pian": [
+    "violin",
+    "piano"
+  ],
+  "four-pieces-opus-119-by-johannes-brahms-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "six-pieces-opus-118-by-johannes-brahms-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "thirtypianopiecesbybrahmsarrangedforviolinandpiano": [
+    "violin",
+    "piano"
+  ],
+  "three-intermezzi-opus-117-by-johannes-brahms-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "two-ballades-from-opus-10-by-johannes-brahms-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "two-ballades-from-opus-10-by-johannes-brahms-for-viola-and-piano": [
+    "viola",
+    "piano"
+  ],
+  "dolly-suite-op-56-arranged-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "five-pieces-by-edward-macdowell-for-alto-saxophone-and-piano": [
+    "alto saxophone",
+    "piano",
+    "saxophone"
+  ],
+  "five-pieces-by-edward-macdowell-arranged-for-clarinet-and-piano": [
+    "clarinet",
+    "piano"
+  ],
+  "three-pieces-by-edward-macdowell-arranged-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
+  ],
+  "elite-syncopations-arranged-for-clarinet-quartet": [
+    "clarinet",
+    "bass clarinet",
+    "bass"
+  ],
+  "three-menuetti-mozart-instrumental-trios": [],
+  "sonata-in-b-op-147-by-schubert-arranged-for-oboe-and-piano": [
+    "oboe",
+    "piano"
+  ],
+  "kinderszenen-by-robert-schumann-arranged-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
+  ],
+  "karens-song-for-soprano-or-treble-chorus-flute-and-piano-or-harp": [
+    "chorus",
+    "flute",
+    "piano",
+    "harp",
+    "soprano"
+  ],
+  "six-italian-song-for-soprano-and-piano": [
+    "soprano",
+    "voice",
+    "piano"
+  ],
+  "chinese-folk-song-mashup-10": [
+    "voice",
+    "piano",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "chorus"
+  ],
+  "carol-of-the-field-mice": [
+    "chorus",
+    "French horn",
+    "horn"
+  ],
+  "come-let-us-mourn": [
+    "chorus",
+    "voice"
+  ],
+  "crocus-for-treble-chorus-piano-and-orchestral-bells": [
+    "chorus",
+    "piano",
+    "bells",
+    "voice"
+  ],
+  "english-is-tough-stuff-for-treble-or-childrens-chorus-and-piano": [
+    "chorus",
+    "piano",
+    "voice"
+  ],
+  "the-sandpiper": [
+    "chorus",
+    "flute",
+    "clarinet",
+    "guitar",
+    "cello",
+    "voice"
+  ],
+  "two-songs-from-the-wind-in-the-willows-for-treble-chorus-and-piano": [
+    "chorus",
+    "voice",
+    "piano"
+  ],
+  "a-poets-life-for-satb-chorus-piano-maracas-and-bongos": [
+    "chorus",
+    "piano",
+    "percussion"
+  ],
+  "a-year-and-a-day-for-satb-chorus-treble-soloists-flute-cello-celeste-or-synthesizer-percussion-and-piano": [
+    "chorus",
+    "voice",
+    "flute",
+    "cello",
+    "celeste",
+    "percussion",
+    "piano"
+  ],
+  "five-poems-by-celia-l-thaxter-for-satb-chorus": [
+    "voice",
+    "chorus"
+  ],
+  "the-geheimerath-rodeleins-house-for-satb-chorus-piano-and-narrator": [
+    "chorus",
+    "piano",
+    "narrator"
+  ],
+  "on-censure-or-backbiting-for-satb-chorus-unaccompanied": [
+    "chorus",
+    "voice"
+  ],
+  "flight-of-the-bungled-g-for-harpsicord": [
+    "harpsichord"
+  ],
+  "flight-of-the-bungled-g-for-piano-four-hands": [
+    "piano"
+  ],
+  "cadenzas-to-mozarts-piano-concerto-k-467": [
+    "piano",
+    "orchestra"
+  ],
+  "fantasie-opus-17-robert-schumann-violin-piano-adaptation-christopher-kies": [
+    "piano",
+    "violin"
+  ],
+  "twelve-short-pieces-for-piano": [
+    "piano"
+  ],
+  "twelve-great-classical-melodies": [
+    "piano"
+  ],
+  "24-erstwhile-familiar-tunes": [
+    "piano"
+  ],
+  "colonel-bogey-march-piano-four-hands": [
+    "piano"
+  ],
+  "oh-what-a-beautiful-mornin-piano-four-hands": [
+    "piano"
+  ],
+  "surrey-with-the-fringe-on-top-piano-four-hands": [
+    "piano"
+  ],
+  "us-armed-forces-suite-piano-four-hands": [
+    "piano"
+  ],
+  "us-armed-forces-suite-piano-four-hands-level-2": [
+    "piano"
+  ],
+  "three-movements-from-dolly-wind-septet": [
+    "flute",
+    "oboe",
+    "horn"
+  ],
+  "all-my-loving-piano-four-hands": [
+    "piano"
+  ],
+  "good-day-sunshine-piano-four-hands": [
+    "piano"
+  ],
+  "hello-goodbye-piano-four-hands": [
+    "piano"
+  ],
+  "here-there-and-everywhere-piano-four-hands": [
+    "piano"
+  ],
+  "if-i-fell-piano-four-hands": [
+    "piano"
+  ],
+  "michelle-piano-four-hands": [
+    "piano"
+  ],
+  "ob-la-di-ob-la-da-piano-four-hands": [
+    "piano"
+  ],
+  "something-piano-four-hands": [
+    "piano"
+  ],
+  "this-boy-ringos-theme-piano-four-hands": [
+    "piano"
+  ],
+  "when-im-sixty-four-piano-four-hands": [
+    "piano"
+  ],
+  "with-a-little-help-from-my-friends-piano-four-hands": [
+    "piano"
+  ],
+  "ob-la-di-ob-la-da-piano-six-hands": [
+    "piano"
+  ],
+  "something-piano-six-hands": [
+    "piano"
+  ],
+  "house-of-the-rising-sun-piano-six-hands": [
+    "piano"
+  ],
+  "with-a-little-help-from-my-friends-piano-six-hands": [
+    "piano"
+  ],
+  "in-my-life-two-pianos": [
+    "piano"
+  ],
+  "michelle-two-pianos": [
+    "piano"
+  ],
+  "nowhere-man-two-pianos": [
+    "piano"
+  ],
+  "tell-me-why-two-pianos": [
+    "piano"
+  ],
+  "the-word-two-pianos": [
+    "piano"
+  ],
+  "this-boy-ringos-theme-two-pianos": [
+    "piano"
+  ],
+  "you-wont-see-me-two-pianos": [
+    "piano"
+  ],
+  "eight-days-a-week-two-pianos-eight-hands": [
+    "piano"
+  ]
+}

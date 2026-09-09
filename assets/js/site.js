@@ -186,8 +186,23 @@
     beatles: { label: "Beatles", className: "work-tag work-tag--beatles" },
   };
   const TAG_ORDER = ["arrangement", "beatles"];
+  const KEYWORD_SYNONYMS = {
+    sax: ["saxophone"],
+    saxophone: ["saxophone", "sax"],
+    choir: ["chorus"],
+    chorus: ["chorus", "choir"],
+    vocal: ["voice"],
+    voice: ["voice", "vocal"],
+    cello: ["cello", "violoncello"],
+    violoncello: ["cello", "violoncello"],
+    drums: ["percussion", "drum"],
+    drum: ["percussion", "drum"],
+    percussion: ["percussion", "drum"],
+    bass: ["bass", "contrabass"],
+  };
 
   const tagsOf = (entry) => entry.tags || [];
+  const keywordsOf = (entry) => entry.keywords || [];
   const hasTag = (entry, tag) => tagsOf(entry).includes(tag);
 
   const tagMarkup = (entry) =>
@@ -197,6 +212,19 @@
         return ` <span class="${pill.className}">${pill.label}</span>`;
       })
       .join("");
+
+  const wordMatch = (text, token) => {
+    if (!token) {
+      return false;
+    }
+    const escaped = token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:[^a-z0-9]|$)`).test(text);
+  };
+
+  const expandToken = (token) => {
+    const extra = KEYWORD_SYNONYMS[token] || [];
+    return Array.from(new Set([token, ...extra]));
+  };
 
   const matches = (entry, query) => {
     const tokens = fold(query).trim().split(/\s+/).filter(Boolean);
@@ -236,7 +264,15 @@
         ...tagsOf(entry).map((tag) => tag.replace(/[-_]/g, " ")),
       ].join(" ")
     );
-    return rest.every((token) => hay.includes(token));
+    const keywordHay = fold(keywordsOf(entry).join(" | "));
+    return rest.every((token) => {
+      if (hay.includes(token)) {
+        return true;
+      }
+      return expandToken(token).some(
+        (term) => wordMatch(keywordHay, term) || hay.includes(term)
+      );
+    });
   };
 
   const optionEls = () => Array.from(searchResults ? searchResults.querySelectorAll("[role='option']") : []);
@@ -689,7 +725,9 @@
         pdf: button.getAttribute("data-score-pdf") || "",
         filename: button.getAttribute("data-score-filename") || "",
         alt: button.getAttribute("aria-label") || "",
-        caption: captionEl ? captionEl.textContent.trim() : "Page",
+        caption:
+          button.getAttribute("data-score-caption") ||
+          (captionEl ? captionEl.textContent.trim() : "Page"),
       };
     };
 
@@ -700,10 +738,11 @@
       scoreIndex = (index + scoreGroup.length) % scoreGroup.length;
       const page = scoreAt(scoreGroup[scoreIndex]);
       scoreTitle.textContent = page.caption;
+      const pdfFile = page.pdf.split("#")[0];
       if (scoreDownload) {
-        if (page.pdf) {
+        if (pdfFile) {
           scoreDownload.hidden = false;
-          scoreDownload.setAttribute("href", page.pdf);
+          scoreDownload.setAttribute("href", pdfFile);
           scoreDownload.setAttribute("download", page.filename || "sample-page.pdf");
           scoreDownload.textContent = "Download";
         } else {
@@ -716,7 +755,7 @@
         const fileAttr = page.filename ? ` download="${esc(page.filename)}"` : "";
         scoreStage.innerHTML = `
           <object class="score-pdf" data="${esc(page.pdf)}" type="application/pdf" aria-label="${esc(page.alt || page.caption)}">
-            <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(page.pdf)}"${fileAttr}>Download the sample page</a>.</p>
+            <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(pdfFile)}"${fileAttr}>Download the sample pages</a>.</p>
           </object>
         `;
         scoreStage.scrollTop = 0;
@@ -744,10 +783,29 @@
         return;
       }
       const groupName = button.getAttribute("data-score-group") || "";
-      scoreGroup = scoreTriggers.filter(
+      const grouped = scoreTriggers.filter(
         (item) => item.getAttribute("data-score-group") === groupName
       );
-      scoreIndex = Math.max(0, scoreGroup.indexOf(button));
+      const seenPdf = new Set();
+      scoreGroup = grouped.filter((item) => {
+        const pdf = item.getAttribute("data-score-pdf") || "";
+        if (!pdf) {
+          return true;
+        }
+        if (seenPdf.has(pdf)) {
+          return false;
+        }
+        seenPdf.add(pdf);
+        return true;
+      });
+      scoreIndex = scoreGroup.indexOf(button);
+      if (scoreIndex < 0) {
+        const pdf = button.getAttribute("data-score-pdf") || "";
+        scoreIndex = Math.max(
+          0,
+          scoreGroup.findIndex((item) => item.getAttribute("data-score-pdf") === pdf)
+        );
+      }
       renderScore(scoreIndex);
       if (typeof scoreDialog.showModal === "function") {
         scoreDialog.showModal();
