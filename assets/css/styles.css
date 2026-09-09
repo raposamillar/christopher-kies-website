@@ -592,6 +592,11 @@ dialog input:focus-visible {
   max-width: 42rem;
 }
 
+.score-pair:has(> :nth-child(3)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 64rem;
+}
+
 .score-page {
   display: block;
   width: 100%;
@@ -1541,8 +1546,16 @@ dialog input:focus-visible {
   .about-layout,
   .about-gallery-grid,
   .media-item,
-  .score-pair {
+  .score-pair,
+  .score-pair:has(> :nth-child(3)) {
     grid-template-columns: 1fr;
+  }
+
+  .page-home .score-pair,
+  .page-beatles .score-pair,
+  .page-home .score-pair:has(> :nth-child(3)),
+  .page-beatles .score-pair:has(> :nth-child(3)) {
+    max-width: none;
   }
 
   .album-card {
@@ -1597,47 +1610,86 @@ dialog input:focus-visible {
     height: calc(100dvh - 8.5rem);
   }
 
-  .page-home .site-main {
+  body {
     font-size: 1.3125rem;
     line-height: 1.5;
   }
 
-  .page-home .kicker {
+  .kicker {
     font-size: 1rem;
   }
 
-  .page-home .hero-block h2 {
+  .hero-block h2,
+  .credits h2,
+  .page-title,
+  .about-gallery h2 {
     font-size: clamp(2rem, 8vw, 2.5rem);
   }
 
-  .page-home .featured-piece-title {
+  .work h3,
+  .featured-piece-title,
+  .media-item h2,
+  .tracks h3 {
     font-size: 1.5rem;
   }
 
-  .page-home .meta,
-  .page-home .featured-excerpt,
-  .page-home .credits p {
+  .section-list a {
+    font-size: 1.45rem;
+  }
+
+  .meta,
+  .featured-excerpt,
+  .credits p,
+  .prose,
+  .note-body {
     font-size: 1.2rem;
   }
 
-  .page-home .work-links {
+  .work-links,
+  .album-card figcaption,
+  .search-result-title {
     font-size: 1.05rem;
   }
 
-  .page-home .album-card figcaption {
-    font-size: 1.05rem;
-  }
-
-  .page-home .score-pair figcaption,
-  .page-home .score-download {
+  .score-pair figcaption,
+  .score-download,
+  .about-gallery figcaption,
+  .samples figcaption,
+  .album-dialog-images figcaption {
     font-size: 0.95rem;
   }
 
-  .page-home .credits-list {
+  .credits-list {
     font-size: 1.15rem;
   }
 
-  .page-home .score-pair figure:nth-child(2) {
+  .breadcrumb,
+  .section-list small,
+  .catno,
+  .site-footer,
+  .search-result-meta,
+  .contact-form label {
+    font-size: 1rem;
+  }
+
+  .page-search .site-search-input,
+  .search-bar input {
+    font-size: 1.125rem;
+  }
+
+  .page-home .featured-piece-title {
+    display: none;
+  }
+
+  .page-home .score-page[data-score-entry-href],
+  .page-home .score-page[data-score-entry-href] + figcaption,
+  .page-beatles .score-page[data-score-entry-href],
+  .page-beatles .score-page[data-score-entry-href] + figcaption {
+    cursor: pointer;
+  }
+
+  .page-home .score-pair figure:nth-child(n + 2),
+  .page-beatles .score-pair figure:nth-child(n + 2) {
     display: none;
   }
 

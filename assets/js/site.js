@@ -738,6 +738,11 @@
     };
 
     const openScore = (button) => {
+      const entryHref = button.getAttribute("data-score-entry-href");
+      if (entryHref && window.matchMedia("(max-width: 800px)").matches) {
+        window.location.assign(entryHref);
+        return;
+      }
       const groupName = button.getAttribute("data-score-group") || "";
       scoreGroup = scoreTriggers.filter(
         (item) => item.getAttribute("data-score-group") === groupName
