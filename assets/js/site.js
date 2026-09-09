@@ -557,6 +557,136 @@
     });
   }
 
+  const scoreTriggers = Array.from(document.querySelectorAll("[data-score-lightbox]"));
+  if (scoreTriggers.length) {
+    const scoreDialog = document.createElement("dialog");
+    scoreDialog.className = "photo-dialog";
+    scoreDialog.setAttribute("data-score-dialog", "");
+    scoreDialog.setAttribute("aria-labelledby", "score-dialog-title");
+    scoreDialog.setAttribute("closedby", "any");
+    scoreDialog.innerHTML = `
+      <div class="photo-dialog-panel">
+        <div class="photo-dialog-bar">
+          <h2 id="score-dialog-title" class="photo-dialog-title" data-score-dialog-title></h2>
+          <div class="photo-dialog-nav">
+            <button type="button" data-score-prev>Previous</button>
+            <button type="button" data-score-next>Next</button>
+            <a data-score-download hidden>Download</a>
+          </div>
+          <button type="button" class="search-close" data-score-dialog-close>Close</button>
+        </div>
+        <div class="photo-dialog-stage" data-score-dialog-stage></div>
+      </div>
+    `;
+    document.body.appendChild(scoreDialog);
+
+    const scoreTitle = scoreDialog.querySelector("[data-score-dialog-title]");
+    const scoreStage = scoreDialog.querySelector("[data-score-dialog-stage]");
+    const scoreClose = scoreDialog.querySelector("[data-score-dialog-close]");
+    const scorePrev = scoreDialog.querySelector("[data-score-prev]");
+    const scoreNext = scoreDialog.querySelector("[data-score-next]");
+    const scoreDownload = scoreDialog.querySelector("[data-score-download]");
+    let scoreGroup = [];
+    let scoreIndex = 0;
+
+    const scoreAt = (button) => {
+      const img = button.querySelector("img");
+      const captionEl = (button.closest("figure") || button).querySelector("figcaption");
+      return {
+        src: (img && img.getAttribute("src")) || "",
+        pdf: button.getAttribute("data-score-pdf") || "",
+        filename: button.getAttribute("data-score-filename") || "",
+        alt: button.getAttribute("aria-label") || "",
+        caption: captionEl ? captionEl.textContent.trim() : "Page",
+      };
+    };
+
+    const renderScore = (index) => {
+      if (!scoreGroup.length) {
+        return;
+      }
+      scoreIndex = (index + scoreGroup.length) % scoreGroup.length;
+      const page = scoreAt(scoreGroup[scoreIndex]);
+      scoreTitle.textContent = page.caption;
+      if (scoreDownload) {
+        if (page.pdf) {
+          scoreDownload.hidden = false;
+          scoreDownload.setAttribute("href", page.pdf);
+          scoreDownload.setAttribute("download", page.filename || "sample-page.pdf");
+          scoreDownload.textContent = "Download";
+        } else {
+          scoreDownload.hidden = true;
+          scoreDownload.removeAttribute("href");
+          scoreDownload.removeAttribute("download");
+        }
+      }
+      if (page.pdf) {
+        const fileAttr = page.filename ? ` download="${esc(page.filename)}"` : "";
+        scoreStage.innerHTML = `
+          <object class="score-pdf" data="${esc(page.pdf)}" type="application/pdf" aria-label="${esc(page.alt || page.caption)}">
+            <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(page.pdf)}"${fileAttr}>Download the sample page</a>.</p>
+          </object>
+        `;
+        return;
+      }
+      scoreStage.innerHTML = `
+        <figure>
+          <img src="${esc(page.src)}" alt="${esc(page.alt || page.caption)}">
+          <figcaption>${esc(page.caption)}</figcaption>
+        </figure>
+      `;
+    };
+
+    const closeScore = () => {
+      if (scoreDialog.open) {
+        scoreDialog.close();
+      }
+    };
+
+    const openScore = (button) => {
+      const groupName = button.getAttribute("data-score-group") || "";
+      scoreGroup = scoreTriggers.filter(
+        (item) => item.getAttribute("data-score-group") === groupName
+      );
+      scoreIndex = Math.max(0, scoreGroup.indexOf(button));
+      renderScore(scoreIndex);
+      if (typeof scoreDialog.showModal === "function") {
+        scoreDialog.showModal();
+        scoreClose && scoreClose.focus();
+      }
+    };
+
+    scoreTriggers.forEach((button) => {
+      button.addEventListener("click", () => openScore(button));
+      const caption = (button.closest("figure") || {}).querySelector("figcaption");
+      if (caption) {
+        caption.addEventListener("click", () => openScore(button));
+      }
+    });
+    scoreClose && scoreClose.addEventListener("click", closeScore);
+    scorePrev && scorePrev.addEventListener("click", () => renderScore(scoreIndex - 1));
+    scoreNext && scoreNext.addEventListener("click", () => renderScore(scoreIndex + 1));
+    scoreDialog.addEventListener("click", (event) => {
+      if (event.target === scoreDialog) {
+        closeScore();
+      }
+    });
+    scoreDialog.addEventListener("keydown", (event) => {
+      if (!scoreDialog.open) {
+        return;
+      }
+      if (event.target.closest(".score-pdf")) {
+        return;
+      }
+      if (event.key === "ArrowLeft") {
+        renderScore(scoreIndex - 1);
+      }
+      if (event.key === "ArrowRight") {
+        renderScore(scoreIndex + 1);
+      }
+    });
+  }
+
   const openSearchDialog = () => {
     if (!searchDialog || typeof searchDialog.showModal !== "function") {
       return;

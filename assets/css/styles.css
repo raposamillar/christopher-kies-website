@@ -552,6 +552,7 @@ summary:focus-visible {
 
 .hero-block .lede {
   margin-bottom: 1.1rem;
+  max-width: 42rem;
 }
 
 .featured-piece-title {
@@ -573,6 +574,58 @@ summary:focus-visible {
   gap: 1.25rem;
   margin: 1.25rem 0 0;
   max-width: 42rem;
+}
+
+.score-page {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.score-pair figure {
+  margin: 0;
+}
+
+.score-pair img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.score-pair figcaption {
+  margin-top: 0.45rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  cursor: zoom-in;
+}
+
+.score-page:hover + figcaption,
+.score-page:focus-visible + figcaption {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.score-download {
+  margin: 0.3rem 0 0;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.cover-credit {
+  margin: 0.75rem 0 0;
+  max-width: 42rem;
+  font-family: var(--sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
 }
 
 .page-placeholder {
@@ -1004,7 +1057,8 @@ summary:focus-visible {
   flex-shrink: 0;
 }
 
-.photo-dialog-nav button {
+.photo-dialog-nav button,
+.photo-dialog-nav a {
   font-family: var(--sans);
   font-size: 0.9375rem;
   background: none;
@@ -1014,6 +1068,10 @@ summary:focus-visible {
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 0.2em;
+}
+
+.photo-dialog-nav a[hidden] {
+  display: none;
 }
 
 .photo-dialog-nav button:disabled {
@@ -1055,6 +1113,25 @@ summary:focus-visible {
   font-family: var(--sans);
   font-size: 0.8125rem;
   color: var(--muted);
+}
+
+.score-pdf {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 8.5rem);
+  border: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.photo-dialog-stage:has(.score-pdf) {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+}
+
+.photo-dialog-stage .score-pdf-fallback {
+  margin: 1.25rem;
+  font-family: var(--sans);
 }
 
 .about-gallery figcaption {
@@ -1428,5 +1505,9 @@ summary:focus-visible {
 
   .photo-dialog-stage img {
     max-height: none;
+  }
+
+  .score-pdf {
+    height: calc(100vh - 7.5rem);
   }
 }
