@@ -567,6 +567,16 @@ dialog input:focus-visible {
   margin: 0 0 0.35rem;
 }
 
+.featured-excerpt {
+  margin: 0 0 1rem;
+  max-width: 42rem;
+  color: var(--muted);
+}
+
+.hero-block .work-links {
+  margin-top: 0.15rem;
+}
+
 .placeholder-note {
   border: 1px dashed var(--rule-light);
   padding: 1.1rem 1.2rem;
