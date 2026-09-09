@@ -1596,4 +1596,56 @@ dialog input:focus-visible {
   .score-pdf {
     height: calc(100dvh - 8.5rem);
   }
+
+  .page-home .site-main {
+    font-size: 1.3125rem;
+    line-height: 1.5;
+  }
+
+  .page-home .kicker {
+    font-size: 1rem;
+  }
+
+  .page-home .hero-block h2 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .page-home .featured-piece-title {
+    font-size: 1.5rem;
+  }
+
+  .page-home .meta,
+  .page-home .featured-excerpt,
+  .page-home .credits p {
+    font-size: 1.2rem;
+  }
+
+  .page-home .work-links {
+    font-size: 1.05rem;
+  }
+
+  .page-home .album-card figcaption {
+    font-size: 1.05rem;
+  }
+
+  .page-home .score-pair figcaption,
+  .page-home .score-download {
+    font-size: 0.95rem;
+  }
+
+  .page-home .credits-list {
+    font-size: 1.15rem;
+  }
+
+  .page-home .score-pair figure:nth-child(2) {
+    display: none;
+  }
+
+  .page-home .album-grid .album-card:nth-child(n + 2) {
+    display: none;
+  }
+
+  .page-home .album-card {
+    max-width: 22rem;
+  }
 }
