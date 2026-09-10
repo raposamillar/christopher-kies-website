@@ -201,6 +201,91 @@
     bass: ["bass", "contrabass"],
   };
 
+  const PAGE_FILTERS = [
+    { keys: ["flute"], href: "catalogue/instrumental/flute.html" },
+    { keys: ["oboe"], href: "catalogue/instrumental/oboe.html" },
+    { keys: ["clarinet"], href: "catalogue/instrumental/clarinet.html" },
+    { keys: ["bassoon"], href: "catalogue/instrumental/bassoon.html" },
+    { keys: ["saxophone", "sax"], href: "catalogue/instrumental/saxophone.html" },
+    { keys: ["violin"], href: "catalogue/instrumental/violin.html" },
+    { keys: ["viola"], href: "catalogue/instrumental/viola.html" },
+    { keys: ["cello", "violoncello"], href: "catalogue/instrumental/cello.html" },
+    { keys: ["guitar"], href: "catalogue/instrumental/guitar.html" },
+    { keys: ["concertos", "concerto"], href: "catalogue/large-ensemble/concertos.html" },
+    { keys: ["ballet"], href: "catalogue/large-ensemble/ballet.html" },
+    { keys: ["orchestra"], href: "catalogue/large-ensemble/orchestra.html" },
+    { keys: ["orchestra with narration"], href: "catalogue/large-ensemble/orchestra-with-narration.html" },
+    { keys: ["concert band"], href: "catalogue/large-ensemble/concert-band.html" },
+    { keys: ["concert band with narration"], href: "catalogue/large-ensemble/concert-band-with-narration.html" },
+    { keys: ["ensembles with narration"], href: "catalogue/chamber/ensembles-with-narration.html" },
+    { keys: ["double reeds", "music with double reeds"], href: "catalogue/chamber/music-with-double-reeds.html" },
+    { keys: ["chamber other", "other chamber"], href: "catalogue/chamber/other.html" },
+    { keys: ["four-hands", "four hands", "piano four-hands", "piano four hands"], href: "catalogue/piano/four-hands.html" },
+    { keys: ["six-hands", "six hands", "piano six-hands", "piano six hands"], href: "catalogue/piano/six-hands.html" },
+    { keys: ["two pianos", "two-pianos"], href: "catalogue/piano/two-pianos.html" },
+    { keys: ["pedagogical", "pedagogical piano", "pedagogical piano pieces"], href: "catalogue/piano/pedagogical.html" },
+    { keys: ["piano solo", "solo piano"], href: "catalogue/piano/solo.html" },
+    { keys: ["piano other", "other piano"], href: "catalogue/piano/other.html" },
+    { keys: ["solo voice", "solo voice and accompaniment"], href: "catalogue/vocal/solo-voice.html" },
+    { keys: ["two or more voices", "two or more voices and accompaniment"], href: "catalogue/vocal/two-or-more-voices.html" },
+    { keys: ["treble chorus", "childrens chorus", "children's chorus", "treble chorus and children's chorus"], href: "catalogue/vocal/treble-chorus.html" },
+    { keys: ["mixed chorus", "mixed chorus (satb and other)"], href: "catalogue/vocal/mixed-chorus.html" },
+    { keys: ["piano"], hrefIncludes: "catalogue/piano/" },
+    { keys: ["chamber"], hrefIncludes: "catalogue/chamber/" },
+    { keys: ["large ensemble"], hrefIncludes: "catalogue/large-ensemble/" },
+    { keys: ["solos & duos", "solos and duos"], hrefIncludes: "catalogue/instrumental/" },
+    { keys: ["vocal"], hrefIncludes: "catalogue/vocal/" },
+  ];
+
+  const pageFilterMap = {};
+  PAGE_FILTERS.forEach((filter) => {
+    filter.keys.forEach((name) => {
+      pageFilterMap[fold(name).replace(/\s+/g, " ")] = filter;
+    });
+  });
+
+  const pageFilterFromQuery = (query) => pageFilterMap[fold(query).trim().replace(/\s+/g, " ")] || null;
+
+  const listingsOf = (entry) => {
+    if (entry.listings && entry.listings.length) {
+      return entry.listings;
+    }
+    return [{ href: entry.href, section: entry.section }];
+  };
+
+  const listingMatchesPage = (listing, page) => {
+    if (!listing || !page) {
+      return false;
+    }
+    const listingPage = (listing.href || "").split("#")[0];
+    if (page.href && listingPage === page.href) {
+      return true;
+    }
+    if (page.hrefIncludes && listing.href && listing.href.includes(page.hrefIncludes)) {
+      return true;
+    }
+    if (page.section && listing.section === page.section) {
+      return true;
+    }
+    if (page.sectionPrefix && listing.section && listing.section.startsWith(page.sectionPrefix)) {
+      return true;
+    }
+    return false;
+  };
+
+  const resolveForPage = (entry, page) => {
+    const listings = listingsOf(entry);
+    if (!page) {
+      const listing = listings[0] || {};
+      return { ...entry, href: listing.href || entry.href, section: listing.section || entry.section };
+    }
+    const listing = listings.find((item) => listingMatchesPage(item, page));
+    if (!listing) {
+      return null;
+    }
+    return { ...entry, href: listing.href, section: listing.section };
+  };
+
   const tagsOf = (entry) => entry.tags || [];
   const keywordsOf = (entry) => entry.keywords || [];
   const hasTag = (entry, tag) => tagsOf(entry).includes(tag);
@@ -277,7 +362,13 @@
 
   const optionEls = () => Array.from(searchResults ? searchResults.querySelectorAll("[role='option']") : []);
 
-  const optionHref = (option) => option && option.getAttribute("data-href");
+  const optionHref = (option) => {
+    if (!option) {
+      return "";
+    }
+    const link = option.querySelector("a[href]");
+    return (link && link.getAttribute("href")) || option.getAttribute("data-href") || "";
+  };
 
   const setExpanded = (open) => {
     if (searchInput) {
@@ -328,7 +419,12 @@
       return;
     }
     const prefix = (searchRoot && searchRoot.getAttribute("data-prefix")) || "";
-    const hits = (searchIndex || []).filter((entry) => matches(entry, trimmed)).slice(0, 100);
+    const page = pageFilterFromQuery(trimmed);
+    const hits = (
+      page
+        ? (searchIndex || []).map((entry) => resolveForPage(entry, page)).filter(Boolean)
+        : (searchIndex || []).filter((entry) => matches(entry, trimmed)).map((entry) => resolveForPage(entry, null))
+    ).slice(0, 100);
     searchStatus.textContent = hits.length
       ? `${hits.length} work${hits.length === 1 ? "" : "s"}`
       : "No works match.";
@@ -339,7 +435,7 @@
           .join(" · ");
         const href = `${prefix}${entry.href}`;
         const tag = tagMarkup(entry);
-        return `<li role="option" id="search-opt-${index}" data-href="${esc(href)}" aria-selected="false"><span class="search-result-title">${esc(entry.title)}${tag}</span><span class="search-result-meta">${esc(meta)}</span></li>`;
+        return `<li role="option" id="search-opt-${index}" aria-selected="false"><a class="search-result-link" href="${esc(href)}"><span class="search-result-title">${esc(entry.title)}${tag}</span><span class="search-result-meta">${esc(meta)}</span></a></li>`;
       })
       .join("");
     setExpanded(true);
@@ -367,6 +463,11 @@
   const followActiveOption = () => {
     const options = optionEls();
     const target = options[activeOption] || options[0];
+    const link = target && target.querySelector("a[href]");
+    if (link) {
+      link.click();
+      return true;
+    }
     const href = optionHref(target);
     if (href) {
       window.location.assign(href);
@@ -882,19 +983,6 @@
       if (searchInput) {
         searchInput.focus();
         searchInput.select();
-      }
-    });
-  }
-
-  if (searchResults) {
-    searchResults.addEventListener("click", (event) => {
-      const option = event.target.closest("[role='option']");
-      if (!option) {
-        return;
-      }
-      const href = optionHref(option);
-      if (href) {
-        window.location.assign(href);
       }
     });
   }

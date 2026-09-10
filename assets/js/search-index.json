@@ -40,6 +40,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/large-ensemble/concertos.html#academic-festival-rag-for-two-pianos",
+        "section": "Large Ensemble · Concertos"
+      },
+      {
+        "href": "catalogue/piano/two-pianos.html#academic-festival-rag-for-two-pianos",
+        "section": "Piano · Two Pianos"
+      }
     ]
   },
   {
@@ -79,6 +89,16 @@
     "keywords": [
       "clarinet",
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/large-ensemble/concertos.html#introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano",
+        "section": "Large Ensemble · Concertos"
+      },
+      {
+        "href": "catalogue/instrumental/clarinet.html#introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano",
+        "section": "Solos & Duos · Clarinet"
+      }
     ]
   },
   {
@@ -438,6 +458,16 @@
     "keywords": [
       "piano",
       "narrator"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/chamber/ensembles-with-narration.html#letombeaudesaintsaenspianofourhandsandnarrator",
+        "section": "Chamber · Ensembles with Narration"
+      },
+      {
+        "href": "catalogue/piano/four-hands.html#letombeaudesaintsaenspianofourhandsandnarrator",
+        "section": "Piano · Four-hands"
+      }
     ]
   },
   {
@@ -483,6 +513,16 @@
       "piano",
       "voice",
       "narrator"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/chamber/ensembles-with-narration.html#little-red-riding-hood-or-ladle-rat-rotten-hut-for-piano-four-hands-and-narrator",
+        "section": "Chamber · Ensembles with Narration"
+      },
+      {
+        "href": "catalogue/piano/four-hands.html#little-red-riding-hood-or-ladle-rat-rotten-hut-for-piano-four-hands-and-narrator",
+        "section": "Piano · Four-hands"
+      }
     ]
   },
   {
@@ -606,6 +646,16 @@
     "keywords": [
       "flute",
       "oboe"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/flute.html#nobody-knows-for-flute-and-oboe",
+        "section": "Solos & Duos · Flute"
+      },
+      {
+        "href": "catalogue/instrumental/oboe.html#nobody-knows-for-flute-and-oboe",
+        "section": "Solos & Duos · Oboe"
+      }
     ]
   },
   {
@@ -1096,6 +1146,16 @@
     "keywords": [
       "flute",
       "bassoon"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/flute.html#aria-variata-alla-maniera-italiana-flute-bassoon-bach-kies",
+        "section": "Solos & Duos · Flute"
+      },
+      {
+        "href": "catalogue/instrumental/bassoon.html#aria-variata-alla-maniera-italiana-flute-bassoon-bach-kies",
+        "section": "Solos & Duos · Bassoon"
+      }
     ]
   },
   {
@@ -1111,6 +1171,16 @@
     "keywords": [
       "oboe",
       "bassoon"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/oboe.html#aria-variata-in-a-minor-for-oboe-and-bassoon",
+        "section": "Solos & Duos · Oboe"
+      },
+      {
+        "href": "catalogue/instrumental/bassoon.html#aria-variata-in-a-minor-for-oboe-and-bassoon",
+        "section": "Solos & Duos · Bassoon"
+      }
     ]
   },
   {
@@ -1126,6 +1196,16 @@
     "keywords": [
       "soprano saxophone",
       "bassoon"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/saxophone.html#aria-variata-alla-maniera-italiana-soprano-saxophone-and-bassoon",
+        "section": "Solos & Duos · Saxophone"
+      },
+      {
+        "href": "catalogue/instrumental/bassoon.html#aria-variata-alla-maniera-italiana-soprano-saxophone-and-bassoon",
+        "section": "Solos & Duos · Bassoon"
+      }
     ]
   },
   {
@@ -1141,6 +1221,16 @@
     "keywords": [
       "flute",
       "guitar"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/flute.html#aria-variata-alla-maniera-italiana-flute-and-guitar",
+        "section": "Solos & Duos · Flute"
+      },
+      {
+        "href": "catalogue/instrumental/guitar.html#aria-variata-alla-maniera-italiana-flute-and-guitar",
+        "section": "Solos & Duos · Guitar"
+      }
     ]
   },
   {
@@ -1156,6 +1246,16 @@
     "keywords": [
       "oboe",
       "guitar"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/instrumental/oboe.html#aria-variata-alla-maniera-italiana-oboe-and-guitar",
+        "section": "Solos & Duos · Oboe"
+      },
+      {
+        "href": "catalogue/instrumental/guitar.html#aria-variata-alla-maniera-italiana-oboe-and-guitar",
+        "section": "Solos & Duos · Guitar"
+      }
     ]
   },
   {
@@ -1865,6 +1965,16 @@
       "piano",
       "harp",
       "soprano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/vocal/solo-voice.html#karens-song-for-soprano-or-treble-chorus-flute-and-piano-or-harp",
+        "section": "Vocal · Solo Voice and Accompaniment"
+      },
+      {
+        "href": "catalogue/vocal/treble-chorus.html#karens-song-for-soprano-or-treble-chorus-flute-and-piano-or-harp",
+        "section": "Vocal · Treble Chorus and Children's Chorus"
+      }
     ]
   },
   {
@@ -1955,6 +2065,16 @@
       "clarinet",
       "bassoon",
       "chorus"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/vocal/two-or-more-voices.html#chinese-folk-song-mashup-10",
+        "section": "Vocal · Two or More Voices and Accompaniment"
+      },
+      {
+        "href": "catalogue/vocal/mixed-chorus.html#chinese-folk-song-mashup-10",
+        "section": "Vocal · Mixed Chorus (SATB and other)"
+      }
     ]
   },
   {
@@ -2427,6 +2547,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/piano/four-hands.html#twelve-great-classical-melodies",
+        "section": "Piano · Four-hands"
+      },
+      {
+        "href": "catalogue/piano/pedagogical.html#twelve-great-classical-melodies",
+        "section": "Piano · Pedagogical Piano Pieces"
+      }
     ]
   },
   {
@@ -2469,6 +2599,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/piano/four-hands.html#oh-what-a-beautiful-mornin-piano-four-hands",
+        "section": "Piano · Four-hands"
+      },
+      {
+        "href": "catalogue/piano/pedagogical.html#oh-what-a-beautiful-mornin-piano-four-hands",
+        "section": "Piano · Pedagogical Piano Pieces"
+      }
     ]
   },
   {
@@ -2483,6 +2623,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/piano/four-hands.html#surrey-with-the-fringe-on-top-piano-four-hands",
+        "section": "Piano · Four-hands"
+      },
+      {
+        "href": "catalogue/piano/pedagogical.html#surrey-with-the-fringe-on-top-piano-four-hands",
+        "section": "Piano · Pedagogical Piano Pieces"
+      }
     ]
   },
   {
@@ -2497,6 +2647,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/piano/four-hands.html#us-armed-forces-suite-piano-four-hands",
+        "section": "Piano · Four-hands"
+      },
+      {
+        "href": "catalogue/piano/pedagogical.html#us-armed-forces-suite-piano-four-hands",
+        "section": "Piano · Pedagogical Piano Pieces"
+      }
     ]
   },
   {
@@ -2511,6 +2671,16 @@
     ],
     "keywords": [
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/piano/four-hands.html#us-armed-forces-suite-piano-four-hands-level-2",
+        "section": "Piano · Four-hands"
+      },
+      {
+        "href": "catalogue/piano/pedagogical.html#us-armed-forces-suite-piano-four-hands-level-2",
+        "section": "Piano · Pedagogical Piano Pieces"
+      }
     ]
   },
   {
