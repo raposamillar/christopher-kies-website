@@ -144,6 +144,8 @@
   let searchIndex = null;
   let searchRequest = 0;
   let activeOption = -1;
+  let choosingSearchResult = false;
+  let searchResultTap = null;
 
   const fold = (value) =>
     String(value || "")
@@ -362,14 +364,6 @@
 
   const optionEls = () => Array.from(searchResults ? searchResults.querySelectorAll("[role='option']") : []);
 
-  const optionHref = (option) => {
-    if (!option) {
-      return "";
-    }
-    const link = option.querySelector("a[href]");
-    return (link && link.getAttribute("href")) || option.getAttribute("data-href") || "";
-  };
-
   const setExpanded = (open) => {
     if (searchInput) {
       searchInput.setAttribute("aria-expanded", open ? "true" : "false");
@@ -460,20 +454,19 @@
       });
   };
 
+  const goToSearchHref = (href) => {
+    if (!href) {
+      return false;
+    }
+    window.location.assign(href);
+    return true;
+  };
+
   const followActiveOption = () => {
     const options = optionEls();
     const target = options[activeOption] || options[0];
-    const link = target && target.querySelector("a[href]");
-    if (link) {
-      link.click();
-      return true;
-    }
-    const href = optionHref(target);
-    if (href) {
-      window.location.assign(href);
-      return true;
-    }
-    return false;
+    const link = target && target.querySelector("a.search-result-link[href]");
+    return goToSearchHref(link && link.href);
   };
 
   const handleSearchKeydown = (event) => {
@@ -1005,6 +998,50 @@
     }
   }
 
+  if (searchResults) {
+    searchResults.addEventListener("pointerdown", (event) => {
+      const link = event.target.closest("a.search-result-link");
+      if (!link) {
+        searchResultTap = null;
+        choosingSearchResult = false;
+        return;
+      }
+      choosingSearchResult = true;
+      searchResultTap = { href: link.href, x: event.clientX, y: event.clientY };
+    });
+    searchResults.addEventListener("pointerup", (event) => {
+      if (!searchResultTap) {
+        return;
+      }
+      const moved =
+        Math.abs(event.clientX - searchResultTap.x) > 12 || Math.abs(event.clientY - searchResultTap.y) > 12;
+      const href = searchResultTap.href;
+      searchResultTap = null;
+      if (moved) {
+        choosingSearchResult = false;
+        return;
+      }
+      event.preventDefault();
+      goToSearchHref(href);
+    });
+    searchResults.addEventListener("pointercancel", () => {
+      searchResultTap = null;
+      choosingSearchResult = false;
+    });
+    searchResults.addEventListener("click", (event) => {
+      const link = event.target.closest("a.search-result-link");
+      if (!link) {
+        return;
+      }
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+        choosingSearchResult = false;
+        return;
+      }
+      event.preventDefault();
+      goToSearchHref(link.href);
+    });
+  }
+
   if (searchPanel && searchRoot && searchInput) {
     searchRoot.addEventListener("submit", (event) => {
       event.preventDefault();
@@ -1016,11 +1053,19 @@
     searchInput.addEventListener("input", runSearch);
     searchInput.addEventListener("keydown", handleSearchKeydown);
     searchRoot.addEventListener("focusout", (event) => {
-      if (!searchRoot.contains(event.relatedTarget)) {
-        closeSearchPanel();
+      if (searchRoot.contains(event.relatedTarget)) {
+        return;
       }
+      window.setTimeout(() => {
+        if (!searchRoot.contains(document.activeElement) && !choosingSearchResult) {
+          closeSearchPanel();
+        }
+      }, 300);
     });
     document.addEventListener("click", (event) => {
+      if (choosingSearchResult) {
+        return;
+      }
       if (!searchRoot.contains(event.target) && !(searchToggle && searchToggle.contains(event.target))) {
         closeSearchPanel();
       }
