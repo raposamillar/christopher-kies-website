@@ -43,10 +43,34 @@
     ]
   },
   {
+    "title": "Academic Festival Rag for Piano and Orchestra",
+    "catalogue_no": "003",
+    "year": "2009–10",
+    "forces": "Concerto for Piano and Orchestra",
+    "href": "catalogue/large-ensemble/concertos.html#academic-festival-rag-for-piano-and-orchestra",
+    "section": "Large Ensemble · Concertos",
+    "keywords": [
+      "piano",
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn",
+      "trumpet",
+      "trombone",
+      "tuba",
+      "percussion",
+      "violin",
+      "viola",
+      "cello",
+      "bass"
+    ]
+  },
+  {
     "title": "Introduction and Ragtime for Clarinet in B Flat and Piano",
     "catalogue_no": "004",
     "year": "2012",
-    "forces": "Concertino for Clarinet in B-flat and Piano",
+    "forces": "Concertino for Clarinet in B Flat and Piano",
     "href": "catalogue/large-ensemble/concertos.html#introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano",
     "section": "Large Ensemble · Concertos",
     "tags": [
@@ -55,6 +79,51 @@
     "keywords": [
       "clarinet",
       "piano"
+    ]
+  },
+  {
+    "title": "Introduction and Ragtime for Clarinet in B Flat and Chamber Orchestra",
+    "catalogue_no": "005",
+    "year": "2012",
+    "forces": "Concertino for Clarinet in B Flat and Chamber Orchestra",
+    "href": "catalogue/large-ensemble/concertos.html#introduction-and-ragtime-for-clarinet-in-b-flat-and-chamber-orchestra",
+    "section": "Large Ensemble · Concertos",
+    "keywords": [
+      "clarinet",
+      "flute",
+      "oboe",
+      "bassoon",
+      "French horn",
+      "trumpet",
+      "trombone",
+      "percussion",
+      "violin",
+      "viola",
+      "cello",
+      "bass"
+    ]
+  },
+  {
+    "title": "Murder on Smuttynose for Chamber Orchestra and Dancers",
+    "catalogue_no": "006",
+    "year": "2002",
+    "forces": "Chamber Orchestra and Dancers",
+    "href": "catalogue/large-ensemble/ballet.html#murder-on-smuttynose-for-chamber-orchestra-and-dancers",
+    "section": "Large Ensemble · Ballet",
+    "keywords": [
+      "dancers",
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn",
+      "trumpet",
+      "trombone",
+      "percussion",
+      "violin",
+      "viola",
+      "cello",
+      "bass"
     ]
   },
   {
@@ -86,6 +155,55 @@
       "viola",
       "violin",
       "cello"
+    ]
+  },
+  {
+    "title": "Murder on Smuttynose, Suite for Orchestra",
+    "catalogue_no": "008",
+    "year": "2012",
+    "forces": "Suite for Orchestra (11 movements from the ballet)",
+    "href": "catalogue/large-ensemble/orchestra.html#murder-on-smuttynose-suite-for-orchestra",
+    "section": "Large Ensemble · Orchestra",
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn",
+      "trumpet",
+      "trombone",
+      "percussion",
+      "violin",
+      "viola",
+      "cello",
+      "bass"
+    ]
+  },
+  {
+    "title": "Franklin Portrait (in 10 movements) for Orchestra, SATB Chorus and Narrator",
+    "catalogue_no": "009",
+    "year": "2006",
+    "forces": "Orchestra, SATB Chorus and Narrator",
+    "href": "catalogue/large-ensemble/orchestra-with-narration.html#franklin-portrait-for-orchestra-satb-chorus-and-narrator",
+    "section": "Large Ensemble · Orchestra with Narration",
+    "keywords": [
+      "narrator",
+      "chorus",
+      "SATB",
+      "Benjamin Franklin",
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn",
+      "trumpet",
+      "trombone",
+      "tuba",
+      "percussion",
+      "violin",
+      "viola",
+      "cello",
+      "bass"
     ]
   },
   {
@@ -141,6 +259,57 @@
     ]
   },
   {
+    "title": "Franklin Portrait: Preamble for Symphonic Band",
+    "catalogue_no": "012",
+    "year": "2007",
+    "forces": "Symphonic Band",
+    "href": "catalogue/large-ensemble/concert-band.html#franklin-portrait-preamble-for-symphonic-band",
+    "section": "Large Ensemble · Concert Band",
+    "keywords": [
+      "Band",
+      "flute",
+      "oboe",
+      "clarinet",
+      "alto saxophone",
+      "tenor saxophone",
+      "baritone saxophone",
+      "bassoon",
+      "trumpet",
+      "French horn",
+      "trombone",
+      "euphonium",
+      "tuba",
+      "percussion",
+      "Benjamin Franklin"
+    ]
+  },
+  {
+    "title": "Le Tombeau de Saint-Saëns for Wind Symphony and Narrator",
+    "catalogue_no": "013",
+    "year": "2003",
+    "forces": "Wind Symphony and Narrator",
+    "href": "catalogue/large-ensemble/concert-band-with-narration.html#le-tombeau-de-saint-saens-for-wind-symphony-and-narrator",
+    "section": "Large Ensemble · Concert Band with Narration",
+    "keywords": [
+      "Band",
+      "narrator",
+      "Ogden Nash",
+      "flute",
+      "oboe",
+      "clarinet",
+      "alto saxophone",
+      "tenor saxophone",
+      "baritone saxophone",
+      "bassoon",
+      "trumpet",
+      "French horn",
+      "trombone",
+      "euphonium",
+      "tuba",
+      "percussion"
+    ]
+  },
+  {
     "title": "Little Red Riding Hood or Ladle Rat Rotten Hut for Concert Band and Narrator",
     "catalogue_no": "014",
     "year": "2009",
@@ -168,7 +337,83 @@
     ]
   },
   {
-    "title": "Le Tombeau de Saint-Saëns for Marimba, Clarinet in B flat, Piano and Narrator",
+    "title": "The Amazing Bone for Brass Quintet and Narrator",
+    "catalogue_no": "015",
+    "year": "2001",
+    "forces": "Brass Quintet and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#the-amazing-bone-for-brass-quintet-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "trumpet",
+      "trombone",
+      "French horn",
+      "tuba",
+      "narrator",
+      "William Steig"
+    ]
+  },
+  {
+    "title": "The Amazing Bone for Trombone, Piano and Narrator",
+    "catalogue_no": "016",
+    "year": "2000",
+    "forces": "Trombone, Piano and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#the-amazing-bone-for-trombone-piano-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "trombone",
+      "piano",
+      "narrator",
+      "William Steig"
+    ]
+  },
+  {
+    "title": "Amos and Boris for Flute, Bass Trombone, Piano and Narrator",
+    "catalogue_no": "017",
+    "year": "2005",
+    "forces": "Flute, Bass Trombone, Piano and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#amos-and-boris-for-flute-bass-trombone-piano-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "flute",
+      "bass trombone",
+      "trombone",
+      "piano",
+      "narrator",
+      "William Steig"
+    ]
+  },
+  {
+    "title": "Amos and Boris for Flute, Tuba, Piano and Narrator",
+    "catalogue_no": "018",
+    "year": "2005",
+    "forces": "Flute, Tuba, Piano and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#amos-and-boris-for-flute-tuba-piano-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "flute",
+      "tuba",
+      "piano",
+      "narrator",
+      "William Steig"
+    ]
+  },
+  {
+    "title": "Amos and Boris for Flute, Bassoon, Piano and Narrator",
+    "catalogue_no": "019",
+    "year": "2005",
+    "forces": "Flute, Bassoon, Piano and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#amos-and-boris-for-flute-bassoon-piano-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "flute",
+      "bassoon",
+      "piano",
+      "narrator",
+      "William Steig"
+    ]
+  },
+  {
+    "title": "Le Tombeau de Saint-Saëns for Marimba, Clarinet in B Flat, Piano and Narrator",
     "catalogue_no": "020b",
     "year": "2020",
     "forces": "Marimba, Clarinet, Piano, and Narrator",
@@ -270,10 +515,26 @@
     ]
   },
   {
+    "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Brass Quintet and Narrator",
+    "catalogue_no": "025",
+    "year": "2007",
+    "forces": "Brass Quintet and Narrator",
+    "href": "catalogue/chamber/ensembles-with-narration.html#little-red-riding-hood-or-ladle-rat-rotten-hut-for-brass-quintet-and-narrator",
+    "section": "Chamber · Ensembles with Narration",
+    "keywords": [
+      "trumpet",
+      "trombone",
+      "French horn",
+      "tuba",
+      "narrator",
+      "Howard L. Chace"
+    ]
+  },
+  {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Clarinet in B Flat, Cello, Piano, and Narrator",
     "catalogue_no": "026",
     "year": "2007",
-    "forces": "Clarinet in B-flat, Violoncello, Piano, and Narrator",
+    "forces": "Clarinet in B Flat, Violoncello, Piano, and Narrator",
     "href": "catalogue/chamber/ensembles-with-narration.html#little-red-riding-hood-or-ladle-rat-rotten-hut",
     "section": "Chamber · Ensembles with Narration",
     "keywords": [
@@ -310,7 +571,7 @@
     ]
   },
   {
-    "title": "Four Bachtatonic/Rocktatonic Inventions for Oboe, Clarinet in B flat and Piano",
+    "title": "Four Bachtatonic/Rocktatonic Inventions for Oboe, Clarinet in B Flat and Piano",
     "catalogue_no": "029",
     "year": "2018",
     "forces": "Oboe, Clarinet, and Piano",
@@ -336,6 +597,18 @@
     ]
   },
   {
+    "title": "Nobody Knows for Flute and Oboe",
+    "catalogue_no": "031",
+    "year": "2013/2014",
+    "forces": "Flute and Oboe",
+    "href": "catalogue/instrumental/flute.html#nobody-knows-for-flute-and-oboe",
+    "section": "Solos & Duos · Flute",
+    "keywords": [
+      "flute",
+      "oboe"
+    ]
+  },
+  {
     "title": "Nobody Knows for Oboe and Piano",
     "catalogue_no": "032",
     "year": "2013",
@@ -345,6 +618,33 @@
     "keywords": [
       "oboe",
       "piano"
+    ]
+  },
+  {
+    "title": "Nobody Knows for Oboe, Bassoon and Piano",
+    "catalogue_no": "033",
+    "year": "2012",
+    "forces": "Oboe, Bassoon and Piano",
+    "href": "catalogue/chamber/music-with-double-reeds.html#nobody-knows-for-oboe-bassoon-and-piano",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "oboe",
+      "bassoon",
+      "piano"
+    ]
+  },
+  {
+    "title": "Octatonic Rag for Woodwind Quartet",
+    "catalogue_no": "034",
+    "year": "2010",
+    "forces": "Woodwind Quartet (fl., ob., cl., bsn.)",
+    "href": "catalogue/chamber/music-with-double-reeds.html#octatonic-rag-for-woodwind-quartet",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon"
     ]
   },
   {
@@ -358,6 +658,110 @@
       "bassoon",
       "oboe",
       "piano"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Woodwind Quintet",
+    "catalogue_no": "035",
+    "year": "2013",
+    "forces": "Woodwind Quintet",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-woodwind-quintet",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Bassoon and Piano",
+    "catalogue_no": "036",
+    "year": "2013",
+    "forces": "Bassoon and Piano",
+    "href": "catalogue/instrumental/bassoon.html#ragtime-reflections-for-bassoon-and-piano",
+    "section": "Solos & Duos · Bassoon",
+    "keywords": [
+      "bassoon",
+      "piano"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Flute, Clarinet in B Flat and Bassoon",
+    "catalogue_no": "037",
+    "year": "2013",
+    "forces": "Flute, Clarinet in B Flat and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-flute-clarinet-in-b-flat-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "clarinet",
+      "bassoon"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Oboe and Piano",
+    "catalogue_no": "038",
+    "year": "2002",
+    "forces": "Oboe and Piano",
+    "href": "catalogue/instrumental/oboe.html#ragtime-reflections-for-oboe-and-piano",
+    "section": "Solos & Duos · Oboe",
+    "keywords": [
+      "oboe",
+      "piano"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Oboe, Bassoon and Piano",
+    "catalogue_no": "039",
+    "year": "2002",
+    "forces": "Oboe, Bassoon and Piano",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-oboe-bassoon-and-piano",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "oboe",
+      "bassoon",
+      "piano"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Flute, Oboe and Piano",
+    "catalogue_no": "040",
+    "year": "2002",
+    "forces": "Flute, Oboe and Piano",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-flute-oboe-and-piano",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "oboe",
+      "piano"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Flute, Horn and Bassoon",
+    "catalogue_no": "041",
+    "year": "2002",
+    "forces": "Flute, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-flute-horn-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "French horn",
+      "bassoon"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Oboe, Horn and Bassoon",
+    "catalogue_no": "042",
+    "year": "2002",
+    "forces": "Oboe, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#ragtime-reflections-for-oboe-horn-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "oboe",
+      "French horn",
+      "bassoon"
     ]
   },
   {
@@ -449,6 +853,20 @@
     ]
   },
   {
+    "title": "Variations on Country Gardens for Flute, Trumpet, Horn and Bassoon",
+    "catalogue_no": "050",
+    "year": "2004",
+    "forces": "Flute, Trumpet, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#variations-on-country-gardens-for-flute-trumpet-horn-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "keywords": [
+      "flute",
+      "trumpet",
+      "French horn",
+      "bassoon"
+    ]
+  },
+  {
     "title": "Eight Ragtime Pieces for Piano",
     "catalogue_no": "051",
     "year": "1975–1993",
@@ -524,13 +942,24 @@
     "title": "Four Bachtatonic/Rocktatonic Inventions for Marimba, Clarinet in B Flat, and Piano",
     "catalogue_no": "056",
     "year": "2018",
-    "forces": "Marimba, Clarinet in B-flat, and Piano",
+    "forces": "Marimba, Clarinet in B Flat, and Piano",
     "href": "catalogue/chamber/other.html#four-bachtatonicrocktatonic-inventions-for-marimba-clarinet-in-b-flat-and-piano",
     "section": "Chamber · Other",
     "keywords": [
       "marimba",
       "clarinet",
       "piano"
+    ]
+  },
+  {
+    "title": "Nobody Knows for Solo Clarinet in B Flat",
+    "catalogue_no": "057",
+    "year": "2011",
+    "forces": "Solo Clarinet in B Flat",
+    "href": "catalogue/instrumental/clarinet.html#nobody-knows-for-solo-clarinet-in-b-flat",
+    "section": "Solos & Duos · Clarinet",
+    "keywords": [
+      "clarinet"
     ]
   },
   {
@@ -542,6 +971,31 @@
     "section": "Solos & Duos · Flute",
     "keywords": [
       "flute"
+    ]
+  },
+  {
+    "title": "Octatonic Rag for String Quartet",
+    "catalogue_no": "059",
+    "year": "2010",
+    "forces": "String Quartet",
+    "href": "catalogue/chamber/other.html#octatonic-rag-for-string-quartet",
+    "section": "Chamber · Other",
+    "keywords": [
+      "violin",
+      "viola",
+      "cello"
+    ]
+  },
+  {
+    "title": "Ragtime Reflections for Clarinet in B Flat and Piano",
+    "catalogue_no": "060",
+    "year": "2013",
+    "forces": "Clarinet in B Flat and Piano",
+    "href": "catalogue/instrumental/clarinet.html#ragtime-reflections-for-clarinet-in-b-flat-and-piano",
+    "section": "Solos & Duos · Clarinet",
+    "keywords": [
+      "clarinet",
+      "piano"
     ]
   },
   {
@@ -557,15 +1011,50 @@
     ]
   },
   {
+    "title": "Take the Love, This Can't Be the A Train for Alto Saxophone and Piano",
+    "catalogue_no": "062",
+    "year": "2016",
+    "forces": "Alto Saxophone and Piano",
+    "href": "catalogue/instrumental/saxophone.html#take-the-love-this-cant-be-the-a-train-for-alto-saxophone-and-piano",
+    "section": "Solos & Duos · Saxophone",
+    "keywords": [
+      "alto saxophone",
+      "piano"
+    ]
+  },
+  {
     "title": "Take the Love, This Can't be the A Train for Clarinet in B Flat and Piano",
     "catalogue_no": "063",
     "year": "2011",
-    "forces": "Clarinet in B-flat and Piano",
+    "forces": "Clarinet in B Flat and Piano",
     "href": "catalogue/instrumental/clarinet.html#take-the-love-this-cant-be-the-a-train-for-clarinet-in-b-flat-and-piano",
     "section": "Solos & Duos · Clarinet",
     "keywords": [
       "clarinet",
       "piano"
+    ]
+  },
+  {
+    "title": "Take the Love, This Can't Be the A Train for Clarinet Quartet/mixed",
+    "catalogue_no": "064",
+    "year": "2010",
+    "forces": "Mixed Clarinet Quartet",
+    "href": "catalogue/chamber/other.html#take-the-love-this-cant-be-the-a-train-for-clarinet-quartet-mixed",
+    "section": "Chamber · Other",
+    "keywords": [
+      "clarinet",
+      "bass clarinet"
+    ]
+  },
+  {
+    "title": "Take the Love, This Can't Be the A Train for Horn Quartet",
+    "catalogue_no": "065",
+    "year": "2010",
+    "forces": "Horn Quartet",
+    "href": "catalogue/chamber/other.html#take-the-love-this-cant-be-the-a-train-for-horn-quartet",
+    "section": "Chamber · Other",
+    "keywords": [
+      "French horn"
     ]
   },
   {
@@ -579,6 +1068,18 @@
       "violin",
       "viola",
       "cello",
+      "piano"
+    ]
+  },
+  {
+    "title": "Taylor Fanfare for Clarinet in B Flat and Piano",
+    "catalogue_no": "067",
+    "year": "2016",
+    "forces": "Clarinet in B Flat and Piano",
+    "href": "catalogue/instrumental/clarinet.html#taylor-fanfare-for-clarinet-in-b-flat-and-piano",
+    "section": "Solos & Duos · Clarinet",
+    "keywords": [
+      "clarinet",
       "piano"
     ]
   },
@@ -610,6 +1111,137 @@
     "keywords": [
       "oboe",
       "bassoon"
+    ]
+  },
+  {
+    "title": "Aria Variata alla maniera italiana (BWV 989) by J.S. Bach / Arranged for Soprano Saxophone and Bassoon",
+    "catalogue_no": "070",
+    "year": "2003",
+    "forces": "Soprano Saxophone and Bassoon",
+    "href": "catalogue/instrumental/saxophone.html#aria-variata-alla-maniera-italiana-soprano-saxophone-and-bassoon",
+    "section": "Solos & Duos · Saxophone",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "soprano saxophone",
+      "bassoon"
+    ]
+  },
+  {
+    "title": "Aria Variata alla maniera italiana (BWV 989) by J.S. Bach / Arranged for Flute and Guitar",
+    "catalogue_no": "071",
+    "year": "2003",
+    "forces": "Flute and Guitar",
+    "href": "catalogue/instrumental/flute.html#aria-variata-alla-maniera-italiana-flute-and-guitar",
+    "section": "Solos & Duos · Flute",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "guitar"
+    ]
+  },
+  {
+    "title": "Aria Variata alla maniera italiana (BWV 989) by J.S. Bach / Arranged for Oboe and Guitar",
+    "catalogue_no": "072",
+    "year": "2003",
+    "forces": "Oboe and Guitar",
+    "href": "catalogue/instrumental/oboe.html#aria-variata-alla-maniera-italiana-oboe-and-guitar",
+    "section": "Solos & Duos · Oboe",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "oboe",
+      "guitar"
+    ]
+  },
+  {
+    "title": "Eight Pieces from Mikrokosmos, Volume 4 by Béla Bartók / Arranged for Woodwind Quartet",
+    "catalogue_no": "073",
+    "year": "1998",
+    "forces": "Woodwind Quartet (fl., ob., cl., bsn.)",
+    "href": "catalogue/chamber/music-with-double-reeds.html#eight-pieces-from-mikrokosmos-volume-4-arranged-for-woodwind-quartet",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "Béla Bartók"
+    ]
+  },
+  {
+    "title": "Nine Pieces from Mikrokosmos, Vol. 4 & 5 by Béla Bartók / Arranged for Two Oboes, Oboe d'amore, and English Horn",
+    "catalogue_no": "074",
+    "year": "2016",
+    "forces": "Two Oboes, Oboe d'amore, and English Horn",
+    "href": "catalogue/chamber/music-with-double-reeds.html#nine-pieces-from-mikrokosmos-vol-4-and-5-arranged-for-two-oboes-oboe-damore-and-english-horn",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "oboe",
+      "oboe d'amore",
+      "English horn",
+      "Béla Bartók"
+    ]
+  },
+  {
+    "title": "Rondo No. 1 from Three Rondos by Béla Bartók / Arranged for Bassoon Quartet",
+    "catalogue_no": "075",
+    "year": "2013",
+    "forces": "Bassoon Quartet",
+    "href": "catalogue/chamber/music-with-double-reeds.html#rondo-no-1-from-three-rondos-arranged-for-bassoon-quartet",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "bassoon",
+      "Béla Bartók"
+    ]
+  },
+  {
+    "title": "Rondo No. 1 from Three Rondos by Béla Bartók / Arranged for Flute, Trumpet, Horn and Bassoon",
+    "catalogue_no": "076",
+    "year": "2002/2008/2013",
+    "forces": "Flute, Trumpet, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#rondo-no-1-from-three-rondos-arranged-for-flute-trumpet-horn-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "trumpet",
+      "French horn",
+      "bassoon",
+      "Béla Bartók"
+    ]
+  },
+  {
+    "title": "Rondo No. 1 from Three Rondos by Béla Bartók / Arranged for Woodwind Quartet",
+    "catalogue_no": "077",
+    "year": "2002/2008/2013",
+    "forces": "Woodwind Quartet (fl., ob., cl., bsn.)",
+    "href": "catalogue/chamber/music-with-double-reeds.html#rondo-no-1-from-three-rondos-arranged-for-woodwind-quartet",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "Béla Bartók"
     ]
   },
   {
@@ -649,9 +1281,9 @@
   },
   {
     "title": "Quartet in F Major, Opus 135, Movement 1, Allegretto by Beethoven / Arranged for Mixed Clarinet Quartet",
-    "catalogue_no": "",
-    "year": "",
-    "forces": "Mixed Clarinet Quartet",
+    "catalogue_no": "080",
+    "year": "2018",
+    "forces": "Mixed Clarinet Quartet · first movement only",
     "href": "catalogue/chamber/other.html#beethoven-quartet-op-135-mvt-1-clarinet-quartet",
     "section": "Chamber · Other",
     "tags": [
@@ -874,6 +1506,131 @@
     ]
   },
   {
+    "title": "Two Piano Pieces, Op. 10, Nos. 2 and 4 by Johannes Brahms / Arranged for Cello and Piano",
+    "catalogue_no": "088",
+    "year": "2015",
+    "forces": "Cello and Piano",
+    "href": "catalogue/instrumental/cello.html#two-piano-pieces-op-10-nos-2-and-4-arranged-for-cello-and-piano",
+    "section": "Solos & Duos · Cello",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "cello",
+      "piano"
+    ]
+  },
+  {
+    "title": "Etude in E Flat Minor, Op. 10, No. 6 by Chopin / Arranged for Clarinet in B Flat and Piano",
+    "catalogue_no": "089",
+    "year": "2013",
+    "forces": "Clarinet in B Flat and Piano",
+    "href": "catalogue/instrumental/clarinet.html#etude-in-e-flat-minor-op-10-no-6-arranged-for-clarinet-in-b-flat-and-piano",
+    "section": "Solos & Duos · Clarinet",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "clarinet",
+      "piano"
+    ]
+  },
+  {
+    "title": "Etude in E Flat Minor, Op. 10, No. 6 by Chopin / Arranged for Alto Saxophone and Piano",
+    "catalogue_no": "090",
+    "year": "2013",
+    "forces": "Alto Saxophone and Piano",
+    "href": "catalogue/instrumental/saxophone.html#etude-in-e-flat-minor-op-10-no-6-arranged-for-alto-saxophone-and-piano",
+    "section": "Solos & Duos · Saxophone",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "alto saxophone",
+      "piano",
+      "saxophone"
+    ]
+  },
+  {
+    "title": "Etude in E Flat Minor, Op. 10, No. 6 by Chopin / Arranged for Violin and Piano",
+    "catalogue_no": "091",
+    "year": "2013",
+    "forces": "Violin and Piano",
+    "href": "catalogue/instrumental/violin.html#etude-in-e-flat-minor-op-10-no-6-arranged-for-violin-and-piano",
+    "section": "Solos & Duos · Violin",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "violin",
+      "piano"
+    ]
+  },
+  {
+    "title": "Etude in E Flat Minor, Op. 10, No. 6 by Chopin / Arranged for Viola and Piano",
+    "catalogue_no": "092",
+    "year": "2013",
+    "forces": "Viola and Piano",
+    "href": "catalogue/instrumental/viola.html#etude-in-e-flat-minor-op-10-no-6-arranged-for-viola-and-piano",
+    "section": "Solos & Duos · Viola",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "viola",
+      "piano"
+    ]
+  },
+  {
+    "title": "Golliwog's Cakewalk from Children's Corner by Debussy / Arranged for Flute, Oboe, Clarinet and Piano",
+    "catalogue_no": "093",
+    "year": "2003",
+    "forces": "Flute, Oboe, Clarinet and Piano",
+    "href": "catalogue/chamber/music-with-double-reeds.html#golliwogs-cakewalk-from-childrens-corner",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "piano"
+    ]
+  },
+  {
+    "title": "The Little Shepherd and Golliwog's Cakewalk from Children's Corner by Debussy / Arranged for Flute, Horn and Bassoon",
+    "catalogue_no": "094",
+    "year": "2003/2013",
+    "forces": "Flute, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#the-little-shepherd-and-golliwogs-cakewalk-from-childrens-corner",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "French horn",
+      "bassoon"
+    ]
+  },
+  {
+    "title": "The Little Shepherd from Children's Corner by Debussy / Arranged for Flute, Oboe and Clarinet",
+    "catalogue_no": "095",
+    "year": "2003",
+    "forces": "Flute, Oboe and Clarinet",
+    "href": "catalogue/chamber/music-with-double-reeds.html#the-little-shepherd-from-childrens-corner",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet"
+    ]
+  },
+  {
     "title": "Dolly, Op. 56 by Fauré Arranged for Oboe, Bassoon, and Piano",
     "catalogue_no": "096",
     "year": "",
@@ -887,6 +1644,41 @@
       "oboe",
       "bassoon",
       "piano"
+    ]
+  },
+  {
+    "title": "Four Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Pas Espagnol, Op. 56 by Fauré / Arranged for Flute, Bassoon, Horn, and String Ensemble",
+    "catalogue_no": "097",
+    "year": "2004",
+    "forces": "Flute, Bassoon, Horn, and String Ensemble",
+    "href": "catalogue/chamber/music-with-double-reeds.html#four-movements-from-dolly-for-flute-bassoon-horn-and-string-ensemble",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "bassoon",
+      "French horn",
+      "strings"
+    ]
+  },
+  {
+    "title": "Three Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Op. 56 by Fauré / Arranged for Wind Septet",
+    "catalogue_no": "098",
+    "year": "2000",
+    "forces": "Wind Septet (Flute, Oboe, 2 Clarinets, 2 Bassoons, and Horn)",
+    "href": "catalogue/chamber/music-with-double-reeds.html#three-movements-from-dolly-wind-septet",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn"
     ]
   },
   {
@@ -935,6 +1727,24 @@
       "oboe",
       "clarinet",
       "bassoon"
+    ]
+  },
+  {
+    "title": "Trois Mouvements Perpétuels by Poulenc / Arranged for Woodwind Quintet",
+    "catalogue_no": "102",
+    "year": "1999",
+    "forces": "Woodwind Quintet (fl., ob., cl., bsn., hn.)",
+    "href": "catalogue/chamber/music-with-double-reeds.html#trois-mouvements-perpetuels-arranged-for-woodwind-quintet",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon",
+      "French horn"
     ]
   },
   {
@@ -997,6 +1807,52 @@
     ]
   },
   {
+    "title": "Träumerei from Kinderszenen by Robert Schumann / Arranged for Mixed Clarinet Quartet",
+    "catalogue_no": "106",
+    "year": "2018",
+    "forces": "Mixed Clarinet Quartet",
+    "href": "catalogue/chamber/other.html#traumerei-from-kinderszenen-arranged-for-clarinet-quartet",
+    "section": "Chamber · Other",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "clarinet"
+    ]
+  },
+  {
+    "title": "Bist du bei mir (BWV 508) by G.H. Stölzel / Arranged for Bassoon (or Cello) and Piano",
+    "catalogue_no": "107",
+    "year": "2003",
+    "forces": "Bassoon or Cello and Piano",
+    "href": "catalogue/instrumental/bassoon.html#bist-du-bei-mir-arranged-for-bassoon-or-cello-and-piano",
+    "section": "Solos & Duos · Bassoon",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "bassoon",
+      "cello",
+      "piano"
+    ]
+  },
+  {
+    "title": "Bist du bei mir (BWV 508) by G.H. Stölzel / Arranged for Oboe, Horn and Bassoon",
+    "catalogue_no": "108",
+    "year": "2003",
+    "forces": "Oboe, Horn and Bassoon",
+    "href": "catalogue/chamber/music-with-double-reeds.html#bist-du-bei-mir-arranged-for-oboe-horn-and-bassoon",
+    "section": "Chamber · Music with Double Reeds",
+    "tags": [
+      "arrangement"
+    ],
+    "keywords": [
+      "oboe",
+      "French horn",
+      "bassoon"
+    ]
+  },
+  {
     "title": "Karen's Song for Soprano (or Treble Chorus), Flute and Piano (or Harp)",
     "catalogue_no": "109",
     "year": "2003",
@@ -1012,6 +1868,48 @@
     ]
   },
   {
+    "title": "Sieben Lieder aus Des Knaben Wunderhorn (Seven Songs from Des Knaben Wunderhorn) for High Male Voice and Piano",
+    "catalogue_no": "110",
+    "year": "2014",
+    "forces": "High Male Voice and Piano",
+    "href": "catalogue/vocal/solo-voice.html#sieben-lieder-aus-des-knaben-wunderhorn-for-high-male-voice-and-piano",
+    "section": "Vocal · Solo Voice and Accompaniment",
+    "keywords": [
+      "voice",
+      "piano",
+      "Wunderhorn",
+      "Schubert",
+      "Ehestand der Freude",
+      "An einen Boten",
+      "Waldvögelein",
+      "Mählämmchen",
+      "Abendgebet",
+      "Das Erbbegräbnis",
+      "Weine nur nicht"
+    ]
+  },
+  {
+    "title": "Sieben Lieder aus Des Knaben Wunderhorn (Seven Songs from Des Knaben Wunderhorn) for High Female Voice and Piano",
+    "catalogue_no": "111",
+    "year": "2014",
+    "forces": "High Female Voice and Piano",
+    "href": "catalogue/vocal/solo-voice.html#sieben-lieder-aus-des-knaben-wunderhorn-for-high-female-voice-and-piano",
+    "section": "Vocal · Solo Voice and Accompaniment",
+    "keywords": [
+      "voice",
+      "piano",
+      "Wunderhorn",
+      "Schubert",
+      "Ehestand der Freude",
+      "An einen Boten",
+      "Waldvögelein",
+      "Mählämmchen",
+      "Abendgebet",
+      "Das Erbbegräbnis",
+      "Weine nur nicht"
+    ]
+  },
+  {
     "title": "Six Italian Songs for Soprano and Piano",
     "catalogue_no": "112",
     "year": "2013",
@@ -1022,6 +1920,24 @@
       "soprano",
       "voice",
       "piano"
+    ]
+  },
+  {
+    "title": "Three Poems of Abigail Lynne Becker for Soprano, Viola and Piano",
+    "catalogue_no": "113",
+    "year": "1996/1999",
+    "forces": "Soprano, Viola and Piano",
+    "href": "catalogue/vocal/solo-voice.html#three-poems-of-abigail-lynne-becker-for-soprano-viola-and-piano",
+    "section": "Vocal · Solo Voice and Accompaniment",
+    "keywords": [
+      "soprano",
+      "voice",
+      "viola",
+      "piano",
+      "Catch",
+      "Of What Are Made the Seasons",
+      "Something",
+      "Abigail Becker"
     ]
   },
   {
@@ -1042,6 +1958,86 @@
     ]
   },
   {
+    "title": "Dialogue Between the Gout and Mr. Franklin for Soprano, Tenor and Piano",
+    "catalogue_no": "115",
+    "year": "2006",
+    "forces": "Soprano, Tenor and Piano",
+    "href": "catalogue/vocal/two-or-more-voices.html#dialogue-between-the-gout-and-mr-franklin-for-soprano-tenor-and-piano",
+    "section": "Vocal · Two or More Voices and Accompaniment",
+    "keywords": [
+      "soprano",
+      "tenor",
+      "voice",
+      "piano",
+      "Ben Franklin"
+    ]
+  },
+  {
+    "title": "Four Poems by Celia L. Thaxter for Soprano, Alto, Clarinet in B Flat and Violoncello",
+    "catalogue_no": "116",
+    "year": "1998/2001",
+    "forces": "Soprano, Alto, Clarinet in B Flat and Violoncello",
+    "href": "catalogue/vocal/two-or-more-voices.html#four-poems-by-celia-l-thaxter-for-soprano-alto-clarinet-in-b-flat-and-violoncello",
+    "section": "Vocal · Two or More Voices and Accompaniment",
+    "keywords": [
+      "soprano",
+      "alto",
+      "voice",
+      "clarinet",
+      "cello"
+    ]
+  },
+  {
+    "title": "Sieben Lieder aus Des Knaben Wunderhorn (Seven Songs from Des Knaben Wunderhorn) for Vocal Duet (High and Medium Voices) and Piano",
+    "catalogue_no": "117",
+    "year": "2014",
+    "forces": "Vocal Duet (High and Medium Voices) and Piano",
+    "href": "catalogue/vocal/two-or-more-voices.html#sieben-lieder-aus-des-knaben-wunderhorn-for-vocal-duet-and-piano",
+    "section": "Vocal · Two or More Voices and Accompaniment",
+    "keywords": [
+      "voice",
+      "piano",
+      "Wunderhorn",
+      "Schubert",
+      "Ehestand der Freude",
+      "An einen Boten",
+      "Waldvögelein",
+      "Mählämmchen",
+      "Abendgebet",
+      "Das Erbbegräbnis",
+      "Weine nur nicht"
+    ]
+  },
+  {
+    "title": "A Poet's Life for Treble Chorus (SSAA), Piano, Bongos and Maracas",
+    "catalogue_no": "118",
+    "year": "2006/2011",
+    "forces": "Treble Chorus (SSAA), Piano, Bongos and Maracas",
+    "href": "catalogue/vocal/treble-chorus.html#a-poets-life-for-treble-chorus-ssaa-piano-bongos-and-maracas",
+    "section": "Vocal · Treble Chorus and Children's Chorus",
+    "keywords": [
+      "chorus",
+      "piano",
+      "percussion",
+      "bongos",
+      "maracas",
+      "Ann Driscoll"
+    ]
+  },
+  {
+    "title": "A Poet's Life for Treble Chorus (SSAA) and Percussion (four players)",
+    "catalogue_no": "119",
+    "year": "2006",
+    "forces": "Treble Chorus (SSAA) and Percussion (four players)",
+    "href": "catalogue/vocal/treble-chorus.html#a-poets-life-for-treble-chorus-ssaa-and-percussion",
+    "section": "Vocal · Treble Chorus and Children's Chorus",
+    "keywords": [
+      "chorus",
+      "percussion",
+      "Ann Driscoll"
+    ]
+  },
+  {
     "title": "Carol of the Field Mice",
     "catalogue_no": "120",
     "year": "1998",
@@ -1052,6 +2048,19 @@
       "chorus",
       "French horn",
       "horn"
+    ]
+  },
+  {
+    "title": "Clouds and Rain for Treble Chorus (SS) and Piano",
+    "catalogue_no": "122",
+    "year": "2004",
+    "forces": "Treble Chorus (SS) and Piano",
+    "href": "catalogue/vocal/treble-chorus.html#clouds-and-rain-for-treble-chorus-ss-and-piano",
+    "section": "Vocal · Treble Chorus and Children's Chorus",
+    "keywords": [
+      "chorus",
+      "piano",
+      "voice"
     ]
   },
   {
@@ -1110,6 +2119,36 @@
     ]
   },
   {
+    "title": "Sing Little, Little Bird, Oh Sing! for Treble Chorus and Piano",
+    "catalogue_no": "127",
+    "year": "1999/2014",
+    "forces": "Treble Chorus and Piano",
+    "href": "catalogue/vocal/treble-chorus.html#sing-little-little-bird-oh-sing-for-treble-chorus-and-piano",
+    "section": "Vocal · Treble Chorus and Children's Chorus",
+    "keywords": [
+      "chorus",
+      "piano",
+      "voice",
+      "Celia L. Thaxter"
+    ]
+  },
+  {
+    "title": "Two Poems of Abigail Lynne Becker for Treble Chorus and Piano",
+    "catalogue_no": "128",
+    "year": "1996",
+    "forces": "Treble Chorus and Piano",
+    "href": "catalogue/vocal/treble-chorus.html#two-poems-of-abigail-lynne-becker-for-treble-chorus-and-piano",
+    "section": "Vocal · Treble Chorus and Children's Chorus",
+    "keywords": [
+      "chorus",
+      "piano",
+      "voice",
+      "Someone",
+      "Little Angel",
+      "Abigail L. Becker"
+    ]
+  },
+  {
     "title": "Two Songs from The Wind in the Willows for Treble Chorus and Piano",
     "catalogue_no": "129",
     "year": "1997",
@@ -1153,6 +2192,92 @@
     ]
   },
   {
+    "title": "Carol of the Field Mice for SATB Chorus, unaccompanied",
+    "catalogue_no": "132",
+    "year": "1998/2013",
+    "forces": "SATB Chorus, unaccompanied",
+    "href": "catalogue/vocal/mixed-chorus.html#carol-of-the-field-mice-for-satb-chorus-unaccompanied",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Kenneth Grahame"
+    ]
+  },
+  {
+    "title": "Clouds and Rain for SATB Chorus and Piano",
+    "catalogue_no": "133",
+    "year": "2004/2013",
+    "forces": "SATB Chorus and Piano",
+    "href": "catalogue/vocal/mixed-chorus.html#clouds-and-rain-for-satb-chorus-and-piano",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Moharimet",
+      "piano"
+    ]
+  },
+  {
+    "title": "Chinese Folk Song Mashup 1.0 for SATB Chorus, Piano and Woodwind Quartet",
+    "catalogue_no": "134",
+    "year": "2017",
+    "forces": "SATB Chorus, Piano and Woodwind Quartet",
+    "href": "catalogue/vocal/mixed-chorus.html#chinese-folk-song-mashup-10-for-satb-chorus-piano-and-woodwind-quartet",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "piano",
+      "flute",
+      "oboe",
+      "clarinet",
+      "bassoon"
+    ]
+  },
+  {
+    "title": "Come Let Us Mourn for SATB Chorus, unaccompanied",
+    "catalogue_no": "135",
+    "year": "2005/2012",
+    "forces": "SATB Chorus, unaccompanied",
+    "href": "catalogue/vocal/mixed-chorus.html#come-let-us-mourn-for-satb-chorus-unaccompanied",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Benjamin Franklin"
+    ]
+  },
+  {
+    "title": "The Drinker's Dictionary for Mixed Chorus (SSAATTBB), Horn Ensemble (12 parts) and Narrator",
+    "catalogue_no": "136",
+    "year": "2006",
+    "forces": "Mixed Chorus (SSAATTBB), Horn Ensemble (12 parts) and Narrator",
+    "href": "catalogue/vocal/mixed-chorus.html#the-drinkers-dictionary-for-mixed-chorus-horn-ensemble-and-narrator",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Benjamin Franklin",
+      "French horn",
+      "narrator"
+    ]
+  },
+  {
+    "title": "The Drinker's Dictionary for Mixed Chorus (SSAATTBB), Brass Ensemble and Narrator",
+    "catalogue_no": "137",
+    "year": "2006",
+    "forces": "Mixed Chorus (SSAATTBB), Brass Ensemble and Narrator",
+    "href": "catalogue/vocal/mixed-chorus.html#the-drinkers-dictionary-for-mixed-chorus-brass-ensemble-and-narrator",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Benjamin Franklin",
+      "brass",
+      "narrator"
+    ]
+  },
+  {
     "title": "Five Poems by Celia L. Thaxter for Four Part (S.A.T.B.) Chorus",
     "catalogue_no": "138",
     "year": "1999/2013",
@@ -1187,6 +2312,47 @@
     "keywords": [
       "chorus",
       "voice"
+    ]
+  },
+  {
+    "title": "The Poets' Guide to New Hampshire for Mixed Chorus (SSAB), Two Pianos and Narrator",
+    "catalogue_no": "141",
+    "year": "2017",
+    "forces": "Mixed Chorus (SSAB), Two Pianos and Narrator",
+    "href": "catalogue/vocal/mixed-chorus.html#the-poets-guide-to-new-hampshire-for-mixed-chorus-two-pianos-and-narrator",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "piano",
+      "narrator"
+    ]
+  },
+  {
+    "title": "The Poets' Guide to New Hampshire (three excerpts) for SATB Chorus and Piano Four-Hands",
+    "catalogue_no": "142",
+    "year": "2017/2018",
+    "forces": "SATB Chorus and Piano Four-Hands",
+    "href": "catalogue/vocal/mixed-chorus.html#the-poets-guide-to-new-hampshire-three-excerpts-for-satb-chorus-and-piano-four-hands",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "piano",
+      "Ode to the Zucchini",
+      "New Hampsha",
+      "The Goshen Hills"
+    ]
+  },
+  {
+    "title": "Summer Afternoon for SATB Chorus, unaccompanied",
+    "catalogue_no": "143",
+    "year": "2004",
+    "forces": "SATB Chorus, unaccompanied",
+    "href": "catalogue/vocal/mixed-chorus.html#summer-afternoon-for-satb-chorus-unaccompanied",
+    "section": "Vocal · Mixed Chorus (SATB and other)",
+    "keywords": [
+      "chorus",
+      "voice",
+      "Moharimet"
     ]
   },
   {
@@ -1345,22 +2511,6 @@
     ],
     "keywords": [
       "piano"
-    ]
-  },
-  {
-    "title": "Three Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Op. 56",
-    "catalogue_no": "",
-    "year": "arr. 2000",
-    "forces": "Wind Septet (Flute, Oboe, 2 Clarinets, 2 Bassoons, and Horn)",
-    "href": "catalogue/chamber/music-with-double-reeds.html#three-movements-from-dolly-wind-septet",
-    "section": "Chamber · Music with Double Reeds",
-    "tags": [
-      "arrangement"
-    ],
-    "keywords": [
-      "flute",
-      "oboe",
-      "horn"
     ]
   },
   {

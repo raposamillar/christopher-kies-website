@@ -23,9 +23,54 @@
   "academic-festival-rag-for-two-pianos": [
     "piano"
   ],
+  "academic-festival-rag-for-piano-and-orchestra": [
+    "piano",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "tuba",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
+  ],
   "introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano": [
     "clarinet",
     "piano"
+  ],
+  "introduction-and-ragtime-for-clarinet-in-b-flat-and-chamber-orchestra": [
+    "clarinet",
+    "flute",
+    "oboe",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
+  ],
+  "murder-on-smuttynose-for-chamber-orchestra-and-dancers": [
+    "dancers",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
   ],
   "franklin-portrait-preamble-for-orchestra": [
     "alto saxophone",
@@ -49,6 +94,39 @@
     "viola",
     "violin",
     "cello"
+  ],
+  "murder-on-smuttynose-suite-for-orchestra": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
+  ],
+  "franklin-portrait-for-orchestra-satb-chorus-and-narrator": [
+    "narrator",
+    "chorus",
+    "SATB",
+    "Benjamin Franklin",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn",
+    "trumpet",
+    "trombone",
+    "tuba",
+    "percussion",
+    "violin",
+    "viola",
+    "cello",
+    "bass"
   ],
   "le-tombeau-de-saint-saens-for-orchestra-and-narrator": [
     "narrator",
@@ -105,6 +183,77 @@
     "percussion",
     "narrator"
   ],
+  "franklin-portrait-preamble-for-symphonic-band": [
+    "Band",
+    "flute",
+    "oboe",
+    "clarinet",
+    "alto saxophone",
+    "tenor saxophone",
+    "baritone saxophone",
+    "bassoon",
+    "trumpet",
+    "French horn",
+    "trombone",
+    "euphonium",
+    "tuba",
+    "percussion",
+    "Benjamin Franklin"
+  ],
+  "le-tombeau-de-saint-saens-for-wind-symphony-and-narrator": [
+    "Band",
+    "narrator",
+    "Ogden Nash",
+    "flute",
+    "oboe",
+    "clarinet",
+    "alto saxophone",
+    "tenor saxophone",
+    "baritone saxophone",
+    "bassoon",
+    "trumpet",
+    "French horn",
+    "trombone",
+    "euphonium",
+    "tuba",
+    "percussion"
+  ],
+  "the-amazing-bone-for-brass-quintet-and-narrator": [
+    "trumpet",
+    "trombone",
+    "French horn",
+    "tuba",
+    "narrator",
+    "William Steig"
+  ],
+  "the-amazing-bone-for-trombone-piano-and-narrator": [
+    "trombone",
+    "piano",
+    "narrator",
+    "William Steig"
+  ],
+  "amos-and-boris-for-flute-bass-trombone-piano-and-narrator": [
+    "flute",
+    "bass trombone",
+    "trombone",
+    "piano",
+    "narrator",
+    "William Steig"
+  ],
+  "amos-and-boris-for-flute-tuba-piano-and-narrator": [
+    "flute",
+    "tuba",
+    "piano",
+    "narrator",
+    "William Steig"
+  ],
+  "amos-and-boris-for-flute-bassoon-piano-and-narrator": [
+    "flute",
+    "bassoon",
+    "piano",
+    "narrator",
+    "William Steig"
+  ],
   "le-tombeau-de-saint-saens-for-marimba-clarinet-in-b-flat-piano-and-narrator": [
     "marimba",
     "percussion",
@@ -151,6 +300,14 @@
     "piano",
     "narrator"
   ],
+  "little-red-riding-hood-or-ladle-rat-rotten-hut-for-brass-quintet-and-narrator": [
+    "trumpet",
+    "trombone",
+    "French horn",
+    "tuba",
+    "narrator",
+    "Howard L. Chace"
+  ],
   "little-red-riding-hood-or-ladle-rat-rotten-hut": [
     "cello",
     "clarinet",
@@ -177,14 +334,69 @@
     "bassoon",
     "piano"
   ],
+  "nobody-knows-for-flute-and-oboe": [
+    "flute",
+    "oboe"
+  ],
   "nobody-knows-for-oboe-and-piano": [
     "oboe",
     "piano"
+  ],
+  "nobody-knows-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "octatonic-rag-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
   ],
   "octatonic-rag-for-oboe-bassoon-and-piano": [
     "bassoon",
     "oboe",
     "piano"
+  ],
+  "ragtime-reflections-for-woodwind-quintet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn"
+  ],
+  "ragtime-reflections-for-bassoon-and-piano": [
+    "bassoon",
+    "piano"
+  ],
+  "ragtime-reflections-for-flute-clarinet-in-b-flat-and-bassoon": [
+    "flute",
+    "clarinet",
+    "bassoon"
+  ],
+  "ragtime-reflections-for-oboe-and-piano": [
+    "oboe",
+    "piano"
+  ],
+  "ragtime-reflections-for-oboe-bassoon-and-piano": [
+    "oboe",
+    "bassoon",
+    "piano"
+  ],
+  "ragtime-reflections-for-flute-oboe-and-piano": [
+    "flute",
+    "oboe",
+    "piano"
+  ],
+  "ragtime-reflections-for-flute-horn-and-bassoon": [
+    "flute",
+    "French horn",
+    "bassoon"
+  ],
+  "ragtime-reflections-for-oboe-horn-and-bassoon": [
+    "oboe",
+    "French horn",
+    "bassoon"
   ],
   "sieben-lieder-ohne-worter-aus-des-knaben-wunderhorn-for-bassoon-and-piano": [
     "bassoon",
@@ -218,6 +430,12 @@
     "bassoon",
     "piano"
   ],
+  "variations-on-country-gardens-for-flute-trumpet-horn-and-bassoon": [
+    "flute",
+    "trumpet",
+    "French horn",
+    "bassoon"
+  ],
   "eight-ragtime-pieces-for-piano": [
     "piano"
   ],
@@ -241,21 +459,48 @@
     "clarinet",
     "piano"
   ],
+  "nobody-knows-for-solo-clarinet-in-b-flat": [
+    "clarinet"
+  ],
   "nobody-knows-for-solo-flute": [
     "flute"
   ],
+  "octatonic-rag-for-string-quartet": [
+    "violin",
+    "viola",
+    "cello"
+  ],
+  "ragtime-reflections-for-clarinet-in-b-flat-and-piano": [
+    "clarinet",
+    "piano"
+  ],
   "ragtime-reflections-flute-and-piano": [
     "flute",
+    "piano"
+  ],
+  "take-the-love-this-cant-be-the-a-train-for-alto-saxophone-and-piano": [
+    "alto saxophone",
     "piano"
   ],
   "take-the-love-this-cant-be-the-a-train-for-clarinet-in-b-flat-and-piano": [
     "clarinet",
     "piano"
   ],
+  "take-the-love-this-cant-be-the-a-train-for-clarinet-quartet-mixed": [
+    "clarinet",
+    "bass clarinet"
+  ],
+  "take-the-love-this-cant-be-the-a-train-for-horn-quartet": [
+    "French horn"
+  ],
   "taylor-fanfare-for-string-quartet-and-piano": [
     "violin",
     "viola",
     "cello",
+    "piano"
+  ],
+  "taylor-fanfare-for-clarinet-in-b-flat-and-piano": [
+    "clarinet",
     "piano"
   ],
   "aria-variata-alla-maniera-italiana-flute-bassoon-bach-kies": [
@@ -265,6 +510,49 @@
   "aria-variata-in-a-minor-for-oboe-and-bassoon": [
     "oboe",
     "bassoon"
+  ],
+  "aria-variata-alla-maniera-italiana-soprano-saxophone-and-bassoon": [
+    "soprano saxophone",
+    "bassoon"
+  ],
+  "aria-variata-alla-maniera-italiana-flute-and-guitar": [
+    "flute",
+    "guitar"
+  ],
+  "aria-variata-alla-maniera-italiana-oboe-and-guitar": [
+    "oboe",
+    "guitar"
+  ],
+  "eight-pieces-from-mikrokosmos-volume-4-arranged-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "Béla Bartók"
+  ],
+  "nine-pieces-from-mikrokosmos-vol-4-and-5-arranged-for-two-oboes-oboe-damore-and-english-horn": [
+    "oboe",
+    "oboe d'amore",
+    "English horn",
+    "Béla Bartók"
+  ],
+  "rondo-no-1-from-three-rondos-arranged-for-bassoon-quartet": [
+    "bassoon",
+    "Béla Bartók"
+  ],
+  "rondo-no-1-from-three-rondos-arranged-for-flute-trumpet-horn-and-bassoon": [
+    "flute",
+    "trumpet",
+    "French horn",
+    "bassoon",
+    "Béla Bartók"
+  ],
+  "rondo-no-1-from-three-rondos-arranged-for-woodwind-quartet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "Béla Bartók"
   ],
   "childrens-carnival-op25": [
     "flute",
@@ -340,6 +628,43 @@
     "viola",
     "piano"
   ],
+  "two-piano-pieces-op-10-nos-2-and-4-arranged-for-cello-and-piano": [
+    "cello",
+    "piano"
+  ],
+  "etude-in-e-flat-minor-op-10-no-6-arranged-for-clarinet-in-b-flat-and-piano": [
+    "clarinet",
+    "piano"
+  ],
+  "etude-in-e-flat-minor-op-10-no-6-arranged-for-alto-saxophone-and-piano": [
+    "alto saxophone",
+    "piano",
+    "saxophone"
+  ],
+  "etude-in-e-flat-minor-op-10-no-6-arranged-for-violin-and-piano": [
+    "violin",
+    "piano"
+  ],
+  "etude-in-e-flat-minor-op-10-no-6-arranged-for-viola-and-piano": [
+    "viola",
+    "piano"
+  ],
+  "golliwogs-cakewalk-from-childrens-corner": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "piano"
+  ],
+  "the-little-shepherd-and-golliwogs-cakewalk-from-childrens-corner": [
+    "flute",
+    "French horn",
+    "bassoon"
+  ],
+  "the-little-shepherd-from-childrens-corner": [
+    "flute",
+    "oboe",
+    "clarinet"
+  ],
   "dolly-suite-op-56-arranged-for-oboe-bassoon-and-piano": [
     "oboe",
     "bassoon",
@@ -383,9 +708,27 @@
     "harp",
     "soprano"
   ],
+  "sieben-lieder-aus-des-knaben-wunderhorn-for-high-male-voice-and-piano": [
+    "voice",
+    "piano",
+    "Wunderhorn",
+    "Schubert"
+  ],
+  "sieben-lieder-aus-des-knaben-wunderhorn-for-high-female-voice-and-piano": [
+    "voice",
+    "piano",
+    "Wunderhorn",
+    "Schubert"
+  ],
   "six-italian-song-for-soprano-and-piano": [
     "soprano",
     "voice",
+    "piano"
+  ],
+  "three-poems-of-abigail-lynne-becker-for-soprano-viola-and-piano": [
+    "soprano",
+    "voice",
+    "viola",
     "piano"
   ],
   "chinese-folk-song-mashup-10": [
@@ -397,10 +740,55 @@
     "bassoon",
     "chorus"
   ],
+  "dialogue-between-the-gout-and-mr-franklin-for-soprano-tenor-and-piano": [
+    "soprano",
+    "tenor",
+    "voice",
+    "piano"
+  ],
+  "four-poems-by-celia-l-thaxter-for-soprano-alto-clarinet-in-b-flat-and-violoncello": [
+    "soprano",
+    "alto",
+    "voice",
+    "clarinet",
+    "cello"
+  ],
+  "sieben-lieder-aus-des-knaben-wunderhorn-for-vocal-duet-and-piano": [
+    "voice",
+    "piano",
+    "Wunderhorn",
+    "Schubert"
+  ],
   "carol-of-the-field-mice": [
     "chorus",
     "French horn",
     "horn"
+  ],
+  "a-poets-life-for-treble-chorus-ssaa-piano-bongos-and-maracas": [
+    "chorus",
+    "piano",
+    "percussion",
+    "bongos",
+    "maracas"
+  ],
+  "a-poets-life-for-treble-chorus-ssaa-and-percussion": [
+    "chorus",
+    "percussion"
+  ],
+  "clouds-and-rain-for-treble-chorus-ss-and-piano": [
+    "chorus",
+    "piano",
+    "voice"
+  ],
+  "sing-little-little-bird-oh-sing-for-treble-chorus-and-piano": [
+    "chorus",
+    "piano",
+    "voice"
+  ],
+  "two-poems-of-abigail-lynne-becker-for-treble-chorus-and-piano": [
+    "chorus",
+    "piano",
+    "voice"
   ],
   "come-let-us-mourn": [
     "chorus",
@@ -444,6 +832,37 @@
     "percussion",
     "piano"
   ],
+  "carol-of-the-field-mice-for-satb-chorus-unaccompanied": [
+    "chorus",
+    "voice"
+  ],
+  "clouds-and-rain-for-satb-chorus-and-piano": [
+    "chorus",
+    "piano",
+    "voice"
+  ],
+  "chinese-folk-song-mashup-10-for-satb-chorus-piano-and-woodwind-quartet": [
+    "chorus",
+    "piano",
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon"
+  ],
+  "come-let-us-mourn-for-satb-chorus-unaccompanied": [
+    "chorus",
+    "voice"
+  ],
+  "the-drinkers-dictionary-for-mixed-chorus-horn-ensemble-and-narrator": [
+    "chorus",
+    "French horn",
+    "narrator"
+  ],
+  "the-drinkers-dictionary-for-mixed-chorus-brass-ensemble-and-narrator": [
+    "chorus",
+    "brass",
+    "narrator"
+  ],
   "five-poems-by-celia-l-thaxter-for-satb-chorus": [
     "voice",
     "chorus"
@@ -454,6 +873,19 @@
     "narrator"
   ],
   "on-censure-or-backbiting-for-satb-chorus-unaccompanied": [
+    "chorus",
+    "voice"
+  ],
+  "the-poets-guide-to-new-hampshire-for-mixed-chorus-two-pianos-and-narrator": [
+    "chorus",
+    "piano",
+    "narrator"
+  ],
+  "the-poets-guide-to-new-hampshire-three-excerpts-for-satb-chorus-and-piano-four-hands": [
+    "chorus",
+    "piano"
+  ],
+  "summer-afternoon-for-satb-chorus-unaccompanied": [
     "chorus",
     "voice"
   ],
@@ -498,7 +930,35 @@
   "three-movements-from-dolly-wind-septet": [
     "flute",
     "oboe",
-    "horn"
+    "clarinet",
+    "bassoon",
+    "French horn"
+  ],
+  "four-movements-from-dolly-for-flute-bassoon-horn-and-string-ensemble": [
+    "flute",
+    "bassoon",
+    "French horn",
+    "strings"
+  ],
+  "trois-mouvements-perpetuels-arranged-for-woodwind-quintet": [
+    "flute",
+    "oboe",
+    "clarinet",
+    "bassoon",
+    "French horn"
+  ],
+  "traumerei-from-kinderszenen-arranged-for-clarinet-quartet": [
+    "clarinet"
+  ],
+  "bist-du-bei-mir-arranged-for-bassoon-or-cello-and-piano": [
+    "bassoon",
+    "cello",
+    "piano"
+  ],
+  "bist-du-bei-mir-arranged-for-oboe-horn-and-bassoon": [
+    "oboe",
+    "French horn",
+    "bassoon"
   ],
   "all-my-loving-piano-four-hands": [
     "piano"
