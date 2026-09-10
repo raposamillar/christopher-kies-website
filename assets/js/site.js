@@ -69,6 +69,14 @@
     toggle.addEventListener("click", () => {
       const open = !nav.classList.contains("is-open");
       if (open) {
+        const input = document.querySelector("[data-search-input]");
+        if (input) {
+          input.blur();
+        }
+        const panel = document.querySelector("[data-search-panel]");
+        if (panel) {
+          panel.hidden = true;
+        }
         nav.classList.add("is-open");
         toggle.setAttribute("aria-expanded", "true");
         document.body.classList.add("nav-open");

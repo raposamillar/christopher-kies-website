@@ -460,7 +460,7 @@ dialog input:focus-visible {
 .page-search {
   grid-area: search;
   position: relative;
-  z-index: 30;
+  z-index: 5;
   display: flex;
   min-width: 0;
   gap: 0.4rem;
@@ -1465,6 +1465,11 @@ dialog input:focus-visible {
   body.nav-open .nav-toggle,
   body.nav-open .search-toggle {
     visibility: hidden;
+  }
+
+  body.nav-open .page-search {
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .header-inner {
