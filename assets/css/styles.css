@@ -924,6 +924,20 @@ dialog input:focus-visible {
   color: var(--muted);
 }
 
+.samples .score-download {
+  justify-self: start;
+}
+
+.samples-pdf {
+  display: block;
+  width: 100%;
+  max-width: 56rem;
+  height: calc(100vh - 12rem);
+  min-height: 36rem;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+}
+
 .note-body {
   max-width: 42rem;
 }

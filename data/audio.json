@@ -619,6 +619,22 @@
       }
     ]
   },
+  "101": {
+    "tracks": [
+      {
+        "src": "assets/audio/101-01-in-autumn.mp3",
+        "title": "1. In Autumn"
+      },
+      {
+        "src": "assets/audio/101-02-to-a-wild-rose.mp3",
+        "title": "2. To a Wild Rose"
+      },
+      {
+        "src": "assets/audio/101-03-alla-tarantella.mp3",
+        "title": "3. Alla Tarantella"
+      }
+    ]
+  },
   "104": {
     "tracks": [
       {
