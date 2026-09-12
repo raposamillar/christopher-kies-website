@@ -514,6 +514,10 @@ dialog input:focus-visible {
   margin: 0;
 }
 
+.footer-line {
+  display: inline;
+}
+
 .back-to-top {
   position: fixed;
   right: var(--space);
@@ -1749,6 +1753,16 @@ dialog input:focus-visible {
 
   .work-tag {
     font-size: 1.1rem;
+  }
+
+  .footer-inner {
+    text-align: center;
+    gap: 0;
+  }
+
+  .footer-inner .footer-line {
+    display: block;
+    line-height: 1.45;
   }
 
   .page-home .featured-piece-title {
