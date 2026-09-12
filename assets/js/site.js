@@ -27,7 +27,7 @@
 
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-nav-toggle]");
-  const isMobileNav = () => window.matchMedia("(max-width: 800px)").matches;
+  const isMobileNav = () => window.matchMedia("(max-width: 1100px)").matches;
 
   const closeSubmenus = () => {
     if (!nav) {
@@ -228,7 +228,14 @@
     { keys: ["concert band"], href: "catalogue/large-ensemble/concert-band.html" },
     { keys: ["concert band with narration"], href: "catalogue/large-ensemble/concert-band-with-narration.html" },
     { keys: ["ensembles with narration"], href: "catalogue/chamber/ensembles-with-narration.html" },
-    { keys: ["double reeds", "music with double reeds"], href: "catalogue/chamber/music-with-double-reeds.html" },
+    { keys: ["trios", "trio"], href: "catalogue/chamber/trios.html" },
+    { keys: ["quartets", "quartet"], href: "catalogue/chamber/quartets.html" },
+    { keys: ["quintets", "quintet"], href: "catalogue/chamber/quintets.html" },
+    { keys: ["double reeds", "music with double reeds"], hrefs: [
+      "catalogue/chamber/trios.html",
+      "catalogue/chamber/quartets.html",
+      "catalogue/chamber/quintets.html",
+    ] },
     { keys: ["chamber other", "other chamber"], href: "catalogue/chamber/other.html" },
     { keys: ["four-hands", "four hands", "piano four-hands", "piano four hands"], href: "catalogue/piano/four-hands.html" },
     { keys: ["six-hands", "six hands", "piano six-hands", "piano six hands"], href: "catalogue/piano/six-hands.html" },
@@ -269,6 +276,9 @@
     }
     const listingPage = (listing.href || "").split("#")[0];
     if (page.href && listingPage === page.href) {
+      return true;
+    }
+    if (page.hrefs && listingPage && page.hrefs.includes(listingPage)) {
       return true;
     }
     if (page.hrefIncludes && listing.href && listing.href.includes(page.hrefIncludes)) {
@@ -880,7 +890,7 @@
 
     const openScore = (button) => {
       const entryHref = button.getAttribute("data-score-entry-href");
-      if (entryHref && window.matchMedia("(max-width: 800px)").matches) {
+      if (entryHref && window.matchMedia("(max-width: 1100px)").matches) {
         window.location.assign(entryHref);
         return;
       }

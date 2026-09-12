@@ -11,9 +11,9 @@
   --wash: #f3f3f3; /* search-result hover */
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --measure: 68rem;
+  --measure: 72rem;
   --space: clamp(1rem, 2.5vw, 2rem);
-  --header-offset: 5.75rem;
+  --header-offset: 5.5rem;
   /* Tag pills. Contrast ≥ 4.5:1 (WCAG AA). */
   --tag-arrangement-bg: var(--ink); /* #111111 */
   --tag-arrangement-fg: var(--bg); /* #ffffff = 18.88:1 */
@@ -28,7 +28,7 @@
 }
 
 html {
-  font-size: 100%;
+  font-size: 125%;
   scroll-behavior: smooth;
   scroll-padding-top: var(--header-offset);
 }
@@ -38,8 +38,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.0625rem;
-  line-height: 1.55;
+  font-size: 1.2rem;
+  line-height: 1.65;
 }
 
 img {
@@ -61,6 +61,10 @@ a {
 
 a:hover {
   text-decoration-thickness: 2px;
+}
+
+h1, h2, h3, p, li {
+  overflow-wrap: break-word;
 }
 
 a:focus-visible,
@@ -125,10 +129,11 @@ dialog input:focus-visible {
   margin: 0;
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 2.15rem;
+  font-size: 2.2rem;
   letter-spacing: 0.02em;
   color: #000000;
   white-space: nowrap;
+  overflow-wrap: normal;
 }
 
 .brand-roles {
@@ -165,6 +170,8 @@ dialog input:focus-visible {
 
 .search-toggle svg {
   display: block;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .site-search-input {
@@ -172,7 +179,7 @@ dialog input:focus-visible {
   min-width: 0;
   min-height: 2.75rem;
   font-family: var(--serif);
-  font-size: 1.0625rem;
+  font-size: 1.2rem;
   color: var(--ink);
   background: var(--bg);
   border: 2px solid var(--rule);
@@ -189,7 +196,7 @@ dialog input:focus-visible {
   min-height: 2.75rem;
   min-width: 5.5rem;
   font-family: var(--sans);
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   letter-spacing: 0.02em;
   color: var(--bg);
   background: var(--ink);
@@ -257,7 +264,7 @@ dialog input:focus-visible {
 .search-bar input {
   flex: 1;
   font-family: var(--serif);
-  font-size: 1.0625rem;
+  font-size: 1.2rem;
   border: 0;
   background: transparent;
   color: var(--ink);
@@ -276,7 +283,7 @@ dialog input:focus-visible {
 
 .search-close {
   font-family: var(--sans);
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   background: none;
   border: 0;
   padding: 0.25rem 0;
@@ -290,7 +297,7 @@ dialog input:focus-visible {
   margin: 0;
   padding: 0.75rem 1rem 0;
   font-family: var(--sans);
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -329,7 +336,7 @@ dialog input:focus-visible {
 
 .search-result-title {
   display: block;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
 }
 
 .search-result-title .work-tag {
@@ -340,14 +347,14 @@ dialog input:focus-visible {
   display: block;
   margin-top: 0.15rem;
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
 .nav-toggle {
   display: none;
   font-family: var(--sans);
-  font-size: 1.125rem;
+  font-size: 1.3rem;
   background: var(--bg);
   color: var(--ink);
   border: 1px solid var(--rule);
@@ -378,7 +385,7 @@ dialog input:focus-visible {
 
 .site-nav a {
   font-family: var(--sans);
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   letter-spacing: 0.02em;
   text-decoration: none;
   background: none;
@@ -408,7 +415,7 @@ dialog input:focus-visible {
   margin: 0;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 1101px) {
   .site-nav .has-sub:hover > .sub-nav {
     display: block;
   }
@@ -434,7 +441,7 @@ dialog input:focus-visible {
 
 .page-title {
   font-weight: 400;
-  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  font-size: clamp(2.1rem, 3.5vw, 2.85rem);
   letter-spacing: 0.02em;
   margin: 0 0 0.35rem;
 }
@@ -472,12 +479,12 @@ dialog input:focus-visible {
 }
 
 .page-search .site-search-input {
-  min-height: 2.5rem;
-  font-size: 1rem;
+  min-height: 2.75rem;
+  font-size: 1.2rem;
 }
 
 .page-search .site-search-submit {
-  min-height: 2.5rem;
+  min-height: 2.75rem;
 }
 
 .lede {
@@ -490,7 +497,7 @@ dialog input:focus-visible {
   border-top: 1px solid var(--rule);
   padding: 1.25rem var(--space);
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -554,7 +561,7 @@ dialog input:focus-visible {
 
 .kicker {
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   letter-spacing: 0.02em;
   margin: 0 0 0.65rem;
 }
@@ -562,7 +569,7 @@ dialog input:focus-visible {
 .hero-block h2,
 .credits h2 {
   font-weight: 400;
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.7rem, 2.6vw, 2.25rem);
   margin: 0 0 0.75rem;
 }
 
@@ -573,7 +580,7 @@ dialog input:focus-visible {
 
 .featured-piece-title {
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 0 0 0.35rem;
 }
 
@@ -632,7 +639,7 @@ dialog input:focus-visible {
 .score-pair figcaption {
   margin-top: 0.45rem;
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--muted);
   text-align: center;
   cursor: zoom-in;
@@ -647,7 +654,7 @@ dialog input:focus-visible {
 .score-download {
   margin: 0.3rem 0 0;
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -655,7 +662,7 @@ dialog input:focus-visible {
   margin: 0.75rem 0 0;
   max-width: 42rem;
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -675,7 +682,7 @@ dialog input:focus-visible {
 
 .page-placeholder figcaption {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -725,7 +732,7 @@ dialog input:focus-visible {
 
 .about-layout figcaption {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-top: 0.4rem;
 }
@@ -738,7 +745,7 @@ dialog input:focus-visible {
 .album-card figcaption {
   margin-top: 0.55rem;
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 1rem;
   line-height: 1.35;
   text-decoration: underline;
   text-underline-offset: 0.15em;
@@ -754,7 +761,7 @@ dialog input:focus-visible {
 
 .media-item .album-subtitle {
   margin: 0.15rem 0 0.55rem;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
 }
 
 .credits {
@@ -774,7 +781,7 @@ dialog input:focus-visible {
   columns: 1;
   column-gap: 2rem;
   color: var(--ink);
-  font-size: 0.98rem;
+  font-size: 1.15rem;
 }
 
 .credits-list li {
@@ -812,7 +819,7 @@ dialog input:focus-visible {
   gap: 1rem;
   padding: 0.85rem 0;
   text-decoration: none;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
 }
 
 .section-list a:hover span:first-child {
@@ -825,7 +832,7 @@ dialog input:focus-visible {
 
 .section-list small {
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
   align-self: center;
   flex-shrink: 0;
@@ -844,13 +851,13 @@ dialog input:focus-visible {
 
 .work h3 {
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin: 0 0 0.25rem;
 }
 
 .catno {
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
   margin-left: 0.4rem;
   white-space: nowrap;
@@ -859,7 +866,7 @@ dialog input:focus-visible {
 .work-tag {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.6875rem;
+  font-size: 1rem;
   letter-spacing: 0.04em;
   line-height: 1;
   color: var(--tag-arrangement-fg);
@@ -879,7 +886,7 @@ dialog input:focus-visible {
 .meta {
   margin: 0 0 0.55rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
 }
 
 .work-links {
@@ -890,13 +897,13 @@ dialog input:focus-visible {
   flex-wrap: wrap;
   gap: 0.35rem 1.1rem;
   font-family: var(--sans);
-  font-size: 0.82rem;
+  font-size: 1.05rem;
   letter-spacing: 0.04em;
 }
 
 .breadcrumb {
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   margin: 0 0 1.1rem;
   color: var(--muted);
 }
@@ -928,7 +935,7 @@ dialog input:focus-visible {
 
 .samples figcaption {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   margin-top: 0.4rem;
   color: var(--muted);
 }
@@ -987,7 +994,7 @@ dialog input:focus-visible {
 
 .read-more summary {
   font-family: var(--sans);
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   cursor: pointer;
   width: fit-content;
   min-height: 1.5rem;
@@ -1023,7 +1030,7 @@ dialog input:focus-visible {
 
 .about-gallery h2 {
   font-weight: 400;
-  font-size: 1.35rem;
+  font-size: 1.55rem;
   margin: 0 0 1rem;
 }
 
@@ -1102,7 +1109,7 @@ dialog input:focus-visible {
   min-width: 0;
   margin: 0;
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   letter-spacing: 0.01em;
 }
 
@@ -1119,7 +1126,7 @@ dialog input:focus-visible {
 .photo-dialog-nav button,
 .photo-dialog-nav a {
   font-family: var(--sans);
-  font-size: 0.9375rem;
+  font-size: 1.125rem;
   background: none;
   border: 0;
   padding: 0.25rem 0;
@@ -1171,7 +1178,7 @@ dialog input:focus-visible {
 .photo-dialog-stage figcaption {
   margin-top: 0.6rem;
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -1196,7 +1203,7 @@ dialog input:focus-visible {
 
 .about-gallery figcaption {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: var(--muted);
   margin-top: 0.4rem;
 }
@@ -1213,7 +1220,7 @@ dialog input:focus-visible {
 
 .contact-form label {
   font-family: var(--sans);
-  font-size: 0.875rem;
+  font-size: 1.05rem;
   display: grid;
   gap: 0.35rem;
 }
@@ -1222,6 +1229,7 @@ dialog input:focus-visible {
 .contact-form textarea,
 .contact-form select {
   font: inherit;
+  font-size: 1.2rem;
   color: var(--ink);
   background: var(--bg);
   border: 1px solid var(--rule);
@@ -1317,7 +1325,7 @@ dialog input:focus-visible {
   min-width: 0;
   margin: 0;
   font-weight: 400;
-  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
   letter-spacing: 0.01em;
 }
 
@@ -1389,7 +1397,7 @@ dialog input:focus-visible {
 .album-dialog-images figcaption {
   margin-top: 0.45rem;
   font-family: var(--sans);
-  font-size: 0.8125rem;
+  font-size: 1.05rem;
   color: var(--muted);
 }
 
@@ -1400,7 +1408,7 @@ dialog input:focus-visible {
 
 .tracks h3 {
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   margin: 1rem 0 0.35rem;
 }
 
@@ -1408,9 +1416,9 @@ dialog input:focus-visible {
   margin: 0.35rem 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
   :root {
-    --header-offset: 6.75rem;
+    --header-offset: 8rem;
   }
 
   .page-heading {
@@ -1430,6 +1438,15 @@ dialog input:focus-visible {
 
   .page-search {
     max-width: none;
+    flex-wrap: wrap;
+  }
+
+  .page-search .site-search-input {
+    flex: 1 1 100%;
+  }
+
+  .page-search .site-search-submit {
+    flex: 1 1 100%;
   }
 
   .nav-toggle {
@@ -1487,7 +1504,7 @@ dialog input:focus-visible {
 
   .brand-name {
     white-space: normal;
-    font-size: clamp(1.35rem, 5.8vw, 2.15rem);
+    font-size: clamp(1.55rem, 6.2vw, 2.45rem);
   }
 
   .brand-roles {
@@ -1539,7 +1556,7 @@ dialog input:focus-visible {
   }
 
   .site-nav a {
-    font-size: clamp(1.7rem, 7vw, 2.25rem);
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
     padding: 0.1rem 0;
     line-height: 1.25;
   }
@@ -1563,7 +1580,7 @@ dialog input:focus-visible {
 
   .site-nav .sub-nav a {
     padding: 0.12rem 0;
-    font-size: clamp(1.2rem, 5vw, 1.5rem);
+    font-size: clamp(1.35rem, 5vw, 1.7rem);
     line-height: 1.25;
   }
 
@@ -1640,30 +1657,30 @@ dialog input:focus-visible {
   }
 
   body {
-    font-size: 1.3125rem;
-    line-height: 1.5;
+    font-size: 1.4rem;
+    line-height: 1.55;
   }
 
   .kicker {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .hero-block h2,
   .credits h2,
   .page-title,
   .about-gallery h2 {
-    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-size: clamp(2.25rem, 8vw, 2.9rem);
   }
 
   .work h3,
   .featured-piece-title,
   .media-item h2,
   .tracks h3 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .section-list a {
-    font-size: 1.45rem;
+    font-size: 1.6rem;
   }
 
   .meta,
@@ -1671,25 +1688,26 @@ dialog input:focus-visible {
   .credits p,
   .prose,
   .note-body {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
   }
 
   .work-links,
   .album-card figcaption,
   .search-result-title {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
   }
 
   .score-pair figcaption,
   .score-download,
   .about-gallery figcaption,
+  .about-layout figcaption,
   .samples figcaption,
   .album-dialog-images figcaption {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
   }
 
   .credits-list {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
   }
 
   .breadcrumb,
@@ -1698,12 +1716,19 @@ dialog input:focus-visible {
   .site-footer,
   .search-result-meta,
   .contact-form label {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
 
   .page-search .site-search-input,
-  .search-bar input {
-    font-size: 1.125rem;
+  .search-bar input,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 1.3rem;
+  }
+
+  .work-tag {
+    font-size: 1.1rem;
   }
 
   .page-home .featured-piece-title {
