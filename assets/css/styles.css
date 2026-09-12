@@ -1418,7 +1418,7 @@ dialog input:focus-visible {
 
 @media (max-width: 1100px) {
   :root {
-    --header-offset: 8rem;
+    --header-offset: 9.5rem;
   }
 
   .page-heading {
@@ -1490,16 +1490,18 @@ dialog input:focus-visible {
   }
 
   .header-inner {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.45rem;
     min-width: 0;
-    gap: 0.75rem;
-    align-items: center;
   }
 
   .brand {
-    width: auto;
+    width: 100%;
     min-width: 0;
-    flex: 1 1 auto;
+    flex: none;
+    text-align: center;
   }
 
   .brand-name {
@@ -1513,8 +1515,12 @@ dialog input:focus-visible {
 
   .header-end {
     position: static;
+    width: 100%;
+    margin-left: 0;
     flex-shrink: 0;
-    align-self: center;
+    justify-content: center;
+    align-self: stretch;
+    gap: 0.35rem;
   }
 
   .site-header {
