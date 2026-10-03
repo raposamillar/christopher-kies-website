@@ -1072,13 +1072,28 @@ dialog input:focus-visible {
 
 .about-layout {
   display: grid;
-  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr);
   gap: 2rem;
   align-items: start;
 }
 
-.about-layout img {
-  width: 100%;
+.about-portrait {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.about-portrait .photo-zoom {
+  width: auto;
+  max-width: 100%;
+}
+
+.about-portrait img {
+  width: auto;
+  max-width: min(18rem, 100%);
+  height: auto;
+  max-height: min(36rem, calc(100dvh - var(--header-offset) - 8rem));
+  object-fit: contain;
+  object-position: center top;
   border: 1px solid var(--rule);
 }
 
@@ -1719,8 +1734,12 @@ dialog input:focus-visible {
   }
 
   .about-portrait {
-    max-width: 14rem;
+    max-width: 16rem;
     margin-inline: auto;
+  }
+
+  .about-portrait img {
+    max-width: min(16rem, 100%);
   }
 
   .credits-list {
@@ -1833,5 +1852,40 @@ dialog input:focus-visible {
 
   .page-home .album-card {
     max-width: 22rem;
+  }
+}
+
+/* Tablet. Desktop is 1280px and up. Mobile is 759px and below. */
+@media (min-width: 760px) and (max-width: 1279px) {
+  .about-layout {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.15rem;
+  }
+
+  .about-portrait {
+    max-width: none;
+    margin-inline: 0;
+  }
+
+  .about-portrait img {
+    max-width: min(20rem, 42vw);
+    max-height: min(34rem, calc(100dvh - var(--header-offset) - 7rem));
+  }
+
+  .about-gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 759px) {
+  .about-portrait {
+    justify-self: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .about-portrait .photo-zoom,
+  .about-portrait img {
+    margin-inline: auto;
   }
 }
