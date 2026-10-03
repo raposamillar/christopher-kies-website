@@ -1,4 +1,7 @@
 (() => {
+  const prefersReducedMotion = () =>
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   const navType = () => {
     const entry = performance.getEntriesByType("navigation")[0];
     return entry ? entry.type : "navigate";
@@ -122,7 +125,7 @@
     }
     event.preventDefault();
     closeNav();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   };
 
   document.querySelectorAll(".brand, .nav-home a").forEach((el) => {
@@ -1113,6 +1116,6 @@
   syncBackToTop();
   window.addEventListener("scroll", syncBackToTop, { passive: true });
   backToTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
 })();

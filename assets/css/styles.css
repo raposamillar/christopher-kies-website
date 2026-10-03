@@ -37,6 +37,16 @@ html {
   scroll-padding-top: var(--header-offset);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .back-to-top {
+    transition: none;
+  }
+}
+
 body {
   margin: 0;
   background: var(--bg);
