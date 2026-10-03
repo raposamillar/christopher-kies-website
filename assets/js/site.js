@@ -851,12 +851,18 @@
       const page = scoreAt(scoreGroup[scoreIndex]);
       scoreTitle.textContent = page.caption;
       const pdfFile = page.pdf.split("#")[0];
+      const pieceLabel = (page.alt || page.caption || "")
+        .replace(/^View sample pages of /i, "")
+        .replace(/ as a PDF$/i, "");
+      const downloadText = pieceLabel
+        ? `Download sample pages: ${pieceLabel}`
+        : "Download sample pages";
       if (scoreDownload) {
         if (pdfFile) {
           scoreDownload.hidden = false;
           scoreDownload.setAttribute("href", pdfFile);
           scoreDownload.setAttribute("download", page.filename || "sample-page.pdf");
-          scoreDownload.textContent = "Download";
+          scoreDownload.textContent = downloadText;
         } else {
           scoreDownload.hidden = true;
           scoreDownload.removeAttribute("href");
@@ -867,7 +873,7 @@
         const fileAttr = page.filename ? ` download="${esc(page.filename)}"` : "";
         scoreStage.innerHTML = `
           <object class="score-pdf" data="${esc(page.pdf)}" type="application/pdf" aria-label="${esc(page.alt || page.caption)}">
-            <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(pdfFile)}"${fileAttr}>Download the sample pages</a>.</p>
+            <p class="score-pdf-fallback">This browser cannot display PDFs. <a href="${esc(pdfFile)}"${fileAttr}>${esc(downloadText)}</a>.</p>
           </object>
         `;
         scoreStage.scrollTop = 0;

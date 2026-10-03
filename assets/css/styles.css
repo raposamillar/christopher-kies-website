@@ -604,9 +604,27 @@ dialog input:focus-visible {
 }
 
 .featured-excerpt {
-  margin: 0 0 1rem;
+  margin: 1rem 0 0;
   max-width: 42rem;
   color: var(--muted);
+}
+
+.featured-score {
+  margin: 0.35rem 0 0;
+  max-width: 28rem;
+}
+
+.featured-score a {
+  display: block;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.featured-score img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  background: var(--bg);
 }
 
 .hero-block .work-links {
