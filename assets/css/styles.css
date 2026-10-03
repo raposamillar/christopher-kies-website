@@ -688,6 +688,24 @@ dialog input:focus-visible {
   text-underline-offset: 0.15em;
 }
 
+.score-entry {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.score-entry figcaption {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+
+.score-entry:hover figcaption {
+  text-decoration-thickness: 2px;
+}
+
 .score-download {
   margin: 0.3rem 0 0;
   font-family: var(--sans);
@@ -1761,8 +1779,6 @@ dialog input:focus-visible {
     display: none;
   }
 
-  .page-home .score-page[data-score-entry-href],
-  .page-home .score-page[data-score-entry-href] + figcaption,
   .page-beatles .score-page[data-score-entry-href],
   .page-beatles .score-page[data-score-entry-href] + figcaption {
     cursor: pointer;
