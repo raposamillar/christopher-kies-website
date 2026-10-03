@@ -26,7 +26,8 @@
       "trumpet",
       "tuba",
       "xylophone"
-    ]
+    ],
+    "program_note_href": "notes/academic-festival-rag-for-piano-and-wind-ensemble.html"
   },
   {
     "title": "Academic Festival Rag Arranged for Two Pianos",
@@ -50,7 +51,8 @@
         "href": "catalogue/piano/two-pianos.html#academic-festival-rag-for-two-pianos",
         "section": "Piano · Two Pianos"
       }
-    ]
+    ],
+    "program_note_href": "notes/academic-festival-rag-for-two-pianos.html"
   },
   {
     "title": "Academic Festival Rag for Piano and Orchestra",
@@ -99,7 +101,8 @@
         "href": "catalogue/instrumental/clarinet.html#introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano",
         "section": "Solos & Duos · Clarinet"
       }
-    ]
+    ],
+    "program_note_href": "notes/introduction-and-rag-for-clarinet-and-orchestra-arranged-for-clarinet-and-piano.html"
   },
   {
     "title": "Introduction and Ragtime for Clarinet in B Flat and Chamber Orchestra",
@@ -175,7 +178,8 @@
       "viola",
       "violin",
       "cello"
-    ]
+    ],
+    "program_note_href": "notes/franklin-portrait-preamble-for-orchestra.html"
   },
   {
     "title": "Murder on Smuttynose, Suite for Orchestra",
@@ -248,7 +252,8 @@
       "viola",
       "cello",
       "bass"
-    ]
+    ],
+    "program_note_href": "notes/le-tombeau-de-saint-saens-for-orchestra-and-narrator.html"
   },
   {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Orchestra and Narrator",
@@ -276,7 +281,8 @@
       "viola",
       "violin",
       "cello"
-    ]
+    ],
+    "program_note_href": "notes/little-red-riding-hood-or-ladle-rat-rotten-hut-for-orchestra-and-narrator.html"
   },
   {
     "title": "Franklin Portrait: Preamble for Symphonic Band",
@@ -354,7 +360,8 @@
       "marimba",
       "percussion",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/littleredridinghoodforconcertbandnarrator.html"
   },
   {
     "title": "The Amazing Bone for Brass Quintet and Narrator",
@@ -446,7 +453,8 @@
       "piano",
       "voice",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/le-tombeau-de-saint-saens-for-marimba-clarinet-in-b-flat-piano-and-narrator.html"
   },
   {
     "title": "Le Tombeau de Saint-Saëns for Piano Four-Hands and Narrator",
@@ -468,7 +476,8 @@
         "href": "catalogue/piano/four-hands.html#letombeaudesaintsaenspianofourhandsandnarrator",
         "section": "Piano · Four-hands"
       }
-    ]
+    ],
+    "program_note_href": "notes/letombeaudesaintsaenspianofourhandsandnarrator.html"
   },
   {
     "title": "Le Tombeau de Saint-Saëns for Woodwind Quintet and Narrator",
@@ -484,7 +493,8 @@
       "French horn",
       "bassoon",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/le-tombeau-de-saint-saens-for-woodwind-quintet-and-narrator.html"
   },
   {
     "title": "Le Tombeau de Saint-Saëns for Brass Quintet and Narrator",
@@ -500,7 +510,8 @@
       "tuba",
       "voice",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/le-tombeau-de-saint-saens-for-brass-quintet-and-narrator.html"
   },
   {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Piano Four-Hands and Narrator",
@@ -523,7 +534,8 @@
         "href": "catalogue/piano/four-hands.html#little-red-riding-hood-or-ladle-rat-rotten-hut-for-piano-four-hands-and-narrator",
         "section": "Piano · Four-hands"
       }
-    ]
+    ],
+    "program_note_href": "notes/little-red-riding-hood-or-ladle-rat-rotten-hut-for-piano-four-hands-and-narrator.html"
   },
   {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Oboe, Bassoon, Piano, and Narrator",
@@ -538,7 +550,8 @@
       "piano",
       "narrator",
       "voice"
-    ]
+    ],
+    "program_note_href": "notes/little-red-riding-hood-or-ladle-rat-rotten-hut-for-oboe-bassoon-and-piano.html"
   },
   {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Flute, Bassoon, Piano and Narrator",
@@ -552,7 +565,8 @@
       "bassoon",
       "piano",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/little-red-riding-hood-for-flute-bassoon-piano-and-narrator.html"
   },
   {
     "title": "Little Red Riding Hood (or Ladle Rat Rotten Hut) for Brass Quintet and Narrator",
@@ -582,7 +596,8 @@
       "clarinet",
       "piano",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/little-red-riding-hood-or-ladle-rat-rotten-hut.html"
   },
   {
     "title": "Old Business for Piano, Contrabass, Drum Set, and Narrator",
@@ -597,7 +612,8 @@
       "percussion",
       "narrator",
       "contrabass"
-    ]
+    ],
+    "program_note_href": "notes/old-business.html"
   },
   {
     "title": "Arietta for Bassoon Quartet",
@@ -608,7 +624,8 @@
     "section": "Chamber · Quartets",
     "keywords": [
       "bassoon"
-    ]
+    ],
+    "program_note_href": "notes/arietta-for-bassoon-quartet.html"
   },
   {
     "title": "Four Bachtatonic/Rocktatonic Inventions for Oboe, Clarinet in B Flat and Piano",
@@ -621,7 +638,8 @@
       "oboe",
       "clarinet",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/four-bachtatonicrocktatonic-inventions-for-oboe-clarinet-in-b-flat-and-piano.html"
   },
   {
     "title": "In-Two-itive Dances for Oboe, Bassoon, and Piano",
@@ -634,7 +652,8 @@
       "oboe",
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/in-two-itive-dances.html"
   },
   {
     "title": "Nobody Knows for Flute and Oboe",
@@ -824,7 +843,8 @@
     "keywords": [
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/sieben-lieder-ohne-worter-aus-des-knaben-wunderhorn-for-bassoon-and-piano.html"
   },
   {
     "title": "Sonata for Bassoon and Piano",
@@ -836,7 +856,8 @@
     "keywords": [
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/sonata-for-bassoon-and-piano.html"
   },
   {
     "title": "Take the Love, This Can't Be the A Train for Bassoon Quartet",
@@ -847,7 +868,8 @@
     "section": "Chamber · Quartets",
     "keywords": [
       "bassoon"
-    ]
+    ],
+    "program_note_href": "notes/take-the-love-this-cant-be-the-a-train-for-bassoon-quartet.html"
   },
   {
     "title": "Take the Love, This Can't Be the A Train",
@@ -860,7 +882,8 @@
       "bassoon",
       "oboe",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/take-the-love-this-cant-be-the-a-train.html"
   },
   {
     "title": "Taylor Fanfare for Oboe, Bassoon, and Piano",
@@ -873,7 +896,8 @@
       "oboe",
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/taylor-fanfare-for-oboe-bassoon-and-piano.html"
   },
   {
     "title": "Variations on Country Gardens for Woodwind Quartet",
@@ -887,7 +911,8 @@
       "oboe",
       "clarinet",
       "bassoon"
-    ]
+    ],
+    "program_note_href": "notes/variations-on-country-gardens-for-woodwind-quartet.html"
   },
   {
     "title": "Variations on Country Gardens for Oboe, Bassoon and Piano",
@@ -900,7 +925,8 @@
       "oboe",
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/variations-on-country-gardens.html"
   },
   {
     "title": "Variations on Country Gardens for Flute, Trumpet, Horn and Bassoon",
@@ -925,7 +951,8 @@
     "section": "Piano · Solo",
     "keywords": [
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/eight-ragtime-pieces-for-piano.html"
   },
   {
     "title": "Chopin Etudes Lite (Eight Chopin Etudes reimagined in \"half the time and half the calories\")",
@@ -964,7 +991,8 @@
     "section": "Piano · Four-hands",
     "keywords": [
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/four-four-handed-complements.html"
   },
   {
     "title": "Taylor Fanfare for Piano Four-Hands",
@@ -975,7 +1003,8 @@
     "section": "Piano · Four-hands",
     "keywords": [
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/taylor-fanfare-for-piano-four-hands.html"
   },
   {
     "title": "Four Bachtatonic/Rocktatonic Inventions for Two Pianos",
@@ -986,7 +1015,8 @@
     "section": "Piano · Two Pianos",
     "keywords": [
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/bachtatonicrocktatonic-inventions-for-two-pianos.html"
   },
   {
     "title": "Four Bachtatonic/Rocktatonic Inventions for Marimba, Clarinet in B Flat, and Piano",
@@ -999,7 +1029,8 @@
       "marimba",
       "clarinet",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/four-bachtatonicrocktatonic-inventions-for-marimba-clarinet-in-b-flat-and-piano.html"
   },
   {
     "title": "Nobody Knows for Solo Clarinet in B Flat",
@@ -1058,7 +1089,8 @@
     "keywords": [
       "flute",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/ragtime-reflections-flute-and-piano.html"
   },
   {
     "title": "Take the Love, This Can't Be the A Train for Alto Saxophone and Piano",
@@ -1082,7 +1114,8 @@
     "keywords": [
       "clarinet",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/take-the-love-this-cant-be-the-a-train-for-clarinet-in-b-flat-and-piano.html"
   },
   {
     "title": "Take the Love, This Can't Be the A Train for Clarinet Quartet/mixed",
@@ -1359,7 +1392,8 @@
       "oboe",
       "clarinet",
       "bassoon"
-    ]
+    ],
+    "program_note_href": "notes/childrens-carnival-op25.html"
   },
   {
     "title": "String Quartet in F Major, Op. 135 by Beethoven / Arranged for Saxophone Quartet",
@@ -1377,7 +1411,8 @@
       "tenor saxophone",
       "baritone saxophone",
       "saxophone"
-    ]
+    ],
+    "program_note_href": "notes/beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet.html"
   },
   {
     "title": "Quartet in F Major, Opus 135, Movement 1, Allegretto by Beethoven / Arranged for Mixed Clarinet Quartet",
@@ -1407,7 +1442,8 @@
       "oboe",
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/six-pieces-from-childrens-games-op-22-by-bizet-arranged-for-oboe-bassoon-and-piano.html"
   },
   {
     "title": "Seven Piano Pieces by Brahms Arranged for Bassoon and Piano",
@@ -1422,7 +1458,8 @@
     "keywords": [
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/seven-piano-pieces-of-johannes-brahms-arranged-for-bassoon-and-piano.html"
   },
   {
     "title": "Five Pieces from Op. 76 by Brahms Arranged for Oboe and Piano",
@@ -1437,7 +1474,8 @@
     "keywords": [
       "oboe",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/five-pieces-from-op-76-by-johannes-brahms-arranged-for-oboe-and-piano.html"
   },
   {
     "title": "Three Intermezzi by Brahms Arranged for Oboe and Piano",
@@ -1452,7 +1490,8 @@
     "keywords": [
       "oboe",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/three-intermezzi-opus117-by-brahms-arranged-for-oboe-and-piano.html"
   },
   {
     "title": "Sixteen Pieces by Brahms Arranged for Clarinet and Piano",
@@ -1467,7 +1506,8 @@
     "keywords": [
       "clarinet",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/sixteen-pieces-by-johannes-brahms-arranged-for-clarinet-and-piano.html"
   },
   {
     "title": "Sixteen Piano Pieces by Brahms Arranged for Alto Saxophone and Piano",
@@ -1483,7 +1523,8 @@
       "alto saxophone",
       "piano",
       "saxophone"
-    ]
+    ],
+    "program_note_href": "notes/sixteen-piano-pieces-by-brahms-arranged-for-alto-saxophone-and-piano.html"
   },
   {
     "title": "Eight Pieces, Opus 76 by Johannes Brahms for Violin and Piano",
@@ -1558,7 +1599,8 @@
     "keywords": [
       "violin",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/thirtypianopiecesbybrahmsarrangedforviolinandpiano.html"
   },
   {
     "title": "Three Intermezzi, Op. 117 by Johannes Brahms for Violin and Piano",
@@ -1744,7 +1786,8 @@
       "oboe",
       "bassoon",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/dolly-suite-op-56-arranged-for-oboe-bassoon-and-piano.html"
   },
   {
     "title": "Four Movements from Dolly: Berceuse, Mi-A-Ou, Jardin de Dolly, Pas Espagnol, Op. 56 by Fauré / Arranged for Flute, Bassoon, Horn, and String Ensemble",
@@ -1795,7 +1838,8 @@
       "alto saxophone",
       "piano",
       "saxophone"
-    ]
+    ],
+    "program_note_href": "notes/five-pieces-by-edward-macdowell-for-alto-saxophone-and-piano.html"
   },
   {
     "title": "Five Pieces by Edward MacDowell Arranged for Clarinet in B Flat and Piano",
@@ -1827,7 +1871,8 @@
       "oboe",
       "clarinet",
       "bassoon"
-    ]
+    ],
+    "program_note_href": "notes/three-pieces-by-edward-macdowell-arranged-for-woodwind-quartet.html"
   },
   {
     "title": "Trois Mouvements Perpétuels by Poulenc / Arranged for Woodwind Quintet",
@@ -1861,7 +1906,8 @@
       "clarinet",
       "bass clarinet",
       "bass"
-    ]
+    ],
+    "program_note_href": "notes/elite-syncopations-arranged-for-clarinet-quartet.html"
   },
   {
     "title": "Three Menuetti by Mozart from K. 331, 282 and 421 / Arranged for 71 Diverse Instrumental Trios",
@@ -1887,7 +1933,8 @@
     "keywords": [
       "oboe",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/sonata-in-b-op-147-by-schubert-arranged-for-oboe-and-piano.html"
   },
   {
     "title": "Kinderszenen, Op. 15 by Robert Schumann Arranged for Woodwind Quartet",
@@ -1975,7 +2022,8 @@
         "href": "catalogue/vocal/treble-chorus.html#karens-song-for-soprano-or-treble-chorus-flute-and-piano-or-harp",
         "section": "Vocal · Treble Chorus and Children's Chorus"
       }
-    ]
+    ],
+    "program_note_href": "notes/karens-song-for-soprano-or-treble-chorus-flute-and-piano-or-harp.html"
   },
   {
     "title": "Sieben Lieder aus Des Knaben Wunderhorn (Seven Songs from Des Knaben Wunderhorn) for High Male Voice and Piano",
@@ -2030,7 +2078,8 @@
       "soprano",
       "voice",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/six-italian-song-for-soprano-and-piano.html"
   },
   {
     "title": "Three Poems of Abigail Lynne Becker for Soprano, Viola and Piano",
@@ -2075,7 +2124,8 @@
         "href": "catalogue/vocal/mixed-chorus.html#chinese-folk-song-mashup-10",
         "section": "Vocal · Mixed Chorus (SATB and other)"
       }
-    ]
+    ],
+    "program_note_href": "notes/chinese-folk-song-mashup-10.html"
   },
   {
     "title": "Dialogue Between the Gout and Mr. Franklin for Soprano, Tenor and Piano",
@@ -2168,7 +2218,8 @@
       "chorus",
       "French horn",
       "horn"
-    ]
+    ],
+    "program_note_href": "notes/carol-of-the-field-mice.html"
   },
   {
     "title": "Clouds and Rain for Treble Chorus (SS) and Piano",
@@ -2193,7 +2244,8 @@
     "keywords": [
       "chorus",
       "voice"
-    ]
+    ],
+    "program_note_href": "notes/come-let-us-mourn.html"
   },
   {
     "title": "Crocus for Treble Chorus, Piano, and Orchestral Bells",
@@ -2207,7 +2259,8 @@
       "piano",
       "bells",
       "voice"
-    ]
+    ],
+    "program_note_href": "notes/crocus-for-treble-chorus-piano-and-orchestral-bells.html"
   },
   {
     "title": "English is Tough Stuff for Treble or Children's Chorus and Piano",
@@ -2220,7 +2273,8 @@
       "chorus",
       "piano",
       "voice"
-    ]
+    ],
+    "program_note_href": "notes/english-is-tough-stuff-for-treble-or-childrens-chorus-and-piano.html"
   },
   {
     "title": "The Sandpiper for Two Treble Choruses, Flute, Clarinet, and Guitar (or Cello)",
@@ -2236,7 +2290,8 @@
       "guitar",
       "cello",
       "voice"
-    ]
+    ],
+    "program_note_href": "notes/the-sandpiper.html"
   },
   {
     "title": "Sing Little, Little Bird, Oh Sing! for Treble Chorus and Piano",
@@ -2279,7 +2334,8 @@
       "chorus",
       "voice",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/two-songs-from-the-wind-in-the-willows-for-treble-chorus-and-piano.html"
   },
   {
     "title": "A Poet's Life for SATB Chorus, Piano, Maracas, and Bongos",
@@ -2292,7 +2348,8 @@
       "chorus",
       "piano",
       "percussion"
-    ]
+    ],
+    "program_note_href": "notes/a-poets-life-for-satb-chorus-piano-maracas-and-bongos.html"
   },
   {
     "title": "A Year and a Day for SATB Chorus, Treble Soloists, Flute, Cello, Celeste (or Synthesizer), Piano and Percussion (one player)",
@@ -2309,7 +2366,8 @@
       "celeste",
       "percussion",
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/a-year-and-a-day-for-satb-chorus-treble-soloists-flute-cello-celeste-or-synthesizer-percussion-and-piano.html"
   },
   {
     "title": "Carol of the Field Mice for SATB Chorus, unaccompanied",
@@ -2407,7 +2465,8 @@
     "keywords": [
       "voice",
       "chorus"
-    ]
+    ],
+    "program_note_href": "notes/five-poems-by-celia-l-thaxter-for-satb-chorus.html"
   },
   {
     "title": "The Geheimerath Rödelein's House for S.A.T.B. Chorus, Piano, and Narrator",
@@ -2420,7 +2479,8 @@
       "chorus",
       "piano",
       "narrator"
-    ]
+    ],
+    "program_note_href": "notes/the-geheimerath-rodeleins-house-for-satb-chorus-piano-and-narrator.html"
   },
   {
     "title": "On Censure or Backbiting for SATB Chorus, Unaccompanied",
@@ -2484,7 +2544,8 @@
     "section": "Piano · Other",
     "keywords": [
       "harpsichord"
-    ]
+    ],
+    "program_note_href": "notes/flight-of-the-bungled-g-for-harpsicord.html"
   },
   {
     "title": "Flight of the Bungled G for Piano Four-Hands",
@@ -2495,7 +2556,8 @@
     "section": "Piano · Four-hands",
     "keywords": [
       "piano"
-    ]
+    ],
+    "program_note_href": "notes/flight-of-the-bungled-g-for-piano-four-hands.html"
   },
   {
     "title": "Cadenzas to W. A. Mozart's Piano Concerto, K. 467",

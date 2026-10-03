@@ -1038,6 +1038,16 @@ dialog input:focus-visible {
   background: var(--bg);
 }
 
+.note-return {
+  margin: 0 0 1.35rem;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+}
+
+.note-body + .note-return {
+  margin: 1.75rem 0 0;
+}
+
 .note-body {
   max-width: 42rem;
 }

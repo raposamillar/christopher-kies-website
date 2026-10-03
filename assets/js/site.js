@@ -266,6 +266,17 @@
 
   const pageFilterFromQuery = (query) => pageFilterMap[fold(query).trim().replace(/\s+/g, " ")] || null;
 
+  const PROGRAM_NOTE_QUERIES = new Set([
+    "program",
+    "program note",
+    "program notes",
+    "note",
+    "notes",
+  ]);
+
+  const isProgramNoteQuery = (query) =>
+    PROGRAM_NOTE_QUERIES.has(fold(query).trim().replace(/\s+/g, " "));
+
   const listingsOf = (entry) => {
     if (entry.listings && entry.listings.length) {
       return entry.listings;
@@ -434,23 +445,29 @@
       return;
     }
     const prefix = (searchRoot && searchRoot.getAttribute("data-prefix")) || "";
-    const page = pageFilterFromQuery(trimmed);
+    const programNotes = isProgramNoteQuery(trimmed);
+    const page = programNotes ? null : pageFilterFromQuery(trimmed);
     const hits = (
-      page
-        ? (searchIndex || []).map((entry) => resolveForPage(entry, page)).filter(Boolean)
-        : (searchIndex || []).filter((entry) => matches(entry, trimmed)).map((entry) => resolveForPage(entry, null))
-    ).slice(0, 100);
+      programNotes
+        ? (searchIndex || []).filter((entry) => entry.program_note_href).map((entry) => resolveForPage(entry, null))
+        : page
+          ? (searchIndex || []).map((entry) => resolveForPage(entry, page)).filter(Boolean)
+          : (searchIndex || []).filter((entry) => matches(entry, trimmed)).map((entry) => resolveForPage(entry, null))
+    ).slice(0, programNotes ? Infinity : 100);
     searchStatus.textContent = hits.length
-      ? `${hits.length} work${hits.length === 1 ? "" : "s"}`
+      ? programNotes
+        ? `${hits.length} program note${hits.length === 1 ? "" : "s"}`
+        : `${hits.length} work${hits.length === 1 ? "" : "s"}`
       : "No works match.";
     searchResults.innerHTML = hits
       .map((entry, index) => {
         const meta = [entry.catalogue_no ? `No. ${entry.catalogue_no}` : "", entry.section, entry.forces]
           .filter(Boolean)
           .join(" · ");
-        const href = `${prefix}${entry.href}`;
+        const href = `${prefix}${programNotes ? entry.program_note_href : entry.href}`;
         const tag = tagMarkup(entry);
-        return `<li role="option" id="search-opt-${index}" aria-selected="false"><a class="search-result-link" href="${esc(href)}"><span class="search-result-title">${esc(entry.title)}${tag}</span><span class="search-result-meta">${esc(meta)}</span></a></li>`;
+        const noteName = programNotes ? `<span class="visually-hidden">, program note</span>` : "";
+        return `<li role="option" id="search-opt-${index}" aria-selected="false"><a class="search-result-link" href="${esc(href)}"><span class="search-result-title">${esc(entry.title)}${noteName}${tag}</span><span class="search-result-meta">${esc(meta)}</span></a></li>`;
       })
       .join("");
     setExpanded(true);
