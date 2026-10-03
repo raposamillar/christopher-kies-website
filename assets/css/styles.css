@@ -435,14 +435,32 @@ dialog input:focus-visible {
 }
 
 @media (min-width: 1280px) {
+  .header-inner {
+    justify-content: center;
+  }
+
+  .header-end {
+    margin-left: 0;
+    transform: translateY(0.28rem);
+  }
+
+  .site-nav .has-sub::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 0.65rem;
+  }
+
   .site-nav .has-sub:hover > .sub-nav {
     display: block;
   }
 }
 
 .site-nav .has-sub {
-  padding-bottom: 0.65rem;
-  margin-bottom: -0.65rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .site-nav .sub-nav a {
