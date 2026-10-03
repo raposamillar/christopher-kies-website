@@ -836,7 +836,7 @@
         src: (img && img.getAttribute("src")) || "",
         pdf: button.getAttribute("data-score-pdf") || "",
         filename: button.getAttribute("data-score-filename") || "",
-        alt: button.getAttribute("aria-label") || "",
+        alt: (img && img.getAttribute("alt")) || button.getAttribute("aria-label") || "",
         caption:
           button.getAttribute("data-score-caption") ||
           (captionEl ? captionEl.textContent.trim() : "Page"),
