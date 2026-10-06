@@ -1135,4 +1135,123 @@
   backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
+
+  const paletteChoices = ["slate", "gold", "red"];
+  const paletteKey = "kies-palette";
+
+  const readStoredPalette = () => {
+    try {
+      const stored = sessionStorage.getItem(paletteKey) || "";
+      return paletteChoices.includes(stored) ? stored : "";
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const mountPalettePreview = () => {
+    if (document.querySelector("[data-palette-preview]")) {
+      return;
+    }
+    const main = document.querySelector("main");
+    if (!main) {
+      return;
+    }
+    const bar = document.createElement("div");
+    bar.className = "palette-preview";
+    bar.setAttribute("data-palette-preview", "");
+    bar.innerHTML =
+      '<div class="palette-preview-inner">' +
+      '<p id="palette-preview-label">Temporary color preview</p>' +
+      '<div class="palette-preview-choices" role="group" aria-labelledby="palette-preview-label">' +
+      '<button type="button" data-palette-choice="" aria-pressed="true">Current</button>' +
+      '<button type="button" data-palette-choice="slate" aria-pressed="false">Slate</button>' +
+      '<button type="button" data-palette-choice="gold" aria-pressed="false">Tie Gold</button>' +
+      '<button type="button" data-palette-choice="red" aria-pressed="false">Hint of Red</button>' +
+      "</div></div>";
+    main.before(bar);
+  };
+
+  const markPaletteBand = () => {
+    if (document.body.classList.contains("page-home")) {
+      return;
+    }
+    const main = document.querySelector(".site-main");
+    if (!main) {
+      return;
+    }
+    const existing = main.querySelector(".page-heading, .beatles-hero, .about-layout");
+    if (existing) {
+      existing.classList.add("palette-band");
+      return;
+    }
+    const title = main.querySelector(":scope > .page-title");
+    if (!title) {
+      return;
+    }
+    const band = document.createElement("div");
+    band.className = "palette-band";
+    title.before(band);
+    band.append(title);
+    let next = band.nextElementSibling;
+    while (next && next.matches(".lede, .meta, .note-return")) {
+      const following = next.nextElementSibling;
+      band.append(next);
+      next = following;
+    }
+  };
+
+  mountPalettePreview();
+  markPaletteBand();
+
+  const paletteButtons = document.querySelectorAll("[data-palette-choice]");
+  const applyPalette = (name) => {
+    const palette = paletteChoices.includes(name) ? name : "";
+    if (palette) {
+      document.body.dataset.palette = palette;
+    } else {
+      delete document.body.dataset.palette;
+    }
+    try {
+      sessionStorage.setItem(paletteKey, palette);
+    } catch (error) {
+      /* Storage can be blocked. The choice still applies on this page. */
+    }
+    const url = new URL(location.href);
+    if (palette) {
+      url.searchParams.set("palette", palette);
+    } else {
+      url.searchParams.delete("palette");
+    }
+    history.replaceState(null, "", url);
+    paletteButtons.forEach((button) => {
+      button.setAttribute("aria-pressed", (button.dataset.paletteChoice || "") === palette ? "true" : "false");
+    });
+  };
+
+  const alignBands = () => {
+    document.querySelectorAll(".home-hero, .home-featured, .beatles-hero").forEach((section) => {
+      section.style.setProperty("--bleed-left", `${section.getBoundingClientRect().left}px`);
+    });
+  };
+
+  const initialPalette = (() => {
+    const fromUrl = new URL(location.href).searchParams.get("palette");
+    if (paletteChoices.includes(fromUrl)) {
+      return fromUrl;
+    }
+    if (fromUrl === null) {
+      return readStoredPalette();
+    }
+    return "";
+  })();
+
+  applyPalette(initialPalette);
+  alignBands();
+  window.addEventListener("resize", alignBands);
+  paletteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyPalette(button.dataset.paletteChoice);
+      alignBands();
+    });
+  });
 })();
