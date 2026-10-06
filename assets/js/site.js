@@ -1167,8 +1167,26 @@
       '<button type="button" data-palette-choice="slate" aria-pressed="false">Slate</button>' +
       '<button type="button" data-palette-choice="gold" aria-pressed="false">Tie Gold</button>' +
       '<button type="button" data-palette-choice="red" aria-pressed="false">Hint of Red</button>' +
-      "</div></div>";
+      "</div>" +
+      '<button type="button" data-theme-toggle aria-pressed="false">Dark mode</button>' +
+      "</div>";
     main.before(bar);
+  };
+
+  const ensureThemeToggle = (bar) => {
+    if (!bar || bar.querySelector("[data-theme-toggle]")) {
+      return;
+    }
+    const inner = bar.querySelector(".palette-preview-inner");
+    if (!inner) {
+      return;
+    }
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.themeToggle = "";
+    button.setAttribute("aria-pressed", "false");
+    button.textContent = "Dark mode";
+    inner.append(button);
   };
 
   const markPaletteBand = () => {
@@ -1201,7 +1219,75 @@
   };
 
   mountPalettePreview();
+  ensureThemeToggle(document.querySelector("[data-palette-preview]"));
   markPaletteBand();
+
+  const themeKey = "kies-theme";
+  const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const readStoredTheme = () => {
+    try {
+      const stored = sessionStorage.getItem(themeKey) || "";
+      return stored === "dark" || stored === "light" ? stored : "";
+    } catch (error) {
+      return "";
+    }
+  };
+  const themeIsDark = () => {
+    const choice = document.documentElement.dataset.theme || "";
+    if (choice === "dark") {
+      return true;
+    }
+    if (choice === "light") {
+      return false;
+    }
+    return themeQuery.matches;
+  };
+  const applyTheme = (theme) => {
+    if (theme === "dark" || theme === "light") {
+      document.documentElement.dataset.theme = theme;
+    } else {
+      delete document.documentElement.dataset.theme;
+    }
+    try {
+      if (theme === "dark" || theme === "light") {
+        sessionStorage.setItem(themeKey, theme);
+      } else {
+        sessionStorage.removeItem(themeKey);
+      }
+    } catch (error) {
+      /* Storage can be blocked. The choice still applies on this page. */
+    }
+    const toggle = document.querySelector("[data-theme-toggle]");
+    if (toggle) {
+      toggle.setAttribute("aria-pressed", themeIsDark() ? "true" : "false");
+    }
+    const url = new URL(location.href);
+    if (theme === "dark" || theme === "light") {
+      url.searchParams.set("theme", theme);
+    } else {
+      url.searchParams.delete("theme");
+    }
+    history.replaceState(null, "", url);
+  };
+  const initialTheme = (() => {
+    const fromUrl = new URL(location.href).searchParams.get("theme");
+    if (fromUrl === "dark" || fromUrl === "light") {
+      return fromUrl;
+    }
+    return readStoredTheme();
+  })();
+  applyTheme(initialTheme);
+  const themeToggle = document.querySelector("[data-theme-toggle]");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      applyTheme(themeIsDark() ? "light" : "dark");
+    });
+  }
+  themeQuery.addEventListener("change", () => {
+    if (!document.documentElement.dataset.theme) {
+      applyTheme("");
+    }
+  });
 
   const paletteButtons = document.querySelectorAll("[data-palette-choice]");
   const applyPalette = (name) => {

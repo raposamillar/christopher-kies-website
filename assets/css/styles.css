@@ -161,7 +161,7 @@ dialog input:focus-visible {
   font-weight: 700;
   font-size: 1.75rem;
   letter-spacing: 0.02em;
-  color: #000000;
+  color: var(--ink);
   white-space: nowrap;
   overflow-wrap: normal;
 }
@@ -1030,11 +1030,11 @@ figure > figcaption.cover-credit {
   min-height: 44px;
   min-width: 44px;
   padding: 0.5rem 0.15rem;
-  color: #111111;
-  background-color: #ffffff;
+  color: var(--ink);
+  background-color: var(--bg);
   line-height: 1.5;
   text-decoration-line: underline;
-  text-decoration-color: #111111;
+  text-decoration-color: var(--ink);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
   overflow-wrap: break-word;
@@ -2405,7 +2405,7 @@ figure > figcaption.cover-credit {
   padding: 0;
   border: 0;
   max-width: 34rem;
-  color: #111111;
+  color: var(--ink);
   font-family: var(--serif);
   font-size: 1.25rem;
   font-weight: 560;
@@ -2530,7 +2530,7 @@ figure > figcaption.cover-credit {
   font-family: var(--serif);
   font-size: 1.25rem;
   font-weight: 560;
-  color: #111111;
+  color: var(--ink);
 }
 
 .page-beatles .video-more a {
@@ -2656,8 +2656,8 @@ figure > figcaption.cover-credit {
   position: sticky;
   top: var(--header-offset);
   z-index: 18;
-  background: #ffffff;
-  border-bottom: 1px solid #111111;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
 }
 
 @media (max-width: 759px) {
@@ -2697,16 +2697,16 @@ figure > figcaption.cover-credit {
 .palette-preview button {
   min-height: 44px;
   padding: 0.4rem 0.85rem;
-  border: 1px solid #6e6e6e;
-  background: #ffffff;
-  color: #111111;
+  border: 1px solid var(--rule-light);
+  background: var(--bg);
+  color: var(--ink);
   font: inherit;
   font-size: 0.95rem;
   cursor: pointer;
 }
 
 .palette-preview button[aria-pressed="true"] {
-  border: 2px solid #111111;
+  border: 2px solid var(--ink);
   font-weight: 600;
 }
 
@@ -2714,6 +2714,8 @@ body {
   --palette-accent: #111111;
   --palette-band: #e6e3de;
   --palette-chip: #ffffff;
+  --palette-chip-ink: #111111;
+  --palette-on-accent: #ffffff;
   overflow-x: clip;
 }
 
@@ -2738,11 +2740,12 @@ body[data-palette="red"] {
 }
 
 body[data-palette] {
-  color: #201c1b;
+  --ink: #201c1b;
+  color: var(--ink);
 }
 
 body[data-palette] a {
-  color: #201c1b;
+  color: var(--ink);
 }
 
 .kicker {
@@ -2837,7 +2840,7 @@ h3 .catno {
   padding: 0.12em 0.55em;
   border-radius: 999px;
   background: var(--palette-chip);
-  color: #111111;
+  color: var(--palette-chip-ink);
   font-size: 0.72em;
   line-height: 1.4;
   white-space: nowrap;
@@ -2845,12 +2848,12 @@ h3 .catno {
 }
 
 body[data-palette="red"] .kicker {
-  color: #201c1b;
+  color: var(--ink);
 }
 
 body[data-palette="red"] .kicker::before,
 body[data-palette="red"] .page-title::before {
-  background: #201c1b;
+  background: var(--ink);
   opacity: 0.35;
 }
 
@@ -2860,12 +2863,12 @@ body[data-palette="red"] .home-featured .kicker::before {
 }
 
 body[data-palette="red"] h2 a {
-  text-decoration-color: #201c1b;
+  text-decoration-color: var(--ink);
 }
 
 .back-to-top {
   background: var(--palette-accent);
-  color: #ffffff;
+  color: var(--palette-on-accent);
   border-color: var(--palette-accent);
   box-shadow: 0 2px 10px rgba(32, 28, 27, 0.22);
 }
@@ -2941,5 +2944,132 @@ body:not(.page-home) .page-title::before {
   .kicker::before,
   .page-beatles .page-title::before {
     margin-inline: auto;
+  }
+}
+
+/* Dark mode. Text on the page and on each band stays at or above 7:1. */
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --tag-beatles-fg: #f7f8ff;
+}
+
+html[data-theme="dark"] body {
+  --bg: #141311;
+  --ink: #f6f3ee;
+  --muted: #d4cfc8;
+  --rule: #f6f3ee;
+  --rule-light: #b7b1a8;
+  --focus: #f6f3ee;
+  --wash: #2c2926;
+  --palette-accent: #f6f3ee;
+  --palette-band: #2c2926;
+  --palette-chip: #f3efe8;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
+html[data-theme="dark"] body[data-palette="slate"] {
+  --palette-accent: #d5e4f4;
+  --palette-band: #243044;
+  --palette-chip: #d5e4f4;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
+html[data-theme="dark"] body[data-palette="gold"] {
+  --palette-accent: #f6d78a;
+  --palette-band: #3a2e18;
+  --palette-chip: #f6e7c4;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
+html[data-theme="dark"] body[data-palette="red"] {
+  --palette-accent: #ffc1bb;
+  --palette-band: #3a2828;
+  --palette-chip: #f6d4d0;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    color-scheme: dark;
+    --tag-beatles-fg: #f7f8ff;
+  }
+
+  html:not([data-theme="light"]) body {
+    --bg: #141311;
+    --ink: #f6f3ee;
+    --muted: #d4cfc8;
+    --rule: #f6f3ee;
+    --rule-light: #b7b1a8;
+    --focus: #f6f3ee;
+    --wash: #2c2926;
+    --palette-accent: #f6f3ee;
+    --palette-band: #2c2926;
+    --palette-chip: #f3efe8;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body[data-palette="slate"] {
+    --palette-accent: #d5e4f4;
+    --palette-band: #243044;
+    --palette-chip: #d5e4f4;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body[data-palette="gold"] {
+    --palette-accent: #f6d78a;
+    --palette-band: #3a2e18;
+    --palette-chip: #f6e7c4;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body[data-palette="red"] {
+    --palette-accent: #ffc1bb;
+    --palette-band: #3a2828;
+    --palette-chip: #f6d4d0;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+}
+
+html[data-theme="dark"] .search-dialog::backdrop,
+html[data-theme="dark"] .photo-dialog::backdrop,
+html[data-theme="dark"] .album-dialog::backdrop {
+  background: rgba(10, 9, 8, 0.78);
+}
+
+html[data-theme="dark"] .featured-score img,
+html[data-theme="dark"] .score-pair img,
+html[data-theme="dark"] .album-card img,
+html[data-theme="dark"] .about-portrait img,
+html[data-theme="dark"] .about-gallery img,
+html[data-theme="dark"] .media-item img,
+html[data-theme="dark"] .album-dialog-images img,
+html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
+  border-color: rgba(246, 243, 238, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .search-dialog::backdrop,
+  html:not([data-theme="light"]) .photo-dialog::backdrop,
+  html:not([data-theme="light"]) .album-dialog::backdrop {
+    background: rgba(10, 9, 8, 0.78);
+  }
+
+  html:not([data-theme="light"]) .featured-score img,
+  html:not([data-theme="light"]) .score-pair img,
+  html:not([data-theme="light"]) .album-card img,
+  html:not([data-theme="light"]) .about-portrait img,
+  html:not([data-theme="light"]) .about-gallery img,
+  html:not([data-theme="light"]) .media-item img,
+  html:not([data-theme="light"]) .album-dialog-images img,
+  html:not([data-theme="light"]) [data-photo-dialog] .photo-dialog-stage img {
+    border-color: rgba(246, 243, 238, 0.35);
   }
 }
