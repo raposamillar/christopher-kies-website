@@ -993,6 +993,36 @@ figure > figcaption.cover-credit {
   letter-spacing: 0.04em;
 }
 
+/* Rights-holder contact. #111 on #fff ≈ 18.7:1 (1.4.6 AAA).
+   Underline is not color-only. 44px target (2.5.5 AAA). */
+.composer-contact {
+  margin: 0.35rem 0 0;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+.composer-contact a {
+  display: inline-block;
+  max-width: 100%;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.15rem;
+  color: #111111;
+  background-color: #ffffff;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  text-decoration-color: #111111;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+  overflow-wrap: break-word;
+}
+
+.composer-contact a:hover {
+  text-decoration-thickness: 2px;
+}
+
 .breadcrumb {
   font-family: var(--sans);
   font-size: 1.05rem;
