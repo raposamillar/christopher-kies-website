@@ -2749,6 +2749,22 @@ body[data-palette="red"] {
   --palette-chip: #fbeae7;
 }
 
+body[data-palette="green"] {
+  /* Leaf green from the Eight Days a Week cover. #2e5700 on the band ≈ 7.4:1 and on white ≈ 8.5:1 (AAA). */
+  --palette-accent: #2e5700;
+  --palette-accent-hover: #587933; /* white on hover ≈ 5.0:1 */
+  --palette-band: #e6f4d7;
+  --palette-chip: #e6f4d7;
+}
+
+body[data-palette="lavender"] {
+  /* Violet from the Beatles covers. #573d76 on the band ≈ 7.1:1 and on white ≈ 9.0:1 (AAA). */
+  --palette-accent: #573d76;
+  --palette-accent-hover: #796491; /* white on hover ≈ 5.2:1 */
+  --palette-band: #ede0f9;
+  --palette-chip: #ede0f9;
+}
+
 body[data-palette] {
   --ink: #201c1b;
   color: var(--ink);
@@ -2855,6 +2871,10 @@ h3 .catno {
   line-height: 1.4;
   white-space: nowrap;
   box-shadow: inset 0 0 0 1px rgba(32, 28, 27, 0.14);
+}
+
+body[data-palette] .home-featured .catno {
+  background: #ffffff;
 }
 
 body[data-palette="red"] .kicker {
@@ -3014,6 +3034,24 @@ html[data-theme="dark"] body[data-palette="red"] {
   --palette-on-accent: #141311;
 }
 
+html[data-theme="dark"] body[data-palette="green"] {
+  --palette-accent: #c5ed97;
+  --palette-accent-hover: #87a168; /* #141311 on hover ≈ 6.5:1 */
+  --palette-band: #2f3e1e;
+  --palette-chip: #e1eed3;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
+html[data-theme="dark"] body[data-palette="lavender"] {
+  --palette-accent: #e3cdf5;
+  --palette-accent-hover: #9b8ca5; /* #141311 on hover ≈ 5.9:1 */
+  --palette-band: #322145;
+  --palette-chip: #eadcf6;
+  --palette-chip-ink: #141311;
+  --palette-on-accent: #141311;
+}
+
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) {
     color-scheme: dark;
@@ -3059,6 +3097,24 @@ html[data-theme="dark"] body[data-palette="red"] {
     --palette-accent-hover: #ad8480;
     --palette-band: #3a2828;
     --palette-chip: #f6d4d0;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body[data-palette="green"] {
+    --palette-accent: #c5ed97;
+    --palette-accent-hover: #87a168;
+    --palette-band: #2f3e1e;
+    --palette-chip: #e1eed3;
+    --palette-chip-ink: #141311;
+    --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body[data-palette="lavender"] {
+    --palette-accent: #e3cdf5;
+    --palette-accent-hover: #9b8ca5;
+    --palette-band: #322145;
+    --palette-chip: #eadcf6;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }

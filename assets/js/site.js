@@ -1136,7 +1136,7 @@
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
 
-  const paletteChoices = ["slate", "gold", "red"];
+  const paletteChoices = ["slate", "gold", "red", "green", "lavender"];
   const paletteKey = "kies-palette";
 
   const readStoredPalette = () => {
@@ -1167,6 +1167,8 @@
       '<button type="button" data-palette-choice="slate" aria-pressed="false">Slate</button>' +
       '<button type="button" data-palette-choice="gold" aria-pressed="false">Tie Gold</button>' +
       '<button type="button" data-palette-choice="red" aria-pressed="false">Hint of Red</button>' +
+      '<button type="button" data-palette-choice="green" aria-pressed="false">Sage</button>' +
+      '<button type="button" data-palette-choice="lavender" aria-pressed="false">Lavender</button>' +
       "</div>" +
       '<button type="button" data-theme-toggle aria-pressed="false">Dark mode</button>' +
       "</div>";
