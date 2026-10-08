@@ -2719,7 +2719,7 @@ figure > figcaption.cover-credit {
 body {
   --palette-accent: #111111;
   --palette-accent-hover: #414141; /* white on hover ≈ 10.2:1 */
-  --palette-band: #e6e3de;
+  --palette-band: #f3f0ed; /* album-cover padding; #111 on the band ≈ 16.6:1 */
   --palette-chip: #ffffff;
   --palette-chip-ink: #111111;
   --palette-on-accent: #ffffff;
@@ -3001,8 +3001,8 @@ html[data-theme="dark"] body {
   --wash: #2c2926;
   --palette-accent: #f6f3ee;
   --palette-accent-hover: #a7a5a1; /* #141311 on hover ≈ 7.6:1 */
-  --palette-band: #2c2926;
-  --palette-chip: #f3efe8;
+  --palette-band: #211f1d; /* same quiet step from the page as #f3f0ed is from white; text ≈ 14.8:1 */
+  --palette-chip: #f3f0ed;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
@@ -3068,8 +3068,8 @@ html[data-theme="dark"] body[data-palette="lavender"] {
     --wash: #2c2926;
     --palette-accent: #f6f3ee;
     --palette-accent-hover: #a7a5a1;
-    --palette-band: #2c2926;
-    --palette-chip: #f3efe8;
+    --palette-band: #211f1d;
+    --palette-chip: #f3f0ed;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
