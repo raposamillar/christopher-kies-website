@@ -2479,7 +2479,7 @@ figure > figcaption.cover-credit {
 }
 
 .page-beatles .beatles-hero.palette-band::before {
-  top: -1rem;
+  top: -1.5rem;
   left: calc(-1 * var(--bleed-left, 0px));
   transform: none;
 }
@@ -2562,7 +2562,7 @@ figure > figcaption.cover-credit {
     max-height: calc(100dvh - var(--header-offset) - 8rem);
   }
 
-  .page-beatles .site-main {
+  .page-beatles:has(.beatles-hero) .site-main {
     padding-left: 3.25rem;
   }
 
@@ -2596,7 +2596,7 @@ figure > figcaption.cover-credit {
     max-height: calc(100dvh - var(--header-offset) - 6.5rem);
   }
 
-  .page-beatles .site-main {
+  .page-beatles:has(.beatles-hero) .site-main {
     padding-left: 5rem;
   }
 
@@ -2721,40 +2721,60 @@ body {
 body[data-palette="slate"] {
   --palette-accent: #2f4a6b;
   --palette-accent-hover: #596e89; /* white on hover ≈ 5.2:1 */
-  --palette-band: #dde4ec;
   --palette-chip: #dde4ec;
+}
+
+body.page-home[data-palette="slate"],
+body.page-beatles[data-palette="slate"] {
+  --palette-band: #dde4ec;
 }
 
 body[data-palette="gold"] {
   /* #6f4600 on the band ≈ 7.2:1 and on white ≈ 8.2:1 (AAA normal text). */
   --palette-accent: #6f4600;
   --palette-accent-hover: #8c6b33; /* white on hover ≈ 4.9:1 */
-  --palette-band: #fbefcb;
   --palette-chip: #fbefcb;
+}
+
+body.page-home[data-palette="gold"],
+body.page-beatles[data-palette="gold"] {
+  --palette-band: #fbefcb;
 }
 
 body[data-palette="red"] {
   /* #971e23 on the band ≈ 7.1:1; white on #971e23 ≈ 8.3:1 (AAA). */
   --palette-accent: #971e23;
   --palette-accent-hover: #ac4b4f; /* white on hover ≈ 5.4:1 */
-  --palette-band: #fbeae7;
   --palette-chip: #fbeae7;
+}
+
+body.page-home[data-palette="red"],
+body.page-beatles[data-palette="red"] {
+  --palette-band: #fbeae7;
 }
 
 body[data-palette="green"] {
   /* Leaf green from the Eight Days a Week cover. #2e5700 on the band ≈ 7.4:1 and on white ≈ 8.5:1 (AAA). */
   --palette-accent: #2e5700;
   --palette-accent-hover: #587933; /* white on hover ≈ 5.0:1 */
-  --palette-band: #e6f4d7;
   --palette-chip: #e6f4d7;
+}
+
+body.page-home[data-palette="green"],
+body.page-beatles[data-palette="green"] {
+  --palette-band: #e6f4d7;
 }
 
 body[data-palette="lavender"] {
   /* Violet from the Beatles covers. #573d76 on the band ≈ 7.1:1 and on white ≈ 9.0:1 (AAA). */
   --palette-accent: #573d76;
   --palette-accent-hover: #796491; /* white on hover ≈ 5.2:1 */
-  --palette-band: #ede0f9;
   --palette-chip: #ede0f9;
+}
+
+body.page-home[data-palette="lavender"],
+body.page-beatles[data-palette="lavender"] {
+  --palette-band: #ede0f9;
 }
 
 body[data-palette] {
@@ -2982,6 +3002,10 @@ body:not(.page-home) .page-title::before {
   }
 }
 
+.page-albums .palette-band:has(> .page-title)::before {
+  bottom: -1.65rem;
+}
+
 .about-layout.palette-band::before {
   clip-path: shape(
     from 0 0.9rem,
@@ -3013,7 +3037,7 @@ body:not(.page-home) .page-title::before {
 
 @media (max-width: 759px) {
   .kicker::before,
-  .page-beatles .page-title::before {
+  .page-beatles .beatles-hero .page-title::before {
     margin-inline: auto;
   }
 }
@@ -3043,46 +3067,66 @@ html[data-theme="dark"] body {
 html[data-theme="dark"] body[data-palette="slate"] {
   --palette-accent: #d5e4f4;
   --palette-accent-hover: #919ba5; /* #141311 on hover ≈ 6.6:1 */
-  --palette-band: #243044;
   --palette-chip: #d5e4f4;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
 
+html[data-theme="dark"] body.page-home[data-palette="slate"],
+html[data-theme="dark"] body.page-beatles[data-palette="slate"] {
+  --palette-band: #243044;
+}
+
 html[data-theme="dark"] body[data-palette="gold"] {
   --palette-accent: #f6d78a;
   --palette-accent-hover: #a79260; /* #141311 on hover ≈ 6.1:1 */
-  --palette-band: #3a2e18;
   --palette-chip: #f6e7c4;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
 
+html[data-theme="dark"] body.page-home[data-palette="gold"],
+html[data-theme="dark"] body.page-beatles[data-palette="gold"] {
+  --palette-band: #3a2e18;
+}
+
 html[data-theme="dark"] body[data-palette="red"] {
   --palette-accent: #ffc1bb;
   --palette-accent-hover: #ad8480; /* #141311 on hover ≈ 5.7:1 */
-  --palette-band: #3a2828;
   --palette-chip: #f6d4d0;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
 
+html[data-theme="dark"] body.page-home[data-palette="red"],
+html[data-theme="dark"] body.page-beatles[data-palette="red"] {
+  --palette-band: #3a2828;
+}
+
 html[data-theme="dark"] body[data-palette="green"] {
   --palette-accent: #c5ed97;
   --palette-accent-hover: #87a168; /* #141311 on hover ≈ 6.5:1 */
-  --palette-band: #2f3e1e;
   --palette-chip: #e1eed3;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
 
+html[data-theme="dark"] body.page-home[data-palette="green"],
+html[data-theme="dark"] body.page-beatles[data-palette="green"] {
+  --palette-band: #2f3e1e;
+}
+
 html[data-theme="dark"] body[data-palette="lavender"] {
   --palette-accent: #e3cdf5;
   --palette-accent-hover: #9b8ca5; /* #141311 on hover ≈ 5.9:1 */
-  --palette-band: #322145;
   --palette-chip: #eadcf6;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
+}
+
+html[data-theme="dark"] body.page-home[data-palette="lavender"],
+html[data-theme="dark"] body.page-beatles[data-palette="lavender"] {
+  --palette-band: #322145;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -3110,46 +3154,66 @@ html[data-theme="dark"] body[data-palette="lavender"] {
   html:not([data-theme="light"]) body[data-palette="slate"] {
     --palette-accent: #d5e4f4;
     --palette-accent-hover: #919ba5;
-    --palette-band: #243044;
     --palette-chip: #d5e4f4;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
 
+  html:not([data-theme="light"]) body.page-home[data-palette="slate"],
+  html:not([data-theme="light"]) body.page-beatles[data-palette="slate"] {
+    --palette-band: #243044;
+  }
+
   html:not([data-theme="light"]) body[data-palette="gold"] {
     --palette-accent: #f6d78a;
     --palette-accent-hover: #a79260;
-    --palette-band: #3a2e18;
     --palette-chip: #f6e7c4;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
 
+  html:not([data-theme="light"]) body.page-home[data-palette="gold"],
+  html:not([data-theme="light"]) body.page-beatles[data-palette="gold"] {
+    --palette-band: #3a2e18;
+  }
+
   html:not([data-theme="light"]) body[data-palette="red"] {
     --palette-accent: #ffc1bb;
     --palette-accent-hover: #ad8480;
-    --palette-band: #3a2828;
     --palette-chip: #f6d4d0;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
 
+  html:not([data-theme="light"]) body.page-home[data-palette="red"],
+  html:not([data-theme="light"]) body.page-beatles[data-palette="red"] {
+    --palette-band: #3a2828;
+  }
+
   html:not([data-theme="light"]) body[data-palette="green"] {
     --palette-accent: #c5ed97;
     --palette-accent-hover: #87a168;
-    --palette-band: #2f3e1e;
     --palette-chip: #e1eed3;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
 
+  html:not([data-theme="light"]) body.page-home[data-palette="green"],
+  html:not([data-theme="light"]) body.page-beatles[data-palette="green"] {
+    --palette-band: #2f3e1e;
+  }
+
   html:not([data-theme="light"]) body[data-palette="lavender"] {
     --palette-accent: #e3cdf5;
     --palette-accent-hover: #9b8ca5;
-    --palette-band: #322145;
     --palette-chip: #eadcf6;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
+  }
+
+  html:not([data-theme="light"]) body.page-home[data-palette="lavender"],
+  html:not([data-theme="light"]) body.page-beatles[data-palette="lavender"] {
+    --palette-band: #322145;
   }
 }
 
