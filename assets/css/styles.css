@@ -600,7 +600,13 @@ dialog input:focus-visible {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
+  transition: opacity 0.2s ease, visibility 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: none;
+  }
 }
 
 .back-to-top svg {
@@ -2712,6 +2718,7 @@ figure > figcaption.cover-credit {
 
 body {
   --palette-accent: #111111;
+  --palette-accent-hover: #414141; /* white on hover ≈ 10.2:1 */
   --palette-band: #e6e3de;
   --palette-chip: #ffffff;
   --palette-chip-ink: #111111;
@@ -2721,6 +2728,7 @@ body {
 
 body[data-palette="slate"] {
   --palette-accent: #2f4a6b;
+  --palette-accent-hover: #596e89; /* white on hover ≈ 5.2:1 */
   --palette-band: #dde4ec;
   --palette-chip: #dde4ec;
 }
@@ -2728,6 +2736,7 @@ body[data-palette="slate"] {
 body[data-palette="gold"] {
   /* #6f4600 on the band ≈ 7.2:1 and on white ≈ 8.2:1 (AAA normal text). */
   --palette-accent: #6f4600;
+  --palette-accent-hover: #8c6b33; /* white on hover ≈ 4.9:1 */
   --palette-band: #fbefcb;
   --palette-chip: #fbefcb;
 }
@@ -2735,6 +2744,7 @@ body[data-palette="gold"] {
 body[data-palette="red"] {
   /* #971e23 on the band ≈ 7.1:1; white on #971e23 ≈ 8.3:1 (AAA). */
   --palette-accent: #971e23;
+  --palette-accent-hover: #ac4b4f; /* white on hover ≈ 5.4:1 */
   --palette-band: #fbeae7;
   --palette-chip: #fbeae7;
 }
@@ -2873,6 +2883,14 @@ body[data-palette="red"] h2 a {
   box-shadow: 0 2px 10px rgba(32, 28, 27, 0.22);
 }
 
+.back-to-top:hover,
+.back-to-top:active {
+  background: var(--palette-accent-hover);
+  border-color: var(--palette-accent-hover);
+  box-shadow: 0 10px 24px rgba(20, 19, 17, 0.34), 0 2px 6px rgba(20, 19, 17, 0.2);
+  transform: translateY(-2px);
+}
+
 .palette-band {
   position: relative;
   isolation: isolate;
@@ -2962,6 +2980,7 @@ html[data-theme="dark"] body {
   --focus: #f6f3ee;
   --wash: #2c2926;
   --palette-accent: #f6f3ee;
+  --palette-accent-hover: #a7a5a1; /* #141311 on hover ≈ 7.6:1 */
   --palette-band: #2c2926;
   --palette-chip: #f3efe8;
   --palette-chip-ink: #141311;
@@ -2970,6 +2989,7 @@ html[data-theme="dark"] body {
 
 html[data-theme="dark"] body[data-palette="slate"] {
   --palette-accent: #d5e4f4;
+  --palette-accent-hover: #919ba5; /* #141311 on hover ≈ 6.6:1 */
   --palette-band: #243044;
   --palette-chip: #d5e4f4;
   --palette-chip-ink: #141311;
@@ -2978,6 +2998,7 @@ html[data-theme="dark"] body[data-palette="slate"] {
 
 html[data-theme="dark"] body[data-palette="gold"] {
   --palette-accent: #f6d78a;
+  --palette-accent-hover: #a79260; /* #141311 on hover ≈ 6.1:1 */
   --palette-band: #3a2e18;
   --palette-chip: #f6e7c4;
   --palette-chip-ink: #141311;
@@ -2986,6 +3007,7 @@ html[data-theme="dark"] body[data-palette="gold"] {
 
 html[data-theme="dark"] body[data-palette="red"] {
   --palette-accent: #ffc1bb;
+  --palette-accent-hover: #ad8480; /* #141311 on hover ≈ 5.7:1 */
   --palette-band: #3a2828;
   --palette-chip: #f6d4d0;
   --palette-chip-ink: #141311;
@@ -3007,6 +3029,7 @@ html[data-theme="dark"] body[data-palette="red"] {
     --focus: #f6f3ee;
     --wash: #2c2926;
     --palette-accent: #f6f3ee;
+    --palette-accent-hover: #a7a5a1;
     --palette-band: #2c2926;
     --palette-chip: #f3efe8;
     --palette-chip-ink: #141311;
@@ -3015,6 +3038,7 @@ html[data-theme="dark"] body[data-palette="red"] {
 
   html:not([data-theme="light"]) body[data-palette="slate"] {
     --palette-accent: #d5e4f4;
+    --palette-accent-hover: #919ba5;
     --palette-band: #243044;
     --palette-chip: #d5e4f4;
     --palette-chip-ink: #141311;
@@ -3023,6 +3047,7 @@ html[data-theme="dark"] body[data-palette="red"] {
 
   html:not([data-theme="light"]) body[data-palette="gold"] {
     --palette-accent: #f6d78a;
+    --palette-accent-hover: #a79260;
     --palette-band: #3a2e18;
     --palette-chip: #f6e7c4;
     --palette-chip-ink: #141311;
@@ -3031,11 +3056,17 @@ html[data-theme="dark"] body[data-palette="red"] {
 
   html:not([data-theme="light"]) body[data-palette="red"] {
     --palette-accent: #ffc1bb;
+    --palette-accent-hover: #ad8480;
     --palette-band: #3a2828;
     --palette-chip: #f6d4d0;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
+}
+
+html[data-theme="dark"] .back-to-top:hover,
+html[data-theme="dark"] .back-to-top:active {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
 }
 
 html[data-theme="dark"] .search-dialog::backdrop,
@@ -3056,6 +3087,11 @@ html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
 }
 
 @media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .back-to-top:hover,
+  html:not([data-theme="light"]) .back-to-top:active {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
+  }
+
   html:not([data-theme="light"]) .search-dialog::backdrop,
   html:not([data-theme="light"]) .photo-dialog::backdrop,
   html:not([data-theme="light"]) .album-dialog::backdrop {
