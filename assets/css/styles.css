@@ -1961,13 +1961,32 @@ figure > figcaption.cover-credit {
 @media (max-width: 759px) {
   .about-portrait {
     justify-self: center;
+    width: min(100%, 16rem);
+    max-width: min(100%, 16rem);
     margin-inline: auto;
     text-align: center;
   }
 
   .about-portrait .photo-zoom,
   .about-portrait img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
     margin-inline: auto;
+  }
+
+  .about-portrait .photo-zoom:hover,
+  .about-portrait .photo-zoom:focus,
+  .about-portrait .photo-zoom:focus-visible,
+  .about-portrait img:hover,
+  .about-portrait img:focus {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: none;
+    transform: none;
   }
 }
 
@@ -2757,16 +2776,16 @@ body.page-contact[data-palette="red"] {
 }
 
 body[data-palette="green"] {
-  /* Leaf green from the Eight Days a Week cover. #2e5700 on the band ≈ 7.4:1 and on white ≈ 8.5:1 (AAA). */
-  --palette-accent: #2e5700;
-  --palette-accent-hover: #587933; /* white on hover ≈ 5.0:1 */
-  --palette-chip: #e6f4d7;
+  /* Olive band #bcc69e. #292e1c on the band ≈ 7.8:1 and on white ≈ 14.0:1 (AAA). */
+  --palette-accent: #292e1c;
+  --palette-accent-hover: #6d7165; /* white on hover ≈ 5.0:1 */
+  --palette-chip: #bcc69e;
 }
 
 body.page-home[data-palette="green"],
 body.page-beatles[data-palette="green"],
 body.page-contact[data-palette="green"] {
-  --palette-band: #e6f4d7;
+  --palette-band: #bcc69e;
 }
 
 body[data-palette="lavender"] {
@@ -2789,6 +2808,10 @@ body[data-palette] {
 
 body[data-palette] a {
   color: var(--ink);
+}
+
+body[data-palette="green"] {
+  --ink: #111111; /* #111 on #bcc69e ≈ 10.5:1 */
 }
 
 .kicker {
@@ -3112,9 +3135,9 @@ html[data-theme="dark"] body.page-contact[data-palette="red"] {
 }
 
 html[data-theme="dark"] body[data-palette="green"] {
-  --palette-accent: #c5ed97;
-  --palette-accent-hover: #87a168; /* #141311 on hover ≈ 6.5:1 */
-  --palette-chip: #e1eed3;
+  --palette-accent: #d2ddb5;
+  --palette-accent-hover: #90967c; /* #141311 on hover ≈ 6.1:1 */
+  --palette-chip: #e4edce;
   --palette-chip-ink: #141311;
   --palette-on-accent: #141311;
 }
@@ -3122,7 +3145,7 @@ html[data-theme="dark"] body[data-palette="green"] {
 html[data-theme="dark"] body.page-home[data-palette="green"],
 html[data-theme="dark"] body.page-beatles[data-palette="green"],
 html[data-theme="dark"] body.page-contact[data-palette="green"] {
-  --palette-band: #2f3e1e;
+  --palette-band: #353b23;
 }
 
 html[data-theme="dark"] body[data-palette="lavender"] {
@@ -3204,9 +3227,9 @@ html[data-theme="dark"] body.page-contact[data-palette="lavender"] {
   }
 
   html:not([data-theme="light"]) body[data-palette="green"] {
-    --palette-accent: #c5ed97;
-    --palette-accent-hover: #87a168;
-    --palette-chip: #e1eed3;
+    --palette-accent: #d2ddb5;
+    --palette-accent-hover: #90967c;
+    --palette-chip: #e4edce;
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
@@ -3214,7 +3237,7 @@ html[data-theme="dark"] body.page-contact[data-palette="lavender"] {
   html:not([data-theme="light"]) body.page-home[data-palette="green"],
   html:not([data-theme="light"]) body.page-beatles[data-palette="green"],
   html:not([data-theme="light"]) body.page-contact[data-palette="green"] {
-    --palette-band: #2f3e1e;
+    --palette-band: #353b23;
   }
 
   html:not([data-theme="light"]) body[data-palette="lavender"] {
