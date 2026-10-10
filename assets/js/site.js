@@ -1,6 +1,18 @@
 (() => {
+  const siteScriptSrc = document.currentScript && document.currentScript.src;
   const prefersReducedMotion = () =>
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const useInPageMedia = () => {
+    if (window.matchMedia("(max-width: 1100px)").matches) {
+      return true;
+    }
+    const ua = navigator.userAgent || "";
+    if (/Android|iP(hone|ad|od)/.test(ua)) {
+      return true;
+    }
+    return navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+  };
 
   const navType = () => {
     const entry = performance.getEntriesByType("navigation")[0];
@@ -845,6 +857,304 @@
     });
   }
 
+  const pdfDialog = document.createElement("dialog");
+  pdfDialog.className = "pdf-viewer";
+  pdfDialog.setAttribute("aria-labelledby", "pdf-viewer-title");
+  pdfDialog.innerHTML = `
+    <div class="pdf-viewer-panel">
+      <div class="pdf-viewer-bar">
+        <button type="button" class="pdf-viewer-back" data-pdf-viewer-back>Back</button>
+        <h2 id="pdf-viewer-title" class="pdf-viewer-title" data-pdf-viewer-title>Sample pages</h2>
+      </div>
+      <div class="pdf-viewer-stage" data-pdf-viewer-stage></div>
+    </div>
+  `;
+  document.body.appendChild(pdfDialog);
+  const pdfTitle = pdfDialog.querySelector("[data-pdf-viewer-title]");
+  const pdfStage = pdfDialog.querySelector("[data-pdf-viewer-stage]");
+  const pdfBack = pdfDialog.querySelector("[data-pdf-viewer-back]");
+  let pdfRenderToken = 0;
+  let pdfHistoryPushed = false;
+  let pdfDocument = null;
+  let pdfHref = "";
+
+  const pdfFileUrl = (href) => {
+    const url = new URL(href, location.href);
+    url.hash = "";
+    return url.href;
+  };
+
+  const releasePdf = () => {
+    pdfRenderToken += 1;
+    const doc = pdfDocument;
+    pdfDocument = null;
+    if (doc) {
+      doc.destroy().catch(() => {});
+    }
+  };
+
+  const closePdfViewer = () => {
+    if (pdfDialog.open) {
+      pdfDialog.close();
+    }
+  };
+
+  const showPdfMessage = (html) => {
+    pdfStage.innerHTML = `<p class="pdf-viewer-status">${html}</p>`;
+  };
+
+  const renderPdfPages = async (href, token) => {
+    showPdfMessage("Loading sample pages…");
+    const fileUrl = pdfFileUrl(href);
+    let pdfjs;
+    try {
+      pdfjs = await import(new URL("vendor/pdf.min.js", siteScriptSrc).href);
+    } catch (error) {
+      if (token !== pdfRenderToken) {
+        return;
+      }
+      showPdfMessage(
+        `These pages could not be shown here. <a href="${fileUrl}" target="_blank" rel="noopener">Open the PDF</a>.`
+      );
+      return;
+    }
+    if (token !== pdfRenderToken) {
+      return;
+    }
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL("vendor/pdf.worker.min.js", siteScriptSrc).href;
+    let doc;
+    try {
+      doc = await pdfjs.getDocument({ url: fileUrl }).promise;
+    } catch (error) {
+      if (token !== pdfRenderToken) {
+        return;
+      }
+      showPdfMessage(
+        `These pages could not be shown here. <a href="${fileUrl}" target="_blank" rel="noopener">Open the PDF</a>.`
+      );
+      return;
+    }
+    if (token !== pdfRenderToken) {
+      doc.destroy().catch(() => {});
+      return;
+    }
+    if (pdfDocument) {
+      pdfDocument.destroy().catch(() => {});
+    }
+    pdfDocument = doc;
+    const pages = document.createElement("div");
+    pages.className = "pdf-viewer-pages";
+    pdfStage.replaceChildren(pages);
+    const cssWidth = Math.max((pdfStage.clientWidth || window.innerWidth) - 28, 240);
+    const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+    for (let index = 1; index <= doc.numPages; index += 1) {
+      if (token !== pdfRenderToken) {
+        return;
+      }
+      const page = await doc.getPage(index);
+      if (token !== pdfRenderToken) {
+        return;
+      }
+      const unscaled = page.getViewport({ scale: 1 });
+      const viewport = page.getViewport({ scale: (cssWidth / unscaled.width) * pixelRatio });
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.floor(viewport.width);
+      canvas.height = Math.floor(viewport.height);
+      canvas.style.width = "100%";
+      canvas.style.height = "auto";
+      canvas.setAttribute("role", "img");
+      canvas.setAttribute("aria-label", `Sample page ${index} of ${doc.numPages}`);
+      pages.appendChild(canvas);
+      const context = canvas.getContext("2d", { alpha: false });
+      await page.render({ canvasContext: context, viewport }).promise;
+    }
+  };
+
+  const openPdfViewer = (href, label) => {
+    pdfHref = href;
+    pdfTitle.textContent = (label || "Sample pages").replace(/\s+/g, " ").trim();
+    if (!pdfDialog.open) {
+      pdfDialog.showModal();
+      history.pushState({ pdfViewer: 1 }, "");
+      pdfHistoryPushed = true;
+    }
+    pdfBack.focus();
+    const token = ++pdfRenderToken;
+    renderPdfPages(href, token);
+  };
+
+  pdfBack.addEventListener("click", closePdfViewer);
+  pdfDialog.addEventListener("close", () => {
+    releasePdf();
+    pdfHref = "";
+    if (pdfHistoryPushed) {
+      pdfHistoryPushed = false;
+      history.back();
+    }
+  });
+  pdfDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closePdfViewer();
+  });
+  window.addEventListener("popstate", () => {
+    if (!pdfDialog.open) {
+      return;
+    }
+    pdfHistoryPushed = false;
+    pdfDialog.close();
+  });
+  window.addEventListener("resize", () => {
+    if (!pdfDialog.open || !pdfHref) {
+      return;
+    }
+    const token = ++pdfRenderToken;
+    renderPdfPages(pdfHref, token);
+  });
+
+  if (useInPageMedia()) {
+    document.querySelectorAll("object.samples-pdf, object.score-pdf").forEach((objectEl) => {
+      const data = objectEl.getAttribute("data");
+      if (!data) {
+        return;
+      }
+      const parent = objectEl.closest(".samples") || objectEl.parentElement;
+      const linked = parent && Array.from(parent.querySelectorAll("a[href]")).some((link) => {
+        try {
+          return new URL(link.href, location.href).pathname.toLowerCase().endsWith(".pdf");
+        } catch (error) {
+          return false;
+        }
+      });
+      if (linked) {
+        objectEl.remove();
+        return;
+      }
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "pdf-viewer-open";
+      button.textContent = "View sample pages";
+      const label = objectEl.getAttribute("aria-label") || "Sample pages";
+      button.addEventListener("click", () => {
+        openPdfViewer(new URL(data, location.href).href, label);
+      });
+      objectEl.replaceWith(button);
+    });
+  }
+
+  document.addEventListener(
+    "click",
+    (event) => {
+      if (!useInPageMedia() || event.defaultPrevented || event.button !== 0) {
+        return;
+      }
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+      const link = event.target.closest("a[href]");
+      if (!link || link.target === "_blank" || link.closest(".pdf-viewer") || link.closest(".audio-player")) {
+        return;
+      }
+      let url;
+      try {
+        url = new URL(link.href, location.href);
+      } catch (error) {
+        return;
+      }
+      if (url.origin !== location.origin) {
+        return;
+      }
+      const path = url.pathname.toLowerCase();
+      const isPdf = path.endsWith(".pdf");
+      const isAudio = path.endsWith(".mp3");
+      if (!isPdf && !isAudio) {
+        return;
+      }
+      event.preventDefault();
+      event.stopPropagation();
+      if (link.hasAttribute("download")) {
+        window.open(url.href, "_blank", "noopener");
+        return;
+      }
+      const label = link.getAttribute("aria-label") || link.textContent || (isAudio ? "Recording" : "Sample pages");
+      if (isAudio) {
+        openAudioPlayer(url.href, label);
+        return;
+      }
+      openPdfViewer(url.href, label);
+    },
+    true
+  );
+
+  const audioDialog = document.createElement("dialog");
+  audioDialog.className = "pdf-viewer audio-player";
+  audioDialog.setAttribute("aria-labelledby", "audio-player-title");
+  audioDialog.innerHTML = `
+    <div class="pdf-viewer-panel">
+      <div class="pdf-viewer-bar">
+        <button type="button" class="pdf-viewer-back" data-audio-player-back>Back</button>
+        <h2 id="audio-player-title" class="pdf-viewer-title" data-audio-player-title>Recording</h2>
+      </div>
+      <div class="pdf-viewer-stage">
+        <audio class="audio-player-control" controls preload="none" data-audio-player-control></audio>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(audioDialog);
+  const audioTitle = audioDialog.querySelector("[data-audio-player-title]");
+  const audioBack = audioDialog.querySelector("[data-audio-player-back]");
+  const audioControl = audioDialog.querySelector("[data-audio-player-control]");
+  let audioHistoryPushed = false;
+
+  const openAudioPlayer = (href, label) => {
+    const next = new URL(href, location.href);
+    next.hash = "";
+    audioTitle.textContent = (label || "Recording").replace(/\s+/g, " ").trim();
+    if (audioControl.src !== next.href) {
+      audioControl.src = next.href;
+    }
+    if (!audioDialog.open) {
+      audioDialog.showModal();
+      history.pushState({ audioPlayer: 1 }, "");
+      audioHistoryPushed = true;
+    }
+    const started = audioControl.play();
+    if (started) {
+      started.catch(() => {});
+    }
+    audioBack.focus();
+  };
+
+  const closeAudioPlayer = () => {
+    if (audioDialog.open) {
+      audioDialog.close();
+    }
+  };
+
+  audioBack.addEventListener("click", closeAudioPlayer);
+  audioDialog.addEventListener("click", (event) => {
+    if (event.target === audioDialog) {
+      closeAudioPlayer();
+    }
+  });
+  audioDialog.addEventListener("close", () => {
+    audioControl.pause();
+    if (audioHistoryPushed) {
+      audioHistoryPushed = false;
+      history.back();
+    }
+  });
+  audioDialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeAudioPlayer();
+  });
+  window.addEventListener("popstate", () => {
+    if (!audioDialog.open) {
+      return;
+    }
+    audioHistoryPushed = false;
+    audioDialog.close();
+  });
+
   const scoreTriggers = Array.from(document.querySelectorAll("[data-score-lightbox]"));
   if (scoreTriggers.length) {
     const scoreDialog = document.createElement("dialog");
@@ -918,6 +1228,11 @@
         }
       }
       if (page.pdf) {
+        if (useInPageMedia()) {
+          openPdfViewer(new URL(pdfFile, location.href).href, page.alt || page.caption || downloadText);
+          closeScore();
+          return true;
+        }
         const fileAttr = page.filename ? ` download="${esc(page.filename)}"` : "";
         scoreStage.innerHTML = `
           <object class="score-pdf" data="${esc(page.pdf)}" type="application/pdf" aria-label="${esc(page.alt || page.caption)}">
@@ -972,7 +1287,9 @@
           scoreGroup.findIndex((item) => item.getAttribute("data-score-pdf") === pdf)
         );
       }
-      renderScore(scoreIndex);
+      if (renderScore(scoreIndex)) {
+        return;
+      }
       if (typeof scoreDialog.showModal === "function") {
         scoreDialog.showModal();
         scoreDialog.scrollTop = 0;
