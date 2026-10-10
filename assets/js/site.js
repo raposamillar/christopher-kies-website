@@ -156,7 +156,7 @@
           }
           form.reset();
           if (status) {
-            status.textContent = "Your message has been sent.";
+            status.textContent = "Successfully sent. Thank you for your message.";
           }
         })
         .catch(() => {

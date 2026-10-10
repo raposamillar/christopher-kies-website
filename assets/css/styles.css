@@ -1431,6 +1431,9 @@ figure > figcaption.cover-credit {
 
 .contact-form button {
   font-family: var(--sans);
+  /* 1.125rem is 24.75px at the 22px root: above the 18pt large-text size. */
+  font-size: 1.125rem;
+  line-height: 1.2;
   background: var(--ink);
   color: var(--bg);
   border: 1px solid var(--ink);
