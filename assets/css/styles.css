@@ -1407,6 +1407,7 @@ figure > figcaption.cover-credit {
   display: grid;
   gap: 0.85rem;
   max-width: 36rem;
+  position: relative;
 }
 
 .contact-form label {
@@ -1436,6 +1437,11 @@ figure > figcaption.cover-credit {
   padding: 0.7rem 1rem;
   cursor: pointer;
   width: fit-content;
+}
+
+.contact-form button:disabled {
+  cursor: default;
+  opacity: 0.7;
 }
 
 .form-status {

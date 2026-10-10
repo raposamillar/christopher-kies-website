@@ -62,8 +62,12 @@
   <main id="content" class="site-main">
     <p class="breadcrumb"><a href="index.html#top">Home</a> / Contact</p>
 <h1 class="page-title">Contact</h1>
-<p class="lede">If you have questions about music, instruction, or upcoming performances, use the form below. Messages are not sent yet.</p>
-<form class="contact-form" data-contact-form novalidate>
+<p class="lede">If you have questions about music, instruction, or upcoming performances, use the form below.</p>
+<form class="contact-form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-contact-form>
+  <input type="hidden" name="form-name" value="contact">
+  <p class="visually-hidden" aria-hidden="true">
+    <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+  </p>
   <label>Name
     <input type="text" name="name" autocomplete="name" required>
   </label>

@@ -137,10 +137,38 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const status = form.querySelector("[data-form-status]");
-      if (status) {
-        status.textContent =
-        status.textContent = "This form is not connected yet. Messages are not sent."
+      const button = form.querySelector("button[type='submit']");
+      const data = new URLSearchParams(new FormData(form)).toString();
+      if (button) {
+        button.disabled = true;
       }
+      if (status) {
+        status.textContent = "Sending…";
+      }
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data,
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Form submission failed.");
+          }
+          form.reset();
+          if (status) {
+            status.textContent = "Your message has been sent.";
+          }
+        })
+        .catch(() => {
+          if (status) {
+            status.textContent = "Your message could not be sent. Please try again.";
+          }
+        })
+        .finally(() => {
+          if (button) {
+            button.disabled = false;
+          }
+        });
     });
   }
 
