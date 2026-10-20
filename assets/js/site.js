@@ -192,6 +192,11 @@
   const searchStatus = document.querySelector("[data-search-status]");
   const searchPanel = document.querySelector("[data-search-panel]");
   const searchClose = document.querySelector("[data-search-close]");
+  if (searchClose && searchDialog) {
+    searchClose.setAttribute("aria-label", "Close");
+    searchClose.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  }
   let searchIndex = null;
   let searchRequest = 0;
   let activeOption = -1;
