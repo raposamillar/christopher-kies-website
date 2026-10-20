@@ -1481,38 +1481,34 @@
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
 
-  const mountPalettePreview = () => {
-    if (document.querySelector("[data-palette-preview]")) {
-      return;
-    }
-    const main = document.querySelector("main");
-    if (!main) {
-      return;
-    }
-    const bar = document.createElement("div");
-    bar.className = "palette-preview";
-    bar.setAttribute("data-palette-preview", "");
-    bar.innerHTML =
-      '<div class="palette-preview-inner">' +
-      '<button type="button" data-theme-toggle aria-pressed="false">Dark mode</button>' +
-      "</div>";
-    main.before(bar);
-  };
+  const themeIcon = (markup) =>
+    '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    markup +
+    "</svg>";
 
-  const ensureThemeToggle = (bar) => {
-    if (!bar || bar.querySelector("[data-theme-toggle]")) {
+  const themeSwitchHtml =
+    '<div class="theme-switch" role="radiogroup" aria-label="Color theme">' +
+    '<button type="button" role="radio" data-theme-choice="light" aria-checked="false" aria-label="Light" tabindex="-1">' +
+    themeIcon('<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>') +
+    "</button>" +
+    '<button type="button" role="radio" data-theme-choice="dark" aria-checked="false" aria-label="Dark" tabindex="-1">' +
+    themeIcon('<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>') +
+    "</button>" +
+    '<button type="button" role="radio" data-theme-choice="system" aria-checked="true" aria-label="System">' +
+    themeIcon('<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>') +
+    "</button>" +
+    "</div>";
+
+  const mountThemeSwitch = () => {
+    const headerEnd = document.querySelector(".header-end");
+    if (!headerEnd || headerEnd.querySelector("[data-theme-choice]")) {
       return;
     }
-    const inner = bar.querySelector(".palette-preview-inner");
-    if (!inner) {
-      return;
+    headerEnd.insertAdjacentHTML("beforeend", themeSwitchHtml);
+    const bar = document.querySelector("[data-palette-preview]");
+    if (bar) {
+      bar.remove();
     }
-    const button = document.createElement("button");
-    button.type = "button";
-    button.dataset.themeToggle = "";
-    button.setAttribute("aria-pressed", "false");
-    button.textContent = "Dark mode";
-    inner.append(button);
   };
 
   const markPaletteBand = () => {
@@ -1544,8 +1540,7 @@
     }
   };
 
-  mountPalettePreview();
-  ensureThemeToggle(document.querySelector("[data-palette-preview]"));
+  mountThemeSwitch();
   markPaletteBand();
 
   try {
@@ -1569,16 +1564,6 @@
       return "";
     }
   };
-  const themeIsDark = () => {
-    const choice = document.documentElement.dataset.theme || "";
-    if (choice === "dark") {
-      return true;
-    }
-    if (choice === "light") {
-      return false;
-    }
-    return themeQuery.matches;
-  };
   const applyTheme = (theme) => {
     if (theme === "dark" || theme === "light") {
       document.documentElement.dataset.theme = theme;
@@ -1594,10 +1579,12 @@
     } catch (error) {
       /* Storage can be blocked. The choice still applies on this page. */
     }
-    const toggle = document.querySelector("[data-theme-toggle]");
-    if (toggle) {
-      toggle.setAttribute("aria-pressed", themeIsDark() ? "true" : "false");
-    }
+    const choice = theme === "dark" || theme === "light" ? theme : "system";
+    document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+      const selected = button.dataset.themeChoice === choice;
+      button.setAttribute("aria-checked", selected ? "true" : "false");
+      button.tabIndex = selected ? 0 : -1;
+    });
     const url = new URL(location.href);
     if (theme === "dark" || theme === "light") {
       url.searchParams.set("theme", theme);
@@ -1611,13 +1598,39 @@
     if (fromUrl === "dark" || fromUrl === "light") {
       return fromUrl;
     }
+    if (fromUrl === "system") {
+      return "";
+    }
     return readStoredTheme();
   })();
   applyTheme(initialTheme);
-  const themeToggle = document.querySelector("[data-theme-toggle]");
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      applyTheme(themeIsDark() ? "light" : "dark");
+  const themeChoices = ["light", "dark", "system"];
+  document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const choice = button.dataset.themeChoice;
+      applyTheme(choice === "system" ? "" : choice);
+    });
+  });
+  const themeSwitch = document.querySelector(".theme-switch");
+  if (themeSwitch) {
+    themeSwitch.addEventListener("keydown", (event) => {
+      const current = themeSwitch.querySelector('[aria-checked="true"]');
+      const index = themeChoices.indexOf(current ? current.dataset.themeChoice : "system");
+      let next = index;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        next = (index + 1) % themeChoices.length;
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        next = (index - 1 + themeChoices.length) % themeChoices.length;
+      } else {
+        return;
+      }
+      event.preventDefault();
+      const choice = themeChoices[next];
+      applyTheme(choice === "system" ? "" : choice);
+      const selected = themeSwitch.querySelector(`[data-theme-choice="${choice}"]`);
+      if (selected) {
+        selected.focus();
+      }
     });
   }
   themeQuery.addEventListener("change", () => {
