@@ -1594,6 +1594,12 @@ figure > figcaption.cover-credit {
   width: 100%;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #595959; /* on #ffffff ≈ 7.0:1 */
+  opacity: 1;
+}
+
 .contact-form button {
   font-family: var(--sans);
   /* 1.125rem is 24.75px at the 22px root: above the 18pt large-text size. */
@@ -1606,6 +1612,30 @@ figure > figcaption.cover-credit {
   padding: 0.7rem 1rem;
   cursor: pointer;
   width: fit-content;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+@media (hover: hover) {
+  .contact-form button:hover:not(:disabled) {
+    box-shadow: 0 10px 24px rgba(20, 19, 17, 0.34), 0 2px 6px rgba(20, 19, 17, 0.2);
+    transform: translateY(-2px);
+  }
+
+  html[data-theme="dark"] .contact-form button:hover:not(:disabled) {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
+  }
+}
+
+@media (hover: hover) and (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .contact-form button:hover:not(:disabled) {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form button {
+    transition: none;
+  }
 }
 
 .contact-form button:disabled {
@@ -3168,6 +3198,11 @@ html[data-theme="dark"] .site-nav .sub-nav {
   border-color: #b7b1a8; /* on #211f1d ≈ 7.7:1, on #141311 ≈ 8.7:1 */
 }
 
+html[data-theme="dark"] .contact-form input::placeholder,
+html[data-theme="dark"] .contact-form textarea::placeholder {
+  color: #9f9f9f; /* on #141311 ≈ 7.0:1 */
+}
+
 html[data-theme="dark"] body {
   --bg: #141311;
   --ink: #f6f3ee;
@@ -3192,6 +3227,11 @@ html[data-theme="dark"] body {
 
   html:not([data-theme="light"]) .site-nav .sub-nav {
     border-color: #b7b1a8;
+  }
+
+  html:not([data-theme="light"]) .contact-form input::placeholder,
+  html:not([data-theme="light"]) .contact-form textarea::placeholder {
+    color: #9f9f9f;
   }
 
   html:not([data-theme="light"]) body {
