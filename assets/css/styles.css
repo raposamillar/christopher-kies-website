@@ -12,7 +12,7 @@
   --rule: #111111;
   --rule-light: #6e6e6e;
   --focus: #111111;
-  --wash: #f3f3f3; /* search-result hover */
+  --wash: #f3f3f3; /* search-result and theme-switch hover */
   --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
   --sans: "Figtree", "Avenir Next", "Segoe UI", sans-serif;
   --measure: 72rem;
@@ -91,6 +91,11 @@ a {
 
 a:hover {
   text-decoration-thickness: 2px;
+  color: var(--muted);
+}
+
+.skip-link:hover {
+  color: var(--bg);
 }
 
 h1, h2, h3, p, li {
@@ -153,6 +158,14 @@ dialog input:focus-visible {
   text-decoration: none;
   line-height: 1.15;
   width: max-content;
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.brand:hover .brand-name {
+  color: var(--muted);
 }
 
 .brand-name {
@@ -386,8 +399,15 @@ dialog input:focus-visible {
   background: var(--bg);
   color: var(--ink);
   border: 1px solid var(--rule);
-  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  padding: 0.45rem 0.95rem;
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .nav-toggle:hover {
+    background: var(--wash);
+  }
 }
 
 .nav-close {
@@ -429,6 +449,10 @@ dialog input:focus-visible {
   text-underline-offset: 0.28em;
 }
 
+.site-nav a:hover {
+  color: var(--muted);
+}
+
 .site-nav .sub-nav {
   display: none;
   position: absolute;
@@ -436,7 +460,7 @@ dialog input:focus-visible {
   top: 100%;
   min-width: 14rem;
   background: var(--bg);
-  border: 1px solid var(--rule);
+  border: 1px solid #4a4a4a; /* on #f3f0ed ≈ 7.8:1, on white ≈ 8.9:1 */
   padding: 0.4rem 0;
   z-index: 20;
   list-style: none;
@@ -474,6 +498,11 @@ dialog input:focus-visible {
 
   .site-nav .has-sub:hover > .sub-nav {
     display: block;
+  }
+
+  .site-nav .sub-nav {
+    border-radius: 0.75rem;
+    overflow: hidden;
   }
 }
 
@@ -1058,6 +1087,8 @@ figure > figcaption.cover-credit {
 
 .composer-contact a:hover {
   text-decoration-thickness: 2px;
+  color: var(--muted);
+  text-decoration-color: var(--muted);
 }
 
 .breadcrumb {
@@ -1073,6 +1104,10 @@ figure > figcaption.cover-credit {
 
 .breadcrumb a {
   color: var(--ink);
+}
+
+.breadcrumb a:hover {
+  color: var(--muted);
 }
 
 .samples {
@@ -1332,6 +1367,10 @@ figure > figcaption.cover-credit {
   text-underline-offset: 0.2em;
 }
 
+.photo-dialog-nav a:hover {
+  color: var(--muted);
+}
+
 .photo-dialog-nav a[hidden] {
   display: none;
 }
@@ -1550,6 +1589,7 @@ figure > figcaption.cover-credit {
   color: var(--ink);
   background: var(--bg);
   border: 1px solid var(--rule);
+  border-radius: 0.75rem;
   padding: 0.55rem 0.65rem;
   width: 100%;
 }
@@ -1562,6 +1602,7 @@ figure > figcaption.cover-credit {
   background: var(--ink);
   color: var(--bg);
   border: 1px solid var(--ink);
+  border-radius: 0.75rem;
   padding: 0.7rem 1rem;
   cursor: pointer;
   width: fit-content;
@@ -2813,7 +2854,9 @@ figure > figcaption.cover-credit {
 .theme-switch {
   display: inline-flex;
   border: 1px solid var(--rule-light);
+  border-radius: 999px;
   background: var(--bg);
+  overflow: hidden;
 }
 
 .theme-switch button {
@@ -2897,6 +2940,11 @@ body {
 h2 a {
   text-decoration-color: var(--palette-accent);
   text-decoration-thickness: 1px;
+}
+
+h2 a:hover {
+  color: var(--muted);
+  text-decoration-color: var(--muted);
 }
 
 .page-home .home-hero,
@@ -3116,6 +3164,10 @@ html[data-theme="dark"] {
   --tag-beatles-fg: #f7f8ff;
 }
 
+html[data-theme="dark"] .site-nav .sub-nav {
+  border-color: #b7b1a8; /* on #211f1d ≈ 7.7:1, on #141311 ≈ 8.7:1 */
+}
+
 html[data-theme="dark"] body {
   --bg: #141311;
   --ink: #f6f3ee;
@@ -3136,6 +3188,10 @@ html[data-theme="dark"] body {
   html:not([data-theme="light"]) {
     color-scheme: dark;
     --tag-beatles-fg: #f7f8ff;
+  }
+
+  html:not([data-theme="light"]) .site-nav .sub-nav {
+    border-color: #b7b1a8;
   }
 
   html:not([data-theme="light"]) body {
