@@ -1481,18 +1481,6 @@
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   });
 
-  const paletteChoices = ["slate", "gold", "red", "green", "lavender"];
-  const paletteKey = "kies-palette";
-
-  const readStoredPalette = () => {
-    try {
-      const stored = sessionStorage.getItem(paletteKey) || "";
-      return paletteChoices.includes(stored) ? stored : "";
-    } catch (error) {
-      return "";
-    }
-  };
-
   const mountPalettePreview = () => {
     if (document.querySelector("[data-palette-preview]")) {
       return;
@@ -1506,15 +1494,6 @@
     bar.setAttribute("data-palette-preview", "");
     bar.innerHTML =
       '<div class="palette-preview-inner">' +
-      '<p id="palette-preview-label">Temporary color preview</p>' +
-      '<div class="palette-preview-choices" role="group" aria-labelledby="palette-preview-label">' +
-      '<button type="button" data-palette-choice="" aria-pressed="true">Current</button>' +
-      '<button type="button" data-palette-choice="slate" aria-pressed="false">Slate</button>' +
-      '<button type="button" data-palette-choice="gold" aria-pressed="false">Tie Gold</button>' +
-      '<button type="button" data-palette-choice="red" aria-pressed="false">Hint of Red</button>' +
-      '<button type="button" data-palette-choice="green" aria-pressed="false">Olive</button>' +
-      '<button type="button" data-palette-choice="lavender" aria-pressed="false">Lavender</button>' +
-      "</div>" +
       '<button type="button" data-theme-toggle aria-pressed="false">Dark mode</button>' +
       "</div>";
     main.before(bar);
@@ -1568,6 +1547,17 @@
   mountPalettePreview();
   ensureThemeToggle(document.querySelector("[data-palette-preview]"));
   markPaletteBand();
+
+  try {
+    sessionStorage.removeItem("kies-palette");
+  } catch (error) {
+    /* Storage can be blocked. */
+  }
+  const paletteUrl = new URL(location.href);
+  if (paletteUrl.searchParams.has("palette")) {
+    paletteUrl.searchParams.delete("palette");
+    history.replaceState(null, "", paletteUrl);
+  }
 
   const themeKey = "kies-theme";
   const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -1636,55 +1626,12 @@
     }
   });
 
-  const paletteButtons = document.querySelectorAll("[data-palette-choice]");
-  const applyPalette = (name) => {
-    const palette = paletteChoices.includes(name) ? name : "";
-    if (palette) {
-      document.body.dataset.palette = palette;
-    } else {
-      delete document.body.dataset.palette;
-    }
-    try {
-      sessionStorage.setItem(paletteKey, palette);
-    } catch (error) {
-      /* Storage can be blocked. The choice still applies on this page. */
-    }
-    const url = new URL(location.href);
-    if (palette) {
-      url.searchParams.set("palette", palette);
-    } else {
-      url.searchParams.delete("palette");
-    }
-    history.replaceState(null, "", url);
-    paletteButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", (button.dataset.paletteChoice || "") === palette ? "true" : "false");
-    });
-  };
-
   const alignBands = () => {
     document.querySelectorAll(".home-hero, .home-featured, .beatles-hero").forEach((section) => {
       section.style.setProperty("--bleed-left", `${section.getBoundingClientRect().left}px`);
     });
   };
 
-  const initialPalette = (() => {
-    const fromUrl = new URL(location.href).searchParams.get("palette");
-    if (paletteChoices.includes(fromUrl)) {
-      return fromUrl;
-    }
-    if (fromUrl === null) {
-      return readStoredPalette();
-    }
-    return "";
-  })();
-
-  applyPalette(initialPalette);
   alignBands();
   window.addEventListener("resize", alignBands);
-  paletteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      applyPalette(button.dataset.paletteChoice);
-      alignBands();
-    });
-  });
 })();
