@@ -1651,12 +1651,6 @@ figure > figcaption.cover-credit {
   width: 100%;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-  color: #595959; /* on #ffffff ≈ 7.0:1 */
-  opacity: 1;
-}
-
 .contact-form button {
   font-family: var(--sans);
   /* 1.125rem is 24.75px at the 22px root: above the 18pt large-text size. */
@@ -3287,11 +3281,6 @@ html[data-theme="dark"] .site-nav .sub-nav {
   border-color: #b7b1a8; /* on #211f1d ≈ 7.7:1, on #141311 ≈ 8.7:1 */
 }
 
-html[data-theme="dark"] .contact-form input::placeholder,
-html[data-theme="dark"] .contact-form textarea::placeholder {
-  color: #9f9f9f; /* on #141311 ≈ 7.0:1 */
-}
-
 html[data-theme="dark"] body {
   --bg: #141311;
   --ink: #f6f3ee;
@@ -3316,11 +3305,6 @@ html[data-theme="dark"] body {
 
   html:not([data-theme="light"]) .site-nav .sub-nav {
     border-color: #b7b1a8;
-  }
-
-  html:not([data-theme="light"]) .contact-form input::placeholder,
-  html:not([data-theme="light"]) .contact-form textarea::placeholder {
-    color: #9f9f9f;
   }
 
   html:not([data-theme="light"]) body {
