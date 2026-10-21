@@ -59,7 +59,12 @@
 
 
   <main id="content" class="site-main">
-    <p class="breadcrumb"><a href="index.html#top">Home</a> / Contact</p>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol role="list">
+        <li><a href="index.html#top">Home</a></li>
+        <li><span aria-current="page">Contact</span></li>
+      </ol>
+    </nav>
 <h1 class="page-title">Contact</h1>
 <p class="lede">If you have questions about music, instruction, or upcoming performances, use the form below.</p>
 <form class="contact-form" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" data-contact-form>

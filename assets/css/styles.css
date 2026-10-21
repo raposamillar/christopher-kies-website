@@ -1155,11 +1155,27 @@ figure > figcaption.cover-credit {
   color: var(--muted);
 }
 
+.breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: " / ";
+  color: var(--muted);
+}
+
 .breadcrumb:has(+ .palette-band) {
   margin-bottom: 1.65rem;
 }
 
-.breadcrumb a {
+.breadcrumb a,
+.breadcrumb [aria-current="page"] {
   color: var(--ink);
 }
 
