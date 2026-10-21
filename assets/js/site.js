@@ -42,7 +42,6 @@
 
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-nav-toggle]");
-  const isMobileNav = () => window.matchMedia("(max-width: 1100px)").matches;
 
   const closeSubmenus = () => {
     if (!nav) {
@@ -50,7 +49,7 @@
     }
     nav.querySelectorAll(".has-sub").forEach((item) => {
       item.classList.remove("is-expanded");
-      const trigger = item.querySelector(":scope > a");
+      const trigger = item.querySelector(":scope > .sub-toggle");
       if (trigger) {
         trigger.setAttribute("aria-expanded", "false");
       }
@@ -100,15 +99,9 @@
       }
     });
 
-    nav.querySelectorAll(".has-sub > a").forEach((trigger) => {
-      trigger.setAttribute("aria-expanded", "false");
-      trigger.setAttribute("aria-haspopup", "true");
-      trigger.addEventListener("click", (event) => {
-        if (!isMobileNav()) {
-          return;
-        }
-        event.preventDefault();
-        const item = trigger.parentElement;
+    nav.querySelectorAll(".sub-toggle").forEach((trigger) => {
+      const item = trigger.parentElement;
+      trigger.addEventListener("click", () => {
         const open = !item.classList.contains("is-expanded");
         closeSubmenus();
         if (open) {
@@ -116,6 +109,12 @@
           trigger.setAttribute("aria-expanded", "true");
         }
       });
+    });
+
+    nav.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeSubmenus();
+      }
     });
   }
 

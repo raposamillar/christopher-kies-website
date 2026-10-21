@@ -554,7 +554,9 @@ dialog input:focus-visible {
     height: 0.65rem;
   }
 
-  .site-nav .has-sub:hover > .sub-nav {
+  .site-nav .has-sub:hover > .sub-nav,
+  .site-nav .has-sub:focus-within > .sub-nav,
+  .site-nav .has-sub.is-expanded > .sub-nav {
     display: block;
   }
 
@@ -565,8 +567,51 @@ dialog input:focus-visible {
 }
 
 .site-nav .has-sub {
+  display: flex;
+  align-items: center;
   padding-bottom: 0;
   margin-bottom: 0;
+}
+
+.sub-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.sub-toggle:hover {
+  color: var(--muted);
+}
+
+.sub-toggle svg {
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.sub-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sub-toggle svg {
+    transition: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sub-toggle {
+    display: none;
+  }
 }
 
 .site-nav .sub-nav a {
@@ -2079,8 +2124,31 @@ figure > figcaption.cover-credit {
   }
 
   .site-nav .has-sub {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
     padding-bottom: 0;
     margin-bottom: 0;
+  }
+
+  .site-nav .has-sub > a {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .site-nav .has-sub > .sub-toggle {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    margin-left: clamp(0.65rem, 3vw, 1.35rem);
+  }
+
+  .site-nav .has-sub > .sub-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
   }
 
   .site-nav .has-sub.is-expanded > .sub-nav {
