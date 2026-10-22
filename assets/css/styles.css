@@ -922,6 +922,9 @@ figure > figcaption.cover-credit {
 
 .page-home .album-card figure > a {
   display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
   line-height: 0;
   text-decoration: none;
 }
@@ -2533,17 +2536,19 @@ figure > figcaption.cover-credit {
     border-top: 1px solid transparent;
   }
 
-  .page-home .home-albums .album-card {
-    width: 100%;
-    max-width: 16rem;
+  .page-home .home-albums .album-card,
+  .page-home .home-albums .album-card figure,
+  .page-home .home-albums .album-card figure > a {
+    width: fit-content;
+    max-width: min(16rem, 100%);
   }
 
   .page-home .home-albums .album-card img {
-    width: 100%;
-    max-width: 100%;
+    display: block;
+    width: auto;
+    max-width: min(16rem, 100%);
     height: auto;
-    object-fit: contain;
-    object-position: top center;
+    max-height: calc(100dvh - var(--header-offset) - 8rem);
   }
 
   .page-home .hero-block.home-albums h2 {
@@ -2658,17 +2663,19 @@ figure > figcaption.cover-credit {
     border-left: 0;
   }
 
-  .page-home .home-albums .album-card {
-    width: 100%;
-    max-width: 14rem;
+  .page-home .home-albums .album-card,
+  .page-home .home-albums .album-card figure,
+  .page-home .home-albums .album-card figure > a {
+    width: fit-content;
+    max-width: min(14rem, 100%);
   }
 
   .page-home .home-albums .album-card img {
-    width: 100%;
-    max-width: 100%;
+    display: block;
+    width: auto;
+    max-width: min(14rem, 100%);
     height: auto;
-    object-fit: contain;
-    object-position: top center;
+    max-height: calc(100dvh - var(--header-offset) - 8rem);
   }
 
   .page-home .hero-block.home-albums h2 {
