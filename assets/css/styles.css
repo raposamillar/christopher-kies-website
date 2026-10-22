@@ -1179,6 +1179,58 @@ figure > figcaption.cover-credit {
   letter-spacing: 0.04em;
 }
 
+.work-links > li:has(a[href*="/samples/"]),
+.work-links > li:has(a[href*="/notes/"]) {
+  flex: 1 0 100%;
+}
+
+/* Icons are decorative. The link text stays the accessible name, including
+   the full sample-page title. currentColor matches the link (#111 on #fff
+   ≈ 18.7:1; #3d3d3d on hover ≈ 10.7:1), so the graphic stays above 3:1. */
+.work-links a:has(.work-link-icon) {
+  display: inline-flex;
+  align-items: flex-start;
+  column-gap: 0.4em;
+  max-width: 100%;
+  text-decoration-line: none;
+}
+
+.work-link-icon {
+  flex: none;
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: 0.16em;
+}
+
+.work-link-icon--external {
+  width: 0.95em;
+  height: 0.95em;
+  margin-top: 0.28em;
+}
+
+.work-link-text {
+  min-width: 0;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover .work-link-text {
+  text-decoration-thickness: 2px;
+}
+
+/* Inline external links stay in the sentence. The icon follows the last word.
+   Link text is --ink (#111 on #fff ≈ 18.7:1; #3d3d3d on hover ≈ 10.7:1). */
+p a:has(> .work-link-icon--external) {
+  text-decoration-line: none;
+}
+
+p a > .work-link-icon--external {
+  display: inline-block;
+  margin: 0 0 0 0.28em;
+  vertical-align: -0.12em;
+}
+
 /* Rights-holder contact. #111 on #fff ≈ 18.7:1 (1.4.6 AAA).
    Underline is not color-only. 44px target (2.5.5 AAA). */
 .composer-contact {
@@ -1190,7 +1242,9 @@ figure > figcaption.cover-credit {
 }
 
 .composer-contact a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: flex-start;
+  column-gap: 0.4em;
   max-width: 100%;
   min-height: 44px;
   min-width: 44px;
@@ -1198,16 +1252,23 @@ figure > figcaption.cover-credit {
   color: var(--ink);
   background-color: var(--bg);
   line-height: 1.5;
+  text-decoration-line: none;
+  overflow-wrap: break-word;
+}
+
+.composer-contact .work-link-text {
   text-decoration-line: underline;
   text-decoration-color: var(--ink);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
-  overflow-wrap: break-word;
 }
 
 .composer-contact a:hover {
-  text-decoration-thickness: 2px;
   color: var(--muted);
+}
+
+.composer-contact a:hover .work-link-text {
+  text-decoration-thickness: 2px;
   text-decoration-color: var(--muted);
 }
 

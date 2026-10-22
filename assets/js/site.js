@@ -1222,6 +1222,92 @@
 
   mountInlinePlayers();
 
+  const workLinkIcons = {
+    sample: `<svg class="work-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <ellipse cx="9.7" cy="16.7" rx="5.05" ry="3.45" fill="currentColor" transform="rotate(-20 9.7 16.7)"/>
+      <path fill="currentColor" d="M13.15 3.35h2.35v12.15h-2.35z"/>
+    </svg>`,
+    note: `<svg class="work-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M7 3.2h7.15L19 8.05V20.8H7z"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M14.05 3.55V8.15H18.6"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M9.3 12h5.5M9.3 15.15h5.5M9.3 18.3h3.3"/>
+    </svg>`,
+    envelope: `<svg class="work-link-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="3.15" y="5.4" width="17.7" height="13.2" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4.1 7.15 12 13.05 19.9 7.15"/>
+    </svg>`,
+    external: `<svg class="work-link-icon work-link-icon--external" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M14.2 5.2h4.6v4.6"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12.2 11.8 18.5 5.5"/>
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M16.6 13.2V18a1.6 1.6 0 0 1-1.6 1.6H6.4A1.6 1.6 0 0 1 4.8 18V9a1.6 1.6 0 0 1 1.6-1.6h4.8"/>
+    </svg>`
+  };
+
+  const decorateWorkLinks = () => {
+    document.querySelectorAll(".work-links a").forEach((link) => {
+      if (link.querySelector(".work-link-icon")) {
+        return;
+      }
+      const href = link.getAttribute("href") || "";
+      const kind = href.includes("/samples/") ? "sample" : href.includes("/notes/") ? "note" : href.includes("sheetmusicplus.com") ? "external" : "";
+      if (!kind) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      if (kind === "external") {
+        const hint = document.createElement("span");
+        hint.className = "visually-hidden";
+        hint.textContent = " (external site)";
+        const workTitle = label.querySelector(".visually-hidden");
+        label.insertBefore(hint, workTitle);
+        link.append(label);
+        link.insertAdjacentHTML("beforeend", workLinkIcons.external);
+        return;
+      }
+      link.insertAdjacentHTML("afterbegin", workLinkIcons[kind]);
+      link.append(label);
+    });
+
+    document.querySelectorAll("a[href*='sheetmusicplus.com']").forEach((link) => {
+      if (link.closest(".work-links") || link.querySelector(".work-link-icon")) {
+        return;
+      }
+      if (!link.textContent.includes("available for sale on Sheet Music Plus")) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      const hint = document.createElement("span");
+      hint.className = "visually-hidden";
+      hint.textContent = " (external site)";
+      label.append(hint);
+      link.append(label);
+      link.insertAdjacentHTML("beforeend", workLinkIcons.external);
+    });
+
+    document.querySelectorAll(".composer-contact a").forEach((link) => {
+      if (link.querySelector(".work-link-icon") || !link.textContent.includes("Contact the composer")) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      link.insertAdjacentHTML("afterbegin", workLinkIcons.envelope);
+      link.append(label);
+    });
+  };
+
+  decorateWorkLinks();
+
   const scoreTriggers = Array.from(document.querySelectorAll("[data-score-lightbox]"));
   if (scoreTriggers.length) {
     const scoreDialog = document.createElement("dialog");
