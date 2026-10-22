@@ -313,6 +313,7 @@ dialog input:focus-visible {
 .search-bar input {
   flex: 1;
   min-width: 0;
+  min-height: 44px;
   font-size: 1rem;
   border: 0;
   background: transparent;
@@ -815,6 +816,14 @@ dialog input:focus-visible {
 .hero-block h2 {
   font-size: clamp(1.5rem, 2.2vw, 1.85rem);
   margin: 0 0 0.75rem;
+}
+
+@media (max-width: 1279px) {
+  .hero-block h2 a {
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 44px;
+  }
 }
 
 .hero-block .lede {
@@ -1320,6 +1329,16 @@ figure > figcaption.cover-credit {
   flex: 1 0 100%;
 }
 
+/* 44px target (2.5.5 AAA). min-height is ignored on inline boxes. */
+.work-links a {
+  display: inline-flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  padding-block: 0.2rem;
+}
+
 /* Icons are decorative. The link text stays the accessible name, including
    the full sample-page title. currentColor matches the link (#111 on #fff
    ≈ 18.7:1; #3d3d3d on hover ≈ 10.7:1), so the graphic stays above 3:1. */
@@ -1500,7 +1519,10 @@ p a > .work-link-icon--external,
 .note-return a {
   display: inline-flex;
   align-items: center;
+  box-sizing: border-box;
   column-gap: 0.35em;
+  min-height: 44px;
+  padding-block: 0.2rem;
   text-decoration: none;
 }
 
@@ -1984,6 +2006,22 @@ p a > .work-link-icon--external,
   font-variant-numeric: tabular-nums;
   color: var(--muted);
   text-align: right;
+}
+
+@media (max-width: 759px) {
+  .inline-player-bar {
+    flex-wrap: wrap;
+  }
+
+  .inline-player-seek {
+    flex: 1 0 100%;
+    width: 100%;
+  }
+
+  .inline-player-time {
+    min-width: 0;
+    margin-left: auto;
+  }
 }
 
 @media (hover: hover) {
@@ -3418,11 +3456,6 @@ p a > .work-link-icon--external,
 
   .header-end .nav-toggle {
     padding: 0 0.75rem;
-  }
-
-  .header-end .theme-switch button {
-    width: 40px;
-    height: 44px;
   }
 }
 
