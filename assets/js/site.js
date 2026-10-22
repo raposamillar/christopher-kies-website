@@ -1143,6 +1143,18 @@
       audio.preload = "none";
       audio.src = url.href;
       player.appendChild(audio);
+      if (link.closest(".featured-listen")) {
+        const knobs = document.createElement("div");
+        knobs.className = "featured-radio-knobs";
+        knobs.setAttribute("aria-hidden", "true");
+        knobs.innerHTML = '<span class="featured-radio-knob"></span><span class="featured-radio-knob"></span>';
+        player.appendChild(knobs);
+        const strap = document.createElement("div");
+        strap.className = "featured-radio-strap";
+        strap.setAttribute("aria-hidden", "true");
+        strap.innerHTML = '<svg class="featured-radio-strap-lead" viewBox="0 0 40 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path d="M40 0C32 18 18 42 4 66"/></svg><svg class="featured-radio-strap-cord-svg" viewBox="0 0 1000 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path class="featured-radio-strap-cord" d="M-2 4C-6 30 -12 90 10 150C36 220 130 280 260 305C420 335 540 310 600 270C650 240 630 215 560 222C400 236 220 200 110 155C40 125 10 70 2 8"/><path class="featured-radio-strap-braid" d="M-2 4C-6 30 -12 90 10 150C36 220 130 280 260 305C420 335 540 310 600 270C650 240 630 215 560 222C400 236 220 200 110 155C40 125 10 70 2 8"/></svg><span class="featured-radio-strap-plug"></span>';
+        player.appendChild(strap);
+      }
       link.replaceWith(player);
 
       const button = player.querySelector(".inline-player-play");
