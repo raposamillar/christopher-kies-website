@@ -1672,6 +1672,7 @@ figure > figcaption.cover-credit {
   border: 1px solid var(--rule);
   border-radius: 0.75rem;
   background: var(--bg);
+  box-shadow: 0 2px 6px rgba(17, 17, 17, 0.08), 0 14px 28px rgba(17, 17, 17, 0.14);
 }
 
 .inline-player-play {
@@ -3501,6 +3502,10 @@ html[data-theme="dark"] body {
   }
 }
 
+html[data-theme="dark"] .inline-player {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
 html[data-theme="dark"] .back-to-top:hover,
 html[data-theme="dark"] .back-to-top:active {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
@@ -3525,6 +3530,10 @@ html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
 }
 
 @media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .inline-player {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.5);
+  }
+
   html:not([data-theme="light"]) .back-to-top:hover,
   html:not([data-theme="light"]) .back-to-top:active {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
