@@ -1124,6 +1124,10 @@ figure > figcaption.cover-credit {
 }
 
 .work {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  column-gap: 0.85rem;
+  align-items: start;
   margin-top: 0.75rem;
   padding: 1.15rem 1.2rem;
   background: var(--bg);
@@ -1136,9 +1140,109 @@ figure > figcaption.cover-credit {
   margin-bottom: 0;
 }
 
+.work > .catno {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0.22rem 0 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.work > h3,
+.work > .meta,
+.work > .work-links,
+.work > .composer-contact {
+  grid-column: 2;
+}
+
+.work:not(:has(> .catno)) > h3,
+.work:not(:has(> .catno)) > .meta,
+.work:not(:has(> .catno)) > .work-links,
+.work:not(:has(> .catno)) > .composer-contact {
+  grid-column: 1 / -1;
+}
+
+.work--quiet {
+  background: transparent;
+  border-radius: 0;
+  margin-top: 0;
+  padding: 0.75rem 1.2rem;
+}
+
+.work--quiet + .work--quiet {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--ink) 16%, transparent);
+}
+
+.work:not(.work--quiet) + .work--quiet,
+.work--quiet + .work:not(.work--quiet) {
+  margin-top: 0.85rem;
+}
+
+.work-group + .work {
+  margin-top: 0.35rem;
+}
+
+.work-group {
+  margin: 1.8rem 0 0.35rem;
+  padding-inline: 1.2rem;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.page-heading + .work-group {
+  margin-top: 1.15rem;
+}
+
+.work-group::before {
+  content: "";
+  display: block;
+  width: 1.75rem;
+  height: 3px;
+  margin: 0 0 0.4rem;
+  background: var(--palette-accent);
+}
+
 .work h3 {
   font-size: 1.25rem;
   margin: 0 0 0.25rem;
+}
+
+.work--quiet > h3 {
+  margin: 0 0 0.15rem;
+}
+
+.work--quiet > .meta {
+  margin: 0;
+}
+
+@media (max-width: 759px) {
+  .work {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.15rem;
+  }
+
+  .work > .catno {
+    grid-row: auto;
+    margin-top: 0;
+  }
+
+  .work > h3,
+  .work > .meta,
+  .work > .work-links,
+  .work > .composer-contact {
+    grid-column: 1;
+  }
 }
 
 .catno {

@@ -1363,6 +1363,55 @@
 
   decorateWorkLinks();
 
+  const shapeCatalogueWorks = () => {
+    const works = [...document.querySelectorAll(".site-main > .work")];
+    if (!works.length) {
+      return;
+    }
+    const labelFor = (work) => {
+      if (work.querySelector(".work-tag--beatles")) {
+        return "Beatles arrangements";
+      }
+      if (work.querySelector(".work-tag")) {
+        return "Arrangements";
+      }
+      return "Original works";
+    };
+    works.forEach((work) => {
+      const catno = work.querySelector(".catno");
+      if (catno) {
+        work.prepend(catno);
+      }
+      const hasMore = work.querySelector(".work-links, .composer-contact");
+      work.classList.toggle("work--quiet", !hasMore);
+    });
+    const labels = works.map(labelFor);
+    const runs = [];
+    labels.forEach((label) => {
+      if (!runs.length || runs[runs.length - 1] !== label) {
+        runs.push(label);
+      }
+    });
+    const divided = runs.length > 1 && new Set(runs).size === runs.length;
+    if (!divided) {
+      return;
+    }
+    let previous = "";
+    works.forEach((work) => {
+      const label = labelFor(work);
+      if (label === previous) {
+        return;
+      }
+      previous = label;
+      const heading = document.createElement("h2");
+      heading.className = "work-group";
+      heading.textContent = label;
+      work.before(heading);
+    });
+  };
+
+  shapeCatalogueWorks();
+
   const scoreTriggers = Array.from(document.querySelectorAll("[data-score-lightbox]"));
   if (scoreTriggers.length) {
     const scoreDialog = document.createElement("dialog");
