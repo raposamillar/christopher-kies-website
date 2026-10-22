@@ -13,6 +13,7 @@
   --rule-light: #6e6e6e;
   --focus: #111111;
   --wash: #f3f3f3; /* search-result and theme-switch hover */
+  --elevation: 0 2px 6px rgba(17, 17, 17, 0.08), 0 16px 36px rgba(17, 17, 17, 0.16);
   --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", serif;
   --sans: "Figtree", "Avenir Next", "Segoe UI", sans-serif;
   --measure: 72rem;
@@ -224,7 +225,8 @@ dialog input:focus-visible {
   font-size: 1rem;
   color: var(--ink);
   background: var(--bg);
-  border: 2px solid var(--rule);
+  border: 1px solid var(--rule-light);
+  border-radius: 0.75rem;
   padding: 0.4rem 0.7rem;
 }
 
@@ -242,7 +244,8 @@ dialog input:focus-visible {
   letter-spacing: 0.02em;
   color: var(--bg);
   background: var(--ink);
-  border: 2px solid var(--rule);
+  border: 1px solid var(--ink);
+  border-radius: 0.75rem;
   padding: 0.4rem 0.9rem;
   cursor: pointer;
 }
@@ -260,8 +263,9 @@ dialog input:focus-visible {
   max-height: min(70vh, 28rem);
   overflow: auto;
   background: var(--bg);
-  border: 2px solid var(--rule);
-  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--rule-light);
+  border-radius: 0.75rem;
+  box-shadow: var(--elevation);
 }
 
 .visually-hidden {
@@ -281,7 +285,9 @@ dialog input:focus-visible {
   width: min(42rem, calc(100vw - 2rem));
   max-height: min(80vh, 38rem);
   padding: 0;
-  border: 1px solid var(--rule);
+  overflow: hidden;
+  border: 1px solid var(--rule-light);
+  border-radius: 0.75rem;
   background: var(--bg);
   color: var(--ink);
 }
@@ -301,7 +307,7 @@ dialog input:focus-visible {
   gap: 0.75rem;
   align-items: center;
   padding: 0.9rem 1rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-light);
 }
 
 .search-bar input {
@@ -456,7 +462,7 @@ dialog input:focus-visible {
   font-size: 1.3rem;
   background: var(--bg);
   color: var(--ink);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   border-radius: 999px;
   padding: 0.45rem 0.95rem;
   cursor: pointer;
@@ -518,7 +524,7 @@ dialog input:focus-visible {
   top: 100%;
   min-width: 14rem;
   background: var(--bg);
-  border: 1px solid #4a4a4a; /* on #f3f0ed ≈ 7.8:1, on white ≈ 8.9:1 */
+  border: 1px solid var(--rule-light);
   padding: 0.4rem 0;
   z-index: 20;
   list-style: none;
@@ -563,7 +569,7 @@ dialog input:focus-visible {
   .site-nav .sub-nav {
     border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: 0 2px 6px rgba(17, 17, 17, 0.08), 0 16px 36px rgba(17, 17, 17, 0.16);
+    box-shadow: var(--elevation);
   }
 }
 
@@ -738,7 +744,7 @@ dialog input:focus-visible {
   border-radius: 50%;
   background: var(--bg);
   color: var(--ink);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
@@ -765,7 +771,7 @@ dialog input:focus-visible {
 /* Landing */
 .hero-block {
   padding: 2.25rem 0 2.5rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-light);
 }
 
 .hero-block:first-child {
@@ -1076,7 +1082,11 @@ figure > figcaption.cover-credit {
 }
 
 .section-list li {
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--rule-light);
+}
+
+.page-heading + .section-list > li:first-child {
+  border-top: 0;
 }
 
 .section-list a {
@@ -1106,13 +1116,16 @@ figure > figcaption.cover-credit {
 }
 
 .work {
-  padding: 1.15rem 0;
-  border-top: 1px solid var(--rule);
+  margin-top: 0.75rem;
+  padding: 1.15rem 1.2rem;
+  background: var(--bg);
+  border: 0;
+  border-radius: 0.75rem;
   scroll-margin-top: var(--header-offset);
 }
 
 .work:last-child {
-  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0;
 }
 
 .work h3 {
@@ -1243,7 +1256,7 @@ figure > figcaption.cover-credit {
   margin: 0 auto;
   width: fit-content;
   max-width: 100%;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   padding: 0.5rem;
 }
 
@@ -1271,7 +1284,7 @@ figure > figcaption.cover-credit {
   max-width: 56rem;
   height: calc(100vh - 12rem);
   min-height: 36rem;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   background: var(--bg);
 }
 
@@ -1401,7 +1414,7 @@ figure > figcaption.cover-credit {
 .about-portrait img,
 .about-gallery img,
 [data-photo-dialog] .photo-dialog-stage img {
-  border-radius: 0.3rem;
+  border-radius: 0.75rem;
 }
 
 .photo-zoom {
@@ -1427,7 +1440,8 @@ figure > figcaption.cover-credit {
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
+  border-radius: 0.75rem;
   background: var(--bg);
   color: var(--ink);
 }
@@ -1455,7 +1469,7 @@ figure > figcaption.cover-credit {
   top: 0;
   z-index: 2;
   padding: 0.9rem 1.15rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-light);
   background: var(--bg);
 }
 
@@ -1530,7 +1544,7 @@ figure > figcaption.cover-credit {
   height: auto;
   max-height: calc(100dvh - 9rem);
   object-fit: contain;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
 }
 
 [data-photo-dialog] .photo-dialog-stage img {
@@ -1549,7 +1563,7 @@ figure > figcaption.cover-credit {
   display: block;
   width: 100%;
   height: calc(100vh - 8.5rem);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   background: var(--bg);
 }
 
@@ -1602,7 +1616,7 @@ figure > figcaption.cover-credit {
   flex-shrink: 0;
   z-index: 2;
   padding: max(0.5rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem max(1rem, env(safe-area-inset-left));
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-light);
   background: var(--bg);
 }
 
@@ -1648,7 +1662,7 @@ figure > figcaption.cover-credit {
   width: 100%;
   height: auto;
   background: #fff;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
 }
 
 .pdf-viewer-status {
@@ -1669,10 +1683,10 @@ figure > figcaption.cover-credit {
   width: min(100%, 36rem);
   margin-top: 0.2rem;
   padding: 0.45rem 0.75rem 0.45rem 0.45rem;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   border-radius: 0.75rem;
   background: var(--bg);
-  box-shadow: 0 2px 6px rgba(17, 17, 17, 0.08), 0 14px 28px rgba(17, 17, 17, 0.14);
+  box-shadow: var(--elevation);
 }
 
 .inline-player-play {
@@ -1784,7 +1798,7 @@ figure > figcaption.cover-credit {
   font-size: 1.2rem;
   color: var(--ink);
   background: var(--bg);
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
   border-radius: 0.75rem;
   padding: 0.55rem 0.65rem;
   width: 100%;
@@ -1885,7 +1899,8 @@ figure > figcaption.cover-credit {
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-light);
+  border-radius: 0.75rem;
   background: var(--bg);
   color: var(--ink);
 }
@@ -1908,7 +1923,7 @@ figure > figcaption.cover-credit {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 1.15rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule-light);
 }
 
 .album-dialog-title {
@@ -2123,7 +2138,7 @@ figure > figcaption.cover-credit {
     min-height: 46px;
     margin: 0;
     padding: 0;
-    border: 1px solid var(--rule);
+    border: 1px solid var(--rule-light);
     border-radius: 999px;
   }
 
@@ -2145,11 +2160,11 @@ figure > figcaption.cover-credit {
 
   .header-end .theme-switch {
     margin: 0;
-    border-color: var(--rule);
+    border-color: var(--rule-light);
   }
 
   .header-end .theme-switch button {
-    border-right-color: var(--rule);
+    border-right-color: var(--rule-light);
   }
 
   body.nav-open .theme-switch {
@@ -3421,9 +3436,29 @@ body:not(.page-home) .page-title::before {
   );
 }
 
-.page-heading + .section-list > li:first-child,
-.page-heading + .work {
-  border-top: 0;
+.site-main:has(> .work) {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 5rem;
+}
+
+.site-main:has(> .work)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0.2rem;
+  bottom: 2.6rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--palette-band);
+  clip-path: shape(
+    from 0 1.35rem,
+    curve to 100% 1.35rem with 36% 0 / 64% 0,
+    vline to calc(100% - 1.35rem),
+    curve to 0 calc(100% - 1.35rem) with 64% 100% / 36% 100%,
+    close
+  );
 }
 
 .palette-band .lede {
@@ -3447,18 +3482,13 @@ html[data-theme="dark"] .site-nav .sub-nav {
   border-color: #b7b1a8; /* on #211f1d ≈ 7.7:1, on #141311 ≈ 8.7:1 */
 }
 
-@media (min-width: 1280px) {
-  html[data-theme="dark"] .site-nav .sub-nav {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 36px rgba(0, 0, 0, 0.55);
-  }
-}
-
 html[data-theme="dark"] body {
   --bg: #141311;
   --ink: #f6f3ee;
   --muted: #d4cfc8;
   --rule: #f6f3ee;
   --rule-light: #b7b1a8;
+  --elevation: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 36px rgba(0, 0, 0, 0.55);
   --focus: #f6f3ee;
   --wash: #2c2926;
   --palette-accent: #f6f3ee;
@@ -3479,18 +3509,13 @@ html[data-theme="dark"] body {
     border-color: #b7b1a8;
   }
 
-  @media (min-width: 1280px) {
-    html:not([data-theme="light"]) .site-nav .sub-nav {
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 36px rgba(0, 0, 0, 0.55);
-    }
-  }
-
   html:not([data-theme="light"]) body {
     --bg: #141311;
     --ink: #f6f3ee;
     --muted: #d4cfc8;
     --rule: #f6f3ee;
     --rule-light: #b7b1a8;
+    --elevation: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 36px rgba(0, 0, 0, 0.55);
     --focus: #f6f3ee;
     --wash: #2c2926;
     --palette-accent: #f6f3ee;
@@ -3500,10 +3525,6 @@ html[data-theme="dark"] body {
     --palette-chip-ink: #141311;
     --palette-on-accent: #141311;
   }
-}
-
-html[data-theme="dark"] .inline-player {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.5);
 }
 
 html[data-theme="dark"] .back-to-top:hover,
@@ -3530,10 +3551,6 @@ html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not([data-theme="light"]) .inline-player {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 16px 32px rgba(0, 0, 0, 0.5);
-  }
-
   html:not([data-theme="light"]) .back-to-top:hover,
   html:not([data-theme="light"]) .back-to-top:active {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(246, 243, 238, 0.28);
