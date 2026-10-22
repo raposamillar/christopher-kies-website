@@ -726,6 +726,29 @@ dialog input:focus-visible {
   margin: 0;
 }
 
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.15rem 1.15rem;
+  margin: 0 0 0.55rem;
+}
+
+.footer-links a {
+  padding: 0.35rem 0;
+}
+
+.footer-links a[aria-current="page"] {
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .footer-links {
+    max-width: 11rem;
+    margin-inline: auto;
+  }
+}
+
 .footer-line {
   display: inline;
 }
@@ -811,6 +834,7 @@ dialog input:focus-visible {
 }
 
 .featured-excerpt a:has(> .work-link-icon),
+.home-about p a:has(> .work-link-icon),
 .lede a:has(> .work-link-icon:not(.work-link-icon--external)) {
   display: inline-flex;
   align-items: flex-start;
@@ -1469,6 +1493,31 @@ p a > .work-link-icon--external,
   margin: 0 0 1.35rem;
   font-family: var(--sans);
   font-size: 1.05rem;
+}
+
+/* The arrow is decorative. Link text stays the accessible name.
+   currentColor matches the link (#111 on #fff ≈ 18.7:1; #3d3d3d on hover ≈ 10.7:1). */
+.note-return a {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.35em;
+  text-decoration: none;
+}
+
+.note-return-icon {
+  flex: none;
+  width: 0.95em;
+  height: 0.95em;
+}
+
+.note-return-text {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+
+.note-return a:hover .note-return-text {
+  text-decoration-thickness: 2px;
 }
 
 .note-body + .note-return {

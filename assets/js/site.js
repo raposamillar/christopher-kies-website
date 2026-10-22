@@ -1347,8 +1347,8 @@
       link.append(label);
     });
 
-    document.querySelectorAll(".featured-excerpt a").forEach((link) => {
-      if (link.querySelector(".work-link-icon") || !/program note/i.test(link.textContent)) {
+    document.querySelectorAll(".featured-excerpt a, .home-about p a").forEach((link) => {
+      if (link.querySelector(".work-link-icon") || !/program note|read about/i.test(link.textContent)) {
         return;
       }
       const label = document.createElement("span");
