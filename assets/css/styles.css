@@ -3856,6 +3856,17 @@ body {
   background: var(--palette-accent);
 }
 
+.home-hero .kicker-marks {
+  display: inline-block;
+  width: 0.85em;
+  height: auto;
+  margin-left: 0.28em;
+  vertical-align: 0.55em;
+  transform: rotate(-24deg);
+  transform-origin: 34% 84%;
+  overflow: visible;
+}
+
 h2 a {
   text-decoration-color: var(--palette-accent);
   text-decoration-thickness: 1px;
