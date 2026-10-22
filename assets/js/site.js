@@ -1068,9 +1068,7 @@
         return;
       }
       const path = url.pathname.toLowerCase();
-      const isPdf = path.endsWith(".pdf");
-      const isAudio = path.endsWith(".mp3");
-      if (!isPdf && !isAudio) {
+      if (!path.endsWith(".pdf")) {
         return;
       }
       event.preventDefault();
@@ -1079,85 +1077,150 @@
         window.open(url.href, "_blank", "noopener");
         return;
       }
-      const label = link.getAttribute("aria-label") || link.textContent || (isAudio ? "Recording" : "Sample pages");
-      if (isAudio) {
-        openAudioPlayer(url.href, label);
-        return;
-      }
+      const label = link.getAttribute("aria-label") || link.textContent || "Sample pages";
       openPdfViewer(url.href, label);
     },
     true
   );
 
-  const audioDialog = document.createElement("dialog");
-  audioDialog.className = "pdf-viewer audio-player";
-  audioDialog.setAttribute("aria-labelledby", "audio-player-title");
-  audioDialog.innerHTML = `
-    <div class="pdf-viewer-panel">
-      <div class="pdf-viewer-bar">
-        <button type="button" class="pdf-viewer-back" data-audio-player-back>Back</button>
-        <h2 id="audio-player-title" class="pdf-viewer-title" data-audio-player-title>Recording</h2>
-      </div>
-      <div class="pdf-viewer-stage">
-        <audio class="audio-player-control" controls preload="none" data-audio-player-control></audio>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(audioDialog);
-  const audioTitle = audioDialog.querySelector("[data-audio-player-title]");
-  const audioBack = audioDialog.querySelector("[data-audio-player-back]");
-  const audioControl = audioDialog.querySelector("[data-audio-player-control]");
-  let audioHistoryPushed = false;
-
-  const openAudioPlayer = (href, label) => {
-    const next = new URL(href, location.href);
-    next.hash = "";
-    audioTitle.textContent = (label || "Recording").replace(/\s+/g, " ").trim();
-    if (audioControl.src !== next.href) {
-      audioControl.src = next.href;
+  const formatClock = (seconds) => {
+    if (!Number.isFinite(seconds) || seconds < 0) {
+      return "0:00";
     }
-    if (!audioDialog.open) {
-      audioDialog.showModal();
-      history.pushState({ audioPlayer: 1 }, "");
-      audioHistoryPushed = true;
+    const total = Math.floor(seconds);
+    const hours = Math.floor(total / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const secs = String(total % 60).padStart(2, "0");
+    if (hours > 0) {
+      return `${hours}:${String(minutes).padStart(2, "0")}:${secs}`;
     }
-    const started = audioControl.play();
-    if (started) {
-      started.catch(() => {});
-    }
-    audioBack.focus();
+    return `${minutes}:${secs}`;
   };
 
-  const closeAudioPlayer = () => {
-    if (audioDialog.open) {
-      audioDialog.close();
-    }
-  };
-
-  audioBack.addEventListener("click", closeAudioPlayer);
-  audioDialog.addEventListener("click", (event) => {
-    if (event.target === audioDialog) {
-      closeAudioPlayer();
-    }
-  });
-  audioDialog.addEventListener("close", () => {
-    audioControl.pause();
-    if (audioHistoryPushed) {
-      audioHistoryPushed = false;
-      history.back();
-    }
-  });
-  audioDialog.addEventListener("cancel", (event) => {
-    event.preventDefault();
-    closeAudioPlayer();
-  });
-  window.addEventListener("popstate", () => {
-    if (!audioDialog.open) {
+  const mountInlinePlayers = () => {
+    const links = Array.from(document.querySelectorAll("a[href]")).filter((link) => {
+      if (link.target === "_blank" || link.hasAttribute("download")) {
+        return false;
+      }
+      try {
+        const url = new URL(link.href, location.href);
+        return url.origin === location.origin && url.pathname.toLowerCase().endsWith(".mp3");
+      } catch (error) {
+        return false;
+      }
+    });
+    if (!links.length) {
       return;
     }
-    audioHistoryPushed = false;
-    audioDialog.close();
-  });
+    const audios = [];
+    links.forEach((link, index) => {
+      const url = new URL(link.href, location.href);
+      url.hash = "";
+      const label = link.textContent.replace(/\s+/g, " ").trim() || "Recording";
+      const player = document.createElement("div");
+      player.className = "inline-player";
+      const titleId = `inline-player-title-${index}`;
+      const actionId = `inline-player-action-${index}`;
+      player.innerHTML = `
+        <button type="button" class="inline-player-play" aria-labelledby="${actionId} ${titleId}">
+          <span class="visually-hidden" id="${actionId}">Play</span>
+          <svg class="inline-player-icon inline-player-icon-play" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
+          <svg class="inline-player-icon inline-player-icon-pause" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 5h4.2v14H6zM13.8 5H18v14h-4.2z"/></svg>
+        </button>
+        <div class="inline-player-main">
+          <p class="inline-player-title" id="${titleId}"></p>
+          <div class="inline-player-bar">
+            <input class="inline-player-seek" type="range" min="0" max="1000" value="0" step="1" disabled aria-label="Playback position for ${esc(label)}">
+            <span class="inline-player-time">0:00 / 0:00</span>
+          </div>
+        </div>
+      `;
+      const title = player.querySelector(".inline-player-title");
+      while (link.firstChild) {
+        title.appendChild(link.firstChild);
+      }
+      const audio = document.createElement("audio");
+      audio.preload = "none";
+      audio.src = url.href;
+      player.appendChild(audio);
+      link.replaceWith(player);
+
+      const button = player.querySelector(".inline-player-play");
+      const action = player.querySelector(".visually-hidden");
+      const seek = player.querySelector(".inline-player-seek");
+      const time = player.querySelector(".inline-player-time");
+      let seeking = false;
+      audios.push(audio);
+
+      const paint = () => {
+        const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+        const current = seeking && duration > 0
+          ? (Number(seek.value) / 1000) * duration
+          : (Number.isFinite(audio.currentTime) ? audio.currentTime : 0);
+        time.textContent = `${formatClock(current)} / ${formatClock(duration)}`;
+        if (!seeking && duration > 0) {
+          seek.value = String(Math.round((current / duration) * 1000));
+        }
+        seek.setAttribute("aria-valuetext", `${formatClock(current)} of ${formatClock(duration)}`);
+      };
+
+      const setPlaying = (playing) => {
+        player.classList.toggle("is-playing", playing);
+        action.textContent = playing ? "Pause" : "Play";
+      };
+
+      button.addEventListener("click", () => {
+        if (audio.paused) {
+          audios.forEach((other) => {
+            if (other !== audio && !other.paused) {
+              other.pause();
+            }
+          });
+          const started = audio.play();
+          if (started) {
+            started.catch(() => {
+              setPlaying(false);
+            });
+          }
+          return;
+        }
+        audio.pause();
+      });
+
+      audio.addEventListener("play", () => setPlaying(true));
+      audio.addEventListener("pause", () => setPlaying(false));
+      audio.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        setPlaying(false);
+        paint();
+      });
+      audio.addEventListener("loadedmetadata", () => {
+        seek.disabled = false;
+        paint();
+      });
+      audio.addEventListener("timeupdate", paint);
+      audio.addEventListener("error", () => {
+        seek.disabled = true;
+        time.textContent = "Unavailable";
+      });
+      seek.addEventListener("pointerdown", () => {
+        seeking = true;
+      });
+      seek.addEventListener("input", () => {
+        seeking = true;
+        if (Number.isFinite(audio.duration) && audio.duration > 0) {
+          audio.currentTime = (Number(seek.value) / 1000) * audio.duration;
+        }
+        paint();
+      });
+      seek.addEventListener("change", () => {
+        seeking = false;
+        paint();
+      });
+    });
+  };
+
+  mountInlinePlayers();
 
   const scoreTriggers = Array.from(document.querySelectorAll("[data-score-lightbox]"));
   if (scoreTriggers.length) {

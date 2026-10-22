@@ -1657,26 +1657,98 @@ figure > figcaption.cover-credit {
   font-size: 1.05rem;
 }
 
-.audio-player {
-  bottom: auto;
-  height: auto;
-  border-bottom: 1px solid var(--rule);
+.work-links > li:has(.inline-player) {
+  flex: 1 0 100%;
 }
 
-.audio-player .pdf-viewer-panel {
-  height: auto;
-  max-height: none;
+.inline-player {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: min(100%, 36rem);
+  margin-top: 0.2rem;
+  padding: 0.45rem 0.75rem 0.45rem 0.45rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.75rem;
+  background: var(--bg);
 }
 
-.audio-player .pdf-viewer-stage {
-  flex: none;
-  overflow: visible;
+.inline-player-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  cursor: pointer;
 }
 
-.audio-player-control {
+.inline-player.is-playing .inline-player-play {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.inline-player-icon {
   display: block;
-  width: 100%;
-  margin-top: 0.35rem;
+}
+
+.inline-player-icon-pause,
+.inline-player.is-playing .inline-player-icon-play {
+  display: none;
+}
+
+.inline-player.is-playing .inline-player-icon-pause {
+  display: block;
+}
+
+.inline-player-title {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.inline-player-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.3rem;
+}
+
+.inline-player-seek {
+  flex: 1;
+  min-width: 0;
+  height: 2.75rem;
+  margin: 0;
+  accent-color: var(--ink);
+  cursor: pointer;
+}
+
+.inline-player-seek:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+.inline-player-time {
+  flex: none;
+  min-width: 6.25rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  text-align: right;
+}
+
+@media (hover: hover) {
+  .inline-player-play:hover {
+    box-shadow: 0 6px 16px rgba(17, 17, 17, 0.18);
+  }
 }
 
 .about-gallery figcaption {
