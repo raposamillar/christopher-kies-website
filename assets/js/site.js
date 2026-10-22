@@ -1276,7 +1276,13 @@
       if (link.closest(".work-links") || link.querySelector(".work-link-icon")) {
         return;
       }
-      if (!link.textContent.includes("available for sale on Sheet Music Plus")) {
+      const visible = [...link.childNodes]
+        .filter((node) => node.nodeType === Node.TEXT_NODE)
+        .map((node) => node.textContent)
+        .join("")
+        .trim();
+      const isInlineSaleLink = link.textContent.includes("available for sale on Sheet Music Plus") || visible === "Sheet Music Plus" || visible === "In My Life";
+      if (!isInlineSaleLink) {
         return;
       }
       const label = document.createElement("span");
@@ -1287,9 +1293,45 @@
       const hint = document.createElement("span");
       hint.className = "visually-hidden";
       hint.textContent = " (external site)";
-      label.append(hint);
+      const context = label.querySelector(".visually-hidden");
+      label.insertBefore(hint, context);
       link.append(label);
       link.insertAdjacentHTML("beforeend", workLinkIcons.external);
+    });
+
+    document.querySelectorAll(".cover-credit a").forEach((link) => {
+      if (link.querySelector(".work-link-icon")) {
+        return;
+      }
+      const href = link.getAttribute("href") || "";
+      if (!/^https?:/i.test(href) || !link.textContent.includes("Cover Art: Antonietta Kies")) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      const hint = document.createElement("span");
+      hint.className = "visually-hidden";
+      hint.textContent = " (external site)";
+      const context = label.querySelector(".visually-hidden");
+      label.insertBefore(hint, context);
+      link.append(label);
+      link.insertAdjacentHTML("beforeend", workLinkIcons.external);
+    });
+
+    document.querySelectorAll(".lede a").forEach((link) => {
+      if (link.closest(".composer-contact") || link.querySelector(".work-link-icon") || !link.textContent.includes("Contact the composer")) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      link.insertAdjacentHTML("afterbegin", workLinkIcons.envelope);
+      link.append(label);
     });
 
     document.querySelectorAll(".composer-contact a").forEach((link) => {
@@ -1302,6 +1344,19 @@
         label.append(link.firstChild);
       }
       link.insertAdjacentHTML("afterbegin", workLinkIcons.envelope);
+      link.append(label);
+    });
+
+    document.querySelectorAll(".featured-excerpt a").forEach((link) => {
+      if (link.querySelector(".work-link-icon") || !/program note/i.test(link.textContent)) {
+        return;
+      }
+      const label = document.createElement("span");
+      label.className = "work-link-text";
+      while (link.firstChild) {
+        label.append(link.firstChild);
+      }
+      link.insertAdjacentHTML("afterbegin", workLinkIcons.note);
       link.append(label);
     });
   };

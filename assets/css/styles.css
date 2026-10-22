@@ -810,6 +810,14 @@ dialog input:focus-visible {
   color: var(--muted);
 }
 
+.featured-excerpt a:has(> .work-link-icon),
+.lede a:has(> .work-link-icon:not(.work-link-icon--external)) {
+  display: inline-flex;
+  align-items: flex-start;
+  column-gap: 0.35em;
+  text-decoration-line: none;
+}
+
 .featured-score {
   margin: 0.35rem 0 0;
   max-width: 28rem;
@@ -1221,11 +1229,15 @@ a:hover .work-link-text {
 
 /* Inline external links stay in the sentence. The icon follows the last word.
    Link text is --ink (#111 on #fff ≈ 18.7:1; #3d3d3d on hover ≈ 10.7:1). */
-p a:has(> .work-link-icon--external) {
+p a:has(> .work-link-icon--external),
+.cover-credit a:has(> .work-link-icon--external),
+.page-quote a:has(> .work-link-icon--external) {
   text-decoration-line: none;
 }
 
-p a > .work-link-icon--external {
+p a > .work-link-icon--external,
+.cover-credit a > .work-link-icon--external,
+.page-quote a > .work-link-icon--external {
   display: inline-block;
   margin: 0 0 0 0.28em;
   vertical-align: -0.12em;
