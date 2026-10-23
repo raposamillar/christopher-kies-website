@@ -1483,6 +1483,16 @@ figure > figcaption.cover-credit {
   }
 }
 
+@media (max-width: 834px) {
+  .credits {
+    margin-top: 2.5rem;
+  }
+
+  .page-contact .contact-form {
+    margin-top: 3rem;
+  }
+}
+
 /* Catalogue */
 .cat-nav,
 .section-list {
@@ -3860,6 +3870,19 @@ p a > .work-link-icon--external,
   margin-bottom: 1rem;
 }
 
+.page-beatles .beatles-catalogue-intro {
+  padding-top: 0.85rem;
+  padding-bottom: 1.15rem;
+}
+
+.page-beatles .beatles-catalogue-intro .lede {
+  margin-bottom: 0;
+}
+
+.page-beatles .beatles-catalogue-intro + .section-list {
+  margin-top: 2.15rem;
+}
+
 .page-beatles .beatles-video-row {
   display: grid;
   gap: 1.15rem;
@@ -4112,9 +4135,31 @@ p a > .work-link-icon--external,
     height: auto;
   }
 
+  .page-beatles .beatles-lower .beatles-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1.25rem;
+    padding-bottom: 0;
+  }
+
+  .page-beatles .beatles-lower .beatles-video + .hero-block {
+    margin-top: 2.25rem;
+  }
+
   .page-beatles .beatles-video-row {
     width: 100%;
     grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-content: center;
+    margin-top: 0;
+    gap: 2.15rem;
+  }
+
+  .page-beatles .video-details {
+    justify-self: start;
+    width: 100%;
+    text-align: left;
   }
 
   .page-beatles .video-placeholder,
@@ -4139,6 +4184,30 @@ p a > .work-link-icon--external,
   .page-beatles .beatles-hero-copy h2,
   .page-beatles .beatles-hero-copy .meta {
     text-align: left;
+  }
+
+  .page-beatles #beatles-catalogue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .page-beatles #beatles-catalogue .lede {
+    margin-bottom: 0;
+  }
+
+  .page-beatles #beatles-catalogue .beatles-catalogue-intro + .section-list {
+    margin-top: 2.5rem;
+  }
+
+  .page-beatles #beatles-catalogue .section-list {
+    margin-bottom: 0;
+  }
+
+  .page-beatles #beatles-catalogue .section-list a {
+    padding-block: 1.5rem;
   }
 }
 
