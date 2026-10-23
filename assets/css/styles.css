@@ -3852,89 +3852,43 @@ p a > .work-link-icon--external,
   display: grid;
   gap: 1.15rem;
   align-items: center;
-  margin-top: 11.15rem;
-}
-
-.page-beatles .tv-ears {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 0.7rem - 2px);
-  width: 12.75rem;
-  height: auto;
-  transform: translateX(-50%);
-  overflow: visible;
-  pointer-events: none;
+  margin-top: 1.5rem;
 }
 
 .page-beatles .tv-set {
-  --tv-cabinet: #d4cbb8;
-  --tv-cabinet-edge: #b7ad98;
-  --tv-side: #a89c86;
-  --tv-bezel: #241f1c;
-  --tv-knob: #3a342e;
+  --tv-wood: #b9834f;
+  --tv-wood-dark: #8d5c32;
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 5.15rem;
-  align-items: stretch;
-  gap: 0.55rem;
-  width: 100%;
-  max-width: 42rem;
-  margin: 0;
-  padding: 0.7rem 0.65rem 0.95rem 0.7rem;
-  border-radius: 0.55rem;
-  background:
-    linear-gradient(180deg, rgba(255, 252, 246, 0.45), transparent 28%),
-    var(--tv-cabinet);
-  box-shadow:
-    inset 0 2px 0 rgba(255, 252, 246, 0.7),
-    inset 0 -0.35rem 0 var(--tv-cabinet-edge),
-    0.42rem 0.06rem 0 0 var(--tv-side),
-    0.28rem 3px 5px rgba(17, 17, 17, 0.12),
-    0.36rem 16px 28px rgba(17, 17, 17, 0.22);
+  display: block;
+  width: min(100%, 30rem);
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 0.55rem 0.28rem 0.85rem;
+  border-radius: 0.35rem;
+  background: linear-gradient(180deg, #e0b27a 0%, var(--tv-wood) 42%, var(--tv-wood-dark) 100%);
+  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.16);
 }
 
-.page-beatles .tv-set::before,
-.page-beatles .tv-set::after {
-  content: "";
+.page-beatles .tv-speaker {
   position: absolute;
-  bottom: -0.28rem;
-  width: 1.35rem;
+  left: 50%;
+  bottom: 0.24rem;
+  width: min(7.5rem, 46%);
   height: 0.38rem;
-  border-radius: 0 0 0.28rem 0.28rem;
-  background: #a89c86;
-}
-
-.page-beatles .tv-set::before {
-  left: 0.85rem;
-}
-
-.page-beatles .tv-set::after {
-  right: 0.85rem;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 0.34rem,
+    rgba(74, 44, 22, 0.55) 0.34rem 0.4rem
+  );
 }
 
 .page-beatles .tv-screen {
   position: relative;
   min-width: 0;
-  padding: 1.15rem;
-  border-radius: 0.45rem;
-  background:
-    linear-gradient(180deg, #3a342e 0 0.16rem, var(--tv-bezel) 0.16rem);
-  box-shadow: inset 0 1px 0 rgba(255, 248, 236, 0.28);
-}
-
-.page-beatles .tv-screen::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  inset: 1.15rem;
-  border-radius: 0.28rem;
-  pointer-events: none;
-  background: linear-gradient(
-    128deg,
-    rgba(255, 252, 246, 0.18) 0%,
-    rgba(255, 252, 246, 0.05) 26%,
-    transparent 48%
-  );
+  padding: 0.22rem;
+  border-radius: 0.85rem;
+  background: var(--tv-wood-dark);
 }
 
 .page-beatles .tv-screen .video-placeholder,
@@ -3943,14 +3897,12 @@ p a > .work-link-icon--external,
   max-width: none;
   margin: 0;
   aspect-ratio: 16 / 9;
-  border: 0.85rem solid #100e0c;
-  border-radius: 0.32rem;
-  background: #121110;
-  color: #e4ddd4;
+  border: 0;
+  border-radius: 0.65rem;
+  background: #9aa89a;
+  color: #3d463d;
   overflow: hidden;
-  box-shadow:
-    0 0 0 0.42rem #efe6d4,
-    inset 0 14px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 0 2px rgba(60, 40, 22, 0.35);
 }
 
 .page-beatles .tv-screen .video-embed iframe {
@@ -3958,89 +3910,6 @@ p a > .work-link-icon--external,
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.page-beatles .tv-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 0.28rem;
-  min-width: 0;
-  padding: 0.45rem 0.15rem 0.5rem;
-  border-radius: 0.4rem;
-  background: #2a2623;
-}
-
-.page-beatles .tv-buttons {
-  display: grid;
-  grid-template-columns: repeat(3, 0.32rem);
-  gap: 0.18rem 0.24rem;
-}
-
-.page-beatles .tv-buttons span {
-  width: 0.32rem;
-  height: 0.32rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, #fffdf8 0 16%, #e4ddd2 38%, #8a847c 70%, #3a342e 100%);
-  box-shadow:
-    inset 1px 1px 0 rgba(255, 252, 246, 0.9),
-    inset -1px -1px 1px rgba(28, 24, 20, 0.75),
-    0 1px 0 #1a1614,
-    1px 2px 2px rgba(0, 0, 0, 0.55);
-}
-
-.page-beatles .tv-dial {
-  display: grid;
-  place-items: center;
-  width: 2.85rem;
-  height: 2.85rem;
-  border-radius: 50%;
-  background:
-    radial-gradient(circle, #2a2623 0 64%, transparent 65%),
-    repeating-conic-gradient(#d5cec2 0 2.2deg, transparent 2.2deg 30deg);
-}
-
-.page-beatles .tv-knob {
-  position: relative;
-  width: 1.95rem;
-  height: 1.95rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, #fffefb 0 8%, #f4efe6 16%, #c8c1b4 40%, #6e6860 72%, #322e2a 100%);
-  box-shadow:
-    inset 2px 2px 0 rgba(255, 252, 246, 0.8),
-    inset -2px -3px 2px rgba(24, 20, 16, 0.6),
-    inset 0 0 0 1px rgba(255, 248, 236, 0.28),
-    0 1px 0 #161311,
-    2px 3px 3px rgba(0, 0, 0, 0.55);
-}
-
-.page-beatles .tv-knob::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 2px;
-  height: 42%;
-  border-radius: 1px;
-  background: #2a2623;
-  transform: translate(-50%, -90%) rotate(36deg);
-  transform-origin: center bottom;
-}
-
-.page-beatles .tv-dial-low .tv-knob::after {
-  transform: translate(-50%, -90%) rotate(208deg);
-}
-
-.page-beatles .tv-grille {
-  width: 2.7rem;
-  height: 3.6rem;
-  border-radius: 50%;
-  background-color: #161412;
-  background-image: radial-gradient(circle, #4a453f 0.055rem, transparent 0.068rem);
-  background-size: 0.32rem 0.32rem;
-  background-position: center;
-  box-shadow: inset 0 0 0 1px rgba(255, 248, 236, 0.08);
 }
 
 .page-beatles .video-details {
@@ -4145,10 +4014,14 @@ p a > .work-link-icon--external,
     column-gap: 1.75rem;
   }
 
-  .page-beatles .beatles-video .video-placeholder,
-  .page-beatles .tv-set {
+  .page-beatles .beatles-video .video-placeholder {
     max-width: none;
     width: 100%;
+  }
+
+  .page-beatles .tv-set {
+    width: min(100%, 30rem);
+    max-width: 30rem;
   }
 }
 
@@ -4196,11 +4069,15 @@ p a > .work-link-icon--external,
 
   .page-beatles .beatles-hero-copy {
     order: 1;
+    grid-column: 1;
+    grid-row: 1;
     text-align: center;
   }
 
   .page-beatles .beatles-hero .score-pair {
     order: 2;
+    grid-column: 1;
+    grid-row: 2;
     width: min(18rem, 100%);
     margin-top: 1.15rem;
   }
@@ -4229,93 +4106,27 @@ p a > .work-link-icon--external,
   }
 
   .page-beatles .video-placeholder,
-  .page-beatles .video-placeholder p,
-  .page-beatles .tv-set {
+  .page-beatles .video-placeholder p {
     margin-inline: auto;
     max-width: 100%;
     min-width: 0;
   }
 
-  /* Phone: controls sit in a row under the screen. Desktop keeps them on the right.
-     A shorter row and a slightly thinner bezel let the 16:9 glass take more of the cabinet. */
   .page-beatles .tv-set {
-    width: 100%;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 0.35rem;
-    padding: 0.5rem 0.45rem 0.5rem;
+    width: min(100%, 20rem);
+    max-width: 20rem;
+    margin-bottom: 0;
   }
 
-  .page-beatles .tv-screen {
-    padding: 0.8rem;
+  .page-beatles .beatles-hero-copy .kicker {
+    margin-top: 1.85rem;
+    padding-top: 1.15rem;
+    text-align: left;
   }
 
-  .page-beatles .tv-screen::after {
-    inset: 0.8rem;
-  }
-
-  .page-beatles .tv-screen .video-placeholder,
-  .page-beatles .tv-screen .video-embed {
-    border-width: 0.65rem;
-    box-shadow:
-      0 0 0 0.32rem #efe6d4,
-      inset 0 14px 20px rgba(0, 0, 0, 0.8);
-  }
-
-  .page-beatles .tv-side {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 0.28rem 0.4rem;
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    padding: 0.22rem 0.4rem 0.26rem;
-  }
-
-  .page-beatles .tv-buttons {
-    grid-template-columns: repeat(3, 0.26rem);
-    gap: 0.12rem 0.16rem;
-  }
-
-  .page-beatles .tv-buttons span {
-    width: 0.26rem;
-    height: 0.26rem;
-  }
-
-  .page-beatles .tv-dial {
-    width: 2.35rem;
-    height: 2.35rem;
-  }
-
-  .page-beatles .tv-knob {
-    width: 1.6rem;
-    height: 1.6rem;
-  }
-
-  .page-beatles .tv-grille {
-    width: 2.15rem;
-    height: 2.55rem;
-  }
-
-  .page-beatles .tv-ears {
-    width: min(12.75rem, 86vw);
-  }
-}
-
-@media (max-width: 380px) {
-  .page-beatles .tv-dial {
-    width: 2.1rem;
-    height: 2.1rem;
-  }
-
-  .page-beatles .tv-knob {
-    width: 1.44rem;
-    height: 1.44rem;
-  }
-
-  .page-beatles .tv-grille {
-    width: 1.95rem;
-    height: 2.3rem;
+  .page-beatles .beatles-hero-copy h2,
+  .page-beatles .beatles-hero-copy .meta {
+    text-align: left;
   }
 }
 
@@ -4689,6 +4500,10 @@ body:not(.page-home) .page-title::before {
   .page-beatles .beatles-hero .page-title::before {
     margin-inline: auto;
   }
+
+  .page-beatles .beatles-hero-copy .kicker::before {
+    margin-inline: 0;
+  }
 }
 
 /* Dark mode. Text on the page and on each band stays at or above 7:1. */
@@ -4770,12 +4585,7 @@ html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
 }
 
 html[data-theme="dark"] .page-beatles .tv-set {
-  box-shadow:
-    inset 0 2px 0 rgba(255, 252, 246, 0.7),
-    inset 0 -0.35rem 0 var(--tv-cabinet-edge),
-    0.42rem 0.06rem 0 0 var(--tv-side),
-    0.28rem 3px 5px rgba(0, 0, 0, 0.4),
-    0.36rem 16px 28px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
 }
 
 html[data-theme="dark"] .featured-listen .inline-player {
@@ -4818,12 +4628,7 @@ html[data-theme="dark"] .featured-listen .inline-player {
   }
 
   html:not([data-theme="light"]) .page-beatles .tv-set {
-    box-shadow:
-      inset 0 2px 0 rgba(255, 252, 246, 0.7),
-      inset 0 -0.35rem 0 var(--tv-cabinet-edge),
-      0.42rem 0.06rem 0 0 var(--tv-side),
-      0.28rem 3px 5px rgba(0, 0, 0, 0.4),
-      0.36rem 16px 28px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
   }
 
   html:not([data-theme="light"]) .featured-listen .inline-player {
