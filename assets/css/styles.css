@@ -876,16 +876,20 @@ dialog input:focus-visible {
   --radio-time: #d8d2c8;
   --radio-tick: rgba(244, 241, 236, 0.55);
   --radio-dial-line: rgba(244, 241, 236, 0.45);
+  --radio-side: #3a3a3a;
   position: relative;
   grid-template-columns: 4.4rem minmax(0, 1fr);
   width: 100%;
   margin-top: 0;
   padding: 0.65rem 0.7rem;
-  border: 1px solid var(--radio-face);
+  border: 0;
   border-radius: 0.95rem;
   background: var(--radio-body);
   color: var(--radio-face);
-  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.08), 0 8px 20px rgba(17, 17, 17, 0.16);
+  box-shadow:
+    0.42rem 0.06rem 0 0 var(--radio-side),
+    0.28rem 3px 5px rgba(17, 17, 17, 0.12),
+    0.36rem 16px 28px rgba(17, 17, 17, 0.22);
 }
 
 .featured-listen .inline-player::after {
@@ -4205,6 +4209,11 @@ html[data-theme="dark"] .featured-listen .inline-player {
   --radio-time: #3d3d3d;
   --radio-tick: rgba(17, 17, 17, 0.45);
   --radio-dial-line: rgba(17, 17, 17, 0.28);
+  --radio-side: #d4cdc3;
+  box-shadow:
+    0.42rem 0.06rem 0 0 var(--radio-side),
+    0.28rem 3px 5px rgba(0, 0, 0, 0.4),
+    0.36rem 16px 28px rgba(0, 0, 0, 0.55);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -4239,5 +4248,10 @@ html[data-theme="dark"] .featured-listen .inline-player {
     --radio-time: #3d3d3d;
     --radio-tick: rgba(17, 17, 17, 0.45);
     --radio-dial-line: rgba(17, 17, 17, 0.28);
+    --radio-side: #d4cdc3;
+    box-shadow:
+      0.42rem 0.06rem 0 0 var(--radio-side),
+      0.28rem 3px 5px rgba(0, 0, 0, 0.4),
+      0.36rem 16px 28px rgba(0, 0, 0, 0.55);
   }
 }
