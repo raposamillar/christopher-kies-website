@@ -1182,7 +1182,7 @@ dialog input:focus-visible {
 }
 
 /* The 11rem set needs a slightly smaller face so the label and time stay inside the dial. */
-@media (min-width: 760px) {
+@media (min-width: 835px) {
   .page-home .home-featured .featured-listen .inline-player {
     grid-template-columns: 3.5rem minmax(0, 1fr);
   }
@@ -1624,7 +1624,7 @@ figure > figcaption.cover-credit {
   margin: 0;
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .work {
     grid-template-columns: minmax(0, 1fr);
     row-gap: 0.15rem;
@@ -2373,7 +2373,7 @@ p a > .work-link-icon--external,
   text-align: right;
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .inline-player-bar {
     flex-wrap: wrap;
   }
@@ -3038,8 +3038,8 @@ p a > .work-link-icon--external,
   }
 }
 
-/* Tablet. Desktop is 1280px and up. Mobile is 759px and below. */
-@media (min-width: 760px) and (max-width: 1279px) {
+/* Tablet is 835–1279px. Desktop is 1280px and up. Mobile, including iPad mini portrait, is 834px and below. */
+@media (min-width: 835px) and (max-width: 1279px) {
   .about-layout {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1.15rem;
@@ -3060,7 +3060,7 @@ p a > .work-link-icon--external,
   }
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .about-portrait {
     justify-self: center;
     width: min(100%, 16rem);
@@ -3092,7 +3092,7 @@ p a > .work-link-icon--external,
   }
 }
 
-/* Landing. Desktop is 1280px and up. Tablet is 760–1279px. Mobile is 759px and below. */
+/* Landing. Desktop is 1280px and up. Tablet is 835–1279px. Mobile, including iPad mini portrait, is 834px and below. */
 .page-home .score-pair,
 .page-home .album-grid {
   grid-template-columns: minmax(0, 1fr);
@@ -3334,7 +3334,7 @@ p a > .work-link-icon--external,
   }
 }
 
-@media (min-width: 760px) and (max-width: 1279px) {
+@media (min-width: 835px) and (max-width: 1279px) {
   .page-home .site-main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -3358,7 +3358,9 @@ p a > .work-link-icon--external,
   .page-home .home-intro {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: fit-content(min(24rem, 42vw)) minmax(14rem, 20rem);
+    /* The text column stays wide enough for "Beatles arrangements".
+       The cover column takes the rest and cannot paint over the text. */
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 24rem);
     column-gap: 1.5rem;
     justify-content: center;
     align-items: start;
@@ -3374,14 +3376,15 @@ p a > .work-link-icon--external,
   }
 
   .page-home .home-hero .score-pair {
-    width: fit-content;
-    max-width: min(24rem, 42vw);
-    justify-self: center;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    justify-self: stretch;
   }
 
   .page-home .home-hero .score-pair img {
-    width: auto;
-    max-width: min(24rem, 42vw);
+    width: 100%;
+    max-width: 100%;
     height: auto;
   }
 
@@ -3485,7 +3488,7 @@ p a > .work-link-icon--external,
   }
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .page-home .hero-block + .hero-block {
     border-left: 0;
     padding-left: 0;
@@ -4064,7 +4067,7 @@ p a > .work-link-icon--external,
   color: var(--ink);
 }
 
-@media (min-width: 760px) {
+@media (min-width: 835px) {
   .page-beatles .beatles-hero {
     display: grid;
     grid-template-columns: minmax(0, 23rem) minmax(14rem, 22rem);
@@ -4135,7 +4138,7 @@ p a > .work-link-icon--external,
   }
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .page-beatles .beatles-hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -4409,7 +4412,7 @@ h2 a:hover {
   padding-bottom: 1.5rem;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 835px) {
   .page-home .home-albums {
     margin-top: 0;
   }
@@ -4461,7 +4464,7 @@ h2 a:hover {
   bottom: -0.9rem;
 }
 
-@media (min-width: 760px) and (max-width: 1279px) {
+@media (min-width: 835px) and (max-width: 1279px) {
   .page-home .home-hero::before {
     top: -1rem;
     bottom: -0.95rem;
@@ -4485,7 +4488,7 @@ h2 a:hover {
   }
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .page-home .home-featured::before {
     top: -0.15rem;
   }
@@ -4577,7 +4580,7 @@ body:not(.page-home) .page-title::before {
   top: -1.6rem;
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .palette-band:has(> .page-title)::before,
   .page-heading.palette-band::before {
     top: -1.7rem;
@@ -4637,7 +4640,7 @@ body:not(.page-home) .page-title::before {
   margin-bottom: 0;
 }
 
-@media (max-width: 759px) {
+@media (max-width: 834px) {
   .kicker::before,
   .page-beatles .beatles-hero .page-title::before {
     margin-inline: auto;
