@@ -159,6 +159,8 @@ dialog input:focus-visible {
   text-decoration: none;
   line-height: 1.15;
   width: max-content;
+  /* 1.7rem × 1.15 is 43px between 561px and 1279px. The box must stay at least 44px (2.5.5). */
+  min-height: 44px;
 }
 
 .brand:hover {
@@ -565,6 +567,11 @@ dialog input:focus-visible {
   .site-nav .has-sub:focus-within > .sub-nav,
   .site-nav .has-sub.is-expanded > .sub-nav {
     display: block;
+  }
+
+  /* Escape dismisses the submenu even while the pointer or focus stays inside it (1.4.13). */
+  .site-nav .has-sub.is-dismissed > .sub-nav {
+    display: none;
   }
 
   .site-nav .sub-nav {
@@ -1306,12 +1313,23 @@ dialog input:focus-visible {
 
 figure > figcaption.cover-credit {
   margin: 0.45rem 0 0;
-  max-width: none;
+  max-width: 100%;
   font-family: var(--sans);
   font-size: 0.85rem;
   color: var(--ink);
   text-align: center;
   cursor: auto;
+}
+
+.cover-credit a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 44px;
+  padding-block: 0.15rem;
+  white-space: normal;
 }
 
 .page-home .album-card figure > a {
@@ -4029,12 +4047,6 @@ p a > .work-link-icon--external,
     margin-top: 1.15rem;
   }
 
-  .page-beatles .beatles-hero .score-pair img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-
   .page-beatles .page-quote {
     margin-inline: auto;
   }
@@ -4043,11 +4055,109 @@ p a > .work-link-icon--external,
   .page-beatles .beatles-hero .score-pair figure,
   .page-beatles .beatles-hero .score-entry {
     margin-inline: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .page-beatles .beatles-hero .score-pair img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .page-beatles .beatles-video-row {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .page-beatles .video-placeholder,
+  .page-beatles .video-placeholder p,
   .page-beatles .tv-set {
     margin-inline: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Phone: controls sit in a row under the screen. Desktop keeps them on the right.
+     A shorter row and a slightly thinner bezel let the 16:9 glass take more of the cabinet. */
+  .page-beatles .tv-set {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+    padding: 0.5rem 0.45rem 0.5rem;
+  }
+
+  .page-beatles .tv-screen {
+    padding: 0.8rem;
+  }
+
+  .page-beatles .tv-screen::after {
+    inset: 0.8rem;
+  }
+
+  .page-beatles .tv-screen .video-placeholder,
+  .page-beatles .tv-screen .video-embed {
+    border-width: 0.65rem;
+    box-shadow:
+      0 0 0 0.32rem #efe6d4,
+      inset 0 14px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .page-beatles .tv-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 0.28rem 0.4rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 0.22rem 0.4rem 0.26rem;
+  }
+
+  .page-beatles .tv-buttons {
+    grid-template-columns: repeat(3, 0.26rem);
+    gap: 0.12rem 0.16rem;
+  }
+
+  .page-beatles .tv-buttons span {
+    width: 0.26rem;
+    height: 0.26rem;
+  }
+
+  .page-beatles .tv-dial {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .page-beatles .tv-knob {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  .page-beatles .tv-grille {
+    width: 2.15rem;
+    height: 2.55rem;
+  }
+
+  .page-beatles .tv-ears {
+    width: min(12.75rem, 86vw);
+  }
+}
+
+@media (max-width: 380px) {
+  .page-beatles .tv-dial {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .page-beatles .tv-knob {
+    width: 1.44rem;
+    height: 1.44rem;
+  }
+
+  .page-beatles .tv-grille {
+    width: 1.95rem;
+    height: 2.3rem;
   }
 }
 
@@ -4087,18 +4197,51 @@ p a > .work-link-icon--external,
   color: var(--bg);
 }
 
+/* Selected fill is --ink and the default outline is --focus, the same color, so the ring was invisible.
+   A page-colored ring sits inside the fill, with ink still showing outside it, so it reads against both. */
 .theme-switch button:focus-visible {
-  outline-offset: -3px;
+  outline: 3px solid var(--bg);
+  outline-offset: -5px;
   z-index: 1;
 }
 
 @media (max-width: 420px) {
+  .site-header,
+  .header-inner,
+  .header-end,
+  .brand,
+  .brand-name {
+    max-width: 100%;
+    min-width: 0;
+  }
+
   .header-end {
-    gap: 0.4rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    justify-items: center;
+    gap: 0.4rem 0.55rem;
+  }
+
+  .header-end .search-toggle,
+  .header-end .nav-toggle {
+    flex-shrink: 0;
   }
 
   .header-end .nav-toggle {
-    padding: 0 0.75rem;
+    padding: 0 0.65rem;
+  }
+
+  /* Own row so the 44px theme buttons are not clipped by the search and menu. */
+  .header-end .theme-switch {
+    grid-column: 1 / -1;
+    width: max-content;
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  .brand-name {
+    font-size: clamp(0.95rem, 6.5vw, 1.45rem);
   }
 }
 

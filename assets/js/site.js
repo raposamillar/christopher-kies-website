@@ -99,22 +99,73 @@
       }
     });
 
+    const submenuIsOpen = (item) => {
+      const sub = item.querySelector(":scope > .sub-nav");
+      return !!sub && window.getComputedStyle(sub).display !== "none";
+    };
+
+    const focusCatalogueControl = (item) => {
+      const trigger = item.querySelector(":scope > .sub-toggle");
+      const link = item.querySelector(":scope > a");
+      const triggerVisible = trigger && window.getComputedStyle(trigger).display !== "none";
+      const target = triggerVisible ? trigger : link;
+      if (target) {
+        target.focus();
+      }
+    };
+
+    const dismissSubmenu = (item) => {
+      item.dataset.dismissing = "true";
+      item.classList.add("is-dismissed");
+      item.classList.remove("is-expanded");
+      const trigger = item.querySelector(":scope > .sub-toggle");
+      if (trigger) {
+        trigger.setAttribute("aria-expanded", "false");
+      }
+      focusCatalogueControl(item);
+      window.requestAnimationFrame(() => {
+        delete item.dataset.dismissing;
+      });
+    };
+
+    nav.querySelectorAll(".has-sub").forEach((item) => {
+      item.addEventListener("pointerleave", () => {
+        item.classList.remove("is-dismissed");
+      });
+      item.addEventListener("focusout", (event) => {
+        if (item.dataset.dismissing === "true") {
+          return;
+        }
+        if (!item.contains(event.relatedTarget)) {
+          item.classList.remove("is-dismissed");
+        }
+      });
+    });
+
     nav.querySelectorAll(".sub-toggle").forEach((trigger) => {
       const item = trigger.parentElement;
       trigger.addEventListener("click", () => {
         const open = !item.classList.contains("is-expanded");
         closeSubmenus();
         if (open) {
+          item.classList.remove("is-dismissed");
           item.classList.add("is-expanded");
           trigger.setAttribute("aria-expanded", "true");
         }
       });
     });
 
-    nav.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeSubmenus();
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || document.querySelector("dialog[open]")) {
+        return;
       }
+      const openItem = [...nav.querySelectorAll(".has-sub")].find(submenuIsOpen);
+      if (!openItem) {
+        closeSubmenus();
+        return;
+      }
+      event.preventDefault();
+      dismissSubmenu(openItem);
     });
   }
 
