@@ -1495,6 +1495,32 @@ figure > figcaption.cover-credit {
   border-top: 0;
 }
 
+@media (max-width: 834px) {
+  .page-heading:has(+ .section-list),
+  .page-heading:has(+ .work),
+  .page-heading:has(+ .work-group) {
+    padding-top: 0.65rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .site-main:has(> .page-heading + .section-list),
+  .site-main:has(> .page-heading + .work),
+  .site-main:has(> .page-heading + .work-group) {
+    padding-bottom: 1.75rem;
+  }
+
+  .page-heading + .section-list,
+  .page-heading + .work,
+  .page-heading + .work-group {
+    margin-top: 0;
+    padding-top: 1.35rem;
+  }
+
+  .page-heading + .section-list {
+    margin-bottom: 0;
+  }
+}
+
 .section-list a {
   display: flex;
   justify-content: space-between;
@@ -3089,6 +3115,24 @@ p a > .work-link-icon--external,
     height: auto;
     max-height: none;
     transform: none;
+  }
+}
+
+@media (max-width: 834px) {
+  .section-list a {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .section-list a span:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .section-list a small {
+    flex-shrink: 0;
+    align-self: flex-start;
+    white-space: nowrap;
   }
 }
 
