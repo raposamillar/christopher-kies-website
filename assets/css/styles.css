@@ -1414,8 +1414,12 @@ figure > figcaption.cover-credit {
 
 .album-card img {
   width: 100%;
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 10px 28px rgba(17, 17, 17, 0.08);
+  border-radius: 4px;
+  border: 3px solid #efeae3;
+  box-shadow:
+    0 0 0 1px rgba(17, 17, 17, 0.28),
+    2px 3px 2px rgba(17, 17, 17, 0.06),
+    5px 10px 18px rgba(17, 17, 17, 0.12);
 }
 
 .album-card figcaption {
@@ -2525,8 +2529,12 @@ p a > .work-link-icon--external,
 }
 
 .media-item img {
-  border: 1px solid rgba(17, 17, 17, 0.18);
-  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 10px 28px rgba(17, 17, 17, 0.08);
+  border-radius: 4px;
+  border: 3px solid #efeae3;
+  box-shadow:
+    0 0 0 1px rgba(17, 17, 17, 0.28),
+    2px 3px 2px rgba(17, 17, 17, 0.06),
+    5px 10px 18px rgba(17, 17, 17, 0.12);
   width: 100%;
   display: block;
 }
@@ -2650,9 +2658,13 @@ p a > .work-link-icon--external,
   height: auto;
   max-height: calc(100vh - 8rem);
   object-fit: contain;
-  border: 1px solid rgba(17, 17, 17, 0.18);
+  border-radius: 4px;
+  border: 3px solid #efeae3;
   background: var(--bg);
-  box-shadow: 0 1px 2px rgba(17, 17, 17, 0.04), 0 10px 28px rgba(17, 17, 17, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(17, 17, 17, 0.28),
+    2px 3px 2px rgba(17, 17, 17, 0.06),
+    5px 10px 18px rgba(17, 17, 17, 0.12);
 }
 
 .album-dialog-images figcaption {
@@ -4446,6 +4458,40 @@ body:not(.page-home) .page-title::before {
   bottom: -1.65rem;
 }
 
+@media (max-width: 834px) {
+  .page-albums .palette-band:has(> .page-title) {
+    padding-top: 1rem;
+    padding-bottom: 1.15rem;
+  }
+
+  .page-albums .media-list {
+    gap: 3.75rem;
+    margin-top: 2.25rem;
+  }
+
+  .page-albums .media-item > div {
+    display: contents;
+  }
+
+  .page-albums .media-item > .album-cover {
+    order: 2;
+    width: min(100%, 18rem);
+    margin-inline: auto;
+  }
+
+  .page-albums .media-item h2 {
+    order: 1;
+    margin: 0 0 0.85rem;
+  }
+
+  .page-albums .media-item .album-subtitle,
+  .page-albums .media-item .meta,
+  .page-albums .media-item .tracks {
+    order: 3;
+  }
+
+}
+
 .about-layout.palette-band::before {
   clip-path: shape(
     from 0 0.9rem,
@@ -4575,13 +4621,20 @@ html[data-theme="dark"] .pdf-viewer::backdrop {
 
 html[data-theme="dark"] .featured-score img,
 html[data-theme="dark"] .score-pair img,
-html[data-theme="dark"] .album-card img,
 html[data-theme="dark"] .about-portrait img,
 html[data-theme="dark"] .about-gallery img,
-html[data-theme="dark"] .media-item img,
-html[data-theme="dark"] .album-dialog-images img,
 html[data-theme="dark"] [data-photo-dialog] .photo-dialog-stage img {
   border-color: rgba(246, 243, 238, 0.35);
+}
+
+html[data-theme="dark"] .album-card img,
+html[data-theme="dark"] .media-item img,
+html[data-theme="dark"] .album-dialog-images img {
+  border-color: #d9d0c4;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.65),
+    2px 3px 2px rgba(0, 0, 0, 0.35),
+    5px 10px 18px rgba(0, 0, 0, 0.5);
 }
 
 html[data-theme="dark"] .page-beatles .tv-set {
@@ -4618,13 +4671,20 @@ html[data-theme="dark"] .featured-listen .inline-player {
 
   html:not([data-theme="light"]) .featured-score img,
   html:not([data-theme="light"]) .score-pair img,
-  html:not([data-theme="light"]) .album-card img,
   html:not([data-theme="light"]) .about-portrait img,
   html:not([data-theme="light"]) .about-gallery img,
-  html:not([data-theme="light"]) .media-item img,
-  html:not([data-theme="light"]) .album-dialog-images img,
   html:not([data-theme="light"]) [data-photo-dialog] .photo-dialog-stage img {
     border-color: rgba(246, 243, 238, 0.35);
+  }
+
+  html:not([data-theme="light"]) .album-card img,
+  html:not([data-theme="light"]) .media-item img,
+  html:not([data-theme="light"]) .album-dialog-images img {
+    border-color: #d9d0c4;
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.65),
+      2px 3px 2px rgba(0, 0, 0, 0.35),
+      5px 10px 18px rgba(0, 0, 0, 0.5);
   }
 
   html:not([data-theme="light"]) .page-beatles .tv-set {
