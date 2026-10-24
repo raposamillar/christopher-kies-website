@@ -1960,11 +1960,93 @@
   });
 
   const alignBands = () => {
-    document.querySelectorAll(".home-hero, .home-featured, .beatles-hero").forEach((section) => {
+    document.querySelectorAll(".home-hero, .home-featured, .beatles-hero, .beatles-catalogue-intro").forEach((section) => {
       section.style.setProperty("--bleed-left", `${section.getBoundingClientRect().left}px`);
     });
   };
 
-  alignBands();
-  window.addEventListener("resize", alignBands);
+  const placeHeroCover = () => {
+    const hero = document.querySelector(".page-home .home-hero");
+    if (!hero) {
+      return;
+    }
+    const wide = window.matchMedia("(min-width: 835px)").matches;
+    const copy = hero.querySelector(".home-hero-copy");
+    const clearCopyShift = () => {
+      if (!copy) {
+        return;
+      }
+      copy.style.marginLeft = "";
+      copy.style.width = "";
+      copy.style.maxWidth = "";
+    };
+    if (!wide) {
+      hero.style.removeProperty("--cover-left");
+      hero.style.removeProperty("--cover-slot");
+      hero.style.minHeight = "";
+      clearCopyShift();
+      return;
+    }
+    const beatles = document.querySelector('.site-nav a[href="beatles.html"]');
+    const contact = document.querySelector('.site-nav a[href="contact.html"]');
+    const heroBox = hero.getBoundingClientRect();
+    const fontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    const gap = fontSize * 1.15;
+    const beatlesBox = beatles ? beatles.getBoundingClientRect() : null;
+    const contactBox = contact ? contact.getBoundingClientRect() : null;
+    let coverLeft = 0;
+    let slot = 0;
+    if (beatlesBox && contactBox && beatlesBox.width > 0 && contactBox.width > 0) {
+      const pad = fontSize * 1.15;
+      const left = beatlesBox.left - pad;
+      const right = contactBox.right + pad;
+      coverLeft = left - heroBox.left;
+      slot = Math.max(0, right - left);
+    } else {
+      const textMax = Math.min(28 * fontSize, heroBox.width * 0.52);
+      coverLeft = textMax + gap;
+      slot = Math.min(22 * fontSize, Math.max(0, heroBox.width - coverLeft - gap));
+    }
+    hero.style.setProperty("--cover-left", `${coverLeft}px`);
+    hero.style.setProperty("--cover-slot", `${slot}px`);
+    const heading = hero.querySelector("h2");
+    if (copy && heading && beatlesBox && contactBox && beatlesBox.width > 0 && contactBox.width > 0) {
+      const probe = heading.cloneNode(true);
+      probe.style.cssText = `position:absolute;visibility:hidden;white-space:nowrap;width:auto;height:auto;font:${getComputedStyle(heading).font};`;
+      document.body.appendChild(probe);
+      const need = Math.ceil(probe.getBoundingClientRect().width);
+      probe.remove();
+      const available = coverLeft - gap;
+      const shift = Math.min(0, available - need);
+      const clampedShift = Math.max(shift, fontSize - heroBox.left);
+      if (clampedShift < -0.5) {
+        const width = Math.min(need, available - clampedShift);
+        copy.style.marginLeft = `${clampedShift}px`;
+        copy.style.width = `${width}px`;
+        copy.style.maxWidth = `${width}px`;
+      } else {
+        clearCopyShift();
+      }
+    } else {
+      clearCopyShift();
+    }
+    const cover = hero.querySelector(".score-pair");
+    if (!cover) {
+      return;
+    }
+    const padBottom = parseFloat(getComputedStyle(hero).paddingBottom) || 0;
+    const needed = cover.getBoundingClientRect().bottom - hero.getBoundingClientRect().top + padBottom;
+    hero.style.minHeight = `${Math.ceil(needed)}px`;
+  };
+
+  const alignHome = () => {
+    alignBands();
+    placeHeroCover();
+  };
+
+  alignHome();
+  window.addEventListener("resize", alignHome);
+  if (document.fonts) {
+    document.fonts.ready.then(alignHome);
+  }
 })();
