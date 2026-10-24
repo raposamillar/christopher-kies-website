@@ -3821,6 +3821,22 @@ p a > .work-link-icon--external,
     margin-top: 0.85rem;
   }
 
+  .page-home .home-hero .kicker {
+    font-size: 0.9rem;
+  }
+
+  .page-home .home-hero h2 {
+    font-size: 1.7rem;
+  }
+
+  .page-home .home-hero .home-hero-more {
+    font-size: 1.15rem;
+  }
+
+  .page-home .home-hero .lede {
+    font-size: 1.1rem;
+  }
+
   .page-home .home-featured {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
