@@ -4113,7 +4113,11 @@ p a > .work-link-icon--external,
     order: 2;
     grid-column: 1;
     grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: min(18rem, 100%);
+    min-height: calc(100dvh - var(--header-offset) + 4rem);
     margin-top: 1.15rem;
   }
 
@@ -4170,8 +4174,9 @@ p a > .work-link-icon--external,
   }
 
   .page-beatles .tv-set {
-    width: min(100%, 20rem);
-    max-width: 20rem;
+    width: min(calc(100vw - 0.75rem), 28rem);
+    max-width: none;
+    margin-inline: calc(50% - min(50vw - 0.375rem, 14rem));
     margin-bottom: 0;
   }
 
@@ -4186,12 +4191,13 @@ p a > .work-link-icon--external,
     text-align: left;
   }
 
+  .page-beatles .site-main {
+    padding-bottom: 1.75rem;
+  }
+
   .page-beatles #beatles-catalogue {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 2.75rem;
-    padding-bottom: 2.75rem;
+    padding-top: 1.75rem;
+    padding-bottom: 0;
   }
 
   .page-beatles #beatles-catalogue .lede {
@@ -4199,15 +4205,8 @@ p a > .work-link-icon--external,
   }
 
   .page-beatles #beatles-catalogue .beatles-catalogue-intro + .section-list {
-    margin-top: 2.5rem;
-  }
-
-  .page-beatles #beatles-catalogue .section-list {
+    margin-top: 2.15rem;
     margin-bottom: 0;
-  }
-
-  .page-beatles #beatles-catalogue .section-list a {
-    padding-block: 1.5rem;
   }
 }
 
