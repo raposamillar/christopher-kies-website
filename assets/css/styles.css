@@ -4050,37 +4050,46 @@ p a > .work-link-icon--external,
   border-bottom: 0;
 }
 
-.page-beatles .beatles-hero .score-pair {
-  display: block;
-  grid-column: 1;
-  grid-row: 1;
-  width: fit-content;
-  max-width: min(22rem, 100%);
-  margin: 0;
+.page-beatles .beatles-hero-copy {
+  max-width: 40rem;
 }
 
-.page-beatles .beatles-hero .score-pair figure,
-.page-beatles .beatles-hero .score-entry {
-  width: fit-content;
-  max-width: 100%;
+.page-beatles .beatles-hero .page-quote {
+  max-width: none;
 }
 
-.page-beatles .beatles-hero .score-pair img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
+.page-beatles .beatles-hero-feature {
+  width: min(20rem, 100%);
+  margin-top: 2.75rem;
+  margin-inline: auto;
 }
 
-.page-beatles .beatles-hero-copy .kicker {
-  margin: 1.35rem 0 0.3rem;
+.page-beatles .beatles-hero-feature .kicker {
+  margin: 0 0 0.3rem;
 }
 
-.page-beatles .beatles-hero-copy h2 {
+.page-beatles .beatles-hero-feature h2 {
   margin-bottom: 0.35rem;
 }
 
-.page-beatles .beatles-hero-copy .meta {
+.page-beatles .beatles-hero-feature .meta {
   margin-bottom: 0;
+}
+
+.page-beatles .beatles-hero-feature .score-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  max-width: 100%;
+  margin: 0.85rem 0 0;
+}
+
+.page-beatles .beatles-hero-feature .score-pair figure,
+.page-beatles .beatles-hero-feature .score-entry,
+.page-beatles .beatles-hero-feature .score-pair img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .page-beatles .beatles-lower {
@@ -4258,32 +4267,19 @@ p a > .work-link-icon--external,
 }
 
 @media (min-width: 835px) {
-  .page-beatles .beatles-hero {
+  .page-beatles .beatles-hero-feature {
     display: grid;
-    grid-template-columns: minmax(0, 23rem) minmax(14rem, 22rem);
+    grid-template-columns: minmax(0, max-content) 20rem;
     justify-content: center;
-    column-gap: 1.35rem;
-    align-items: center;
+    column-gap: 3rem;
+    align-items: start;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
   }
 
-  .page-beatles .beatles-hero-copy {
-    grid-column: 2;
-    grid-row: 1;
-    min-width: 0;
-  }
-
-  .page-beatles .beatles-hero .score-pair {
-    width: 100%;
-    max-width: 23rem;
-  }
-
-  .page-beatles .beatles-hero .score-pair img {
-    max-width: min(23rem, 100%);
-    max-height: calc(100dvh - var(--header-offset) - 8rem);
-  }
-
-  .page-beatles:has(.beatles-hero) .site-main {
-    padding-left: 3.25rem;
+  .page-beatles .beatles-hero-feature .score-pair {
+    margin-top: 0;
   }
 
   .page-beatles .beatles-video-row {
@@ -4303,32 +4299,16 @@ p a > .work-link-icon--external,
 }
 
 @media (min-width: 1280px) {
-  .page-beatles .beatles-hero {
-    grid-template-columns: minmax(0, 29rem) minmax(16rem, 26rem);
-    justify-content: center;
-    column-gap: 1.75rem;
-    align-items: center;
-  }
-
   .page-beatles .beatles-hero .page-title {
     font-size: clamp(1.85rem, 2.6vw, 2.35rem);
   }
 
-  .page-beatles .beatles-hero .score-pair,
-  .page-beatles .beatles-hero .score-pair img {
-    max-width: min(29rem, 100%);
-  }
-
-  .page-beatles .beatles-hero .score-pair img {
-    max-height: calc(100dvh - var(--header-offset) - 6.5rem);
-  }
-
-  .page-beatles:has(.beatles-hero) .site-main {
-    padding-left: 5rem;
-  }
-
   .page-beatles .beatles-video-row {
     column-gap: 2rem;
+  }
+
+  .page-beatles #beatles-catalogue .lede {
+    max-width: none;
   }
 }
 
@@ -4338,47 +4318,22 @@ p a > .work-link-icon--external,
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .page-beatles .beatles-hero-copy,
-  .page-beatles .beatles-hero .score-pair {
-    min-width: 0;
-    max-width: 100%;
-  }
-
   .page-beatles .beatles-hero-copy {
-    order: 1;
-    grid-column: 1;
-    grid-row: 1;
     text-align: center;
   }
 
-  .page-beatles .beatles-hero .score-pair {
-    order: 2;
-    grid-column: 1;
-    grid-row: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  .page-beatles .beatles-hero-feature {
     width: min(18rem, 100%);
-    min-height: calc(100dvh - var(--header-offset) + 4rem);
+    margin-top: 2.25rem;
+    margin-inline: auto;
+  }
+
+  .page-beatles .beatles-hero-feature .score-pair {
     margin-top: 1.15rem;
   }
 
   .page-beatles .page-quote {
     margin-inline: auto;
-  }
-
-  .page-beatles .beatles-hero .score-pair,
-  .page-beatles .beatles-hero .score-pair figure,
-  .page-beatles .beatles-hero .score-entry {
-    margin-inline: auto;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .page-beatles .beatles-hero .score-pair img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
   }
 
   .page-beatles .beatles-lower .beatles-video {
@@ -4422,14 +4377,17 @@ p a > .work-link-icon--external,
     margin-bottom: 0;
   }
 
-  .page-beatles .beatles-hero-copy .kicker {
-    margin-top: 1.85rem;
-    padding-top: 1.15rem;
+  .page-beatles .beatles-hero-feature .kicker {
+    margin-top: 0;
     text-align: left;
   }
 
-  .page-beatles .beatles-hero-copy h2,
-  .page-beatles .beatles-hero-copy .meta {
+  .page-beatles .beatles-hero-feature .kicker::before {
+    margin-inline: 0;
+  }
+
+  .page-beatles .beatles-hero-feature h2,
+  .page-beatles .beatles-hero-feature .meta {
     text-align: left;
   }
 
