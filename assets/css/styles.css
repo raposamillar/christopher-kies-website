@@ -2448,6 +2448,58 @@ p a > .work-link-icon--external,
   }
 }
 
+/* Catalogue play control uses the landing radio's knob, and only the knob. */
+.work .inline-player {
+  --radio-body: #111111;
+  --radio-face: #f4f1ec;
+}
+
+.work .inline-player-play .inline-player-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.work .inline-player-play {
+  border-width: 2px;
+  border-color: color-mix(in srgb, var(--radio-face) 55%, black);
+  background:
+    radial-gradient(
+      circle at 32% 28%,
+      color-mix(in srgb, var(--radio-face) 45%, white) 0 16%,
+      var(--radio-face) 48%,
+      color-mix(in srgb, var(--radio-face) 50%, black) 100%
+    );
+  color: var(--radio-body);
+  box-shadow:
+    inset 2px 2px 0 color-mix(in srgb, var(--radio-face) 25%, white),
+    inset -2px -3px 2px color-mix(in srgb, var(--radio-face) 40%, black),
+    1px 2px 2px rgba(0, 0, 0, 0.45);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+
+.work .inline-player-play:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 2px 3px 4px rgba(0, 0, 0, 0.45),
+    inset -1px -1px 0 color-mix(in srgb, var(--radio-face) 65%, white);
+}
+
+.work .inline-player.is-playing .inline-player-play {
+  border-color: color-mix(in srgb, var(--radio-body) 55%, black);
+  background:
+    radial-gradient(
+      circle at 32% 28%,
+      color-mix(in srgb, var(--radio-body) 45%, white) 0 16%,
+      var(--radio-body) 48%,
+      color-mix(in srgb, var(--radio-body) 50%, black) 100%
+    );
+  color: var(--radio-face);
+  transform: translateY(1px);
+  box-shadow:
+    inset 2px 3px 4px rgba(0, 0, 0, 0.4),
+    inset -1px -1px 0 color-mix(in srgb, var(--radio-body) 65%, white);
+}
+
 .about-gallery figcaption {
   font-family: var(--sans);
   font-size: 1rem;
@@ -4922,6 +4974,11 @@ html[data-theme="dark"] .page-beatles .tv-set {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
 }
 
+html[data-theme="dark"] .work .inline-player {
+  --radio-body: #f4f1ec;
+  --radio-face: #111111;
+}
+
 html[data-theme="dark"] .featured-listen .inline-player {
   --radio-body: #f4f1ec;
   --radio-face: #111111;
@@ -4970,6 +5027,11 @@ html[data-theme="dark"] .featured-listen .inline-player {
 
   html:not([data-theme="light"]) .page-beatles .tv-set {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
+  }
+
+  html:not([data-theme="light"]) .work .inline-player {
+    --radio-body: #f4f1ec;
+    --radio-face: #111111;
   }
 
   html:not([data-theme="light"]) .featured-listen .inline-player {
