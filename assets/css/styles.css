@@ -4103,7 +4103,47 @@ p a > .work-link-icon--external,
 }
 
 .page-beatles .beatles-hero-copy {
-  max-width: 40rem;
+  max-width: 35rem;
+  min-width: 0;
+}
+
+.page-beatles .beatles-intro {
+  /* 35rem keeps each line within 80 characters, including the sans fallback. */
+  margin: 0.75rem 0 0;
+  max-width: 35rem;
+  text-align: left;
+}
+
+.page-beatles .beatles-intro p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.page-beatles .beatles-intro p + p {
+  /* 1.5 × the 1.6 line-height. */
+  margin-top: 2.4em;
+}
+
+.page-beatles .beatles-intro-close {
+  margin-top: 2.4em;
+}
+
+.page-beatles .beatles-intro p.beatles-intro-line {
+  margin-top: 0.85rem;
+  font-family: var(--serif);
+  font-size: 1.35em;
+  font-weight: 560;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.page-beatles .beatles-intro p.beatles-intro-sign {
+  margin-top: 0.85rem;
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .page-beatles .beatles-hero .page-quote {
@@ -4302,21 +4342,6 @@ p a > .work-link-icon--external,
 }
 
 @media (min-width: 835px) {
-  .page-beatles .beatles-hero-feature {
-    display: grid;
-    grid-template-columns: minmax(0, max-content) 20rem;
-    justify-content: center;
-    column-gap: 3rem;
-    align-items: start;
-    width: fit-content;
-    max-width: 100%;
-    margin-inline: auto;
-  }
-
-  .page-beatles .beatles-hero-feature .score-pair {
-    margin-top: 0;
-  }
-
   .page-beatles .beatles-video-row {
     grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
     column-gap: 1.75rem;
@@ -4325,8 +4350,34 @@ p a > .work-link-icon--external,
 }
 
 @media (min-width: 1280px) {
+  .page-beatles .beatles-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 35rem) minmax(20rem, 24rem);
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+    justify-content: space-between;
+    align-items: start;
+  }
+
   .page-beatles .beatles-hero .page-title {
+    grid-column: 1 / -1;
     font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  }
+
+  .page-beatles .beatles-intro {
+    /* Sits level with the cover, at a size that runs about as tall as the image. */
+    margin-top: 7.05rem;
+    font-size: 1.16rem;
+  }
+
+  .page-beatles .beatles-hero-feature {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    margin-inline: 0;
+  }
+
+  .page-beatles .beatles-hero-feature .score-pair {
+    margin-top: 0.85rem;
   }
 
   .page-beatles .beatles-video-row {
@@ -4344,6 +4395,7 @@ p a > .work-link-icon--external,
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .page-beatles .beatles-hero .page-title,
   .page-beatles .beatles-hero-copy {
     text-align: center;
   }
