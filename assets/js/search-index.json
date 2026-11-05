@@ -1059,8 +1059,8 @@
     "catalogue_no": "059",
     "year": "2010",
     "forces": "String Quartet",
-    "href": "catalogue/chamber/other.html#octatonic-rag-for-string-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#octatonic-rag-for-string-quartet",
+    "section": "Chamber · Quartets",
     "keywords": [
       "violin",
       "viola",
@@ -1122,8 +1122,8 @@
     "catalogue_no": "064",
     "year": "2010",
     "forces": "Mixed Clarinet Quartet",
-    "href": "catalogue/chamber/other.html#take-the-love-this-cant-be-the-a-train-for-clarinet-quartet-mixed",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#take-the-love-this-cant-be-the-a-train-for-clarinet-quartet-mixed",
+    "section": "Chamber · Quartets",
     "keywords": [
       "clarinet",
       "bass clarinet"
@@ -1134,8 +1134,8 @@
     "catalogue_no": "065",
     "year": "2010",
     "forces": "Horn Quartet",
-    "href": "catalogue/chamber/other.html#take-the-love-this-cant-be-the-a-train-for-horn-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#take-the-love-this-cant-be-the-a-train-for-horn-quartet",
+    "section": "Chamber · Quartets",
     "keywords": [
       "French horn"
     ]
@@ -1152,6 +1152,16 @@
       "viola",
       "cello",
       "piano"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/chamber/other.html#taylor-fanfare-for-string-quartet-and-piano",
+        "section": "Chamber · Other"
+      },
+      {
+        "href": "catalogue/chamber/quintets.html#taylor-fanfare-for-string-quartet-and-piano",
+        "section": "Chamber · Quintets"
+      }
     ]
   },
   {
@@ -1400,8 +1410,8 @@
     "catalogue_no": "079",
     "year": "",
     "forces": "Saxophone Quartet, SATB",
-    "href": "catalogue/chamber/other.html#beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#beethoven-string-quartet-in-f-major-arranged-for-saxophone-quartet",
+    "section": "Chamber · Quartets",
     "tags": [
       "arrangement"
     ],
@@ -1419,8 +1429,8 @@
     "catalogue_no": "080",
     "year": "2018",
     "forces": "Mixed Clarinet Quartet · first movement only",
-    "href": "catalogue/chamber/other.html#beethoven-quartet-op-135-mvt-1-clarinet-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#beethoven-quartet-op-135-mvt-1-clarinet-quartet",
+    "section": "Chamber · Quartets",
     "tags": [
       "arrangement"
     ],
@@ -1897,8 +1907,8 @@
     "catalogue_no": "103",
     "year": "",
     "forces": "3 Clarinets in B Flat, 1 Bass Clarinet",
-    "href": "catalogue/chamber/other.html#elite-syncopations-arranged-for-clarinet-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#elite-syncopations-arranged-for-clarinet-quartet",
+    "section": "Chamber · Quartets",
     "tags": [
       "arrangement"
     ],
@@ -1918,6 +1928,16 @@
     "section": "Chamber · Other",
     "tags": [
       "arrangement"
+    ],
+    "listings": [
+      {
+        "href": "catalogue/chamber/other.html#three-menuetti-mozart-instrumental-trios",
+        "section": "Chamber · Other"
+      },
+      {
+        "href": "catalogue/chamber/trios.html#three-menuetti-mozart-instrumental-trios",
+        "section": "Chamber · Trios"
+      }
     ]
   },
   {
@@ -1958,8 +1978,8 @@
     "catalogue_no": "106",
     "year": "2018",
     "forces": "Mixed Clarinet Quartet",
-    "href": "catalogue/chamber/other.html#traumerei-from-kinderszenen-arranged-for-clarinet-quartet",
-    "section": "Chamber · Other",
+    "href": "catalogue/chamber/quartets.html#traumerei-from-kinderszenen-arranged-for-clarinet-quartet",
+    "section": "Chamber · Quartets",
     "tags": [
       "arrangement"
     ],
