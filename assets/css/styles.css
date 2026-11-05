@@ -4193,61 +4193,26 @@ p a > .work-link-icon--external,
   margin-top: 1.5rem;
 }
 
-.page-beatles .tv-set {
-  --tv-wood: #b9834f;
-  --tv-wood-dark: #8d5c32;
-  position: relative;
-  display: block;
-  width: min(100%, 30rem);
-  max-width: 30rem;
-  margin: 0 auto;
-  padding: 0.55rem 0.28rem 0.85rem;
-  border-radius: 0.35rem;
-  background: linear-gradient(180deg, #e0b27a 0%, var(--tv-wood) 42%, var(--tv-wood-dark) 100%);
-  box-shadow: 0 8px 18px rgba(17, 17, 17, 0.16);
-}
-
-.page-beatles .tv-speaker {
-  position: absolute;
-  left: 50%;
-  bottom: 0.24rem;
-  width: min(7.5rem, 46%);
-  height: 0.38rem;
-  transform: translateX(-50%);
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0 0.34rem,
-    rgba(74, 44, 22, 0.55) 0.34rem 0.4rem
-  );
-}
-
-.page-beatles .tv-screen {
-  position: relative;
+.page-beatles .beatles-video-player {
   min-width: 0;
-  padding: 0.22rem;
-  border-radius: 0.85rem;
-  background: var(--tv-wood-dark);
+  width: 100%;
 }
 
-.page-beatles .tv-screen .video-placeholder,
-.page-beatles .tv-screen .video-embed {
+.page-beatles .beatles-video-player .video-embed {
   width: 100%;
   max-width: none;
   margin: 0;
   aspect-ratio: 16 / 9;
-  border: 0;
-  border-radius: 0.65rem;
-  background: #9aa89a;
-  color: #3d463d;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 2px rgba(60, 40, 22, 0.35);
+  overflow: visible;
+  border-radius: 0;
 }
 
-.page-beatles .tv-screen .video-embed iframe {
+.page-beatles .beatles-video-player .video-embed iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+  border-radius: 0;
 }
 
 .page-beatles .video-details {
@@ -4263,20 +4228,17 @@ p a > .work-link-icon--external,
 }
 
 .page-beatles .video-entry {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  column-gap: 0.45rem;
-  align-items: baseline;
+  display: block;
 }
 
 .page-beatles .video-time,
 .page-beatles .video-song,
-.page-beatles .video-performers,
 .page-beatles .video-more {
   margin: 0;
 }
 
 .page-beatles .video-time {
+  margin-bottom: 0.15rem;
   font-family: var(--sans);
   font-size: 0.75rem;
   font-weight: 700;
@@ -4294,11 +4256,32 @@ p a > .work-link-icon--external,
   color: var(--ink);
 }
 
-.page-beatles .video-performers {
-  margin-top: 0.12rem;
+.page-beatles .video-credits {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.6rem 0 0;
+}
+
+.page-beatles .video-credits div {
+  display: grid;
+  gap: 0.08rem;
+}
+
+.page-beatles .video-credits dt {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.page-beatles .video-credits dd {
+  margin: 0;
   font-family: var(--sans);
   font-size: 0.85rem;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--muted);
 }
 
@@ -4313,7 +4296,7 @@ p a > .work-link-icon--external,
 
 .page-beatles .video-more a {
   display: inline-flex;
-  align-items: center;
+  align-items: baseline;
   min-height: 44px;
   color: var(--ink);
 }
@@ -4335,19 +4318,10 @@ p a > .work-link-icon--external,
   }
 
   .page-beatles .beatles-video-row {
-    grid-template-columns: minmax(0, 1.4fr) minmax(14rem, 0.9fr);
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
     column-gap: 1.75rem;
   }
 
-  .page-beatles .beatles-video .video-placeholder {
-    max-width: none;
-    width: 100%;
-  }
-
-  .page-beatles .tv-set {
-    width: min(100%, 30rem);
-    max-width: 30rem;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -4413,20 +4387,6 @@ p a > .work-link-icon--external,
     justify-self: start;
     width: 100%;
     text-align: left;
-  }
-
-  .page-beatles .video-placeholder,
-  .page-beatles .video-placeholder p {
-    margin-inline: auto;
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .page-beatles .tv-set {
-    width: min(calc(100vw - 0.75rem), 28rem);
-    max-width: none;
-    margin-inline: calc(50% - min(50vw - 0.375rem, 14rem));
-    margin-bottom: 0;
   }
 
   .page-beatles .beatles-hero-feature .kicker {
@@ -4970,10 +4930,6 @@ html[data-theme="dark"] .album-dialog-images img {
     5px 10px 18px rgba(0, 0, 0, 0.5);
 }
 
-html[data-theme="dark"] .page-beatles .tv-set {
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
-}
-
 html[data-theme="dark"] .work .inline-player {
   --radio-body: #f4f1ec;
   --radio-face: #111111;
@@ -5023,10 +4979,6 @@ html[data-theme="dark"] .featured-listen .inline-player {
       0 0 0 1px rgba(0, 0, 0, 0.65),
       2px 3px 2px rgba(0, 0, 0, 0.35),
       5px 10px 18px rgba(0, 0, 0, 0.5);
-  }
-
-  html:not([data-theme="light"]) .page-beatles .tv-set {
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
   }
 
   html:not([data-theme="light"]) .work .inline-player {
