@@ -3203,7 +3203,7 @@ p a > .work-link-icon--external,
   }
 
   .page-home .site-main {
-    padding-top: 0.85rem;
+    padding-top: 0;
   }
 
   .page-home .header-inner {
@@ -3478,13 +3478,40 @@ p a > .work-link-icon--external,
   max-width: 56rem;
 }
 
+.page-home .home-summary {
+  position: relative;
+  grid-column: 1 / -1;
+  max-width: none;
+  margin: 0;
+  padding: 1.85rem 0 2.15rem;
+  color: var(--ink); /* #111 on #fff ≈ 17.4:1; #f6f3ee on #141311 ≈ 16.8:1 */
+  text-align: center;
+}
+
+.page-home .home-summary p {
+  position: relative;
+  width: min(40rem, 100%);
+  margin: 0 auto;
+  left: calc(50vw - 50% - var(--bleed-left, 0px));
+  line-height: 1.55;
+  text-align: center;
+}
+
+.page-home .home-summary p + p {
+  margin-top: 1.55em;
+}
+
+.page-home .home-hero {
+  position: relative;
+}
+
 @media (min-width: 1280px) {
   .page-home .site-main {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 2rem;
     align-items: start;
-    padding-top: 1.15rem;
+    padding-top: 0;
     padding-bottom: 2.25rem;
     padding-left: 5rem;
   }
@@ -3652,7 +3679,7 @@ p a > .work-link-icon--external,
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 1.25rem;
     align-items: start;
-    padding-top: 1rem;
+    padding-top: 0;
     padding-bottom: 2rem;
     padding-left: 3.25rem;
   }
@@ -4364,8 +4391,7 @@ p a > .work-link-icon--external,
   }
 
   .page-beatles .beatles-intro {
-    /* Sits level with the cover, at a size that runs about as tall as the image. */
-    margin-top: 7.05rem;
+    margin-top: 0.85rem;
     font-size: 1.16rem;
   }
 

@@ -1976,7 +1976,7 @@
   });
 
   const alignBands = () => {
-    document.querySelectorAll(".home-hero, .home-featured, .beatles-hero, .beatles-catalogue-intro").forEach((section) => {
+    document.querySelectorAll(".home-summary, .home-hero, .home-featured, .beatles-hero, .beatles-catalogue-intro").forEach((section) => {
       section.style.setProperty("--bleed-left", `${section.getBoundingClientRect().left}px`);
     });
   };
